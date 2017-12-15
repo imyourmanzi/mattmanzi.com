@@ -13,7 +13,7 @@
         </div>
         <router-view></router-view>
         <footer v-bind:class="">
-            &copy; Matthew Manzi 2017
+            &copy; Matthew R. Manzi 2017
         </footer>
     </div>
 </template>
@@ -78,7 +78,7 @@ body {
 .sectionLink {
     padding: 0em 1em; /* top & bottom: 0em, left & right: 1em */
 
-    font-size: 1.1em;
+    font-size: 1.25em;
     color: white;
 }
 
@@ -98,7 +98,7 @@ body {
     width: 86%;
     margin: 1rem auto;
 
-    font-size: 4.4rem;
+    font-size: 5.0rem;
     font-weight: 300;
     vertical-align: middle;
 }
