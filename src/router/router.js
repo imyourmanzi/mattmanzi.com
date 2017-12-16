@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Code from '@/components/Code'
+import Tech from '@/components/Tech'
 import Music from '@/components/Music'
 import Resume from '@/components/Resume'
 import Faq from '@/components/Faq'
@@ -19,9 +19,9 @@ const routes = [
         redirect: '/'
     },
     {
-        path: '/code',
-        name: 'code',
-        component: Code
+        path: '/tech',
+        name: 'tech',
+        component: Tech
     },
     {
         path: '/music',

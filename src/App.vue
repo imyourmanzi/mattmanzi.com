@@ -7,12 +7,15 @@
             </router-link>
             <div id="sectionLinks">
                 <div v-for="section in sections">
-                    <router-link class="sectionLink" :to="section.uri">{{ section.title }}</router-link>
+                    <router-link class="sectionLink" v-bind:class="{'currPage': pageName == section.uri}" :to="section.uri">{{ section.title }}</router-link>
                 </div>
             </div>
         </div>
         <router-view></router-view>
-        <footer v-bind:class="">
+        <footer>
+            <div id="supportContact" v-if="pageName == 'tech'">
+                Trouble with an App?&nbsp;&nbsp;<a href="#contact" class="custLink">Contact Support</a>
+            </div>
             &copy; Matthew R. Manzi 2017
         </footer>
     </div>
@@ -24,6 +27,9 @@ export default {
     computed: {
         sections() {
             return this.$store.state.sections
+        },
+        pageName() {
+            return this.$store.state.route.name
         }
     }
 }
@@ -31,6 +37,34 @@ export default {
 
 <style>
 /* Root-level attributes */
+.container {
+    position: relative;
+    width: 68%;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+
+    text-align: left;
+}
+
+.direct {
+    width: 86%;
+    margin: 1rem auto;
+
+    font-size: 5.0rem;
+    font-weight: 300;
+    vertical-align: middle;
+}
+
+.custLink {
+    text-decoration: none;
+    color: #2375d3;
+}
+
+.custLink:hover {
+    color: #0f97e0;
+}
+
+/* Layout-level attributes */
 body {
     margin: 0 0 3rem 0;
     padding: 0;
@@ -86,32 +120,26 @@ body {
     color: gray;
 }
 
-/*#container {
-    width: 84%;
-    height: 100%;
-    margin: 0 auto;
-
-    background-color: #111111;
-}*/
-
-.direct {
-    width: 86%;
-    margin: 1rem auto;
-
-    font-size: 5.0rem;
-    font-weight: 300;
-    vertical-align: middle;
+.currPage {
+    text-decoration: underline !important;
 }
 
 footer {
     position: fixed;
-    width: 92%;
-    padding: 1% 4%; /* top & bottom: 1%, left & right: 4% */
+    width: 100%;
+    padding: 0 0 1em 0;
     bottom: 0;
 
     background-color: #000a21;
 
     vertical-align: middle;
+}
+
+#supportContact {
+    padding: 0.4em 0;
+    margin: 0 0 1em 0;
+
+    background-color: #282828;
 }
 
 /* Extra tall and skinny screens (i.e. smartphones) */

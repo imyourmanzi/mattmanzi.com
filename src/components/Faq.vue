@@ -1,5 +1,5 @@
 <template>
-    <div id="faqContainer">
+    <div id="faqContainer" class="container">
         <div class="faqEntry" v-for="faqEntry in faqEntries">
             <div class="entryQuestion" @click="toggleShowAnswer(faqEntry.id)">
                 <h3>{{ faqEntry.question }}</h3>
@@ -45,13 +45,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #faqContainer {
-    position: relative;
-    width: 68%;
-    margin: 0 auto;
-
-    text-align: left;
-
-    background-color: #FF00FF;
+    /* background-color: #FF00FF; */
 }
 
 .entryQuestion {

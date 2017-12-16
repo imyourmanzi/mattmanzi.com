@@ -1,5 +1,5 @@
 <template>
-    <div id="musicContainer">
+    <div id="musicContainer" class="container">
 
     </div>
 </template>

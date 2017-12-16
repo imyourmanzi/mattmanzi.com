@@ -1,5 +1,5 @@
 <template>
-    <div id="homeContainer">
+    <div id="homeContainer" class="container">
         <p class="direct">As we say it,<br/>so it shall be.</p>
         <div id="sectionBoxes">
             <div v-for="section in sections">
@@ -26,6 +26,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#homeContainer {
+    text-align: center !important;
+}
+
 #sectionBoxes {
     position: relative;
     display: flex;
