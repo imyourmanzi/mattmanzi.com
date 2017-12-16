@@ -2,7 +2,6 @@
     <div id="app">
         <div id="header" v-bind:class="">
             <router-link :to="'/'" id="titleLink">
-            <!-- <img id="logo-header" src="./assets/img/header-logo.png" /> -->
             MattManzi<small>.com</small>
             </router-link>
             <div id="sectionLinks">
@@ -37,9 +36,20 @@ export default {
 
 <style>
 /* Root-level attributes */
+body {
+    margin: 0 0 3rem 0;
+    padding: 0;
+
+    background-color: #000a21;
+}
+
+a {
+    text-decoration: none;
+}
+
 .container {
     position: relative;
-    width: 68%;
+    width: 80%;
     margin: 0 auto;
     padding-bottom: 5rem;
 
@@ -56,7 +66,6 @@ export default {
 }
 
 .custLink {
-    text-decoration: none;
     color: #2375d3;
 }
 
@@ -65,13 +74,6 @@ export default {
 }
 
 /* Layout-level attributes */
-body {
-    margin: 0 0 3rem 0;
-    padding: 0;
-
-    background-color: #000a21;
-}
-
 #app {
     font-family: 'Avenir Next', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -88,10 +90,6 @@ body {
     padding: 2% 4% 1% 4%; /* top: 2%, bottom: 1%, left & right: 4% */
 
     background-color: #000a21;
-}
-
-#header a {
-    text-decoration: none;
 }
 
 #header small {

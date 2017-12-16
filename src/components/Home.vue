@@ -36,15 +36,10 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    /*align-items: center;*/
 
     width: 86%;
     margin: auto;
     max-width: 1200px;
-}
-
-#sectionBoxes a {
-    text-decoration: none;
 }
 
 .sectionBoxLinkWrap {

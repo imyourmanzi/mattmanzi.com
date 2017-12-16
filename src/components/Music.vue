@@ -1,13 +1,20 @@
 <template>
     <div id="musicContainer" class="container">
-        <img src="../../static/img/music-header@0-33x.png"/>
-        <img src="../../static/img/myx-logo.svg"/>
+        <img :src="resolve('music-header@0-33x.png')"/>
+        <img :src="resolve('myx-logo.svg')"/>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-    name: 'music'
+    name: 'music',
+    computed: {
+        ...mapGetters([
+            'resolve'
+        ])
+    }
 }
 </script>
 

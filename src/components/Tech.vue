@@ -4,12 +4,12 @@
             <h1 class="md"># Projects</h1>
             <h2 class="md">&nbsp;## iOS Apps</h2>
             <div id="iosProjects">
-                <div class="iosProj" v-for="proj in iosProjects">
+                <div class="panel" v-for="proj in iosProjects">
                     <h3 class="md">{{ proj.name }}</h3>
                     <p>
                         {{ proj.about }}
                     </p>
-                    <img :src="proj.imgUri" class="screenshot" />
+                    <img :src="resolve(proj.imgUri)" class="screenshot" />
                     <a :href="proj.url" target="_blank"><img src="../../static/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" /></a>
                 </div>
             </div>
@@ -19,19 +19,19 @@
                 Purpose/intent, goals, about, etc.
             </p>
             <div id="valleyMatchSteps">
-                <div class="valleyMatchStep">
+                <div class="panel">
                     <h3 class="md">Design and Approval</h3>
                     <p>
                         The desigadsfkfsdfkjl
                     </p>
                 </div>
-                <div class="valleyMatchStep">
+                <div class="panel">
                     <h3 class="md">Development</h3>
                     <p>
                         The devgadsfkfsdfkjl
                     </p>
                 </div>
-                <div class="valleyMatchStep">
+                <div class="panel">
                     <h3 class="md">Results</h3>
                     <p>
                         The resigadsfkfsdfkjl also a graph in here or something
@@ -61,12 +61,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
     name: 'tech',
     computed: {
         iosProjects() {
             return this.$store.state.iosPojects;
-        }
+        },
+        ...mapGetters([
+            'resolve'
+        ])
     }
 }
 </script>
@@ -96,15 +101,15 @@ h3 {
     text-align: center;
 }
 
+.panel {
+    padding: 0 0.5em;
+    width: 21em;
+}
+
 #iosProjects {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
-
-.iosProj {
-    padding: 0 2em;
-    width: 21em;
 }
 
 .screenshot {
@@ -118,11 +123,6 @@ h3 {
     flex-wrap: wrap;
 }
 
-.valleyMatchStep {
-    padding: 0 2em;
-    width: 21em;
-}
-
 #contact table {
     width: 92%;
     margin: auto 4%;
@@ -132,7 +132,7 @@ h3 {
     font-size: 1.2em;
 }
 
-#contact table thead {
+#contact thead {
     background-color: black;
 
     text-align: center;
@@ -144,11 +144,11 @@ h3 {
     border: 1px solid #494949;
 }
 
-#contact table tbody tr:nth-child(odd) {
+#contact tbody tr:nth-child(odd) {
     background-color: #282828;
 }
 
-#contact table tbody tr:nth-child(even) {
+#contact tbody tr:nth-child(even) {
     background-color: #191919;
 }
 </style>

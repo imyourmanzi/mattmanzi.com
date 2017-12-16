@@ -44,10 +44,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#faqContainer {
-    /* background-color: #FF00FF; */
-}
-
 .entryQuestion {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -60,6 +56,11 @@ export default {
     margin: 0 2em;
 }
 
+.entryAnswer pre {
+    font-family: inherit;
+    white-space: pre-wrap;
+}
+
 .reveal-enter, .reveal-leave-to {
     opacity: 0;
 }
@@ -70,10 +71,5 @@ export default {
 
 .reveal-leave-active {
     transition: opacity 0.2s;
-}
-
-pre {
-    font-family: inherit;
-    white-space: pre-wrap;
 }
 </style>
