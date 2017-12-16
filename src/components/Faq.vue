@@ -6,7 +6,7 @@
             </div>
             <transition name="reveal">
                 <div class="entryAnswer" v-if="openFaqs.indexOf(faqEntry.id) !== -1">
-                    {{ faqEntry.answer }}
+                    <pre>{{ faqEntry.answer }}</pre>
                 </div>
             </transition>
         </div>
@@ -70,5 +70,10 @@ export default {
 
 .reveal-leave-active {
     transition: opacity 0.2s;
+}
+
+pre {
+    font-family: inherit;
+    white-space: pre-wrap;
 }
 </style>
