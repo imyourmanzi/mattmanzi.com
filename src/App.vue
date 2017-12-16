@@ -3,7 +3,7 @@
         <div id="header" v-bind:class="">
             <router-link :to="'/'" id="titleLink">
             <!-- <img id="logo-header" src="./assets/img/header-logo.png" /> -->
-            Matt Manzi
+            MattManzi<small>.com</small>
             </router-link>
             <div id="sectionLinks">
                 <div v-for="section in sections">
@@ -14,7 +14,7 @@
         <router-view></router-view>
         <footer>
             <div id="supportContact" v-if="pageName == 'tech'">
-                Trouble with an App?&nbsp;&nbsp;<a href="#contact" class="custLink">Contact Support</a>
+                Trouble with an App?&nbsp;&nbsp;&nbsp;&nbsp;<a href="#contact" class="custLink">Contact Support</a>
             </div>
             &copy; Matthew R. Manzi 2017
         </footer>
@@ -92,6 +92,10 @@ body {
 
 #header a {
     text-decoration: none;
+}
+
+#header small {
+    font-size: 50%;
 }
 
 #titleLink {

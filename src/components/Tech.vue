@@ -2,7 +2,7 @@
     <div id="techContainer" class="container">
         <div id="projects">
             <h1 class="md"># Projects</h1>
-            <h2 class="md">&nbsp;## iOS</h2>
+            <h2 class="md">&nbsp;## iOS Apps</h2>
             <div id="iosProjects">
                 <div class="iosProj" v-for="proj in iosProjects">
                     <h3 class="md">{{ proj.name }}</h3>
