@@ -129,17 +129,17 @@ a {
 footer {
     position: fixed;
     width: 100%;
-    padding: 0 0 1em 0;
+    padding: 0 0 0.4em 0;
     bottom: 0;
 
     background-color: #000a21;
 
-    vertical-align: middle;
+    font-size: 0.93rem;
 }
 
 #supportContact {
-    padding: 0.4em 0;
-    margin: 0 0 1em 0;
+    padding: 0.2em 0;
+    margin: 0 0 0.4em 0;
 
     background-color: #282828;
 }

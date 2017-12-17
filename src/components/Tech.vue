@@ -142,8 +142,6 @@ h3 {
     margin: auto 4%;
 
     border-collapse: collapse;
-
-    font-size: 1.2em;
 }
 
 #contact #standard thead {
