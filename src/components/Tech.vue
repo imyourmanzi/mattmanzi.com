@@ -10,7 +10,7 @@
                         {{ proj.about }}
                     </p>
                     <img :src="resolve(proj.imgUri)" class="screenshot" />
-                    <a :href="proj.url" target="_blank"><img src="../../static/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" /></a>
+                    <a :href="proj.url" target="_blank"><img :src="resolve('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg')" /></a>
                 </div>
             </div>
             <div class="spacing"></div>
@@ -42,7 +42,7 @@
         <div class="spacing"></div>
         <div id="contact">
             <h1 class="md"># Contact</h1>
-            <table>
+            <table id="standard">
                 <thead class="md">
                     <tr>
                         <th>App</th>
@@ -52,6 +52,16 @@
                 <tbody>
                     <tr v-for="proj in iosProjects">
                         <td>{{ proj.name }}</td>
+                        <td><a :href="'mailto:' + proj.contact" class="custLink">{{ proj.contact }}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="tiny" v-for="proj in iosProjects">
+                <tbody>
+                    <tr>
+                        <td>{{ proj.name }}</td>
+                    </tr>
+                    <tr>
                         <td><a :href="'mailto:' + proj.contact" class="custLink">{{ proj.contact }}</a></td>
                     </tr>
                 </tbody>
@@ -123,7 +133,11 @@ h3 {
     flex-wrap: wrap;
 }
 
-#contact table {
+#contact #tiny {
+    display: none;
+}
+
+#contact #standard {
     width: 92%;
     margin: auto 4%;
 
@@ -132,23 +146,55 @@ h3 {
     font-size: 1.2em;
 }
 
-#contact thead {
+#contact #standard thead {
     background-color: black;
 
     text-align: center;
 }
 
-#contact th, td {
+#contact #standard th, td {
     padding: 0.3em 1.5em;
 
     border: 1px solid #494949;
 }
 
-#contact tbody tr:nth-child(odd) {
+#contact #standard tbody tr:nth-child(odd) {
     background-color: #282828;
 }
 
-#contact tbody tr:nth-child(even) {
+#contact #standard tbody tr:nth-child(even) {
     background-color: #191919;
+}
+
+@media screen and (max-aspect-ratio: 767/1024) {
+
+    #contact #standard {
+        display: none;
+    }
+
+    #contact #tiny {
+        display: table;
+        width: 100%;
+    }
+
+    #contact #tiny {
+        margin-bottom: 1em;
+
+        border-collapse: collapse;
+    }
+
+    #contact #tiny tr:nth-child(odd) {
+        background-color: black;
+        border-bottom: 2px solid #494949;
+    }
+
+    #contact #tiny tbody tr:nth-child(even) {
+        background-color: #282828;
+    }
+
+    #contact #tiny td {
+        border: none;
+    }
+
 }
 </style>

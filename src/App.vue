@@ -147,6 +147,10 @@ footer {
 /* Extra tall and skinny screens (i.e. smartphones) */
 @media screen and (max-aspect-ratio: 767/1024) {
 
+    .container {
+        width: 92%;
+    }
+
     #sectionLinks {
         justify-content: space-around;
         overflow-x: auto;
