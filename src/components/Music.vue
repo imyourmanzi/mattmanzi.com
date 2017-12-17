@@ -15,7 +15,7 @@
         <div class="spacing"></div>
         <div id="musicRow" class="contentRow">
             <div class="visual">
-                <iframe width="100%" height="350" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/official-myx&amp;auto_play=false&amp;buying=false&amp;liking=true&amp;download=false&amp;sharing=true&amp;show_artwork=true&amp;show_comments=false&amp;show_playcount=false&amp;show_user=true&amp;hide_related=true&amp;visual=true&amp;start_track=0"></iframe>
+                <iframe width="100%" height="250" src="https://www.mixcloud.com/widget/follow/?u=%2Fofficial_myx%2F&hide_followers=1" frameborder="0"></iframe>
             </div>
             <div class="text">
                 <h1 class="logo">Music</h1>
@@ -59,6 +59,10 @@ img {
     justify-content: center;
 }
 
+#musicRow {
+    flex-wrap: wrap-reverse;
+}
+
 .text {
     max-width: 45em;
     margin: 0 2em;
@@ -70,6 +74,6 @@ img {
 .visual {
     width: 100%;
     max-width: 25em;
-    padding: 0 2em;
+    margin: 0 2em;
 }
 </style>
