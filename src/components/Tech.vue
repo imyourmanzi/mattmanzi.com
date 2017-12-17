@@ -95,10 +95,6 @@ export default {
     font-family: 'Courier New', monospace;
 }
 
-.spacing {
-    margin: 7em 0;
-}
-
 p {
     width: 94%;
     padding: 0 3%;

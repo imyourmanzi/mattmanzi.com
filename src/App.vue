@@ -56,6 +56,10 @@ a {
     text-align: left;
 }
 
+.spacing {
+    margin: 7em 0;
+}
+
 .direct {
     width: 86%;
     margin: 1rem auto;

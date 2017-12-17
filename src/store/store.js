@@ -67,6 +67,10 @@ export const store = new Vuex.Store({
         ]
     },
     getters: {
+
+        // Returns a function that accepts a filename and returns
+        // the relative path to the file (if the extension is
+        // recognized) from the `components` directory
         resolve(state) {
 
             return function(filename) {
@@ -81,6 +85,7 @@ export const store = new Vuex.Store({
             }
 
         }
+        
     },
     mutations: {
         // add mutations for state data here
