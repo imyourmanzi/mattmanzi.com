@@ -15,7 +15,7 @@
         <div class="spacing"></div>
         <div id="musicRow" class="contentRow">
             <div class="visual">
-                <iframe width="100%" height="250" src="https://www.mixcloud.com/widget/follow/?u=%2Fofficial_myx%2F&hide_followers=1" frameborder="0"></iframe>
+                <iframe width="100%" height="250" src="https://www.mixcloud.com/widget/follow/?u=%2Fofficial_myx%2F&hide_followers=1" frameborder="0" ></iframe>
             </div>
             <div class="text">
                 <h1 class="logo">Music</h1>
