@@ -4,7 +4,10 @@
             <h1>Matthew R. Manzi</h1>
             ERK 406, UMBC 1000 Hilltop Circle, Baltimore, MD 21250 • (610) 368-4021 • manzi.matthewr@gmail.com
         </div>
-        <h3 @click="toggleShowSection(resume.ids.education)">Education</h3>
+        <div class="section" @click="toggleShowSection(resume.ids.education)">
+            <h3>Education</h3>
+            <h3>{{ openSections.indexOf(resume.ids.education) === -1 ? "+" : "\u2014" }}</h3>
+        </div>
         <hr />
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.education) !== -1">
@@ -21,7 +24,10 @@
                 </div>
             </div>
         </transition>
-        <h3 @click="toggleShowSection(resume.ids.skills)">Technical Skills</h3>
+        <div class="section" @click="toggleShowSection(resume.ids.skills)">
+            <h3>Technical Skills</h3>
+            <h3>{{ openSections.indexOf(resume.ids.skills) === -1 ? "+" : "\u2014" }}</h3>
+        </div>
         <hr />
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.skills) !== -1">
@@ -31,7 +37,10 @@
                 </div>
             </div>
         </transition>
-        <h3 @click="toggleShowSection(resume.ids.experience)">Experience</h3>
+        <div class="section" @click="toggleShowSection(resume.ids.experience)">
+            <h3>Experience</h3>
+            <h3>{{ openSections.indexOf(resume.ids.experience) === -1 ? "+" : "\u2014" }}</h3>
+        </div>
         <hr />
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.experience) !== -1">
@@ -46,7 +55,10 @@
                 </div>
             </div>
         </transition>
-        <h3 @click="toggleShowSection(resume.ids.projects)">Projects</h3>
+        <div class="section" @click="toggleShowSection(resume.ids.projects)">
+            <h3>Projects</h3>
+            <h3>{{ openSections.indexOf(resume.ids.projects) === -1 ? "+" : "\u2014" }}</h3>
+        </div>
         <hr />
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.projects) !== -1">
@@ -61,7 +73,10 @@
                 </div>
             </div>
         </transition>
-        <h3 @click="toggleShowSection(resume.ids.volunteer)">Volunteer Activities</h3>
+        <div class="section" @click="toggleShowSection(resume.ids.volunteer)">
+            <h3>Volunteer Activities</h3>
+            <h3>{{ openSections.indexOf(resume.ids.volunteer) === -1 ? "+" : "\u2014" }}</h3>
+        </div>
         <hr />
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.volunteer) !== -1">
@@ -122,16 +137,10 @@ h1 {
 
 h3 {
     margin-bottom: 0em;
+    margin-top: 0.7em;
 
     font-weight: 400;
     text-transform: uppercase;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    cursor: pointer;
 }
 
 p {
@@ -143,6 +152,18 @@ p {
 ul {
     margin-top: 0.5em;
     padding-left: 5em;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    cursor: pointer;
 }
 
 .detailLine {

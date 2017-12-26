@@ -3,6 +3,7 @@
         <div class="faqEntry" v-for="faqEntry in faqEntries">
             <div class="entryQuestion" @click="toggleShowAnswer(faqEntry.id)">
                 <h3>{{ faqEntry.question }}</h3>
+                <h3>{{ openFaqs.indexOf(faqEntry.id) === -1 ? "+" : "\u2014" }}</h3>
             </div>
             <transition name="reveal">
                 <div class="entryAnswer" v-if="openFaqs.indexOf(faqEntry.id) !== -1">
@@ -45,10 +46,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .entryQuestion {
+    display: flex;
+    justify-content: space-between;
+
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    
     cursor: pointer;
 }
 
