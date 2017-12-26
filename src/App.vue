@@ -1,12 +1,12 @@
 <template>
     <div id="app">
-        <div id="header" v-bind:class="">
+        <div id="header" v-bind:class="{'divided': pageName !== 'home'}">
             <router-link :to="'/'" id="titleLink">
             MattManzi<small>.com</small>
             </router-link>
             <div id="sectionLinks">
                 <div v-for="section in sections">
-                    <router-link class="sectionLink" v-bind:class="{'currPage': pageName == section.uri}" :to="section.uri">{{ section.title }}</router-link>
+                    <router-link class="sectionLink" v-bind:class="{'currPage': pageName === section.uri}" :to="section.uri">{{ section.title }}</router-link>
                 </div>
             </div>
         </div>
@@ -54,6 +54,8 @@ a {
     padding-bottom: 5rem;
 
     text-align: left;
+
+    /* border-top: 1px solid gray; */
 }
 
 .spacing {
@@ -94,6 +96,10 @@ a {
     padding: 2% 4% 1% 4%; /* top: 2%, bottom: 1%, left & right: 4% */
 
     background-color: #000a21;
+}
+
+.divided {
+    border-bottom: 1px solid gray;
 }
 
 #header small {
