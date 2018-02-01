@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style>
+
 /* Root-level attributes */
 body {
     margin: 0 0 3rem 0;
@@ -54,8 +55,6 @@ a {
     padding-bottom: 5rem;
 
     text-align: left;
-
-    /* border-top: 1px solid gray; */
 }
 
 .spacing {
@@ -144,7 +143,7 @@ footer {
 
     background-color: #000a21;
 
-    font-size: 0.93rem;
+    font-size: 0.93em;
 }
 
 #supportContact {
