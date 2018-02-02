@@ -1,12 +1,12 @@
 <template>
     <div id="faqContainer" class="container">
-        <div class="faqEntry" v-for="faqEntry in faqEntries">
-            <div class="entryQuestion" @click="toggleShowAnswer(faqEntry.id)">
+        <div class="faqEntry" v-for="(faqEntry, i) in faqEntries">
+            <div class="entryQuestion" @click="toggleShowAnswer(i)">
                 <h3>{{ faqEntry.question }}</h3>
-                <h3>{{ openFaqs.indexOf(faqEntry.id) === -1 ? "+" : "\u2014" }}</h3>
+                <h3>{{ openFaqs.indexOf(i) === -1 ? "+" : "\u2014" }}</h3>
             </div>
             <transition name="reveal">
-                <div class="entryAnswer" v-if="openFaqs.indexOf(faqEntry.id) !== -1">
+                <div class="entryAnswer" v-if="openFaqs.indexOf(i) !== -1">
                     <pre>{{ faqEntry.answer }}</pre>
                 </div>
             </transition>
@@ -53,7 +53,7 @@ export default {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    
+
     cursor: pointer;
 }
 

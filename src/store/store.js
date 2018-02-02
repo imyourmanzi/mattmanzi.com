@@ -174,12 +174,10 @@ export const store = new Vuex.Store({
         },
         faqEntries: [
             {
-                id: 1,
                 question: "Are you a nerd?",
                 answer: "Yes, of course."
             },
             {
-                id: 2,
                 question: "Where did you learn all this programming stuff?",
                 answer: "I am currently pursuing a bachelor of science degree in computer science at the University of Maryland, Baltimore County.\n\nThat's...not the full answer.  Now ramble about self-taught stuff from my notes."
             }
