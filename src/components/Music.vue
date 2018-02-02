@@ -64,7 +64,7 @@ img {
 }
 
 .text {
-    max-width: 45em;
+    max-width: 42em;
     margin: 0 2em;
 
     text-align: justify;
@@ -73,7 +73,7 @@ img {
 
 .visual {
     width: 100%;
-    max-width: 25em;
+    max-width: 23em;
     margin: 0 2em;
 }
 </style>

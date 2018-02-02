@@ -42,6 +42,8 @@ body {
     padding: 0;
 
     background-color: #000a21;
+
+    font-size: 18px; /* make the whole site have a slighty larger font (default: 16px) */
 }
 
 a {
@@ -65,7 +67,7 @@ a {
     width: 86%;
     margin: 1rem auto;
 
-    font-size: 5.0rem;
+    font-size: 5.5rem;
     font-weight: 300;
     vertical-align: middle;
 }
@@ -106,7 +108,7 @@ a {
 }
 
 #titleLink {
-    font-size: 2.2rem;
+    font-size: 3.0rem;
     font-weight: lighter;
     color: inherit;
 }
