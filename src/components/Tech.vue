@@ -11,7 +11,7 @@
                     <a :href="proj.url" target="_blank"><img :src="resolve('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg')" /></a>
                 </div>
             </div>
-            <div class="spacing"></div>
+            <!-- <div class="spacing"></div>
             <h2 class="md">&nbsp;## Valley Match</h2>
             <p>
                 Purpose/intent, goals, about, etc.
@@ -35,7 +35,7 @@
                         The resigadsfkfsdfkjl also a graph in here or something
                     </p>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="spacing"></div>
         <div id="contact">
