@@ -4,12 +4,10 @@
             <h1 class="md"># Projects</h1>
             <h2 class="md">&nbsp;## iOS Apps</h2>
             <div id="iosProjects">
-                <div class="panel" v-for="proj in iosProjects">
+                <div class="panel" v-for="(proj, i) in iosProjects">
                     <h3 class="md">{{ proj.name }}</h3>
-                    <p>
-                        {{ proj.about }}
-                    </p>
-                    <img :src="resolve(proj.imgUri)" class="screenshot" />
+                    <img :src="resolve(proj.imgRes)" class="screenshot" />
+                    <p>{{ proj.about }}</p>
                     <a :href="proj.url" target="_blank"><img :src="resolve('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg')" /></a>
                 </div>
             </div>
@@ -96,11 +94,10 @@ export default {
 }
 
 p {
+    white-space: pre-line;
+
     width: 94%;
     padding: 0 3%;
-
-    text-align: justify;
-    text-indent: 30px;
 }
 
 h3 {
@@ -120,7 +117,23 @@ h3 {
 
 .screenshot {
     width: 96%;
-    margin: 2%;
+    height: 85px;
+    margin: 0 2%;
+
+    border-radius: 15px;
+    object-fit: cover;
+    opacity: 0.7;
+
+    transition: opacity 0.3s,
+                height 0.5s,
+                border-radius 0.5s;
+}
+
+.screenshot:hover {
+    height: 570px;
+
+    border-radius: 10px;
+    opacity: 1;
 }
 
 #valleyMatchSteps {
