@@ -68,7 +68,7 @@ a {
     margin: 1rem auto;
 
     font-size: 5.5rem;
-    font-weight: 300;
+    font-weight: lighter;
     vertical-align: middle;
 }
 
