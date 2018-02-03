@@ -1,6 +1,6 @@
 <template>
     <div id="musicContainer" class="container">
-        <img id="music-header" :src="resolve('music-header@0-33x.png')"/>
+        <img id="music-header" :src="resolve('music-header@0-33x.jpg')"/>
         <div id="aboutRow" class="contentRow">
             <div class="text">
                 <h1 class="logo">About</h1>
@@ -48,7 +48,7 @@ img {
 }
 
 .logo {
-    font-family: "LeckerliOne";
+    font-family: "LeckerliOne", 'Courier New', monospace;
     font-size: 2.5em;
     font-weight: lighter;
 }
