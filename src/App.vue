@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div id="header" v-bind:class="{'divided': pageName !== 'home'}">
+        <div id="header" :class="{'divided': pageName !== 'home'}">
             <router-link :to="'/'" id="titleLink">
             MattManzi<small>.com</small>
             </router-link>
@@ -9,6 +9,9 @@
                     <router-link class="sectionLink" v-bind:class="{'currPage': pageName === section.uri}" :to="section.uri">{{ section.title }}</router-link>
                 </div>
             </div>
+        </div>
+        <div class="construction" :class="{'showConstruction': pageName !== 'home'}">
+            Notice: This website is still under construction, thank you for your understanding.
         </div>
         <router-view></router-view>
         <footer>
@@ -135,6 +138,19 @@ a {
 
 .currPage {
     text-decoration: underline !important;
+}
+
+.construction {
+    display: none;
+    padding: 0.2em 0;
+
+    background-color: #3443A3;
+
+    color: yellow;
+}
+
+.showConstruction {
+    display: inherit;
 }
 
 footer {
