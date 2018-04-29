@@ -1,14 +1,17 @@
 <template>
     <div id="resumeContainer" class="container">
+        <!-- resume header -->
         <div id="nameplate">
             <h1>Matthew R. Manzi</h1>
             ERK 406, UMBC 1000 Hilltop Circle, Baltimore, MD 21250 • (610) 368-4021 • manzi.matthewr@gmail.com
         </div>
+        <!-- education header -->
         <div class="section" @click="toggleShowSection(resume.ids.education)">
             <h3>Education</h3>
             <h3>{{ openSections.indexOf(resume.ids.education) === -1 ? "+" : "\u2014" }}</h3>
         </div>
         <hr />
+        <!-- education section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.education) !== -1">
                 <div class="education">
@@ -24,11 +27,13 @@
                 </div>
             </div>
         </transition>
+        <!-- tech skills header -->
         <div class="section" @click="toggleShowSection(resume.ids.skills)">
             <h3>Technical Skills</h3>
             <h3>{{ openSections.indexOf(resume.ids.skills) === -1 ? "+" : "\u2014" }}</h3>
         </div>
         <hr />
+        <!-- tech skills section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.skills) !== -1">
                 <div class="skill" v-for="skill in resume.skills">
@@ -37,11 +42,13 @@
                 </div>
             </div>
         </transition>
+        <!-- experience header -->
         <div class="section" @click="toggleShowSection(resume.ids.experience)">
             <h3>Experience</h3>
             <h3>{{ openSections.indexOf(resume.ids.experience) === -1 ? "+" : "\u2014" }}</h3>
         </div>
         <hr />
+        <!-- experience section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.experience) !== -1">
                 <div class="experience" v-for="exp in resume.experience">
@@ -55,11 +62,13 @@
                 </div>
             </div>
         </transition>
+        <!-- projects header -->
         <div class="section" @click="toggleShowSection(resume.ids.projects)">
             <h3>Projects</h3>
             <h3>{{ openSections.indexOf(resume.ids.projects) === -1 ? "+" : "\u2014" }}</h3>
         </div>
         <hr />
+        <!-- projects section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.projects) !== -1">
                 <div class="project" v-for="proj in resume.projects">
@@ -73,11 +82,13 @@
                 </div>
             </div>
         </transition>
+        <!-- volunteer header -->
         <div class="section" @click="toggleShowSection(resume.ids.volunteer)">
             <h3>Volunteer Activities</h3>
             <h3>{{ openSections.indexOf(resume.ids.volunteer) === -1 ? "+" : "\u2014" }}</h3>
         </div>
         <hr />
+        <!-- volunteer section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.volunteer) !== -1">
                 <div class="activity" v-for="activity in resume.volunteer">
@@ -99,7 +110,7 @@ export default {
     name: 'resume',
     data() {
         return {
-            openSections: [1]
+            openSections: [0] /* first section should be open on load */
         }
     },
     computed: {
@@ -169,6 +180,7 @@ ul {
 .detailLine {
     display: flex;
     justify-content: space-between;
+    padding-right: 0.3em;
 }
 
 .skill {

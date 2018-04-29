@@ -58,11 +58,11 @@ export const store = new Vuex.Store({
         ],
         resume: {
             ids: {
-                education: 1,
-                skills: 2,
-                experience: 3,
-                projects: 4,
-                volunteer: 5
+                education: 0,
+                skills: 1,
+                experience: 2,
+                projects: 3,
+                volunteer: 4
             },
             skills: [
                 {
