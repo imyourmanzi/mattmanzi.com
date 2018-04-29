@@ -18,7 +18,7 @@
             <div id="supportContact" v-if="pageName == 'tech'">
                 Trouble with an App?&nbsp;&nbsp;&nbsp;&nbsp;<a href="#contact" class="custLink">Contact Support</a>
             </div>
-            &copy; Matthew R. Manzi 2017
+            &copy; Matthew R. Manzi 2018
         </footer>
     </div>
 </template>
@@ -38,6 +38,7 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Leckerli+One|Quicksand:300,400');
 
 /* Root-level attributes */
 body {
@@ -45,8 +46,6 @@ body {
     padding: 0;
 
     background-color: #000a21;
-
-    font-size: 18px; /* make the whole site have a slighty larger font (default: 16px) */
 }
 
 a {
@@ -71,7 +70,7 @@ a {
     margin: 1rem auto;
 
     font-size: 5.5rem;
-    font-weight: lighter;
+    font-weight: 300;
     vertical-align: middle;
 }
 
@@ -85,7 +84,9 @@ a {
 
 /* Layout-level attributes */
 #app {
-    font-family: 'Avenir Next', Helvetica, Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 18px; /* make the whole site have a slighty larger font (default: 16px) */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -112,7 +113,7 @@ a {
 
 #titleLink {
     font-size: 3.0rem;
-    font-weight: lighter;
+    font-weight: 300;
     color: inherit;
 }
 

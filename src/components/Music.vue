@@ -48,9 +48,8 @@ img {
 }
 
 .logo {
-    font-family: "LeckerliOne", 'Courier New', monospace;
+    font-family: "Leckerli One", cursive;
     font-size: 2.5em;
-    font-weight: lighter;
 }
 
 .contentRow {
