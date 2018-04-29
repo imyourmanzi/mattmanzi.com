@@ -1,5 +1,12 @@
 <template>
     <div id="resumeContainer" class="container">
+        <!-- download box -->
+        <div id="downloadContainer">
+            <a class="custLink" :href="resolve('resume_pdf')" target="_blank">
+                <!-- no space between image and text to avoid awkward underline -->
+                <img :src="resolve('dl.svg')" />Download PDF
+            </a>
+        </div>
         <!-- resume header -->
         <div id="nameplate">
             <h1>Matthew R. Manzi</h1>
@@ -106,6 +113,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
     name: 'resume',
     data() {
@@ -116,7 +125,10 @@ export default {
     computed: {
         resume() {
             return this.$store.state.resume
-        }
+        },
+        ...mapGetters([
+                'resolve'
+        ])
     },
     methods: {
         toggleShowSection(sectionId) {
@@ -136,6 +148,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#downloadContainer {
+    width: 9em;
+    margin-top: 0;
+    padding: 0.6em 0.5em 0.5em 0.5em; /* extra room at the top */
+
+    text-align: center;
+
+    border: solid thin white;
+    border-top: none;
+    background-color: #282828;
+}
+
+#downloadContainer img {
+    height: 1.2em;
+    padding-right: 0.3em;
+}
+
 h1 {
     margin-bottom: 0;
 

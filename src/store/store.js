@@ -4,8 +4,12 @@ import Vuex from 'vuex'
 const M_DASH      = "\u2014"
 const DOMAIN_NAME = "mattmanzi.com"
 
-const STATIC_DIR = "../../static/"
-const IMG_DIR    = STATIC_DIR + "img/"
+const RESUME_PREFIX  = "Matthew R Manzi - "
+const RESUME_VERSION = "01-2018 Technical v1"
+
+const STATIC_DIR    = "../../static/"
+const IMG_DIR       = STATIC_DIR + "img/"
+const RES_NOT_FOUND = IMG_DIR + "res-not-found.jpg"
 
 Vue.use(Vuex)
 
@@ -192,13 +196,19 @@ export const store = new Vuex.Store({
 
             return function(filename) {
 
-                var imgRegex = /.*(\.jpg|\.svg)/
+                var imgRegex    = /.*\.(jpg|svg)/
+                var resumeRegex = /resume_(pdf|docx)/
 
                 if (imgRegex.test(filename)) {
                     return IMG_DIR + filename
+                } else if (resumeRegex.test(filename)) {
+                    return STATIC_DIR +
+                           RESUME_PREFIX +
+                           RESUME_VERSION +
+                           "." + filename.match(resumeRegex)[1] /* filetype */
                 }
 
-                return ""
+                return RES_NOT_FOUND
             }
 
         }
