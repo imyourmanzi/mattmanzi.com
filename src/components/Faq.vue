@@ -3,7 +3,7 @@
         <div class="faqEntry" v-for="(faqEntry, i) in faqEntries">
             <div class="entryQuestion" @click="toggleShowAnswer(i)">
                 <h3>{{ faqEntry.question }}</h3>
-                <h3>{{ openFaqs.indexOf(i) === -1 ? "+" : "\u2014" }}</h3>
+                <h3>{{ openFaqs.indexOf(i) === -1 ? "+" : "\u2013" }}</h3>
             </div>
             <transition name="reveal">
                 <div class="entryAnswer" v-if="openFaqs.indexOf(i) !== -1">

@@ -130,7 +130,7 @@ h3 {
 }
 
 .screenshot:hover {
-    height: 645px;
+    height: 640px;
 
     border-radius: 10px;
     opacity: 1;

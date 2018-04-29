@@ -54,7 +54,7 @@ a {
 
 .container {
     position: relative;
-    width: 80%;
+    width: 92%;
     margin: 0 auto;
     padding-bottom: 5rem;
 
@@ -74,12 +74,15 @@ a {
     vertical-align: middle;
 }
 
+/* custLink emulates the style of a button on iOS */
 .custLink {
     color: #2375d3;
 }
 
 .custLink:hover {
-    color: #0f97e0;
+    /* color: #0f97e0; */
+    color: white;
+    text-decoration: underline;
 }
 
 /* Layout-level attributes */
@@ -135,6 +138,7 @@ a {
 
 .sectionLink:hover {
     color: gray;
+    text-decoration: underline;
 }
 
 .currPage {

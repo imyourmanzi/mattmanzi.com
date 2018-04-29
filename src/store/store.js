@@ -24,11 +24,11 @@ export const store = new Vuex.Store({
             {
                 title: "Resumé",
                 uri: "resume"
-            },
+            }/*,
             {
                 title: "FAQ",
                 uri: "faq"
-            }
+            }*/
         ],
         iosPojects: [
             {

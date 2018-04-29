@@ -3,12 +3,12 @@
         <!-- resume header -->
         <div id="nameplate">
             <h1>Matthew R. Manzi</h1>
-            ERK 406, UMBC 1000 Hilltop Circle, Baltimore, MD 21250 • (610) 368-4021 • manzi.matthewr@gmail.com
+            ERK 406, UMBC 1000 Hilltop Circle, Baltimore, MD 21250 • (610) 368-4021 • <a href="mailto:manzi.matthewr@gmail.com">manzi.matthewr@gmail.com</a>
         </div>
         <!-- education header -->
         <div class="section" @click="toggleShowSection(resume.ids.education)">
             <h3>Education</h3>
-            <h3>{{ openSections.indexOf(resume.ids.education) === -1 ? "+" : "\u2014" }}</h3>
+            <h3>{{ openSections.indexOf(resume.ids.education) === -1 ? "+" : "\u2013" }}</h3>
         </div>
         <hr />
         <!-- education section -->
@@ -30,7 +30,7 @@
         <!-- tech skills header -->
         <div class="section" @click="toggleShowSection(resume.ids.skills)">
             <h3>Technical Skills</h3>
-            <h3>{{ openSections.indexOf(resume.ids.skills) === -1 ? "+" : "\u2014" }}</h3>
+            <h3>{{ openSections.indexOf(resume.ids.skills) === -1 ? "+" : "\u2013" }}</h3>
         </div>
         <hr />
         <!-- tech skills section -->
@@ -45,7 +45,7 @@
         <!-- experience header -->
         <div class="section" @click="toggleShowSection(resume.ids.experience)">
             <h3>Experience</h3>
-            <h3>{{ openSections.indexOf(resume.ids.experience) === -1 ? "+" : "\u2014" }}</h3>
+            <h3>{{ openSections.indexOf(resume.ids.experience) === -1 ? "+" : "\u2013" }}</h3>
         </div>
         <hr />
         <!-- experience section -->
@@ -65,7 +65,7 @@
         <!-- projects header -->
         <div class="section" @click="toggleShowSection(resume.ids.projects)">
             <h3>Projects</h3>
-            <h3>{{ openSections.indexOf(resume.ids.projects) === -1 ? "+" : "\u2014" }}</h3>
+            <h3>{{ openSections.indexOf(resume.ids.projects) === -1 ? "+" : "\u2013" }}</h3>
         </div>
         <hr />
         <!-- projects section -->
@@ -85,7 +85,7 @@
         <!-- volunteer header -->
         <div class="section" @click="toggleShowSection(resume.ids.volunteer)">
             <h3>Volunteer Activities</h3>
-            <h3>{{ openSections.indexOf(resume.ids.volunteer) === -1 ? "+" : "\u2014" }}</h3>
+            <h3>{{ openSections.indexOf(resume.ids.volunteer) === -1 ? "+" : "\u2013" }}</h3>
         </div>
         <hr />
         <!-- volunteer section -->
@@ -144,6 +144,14 @@ h1 {
 
 #nameplate {
     text-align: center;
+}
+
+#nameplate a {
+    color: white;
+}
+
+#nameplate a:hover {
+    text-decoration: underline;
 }
 
 h3 {
