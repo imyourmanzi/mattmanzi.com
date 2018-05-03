@@ -4,7 +4,7 @@
             <h1 class="md"># Projects</h1>
             <h2 class="md">&nbsp;## iOS Apps</h2>
             <div id="iosProjects">
-                <div class="panel" v-for="(proj, i) in iosProjects">
+                <div class="panel" v-for="(proj, i) in tech.iosProjects">
                     <h3 class="md">{{ proj.name }}</h3>
                     <img :src="resolve(proj.imgRes)" class="screenshot" />
                     <p>{{ proj.about }}</p>
@@ -74,8 +74,8 @@ import { mapGetters } from 'vuex'
 export default {
     name: 'tech',
     computed: {
-        iosProjects() {
-            return this.$store.state.iosPojects;
+        tech() {
+            return this.$store.state.tech;
         },
         ...mapGetters([
             'resolve'

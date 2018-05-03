@@ -1,33 +1,26 @@
 <template>
     <div id="musicContainer" class="container">
-        <!-- <img id="music-header" :src="resolve('music-header@0-33x.jpg')"/> -->
         <div id="parCansHeader">
             <img class="parCans exclude" :src="resolve('par-cans-left-fade.svg')" />
-            <!-- <img class="parCans" :src="resolve('myx-logo.svg')"/> -->
             <img class="parCans" :src="resolve('par-cans-right-fade.svg')" />
         </div>
-        <!-- <div class="spacing"></div> -->
         <div id="musicRow" class="contentRow">
             <div class="visual">
-                <iframe width="100%" height="250" src="https://www.mixcloud.com/widget/follow/?u=%2Fofficial_myx%2F&hide_followers=1" frameborder="0" ></iframe>
+                <iframe width="100%" height="250" :src="music.music.visual" frameborder="0" ></iframe>
             </div>
             <div class="text">
-                <h1 class="logo">Music</h1>
-                <p>
-                    sgfdg jlksgjldfk sjgdfksl;gjksdfl; g jdsfklgsdfjgh sdfghsdfjkghdfgfsdgjfdsh kjdf jdfjsghlkjdfshgldf ljdfgh ljdshgdlfjks hsfljtgr ruthreog hgsdf ghdsfg herljthg lhaslu ghshg ;gf gfdfsgfg dfsgfdlkghj fghdfgf hf wioej bgire ioj iua hawiu gnfkhurt awkjbrg ljkg uairwih trouitha oghag gjfghraeg. dsafh sajfh sajkh asg sjkfh askhfjklsa hgkjha kjlsdafh ksdfh ajks haskjhgjk safh jksalhf fkjgh jklfgh ag hauiwerhtiaufajsfh aui fsuifh iuaharahga kjgh aifh kbvka  fsb sahfhahfiauh aiuh kajshf ksahdf skfg skjf sdf.
-                </p>
+                <h1 class="logo">{{ music.music.title }}</h1>
+                <p>{{ music.music.text }}</p>
             </div>
         </div>
         <div class="spacing"></div>
         <div id="aboutRow" class="contentRow">
             <div class="text">
-                <h1 class="logo">About</h1>
-                <p>
-                    sgfdg jlksgjldfk sjgdfksl;gjksdfl; g jdsfklgsdfjgh sdfghsdfjkghdfgfsdgjfdsh kjdf jdfjsghlkjdfshgldf ljdfgh ljdshgdlfjks hsfljtgr ruthreog hgsdf ghdsfg herljthg lhaslu ghshg ;gf gfdfsgfg dfsgfdlkghj fghdfgf hf wioej bgire ioj iua hawiu gnfkhurt awkjbrg ljkg uairwih trouitha oghag gjfghraeg. dsafh sajfh sajkh asg sjkfh askhfjklsa hgkjha kjlsdafh ksdfh ajks haskjhgjk safh jksalhf fkjgh jklfgh ag hauiwerhtiaufajsfh aui fsuifh iuaharahga kjgh aifh kbvka  fsb sahfhahfiauh aiuh kajshf ksahdf skfg skjf sdf.
-                </p>
+                <h1 class="logo">{{ music.about.title }}</h1>
+                <p>{{ music.about.text }}</p>
             </div>
             <div class="visual">
-                <img :src="resolve('myx-logo.svg')"/>
+                <img :src="resolve(music.about.visual)"/>
             </div>
         </div>
 </iframe>
@@ -40,6 +33,9 @@ import { mapGetters } from 'vuex'
 export default {
     name: 'music',
     computed: {
+        music() {
+            return this.$store.state.music;
+        },
         ...mapGetters([
             'resolve'
         ])
