@@ -67,6 +67,7 @@ export const store = new Vuex.Store({
                 title: "Music",
                 visual: "https://www.mixcloud.com/widget/follow/?u=%2Fofficial_myx%2F&hide_followers=1",
                 text: "sgfdg jlksgjldfk sjgdfksl;gjksdfl; g jdsfklgsdfjgh sdfghsdfjkghdfgfsdgjfdsh kjdf jdfjsghlkjdfshgldf ljdfgh ljdshgdlfjks hsfljtgr ruthreog hgsdf ghdsfg herljthg lhaslu ghshg ;gf gfdfsgfg dfsgfdlkghj fghdfgf hf wioej bgire ioj iua hawiu gnfkhurt awkjbrg ljkg uairwih trouitha oghag gjfghraeg. dsafh sajfh sajkh asg sjkfh askhfjklsa hgkjha kjlsdafh ksdfh ajks haskjhgjk safh jksalhf fkjgh jklfgh ag hauiwerhtiaufajsfh aui fsuifh iuaharahga kjgh aifh kbvka  fsb sahfhahfiauh aiuh kajshf ksahdf skfg skjf sdf."
+                //text: "Poopy-di scoop/Scoop-diddy-whoop/Whoop-di-scoop-di-poop/Poop-di-scoopty/Scoopty-whoop/Whoopity-scoop, whoop-poop/Poop-diddy, whoop-scoop/Poop, poop/Scoop-diddy-whoop/Whoop-diddy-scoop/Whoop-diddy-scoop, poop"
             },
             about: {
                 title: "About",
