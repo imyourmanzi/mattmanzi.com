@@ -48,7 +48,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="proj in iosProjects">
+                    <tr v-for="proj in tech.iosProjects">
                         <td>{{ proj.name }}</td>
                         <td><a :href="'mailto:' + proj.contact" class="custLink">{{ proj.contact }}</a></td>
                     </tr>
