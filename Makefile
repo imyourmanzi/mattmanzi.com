@@ -4,20 +4,29 @@ test:
 prod:
 	npm run build
 
-# install vuex
-vuex:
+install:
+	npm install
+
+report:
+	npm run build --report
+
+
+#### not useful in an existing project ###
+
+# install and save vuex
+install-vuex:
 	npm install vuex --save
 
-# install vuex router-sync
+# install and save vuex router-sync
 install-vuex-router-sync:
 	npm install vuex-router-sync --save
 
 # install support for `...` (spread) operator in javascript code
+# only save-dev because production code will be expanded
 install-three-dots:
 	npm install babel-preset-stage-2 --save-dev
-	# also need to add `["stage-2"]` after `["env": ... ]` code in .babelrc file
+	# then also need to add `["stage-2"]` after `["env": ... ]` in .babelrc
 
-# not useful in an existing project
-# for creating a new project in a dir in `.`
-#init:
-#	vue init webpack <project-name>
+# (for creating <project-name> in current dir)
+init:
+	vue init webpack <project-name>
