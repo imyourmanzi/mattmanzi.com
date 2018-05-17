@@ -161,7 +161,7 @@ export default {
 }
 
 #downloadContainer img {
-    height: 1.2em;
+    height: 1em;
     padding-right: 0.3em;
 }
 
