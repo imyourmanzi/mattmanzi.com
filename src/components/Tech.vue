@@ -54,7 +54,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table id="tiny" v-for="proj in iosProjects">
+            <table id="tiny" v-for="proj in tech.iosProjects">
                 <tbody>
                     <tr>
                         <td>{{ proj.name }}</td>
@@ -147,8 +147,7 @@ h3 {
 }
 
 #contact #standard {
-    width: 92%;
-    margin: auto 4%;
+    margin: auto;
 
     border-collapse: collapse;
 }
@@ -180,8 +179,10 @@ h3 {
     }
 
     #contact #tiny {
+        margin: auto;
+
         display: table;
-        width: 100%;
+        width: 80%;
     }
 
     #contact #tiny {
