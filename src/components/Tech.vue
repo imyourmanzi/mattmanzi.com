@@ -106,7 +106,7 @@ h3 {
 
 .panel {
     padding: 0 0.5em;
-    width: 21em;
+    width: 22em;
 }
 
 #iosProjects {
@@ -130,7 +130,7 @@ h3 {
 }
 
 .screenshot:hover {
-    height: 640px;
+    height: 675px;
 
     border-radius: 10px;
     opacity: 1;

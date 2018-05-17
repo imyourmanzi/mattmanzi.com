@@ -37,20 +37,20 @@ export const store = new Vuex.Store({
         tech: {
             iosProjects: [
                 {
+                    name: "You Salty?",
+                    about: "Whether it’s your friend or some old dude, let them know they’re being a little *salty* with this nifty app.\n\nAbout the Creators:\nWe are just two high school students: one with creativity and one who knows how to code.\n\nBackstory:\nFor a simple 'shaker' app, it's taught me a whole lot.  This is the first iOS application I ever developed and distributed, so not only was I learning a new language but also a new operation system, API, and development process.  After all was said and done, version 1.0 was rejected for being \"too simple\" and lacking the standard complexity of other apps available on the Store.  As you might guess, I also learned about persistence.  The upgraded version was completed in the following weeks and still stands as my most downloaded app on the App Store.  A shoutout is due to my friend, Will, who convinced me to do it in the first place; if he hadn't asked me in my junior year of high school, I would be years behind where I am now.",
+                    imgRes: "you-salty-screenshot.jpg",
+                    peekRes: "peek-you-salty-screenshot.jpg",
+                    url: "https://itunes.apple.com/us/app/you-salty/id957210202?mt=8",
+                    contact: "saltshakersupport@" + DOMAIN_NAME
+                },
+                {
                     name: "It's Time To Go",
                     about: "Never be late again.\n\nIt’s Time To Go is great for everyone, whether you're a road warrior, soccer mom, busy student, weekend partier, casual traveler, or just a Type A personality. Within seconds, easily create a schedule of activities and tasks to make sure you get to your event on time.\n\nBenefits:\n- No more stress over \"When do I have to…?\"\n- Saves time" + M_DASH + "planning is a breeze!\n\nFeatures:\n- Built-in, default schedules for one-tap time management\n- Add directly to iOS Calendar\n- 100% customizable schedules for travel, sports, extracurriculars, and more\n- Save and re-open prior events and trips\n- Uses Apple Maps integration to get driving times\n- No ads!\n\nBackstory:\nIt's Time To Go (originally TravelTimer) was an app I developed for my Dad.  Always travelling for work, he found it handy to start with the time that his plane or train departed and subtract away the time it took to complete prior steps like going through TSA checks, checking luggage, and driving to the airport or station to know at what time each task would need to be done, ultimately telling him when it was time to go.",
                     imgRes: "time-to-go-screenshot.jpg",
                     peekRes: "peek-time-to-go-screenshot.jpg",
                     url: "https://itunes.apple.com/us/app/its-time-to-go/id1016276343?ls=1&mt=8",
                     contact: "timetogosupport@" + DOMAIN_NAME
-                },
-                {
-                    name: "You Salty?",
-                    about: "Whether it’s your friend or some old dude, let them know they’re being a little *salty* with this nifty app.\n\nAbout the Creators:\nWe are just two high school students: one with creativity and one who knows how to code.\n\nBackstory:\nFor a simple 'shaker' app, it taught me a whole lot.  It's the first iOS application I ever developed and distributed, so not only was I learning a new language but a new operation system, API, and development process.  After all was said and done, version 1.0 was rejected as \"too simple\" and lacked the standard complexity of other apps available on the store.  But as you might be able to tell, I also learned about persistence.  The upgraded version was completed in the following weeks and still stands as my most downloaded app on the store.  A shoutout is due to my friend Will who convinced me to do it in the first place; if he hadn't asked me in junior year of high school, I would be years behind where I am now.",
-                    imgRes: "you-salty-screenshot.jpg",
-                    peekRes: "peek-you-salty-screenshot.jpg",
-                    url: "https://itunes.apple.com/us/app/you-salty/id957210202?mt=8",
-                    contact: "saltshakersupport@" + DOMAIN_NAME
                 },
                 {
                     name: "GV 50: Gold Tour",
