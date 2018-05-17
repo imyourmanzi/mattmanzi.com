@@ -38,7 +38,7 @@
       }
     </style>
   </defs>
-  <rect class="cls-1" x="218" y="31" width="77" height="280"/>
-  <path id="Polygon_1" data-name="Polygon 1" class="cls-2" d="M256.5,401.034L117.985,232.966H395.007Z"/>
-  <path class="cls-2" d="M78.654,421H463l-27.658,62H51Z"/>
+  <rect class="cls-1" x="212" width="89" height="323"/>
+  <path id="Polygon_1" data-name="Polygon 1" class="cls-2" d="M256.011,409L83.012,199h346Z"/>
+  <path class="cls-2" d="M34.366,435H512.005l-34.371,77H0Z"/>
 </svg>
