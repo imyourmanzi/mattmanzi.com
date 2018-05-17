@@ -21,10 +21,10 @@ export const store = new Vuex.Store({
                 title: "Tech",
                 uri: "tech"
             },
-            {
-                title: "Music",
-                uri: "music"
-            },
+            // {
+            //     title: "Music",
+            //     uri: "music"
+            // },
             {
                 title: "Resumé",
                 uri: "resume"
