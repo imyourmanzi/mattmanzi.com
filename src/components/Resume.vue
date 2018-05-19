@@ -9,8 +9,8 @@
         </div>
         <!-- resume header -->
         <div id="nameplate">
-            <h1>Matthew R. Manzi</h1>
-            ERK 406, UMBC 1000 Hilltop Circle, Baltimore, MD 21250 • (610) 368-4021 • <a href="mailto:manzi.matthewr@gmail.com">manzi.matthewr@gmail.com</a>
+            <h1>Matt R. Manzi</h1>
+            WAA 3322B, UMBC 1000 Hilltop Circle, Baltimore, MD 21250 • (610) 368-4021 • <a href="mailto:manzi.matthewr@gmail.com">manzi.matthewr@gmail.com</a>
         </div>
         <!-- education header -->
         <div class="section" @click="toggleShowSection(resume.ids.education)">
@@ -21,16 +21,16 @@
         <!-- education section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.education) !== -1">
-                <div class="education">
+                <div class="education" v-for="edu in resume.education">
                     <div class="detailLine">
-                        <p><strong>University of Maryland, Baltimore County (UMBC)</strong> Baltimore, MD</p>
-                        <p><em>May 2020</em></p>
+                        <p><strong>{{ edu.schoolName }}</strong> {{ edu.location }}</p>
+                        <p><em>{{ edu.gradDate }}</em></p>
                     </div>
                     <div class="detailLine">
-                        <p>Bachelor of Science, Computer Science</p>
-                        <p><em>GPA: 4.0</em></p>
+                        <p>{{ edu.major }}</p>
+                        <p><em>GPA: {{ edu.gpa.toPrecision(2) }}</em></p>
                     </div>
-                    <p><em>Honors:</em> Dean's Fellow, Center for Women in Technology (CWIT) Cyber Scholar</p>
+                    <p><em>Honors:</em> {{ edu.honors.join(", ") }}</p>
                 </div>
             </div>
         </transition>
@@ -51,7 +51,7 @@
         </transition>
         <!-- experience header -->
         <div class="section" @click="toggleShowSection(resume.ids.experience)">
-            <h3>Experience</h3>
+            <h3>Relevant Experience</h3>
             <h3>{{ openSections.indexOf(resume.ids.experience) === -1 ? "+" : "\u2013" }}</h3>
         </div>
         <hr />
@@ -60,7 +60,7 @@
             <div v-if="openSections.indexOf(resume.ids.experience) !== -1">
                 <div class="experience" v-for="exp in resume.experience">
                     <div class="detailLine">
-                        <p>{{ exp.employerName }}, <em>{{ exp.title }}</em>, {{ exp.location }}</p>
+                        <p>{{ exp.employerName ? exp.employerName + ", " : "" }}<em>{{ exp.title }}</em>{{ exp.location ? ", " + exp.location : "" }}</p>
                         <p><em>{{ exp.timeDetail }}</em></p>
                     </div>
                     <ul>
@@ -80,7 +80,7 @@
             <div v-if="openSections.indexOf(resume.ids.projects) !== -1">
                 <div class="project" v-for="proj in resume.projects">
                     <div class="detailLine">
-                        <p><em>{{ proj.name }}</em>, {{ proj.organization }}</p>
+                        <p><em>{{ proj.name }}</em>{{ proj.organization ? ", " + proj.organization : "" }}</p>
                         <p><em>{{ proj.timeDetail }}</em></p>
                     </div>
                     <ul>
@@ -100,7 +100,7 @@
             <div v-if="openSections.indexOf(resume.ids.volunteer) !== -1">
                 <div class="activity" v-for="activity in resume.volunteer">
                     <div class="detailLine">
-                        <p><em>{{ activity.name }}</em>, {{ activity.organization }}</p>
+                        <p><em>{{ activity.name }}</em>{{ activity.organization ? ", " + activity.organization : "" }}</p>
                         <p><em>{{ activity.timeDetail }}</em></p>
                     </div>
                     <ul>

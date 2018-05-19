@@ -4,8 +4,8 @@ import Vuex from 'vuex'
 const M_DASH      = "\u2014"
 const DOMAIN_NAME = "mattmanzi.com"
 
-const RESUME_PREFIX  = "Matthew R Manzi - "
-const RESUME_VERSION = "01-2018 Technical v1"
+const RESUME_PREFIX  = "Matt R Manzi - "
+const RESUME_VERSION = "05-2018 Technical v1"
 
 const STATIC_DIR    = "../../static/"
 const IMG_DIR       = STATIC_DIR + "img/"
@@ -26,7 +26,7 @@ export const store = new Vuex.Store({
             //     uri: "music"
             // },
             {
-                title: "Resumé",
+                title: "Résumé",
                 uri: "resume"
             }/*,
             {
@@ -83,22 +83,35 @@ export const store = new Vuex.Store({
                 projects: 3,
                 volunteer: 4
             },
+            education: [
+                {
+                    schoolName: "University of Maryland, Baltimore County (UMBC)",
+                    location: "Baltimore, MD",
+                    gradDate: "May 2020",
+                    major: "Bachelor of Science, Computer Science",
+                    gpa: 4.0,
+                    honors: [
+                        "Dean’s Fellow",
+                        "Center for Women in Technology (CWIT) Cyber Scholar"
+                    ]
+                }
+            ],
             skills: [
                 {
                     subset: "Programming",
-                    values: ["Java", "Swift (iOS)", "Python", "C++", "Transact-SQL", "Bash", "HTML", "CSS", "JavaScript", "C#", "C"]
+                    values: ["Java", "Python", "C++", "C", "Swift (iOS)", "SQL", "Bash", "HTML", "CSS", "JavaScript", "C#"]
                 },
                 {
                     subset: "Operating Systems",
-                    values: ["macOS 9-12", "Ubuntu Server/Desktop 16", "Windows 7/8/10"]
+                    values: ["macOS 9-12", "Ubuntu Server/Desktop 16", "Windows 10"]
                 },
                 {
                     subset: "Software",
-                    values: ["MS-Office", "Xcode", "NetBeans", "SQL Server Mgmt Studio", "Splunk (Power User 6.3)", "Eclipse", "VMware"]
+                    values: ["MS-Office", "Xcode", "NetBeans", "SQL Server Mgmt Studio", "Splunk 6.3 Power User", "VMware", "Eclipse"]
                 },
                 {
                     subset: "Hardware",
-                    values: ["Arduino", "Raspberry Pi", "Rack Servers", "Networking Equipment", "PC Components"]
+                    values: ["Raspberry Pi", "Rack Servers", "Networking Equipment", "PC Components", "Arduino"]
                 }
             ],
             experience: [
@@ -108,8 +121,8 @@ export const store = new Vuex.Store({
                     location: "Baltimore, MD",
                     timeDetail: "Aug 2017 – Present",
                     points: [
-                        "Assist, grade, and support students taking Computer Science I for Majors (CMSC 201)",
-                        "Lead discussion and review sections for students, covering material in Python programming language",
+                        "Assist students and grade assignments for Computer Science I for Majors (CMSC 201)",
+                        "Lead discussion groups for students, covering material in Python programming language",
                         "Hold weekly office hours to aid students outside of class"
                     ]
                 },
@@ -127,25 +140,43 @@ export const store = new Vuex.Store({
                     employerName: "WSFS Bank",
                     title: "Software Developer Intern",
                     location: "Wilmington, DE",
-                    timeDetail: "Jun – Aug 2017",
+                    timeDetail: "Jun – Aug 2017, Jan 2018",
                     points: [
-                        "Worked with 3 developers and 2 project managers over a 3-sprint Agile project to develop and deliver a working web-based check processing application to an internal customer",
-                        "Co-designed and implemented the RESTful API and database for the application",
-                        "Participated in daily standup meetings with team members to discuss progress, speed bumps, and successes of the current sprint and overall project"
+                        "Collaborated with 3 developers and 2 project managers over a 3-sprint, Agile project to provide a working product (check processing application) to an internal customer by the end of the summer",
+                        "Contributed to the design of and implemented the RESTful API and database for the product, a web application",
+                        "Participated in daily standup meetings team members to discuss progress, speed bumps, and successes of the current sprint and project"
                     ]
                 },
                 {
                     employerName: "Cratr LLC",
                     title: "Senior Programmer",
-                    location: "Glen Mills, PA",
+                    location: "",
                     timeDetail: "Aug 2016 – May 2017",
                     points: [
                         "Built and integrated features to provide crucial website functionality and benefit user experience, including a payment system and product pages",
-                        "As a member of the management team and co-owner, collaborated with 5 team members to facilitate personal and other’s contributions to the formation of the business and startup of the company"
+                        "Collaborated with 5 team members to facilitate personal and other’s contributions to the startup of the company",
+                        "Contributed to formation of the business as a member of the management team"
                     ]
                 }
             ],
             projects: [
+                {
+                    name: "Mid-Atlantic Collegiate Cyber Defense Competition Qualifiers",
+                    organization: "UMBC",
+                    timeDetail: "Feb 2018",
+                    points: [
+                        "Managed and protected multiple Linux-based systems",
+                        "Managed firewall rules for each device"
+                    ]
+                },
+                {
+                    name: "CyberDawgs Cyber Defense Exercise",
+                    organization: "UMBC",
+                    timeDetail: "Nov 2017",
+                    points: [
+                        "Defended a Linux server, while supporting team efforts to complete offensive business objectives"
+                    ]
+                },
                 {
                     name: "Innovate Good Hackathon",
                     organization: "UMBC",
@@ -161,32 +192,23 @@ export const store = new Vuex.Store({
                     points: [
                         "Collaborated with 3 students to brainstorm, develop, launch, and present an original website in a 24-hour time constraint to provide users with crowdsourced restaurant wait times"
                     ]
-                },
-                {
-                    name: "NSA 4th Codebreaker Challenge",
-                    organization: "UMBC",
-                    timeDetail: "Sep – Dec 2016",
-                    points: [
-                        "Independently solved challenges mimicking real-world tasks to learn various computer security techniques through network-based and reverse engineering tasks"
-                    ]
                 }
             ],
             volunteer: [
                 {
-                    name: "Bits and Bytes",
+                    name: "Bits and Bytes & Cyber 101",
                     organization: "UMBC CWIT",
-                    timeDetail: "Feb 2017",
+                    timeDetail: "Feb 2017, Sep 2017",
                     points: [
                         "Assisted participants in a programming workshop intended to promote STEM fields to high school junior girls"
                     ]
                 },
                 {
-                    name: "Community Outreach",
-                    organization: "GVHS Robotics Team",
-                    timeDetail: "Jul – Oct 2015",
+                    name: "Photo Club",
+                    organization: "UMBC",
+                    timeDetail: "Aug 2017 – May 2018",
                     points: [
-                        "Developed and taught two 2-week summer programming camps",
-                        "Designed, developed and published mobile (iOS) guided tour application for the school’s 50th Homecoming"
+                        "Served as Treasurer; responsible for managing funds, fundraising, and contributing to overall club management"
                     ]
                 }
             ]
