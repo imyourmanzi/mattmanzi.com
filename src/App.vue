@@ -16,9 +16,9 @@
         <router-view></router-view>
         <footer :class="{'dividedBottom': pageName !== 'home'}">
             <div id="extLinks">
-                <div class="extLink" v-for="ext in externalLinks">
-                    <a :href="ext.url"><img :src="resolve(ext.imgRes)" :alt="ext.imgAlt" /></a>
-                </div>
+                <a :href="ext.url" class="extLink" v-for="ext in externalLinks">
+                    <img :src="resolve(ext.imgRes)" :alt="ext.imgAlt" />
+                </a>
             </div>
             &copy; Matt R. Manzi 2018
         </footer>
@@ -185,7 +185,7 @@ a {
     padding: 0 1.5em;
 }
 
-.extLink a:hover {
+.extLink:hover {
     opacity: 0.5;
 }
 
