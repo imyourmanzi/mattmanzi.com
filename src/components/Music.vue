@@ -1,8 +1,8 @@
 <template>
     <div id="musicContainer" class="container">
         <div id="parCansHeader">
-            <img class="parCans exclude" :src="resolve('par-cans-left-fade.svg')" />
-            <img class="parCans" :src="resolve('par-cans-right-fade.svg')" />
+            <img class="parCans exclude" :src="resolve('par-cans-left-fade.svg')" alt="" />
+            <img class="parCans" :src="resolve('par-cans-right-fade.svg')" alt="" />
         </div>
         <div id="musicRow" class="contentRow">
             <div class="visual">
@@ -34,7 +34,7 @@ export default {
     name: 'music',
     computed: {
         music() {
-            return this.$store.state.music;
+            return this.$store.state.music
         },
         ...mapGetters([
             'resolve'
