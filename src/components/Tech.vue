@@ -1,12 +1,15 @@
 <template>
     <div id="techContainer" class="container">
+        <div id="contactJump">
+            Trouble with an App?&nbsp;&nbsp;&nbsp;<a href="#contact" class="custLink">Contact Support</a>
+        </div>
         <div id="projects">
             <h1 class="md"># Projects</h1>
             <h2 class="md">&nbsp;## iOS Apps</h2>
             <div id="iosProjects">
                 <div class="panel" v-for="(proj, i) in tech.iosProjects">
                     <h3 class="md">{{ proj.name }}</h3>
-                    <img :src="resolve(proj.imgRes)" class="screenshot" />
+                    <img :src="resolve(proj.imgRes)" class="screenshot" :alt="proj.imgAlt" />
                     <p>{{ proj.about }}</p>
                     <a :href="proj.url" target="_blank"><img :src="resolve('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg')" /></a>
                 </div>
@@ -39,7 +42,7 @@
         </div>
         <div class="spacing"></div>
         <div id="contact">
-            <h1 class="md"># Contact</h1>
+            <h1 class="md"># Contact Support</h1>
             <table id="standard">
                 <thead class="md">
                     <tr>
@@ -75,7 +78,7 @@ export default {
     name: 'tech',
     computed: {
         tech() {
-            return this.$store.state.tech;
+            return this.$store.state.tech
         },
         ...mapGetters([
             'resolve'
@@ -86,6 +89,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#contactJump {
+    width: 19em;
+    margin-left: auto;
+    padding: 0.5em;
+
+    text-align: center;
+
+    border: solid thin white;
+    border-top: none;
+    background-color: #282828;
+}
+
 /* markdown style */
 .md {
     padding: 0 1em;
