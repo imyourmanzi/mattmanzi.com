@@ -150,8 +150,7 @@ export default {
 <style scoped>
 #downloadContainer {
     width: 9em;
-    margin-top: 0;
-    padding: 0.6em 0.5em 0.5em 0.5em; /* extra room at the top */
+    padding: 0.5em;
 
     text-align: center;
 
