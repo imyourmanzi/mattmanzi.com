@@ -20,7 +20,7 @@
                 <p>{{ music.about.text }}</p>
             </div>
             <div class="visual">
-                <img :src="resolve(music.about.visual)"/>
+                <img :src="resolve(music.about.visual)" alt="Official Myx logo"/>
             </div>
         </div>
 </iframe>
