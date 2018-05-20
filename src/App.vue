@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div id="header" :class="{'divided': pageName !== 'home'}">
+        <div id="header" :class="{'dividedTop': pageName !== 'home'}">
             <router-link :to="'/'" id="titleLink">
             MattManzi<small>.com</small>
             </router-link>
@@ -14,16 +14,20 @@
             Notice: This website is still under construction, thank you for your understanding.
         </div>
         <router-view></router-view>
-        <footer>
-            <div id="supportContact" v-if="pageName == 'tech'">
-                Trouble with an App?&nbsp;&nbsp;&nbsp;&nbsp;<a href="#contact" class="custLink">Contact Support</a>
+        <footer :class="{'dividedBottom': pageName !== 'home'}">
+            <div id="extLinks">
+                <div class="extLink" v-for="ext in externalLinks">
+                    <a :href="ext.url"><img :src="resolve(ext.imgRes)" :alt="ext.imgAlt" /></a>
+                </div>
             </div>
-            &copy; Matthew R. Manzi 2018
+            &copy; Matt R. Manzi 2018
         </footer>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
     name: 'app',
     computed: {
@@ -32,7 +36,13 @@ export default {
         },
         pageName() {
             return this.$store.state.route.name
-        }
+        },
+        externalLinks() {
+            return this.$store.state.externalLinks
+        },
+        ...mapGetters([
+            'resolve'
+        ])
     }
 }
 </script>
@@ -42,7 +52,7 @@ export default {
 
 /* Root-level attributes */
 body {
-    margin: 0 0 3rem 0;
+    margin: 0;
     padding: 0;
 
     background-color: #000a21;
@@ -76,17 +86,18 @@ a {
 
 /* custLink emulates the style of a button on iOS */
 .custLink {
-    color: #2375d3;
+    color: #6699cc;
 }
 
 .custLink:hover {
-    /* color: #0f97e0; */
     color: white;
     text-decoration: underline;
 }
 
 /* Layout-level attributes */
 #app {
+    width: 100%;
+
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     font-size: 18px; /* make the whole site have a slighty larger font (default: 16px) */
@@ -94,7 +105,6 @@ a {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: white;
-    width: 100%;
 }
 
 /* Normal attributes */
@@ -106,8 +116,12 @@ a {
     background-color: #000a21;
 }
 
-.divided {
+.dividedTop {
     border-bottom: 1px solid gray;
+}
+
+.dividedBottom {
+    border-top: 1px solid gray;
 }
 
 #header small {
@@ -121,7 +135,6 @@ a {
 }
 
 #sectionLinks {
-    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -158,22 +171,36 @@ a {
     display: inherit;
 }
 
+#extLinks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1em 1em;
+}
+
+.extLink {
+    padding: 0 1.5em;
+}
+
+.extLink a:hover {
+    opacity: 0.5;
+}
+
+.extLink img {
+    height: 32px;
+}
+
 footer {
-    position: fixed;
     width: 100%;
-    padding: 0 0 0.4em 0;
     bottom: 0;
+    padding: 0 0 1em 0;
 
     background-color: #000a21;
 
     font-size: 0.93em;
-}
-
-#supportContact {
-    padding: 0.2em 0;
-    margin: 0 0 0.4em 0;
-
-    background-color: #282828;
 }
 
 /* Extra tall and skinny screens (i.e. smartphones) */
