@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="construction" :class="{'showConstruction': pageName !== 'home'}">
+        <div class="construction" :class="{'showConstruction': !['home', 'tech', 'resume'].includes(pageName)}">
             Notice: This website is still under construction, thank you for your understanding.
         </div>
         <router-view></router-view>
