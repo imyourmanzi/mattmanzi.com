@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Tech from '@/components/Tech'
 import Music from '@/components/Music'
+import Photos from '@/components/Photos'
 import Resume from '@/components/Resume'
 import Faq from '@/components/Faq'
 
@@ -27,6 +28,11 @@ const routes = [
         path: '/music',
         name: 'music',
         component: Music
+    },
+    {
+        path: '/photos',
+        name: 'photos',
+        component: Photos
     },
     {
         path: '/resume',

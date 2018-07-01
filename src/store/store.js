@@ -26,6 +26,10 @@ export const store = new Vuex.Store({
             //     uri: "music"
             // },
             {
+                title: "Photos",
+                uri: "photos"
+            },
+            {
                 title: "Résumé",
                 uri: "resume"
             }/*,
@@ -99,6 +103,48 @@ export const store = new Vuex.Store({
                 visual: "myx-logo.svg",
                 text: "sgfdg jlksgjldfk sjgdfksl;gjksdfl; g jdsfklgsdfjgh sdfghsdfjkghdfgfsdgjfdsh kjdf jdfjsghlkjdfshgldf ljdfgh ljdshgdlfjks hsfljtgr ruthreog hgsdf ghdsfg herljthg lhaslu ghshg ;gf gfdfsgfg dfsgfdlkghj fghdfgf hf wioej bgire ioj iua hawiu gnfkhurt awkjbrg ljkg uairwih trouitha oghag gjfghraeg. dsafh sajfh sajkh asg sjkfh askhfjklsa hgkjha kjlsdafh ksdfh ajks haskjhgjk safh jksalhf fkjgh jklfgh ag hauiwerhtiaufajsfh aui fsuifh iuaharahga kjgh aifh kbvka  fsb sahfhahfiauh aiuh kajshf ksahdf skfg skjf sdf."
             }
+        },
+        photos: {
+            viewer: {
+                options: {
+                    shareButtons: [
+                        {id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
+                        {id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
+                        {id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
+                    ],
+                    shareEl: false
+                },
+                imgs: [
+                    {
+                        src: IMG_DIR + "time-to-go-screenshot.jpg",
+                        thumbnail: IMG_DIR + "time-to-go-screenshot.jpg",
+                        w: 600,
+                        h: 400
+                    },
+                    {
+                        src: IMG_DIR + "gv-gold-screenshot.jpg",
+                        thumbnail: IMG_DIR + "gv-gold-screenshot.jpg",
+                        w: 600,
+                        h: 400,
+                        title: 'Will be used for caption'
+                    },
+                    {
+                        src: IMG_DIR + "you-salty-screenshot.jpg",
+                        thumbnail: IMG_DIR + "you-salty-screenshot.jpg",
+                        w: 600,
+                        h: 400,
+                        title: 'Will be used for caption'
+                    },
+                    {
+                        src: IMG_DIR + "res-not-found.jpg",
+                        thumbnail: IMG_DIR + "res-not-found.jpg",
+                        w: 600,
+                        h: 400,
+                        title: 'Will be used for caption'
+                    }
+                ]
+            },
+            insta: "https://www.instagram.com/imyourmanzi/"
         },
         resume: {
             ids: {

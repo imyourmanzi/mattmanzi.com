@@ -5,9 +5,11 @@ import App from './App'
 import { sync } from 'vuex-router-sync' // import this with { }
 import router from './router/router'
 import { store } from './store/store' // import this with { }
+import VuePictureSwipe from 'vue-picture-swipe'
 
 sync(store, router) // done. Returns an unsync callback fn, assign if necessary
 
+Vue.component('vue-picture-swipe', VuePictureSwipe)
 Vue.config.productionTip = false
 
 new Vue({
