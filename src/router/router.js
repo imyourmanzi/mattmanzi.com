@@ -6,6 +6,7 @@ import Music from '@/components/Music'
 import Photos from '@/components/Photos'
 import Resume from '@/components/Resume'
 import Faq from '@/components/Faq'
+import PhotoCollection from '@/components/PhotoCollection'
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ const routes = [
         path: '/photos',
         name: 'photos',
         component: Photos
+    },
+    {
+        path: '/photos/:photo_collection',
+        name: 'photo-collection',
+        component: PhotoCollection
     },
     {
         path: '/resume',
