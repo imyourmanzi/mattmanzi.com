@@ -9,6 +9,7 @@ const RESUME_VERSION = "05-2018 Technical v1"
 
 const STATIC_DIR    = "../../static/"
 const IMG_DIR       = STATIC_DIR + "img/"
+const PHOTO_COLS    = IMG_DIR + "photo-collections/"
 const RES_NOT_FOUND = IMG_DIR + "res-not-found.jpg"
 
 Vue.use(Vuex)
@@ -107,275 +108,58 @@ export const store = new Vuex.Store({
         photos: {
             collections: [
                 {
-                    name: "Test Collection",
-                    uri: "col1",
-                    date: "YYYY-MM-DD",
+                    name: "Erin Flannery",
+                    uri: "c0",
+                    date: "2018-06-09",
+                    description: "Welcome to her crib.",
                     photos: [
                         {
-                            src: IMG_DIR + "time-to-go-screenshot.jpg",
-                            thumbnail: IMG_DIR + "time-to-go-screenshot.jpg",
-                            w: 600,
-                            h: 400
+                            src: PHOTO_COLS + "c0/" + "pub20180609-1.jpg",
+                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-1.jpg",
+                            w: 2000,
+                            h: 1333
                         },
                         {
-                            src: IMG_DIR + "gv-gold-screenshot.jpg",
-                            thumbnail: IMG_DIR + "gv-gold-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
+                            src: PHOTO_COLS + "c0/" + "pub20180609-2.jpg",
+                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-2.jpg",
+                            w: 1333,
+                            h: 2000,
                         },
                         {
-                            src: IMG_DIR + "you-salty-screenshot.jpg",
-                            thumbnail: IMG_DIR + "you-salty-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
+                            src: PHOTO_COLS + "c0/" + "pub20180609-3.jpg",
+                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-3.jpg",
+                            w: 2000,
+                            h: 1333,
                         },
                         {
-                            src: IMG_DIR + "res-not-found.jpg",
-                            thumbnail: IMG_DIR + "res-not-found.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        }
-                    ]
-                },
-                {
-                    name: "Test Collection Dupe",
-                    uri: "col1",
-                    date: "YYYY-MM-DD ;)",
-                    photos: [
-                        {
-                            src: IMG_DIR + "time-to-go-screenshot.jpg",
-                            thumbnail: IMG_DIR + "time-to-go-screenshot.jpg",
-                            w: 600,
-                            h: 400
+                            src: PHOTO_COLS + "c0/" + "pub20180609-4.jpg",
+                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-4.jpg",
+                            w: 1333,
+                            h: 2000,
                         },
                         {
-                            src: IMG_DIR + "gv-gold-screenshot.jpg",
-                            thumbnail: IMG_DIR + "gv-gold-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
+                            src: PHOTO_COLS + "c0/" + "pub20180609-5.jpg",
+                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-5.jpg",
+                            w: 2000,
+                            h: 1333,
                         },
                         {
-                            src: IMG_DIR + "you-salty-screenshot.jpg",
-                            thumbnail: IMG_DIR + "you-salty-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
+                            src: PHOTO_COLS + "c0/" + "pub20180609-6.jpg",
+                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-6.jpg",
+                            w: 1333,
+                            h: 2000,
                         },
                         {
-                            src: IMG_DIR + "res-not-found.jpg",
-                            thumbnail: IMG_DIR + "res-not-found.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        }
-                    ]
-                },
-                {
-                    name: "Test Collection Dupe",
-                    uri: "col1",
-                    date: "YYYY-MM-DD ;)",
-                    photos: [
-                        {
-                            src: IMG_DIR + "time-to-go-screenshot.jpg",
-                            thumbnail: IMG_DIR + "time-to-go-screenshot.jpg",
-                            w: 600,
-                            h: 400
+                            src: PHOTO_COLS + "c0/" + "pub20180609-7.jpg",
+                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-7.jpg",
+                            w: 2000,
+                            h: 1333,
                         },
                         {
-                            src: IMG_DIR + "gv-gold-screenshot.jpg",
-                            thumbnail: IMG_DIR + "gv-gold-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "you-salty-screenshot.jpg",
-                            thumbnail: IMG_DIR + "you-salty-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "res-not-found.jpg",
-                            thumbnail: IMG_DIR + "res-not-found.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        }
-                    ]
-                },
-                {
-                    name: "Test Collection Dupe",
-                    uri: "col1",
-                    date: "YYYY-MM-DD ;)",
-                    photos: [
-                        {
-                            src: IMG_DIR + "time-to-go-screenshot.jpg",
-                            thumbnail: IMG_DIR + "time-to-go-screenshot.jpg",
-                            w: 600,
-                            h: 400
-                        },
-                        {
-                            src: IMG_DIR + "gv-gold-screenshot.jpg",
-                            thumbnail: IMG_DIR + "gv-gold-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "you-salty-screenshot.jpg",
-                            thumbnail: IMG_DIR + "you-salty-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "res-not-found.jpg",
-                            thumbnail: IMG_DIR + "res-not-found.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        }
-                    ]
-                },
-                {
-                    name: "Test Collection Dupe",
-                    uri: "col1",
-                    date: "YYYY-MM-DD ;)",
-                    photos: [
-                        {
-                            src: IMG_DIR + "time-to-go-screenshot.jpg",
-                            thumbnail: IMG_DIR + "time-to-go-screenshot.jpg",
-                            w: 600,
-                            h: 400
-                        },
-                        {
-                            src: IMG_DIR + "gv-gold-screenshot.jpg",
-                            thumbnail: IMG_DIR + "gv-gold-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "you-salty-screenshot.jpg",
-                            thumbnail: IMG_DIR + "you-salty-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "res-not-found.jpg",
-                            thumbnail: IMG_DIR + "res-not-found.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        }
-                    ]
-                },
-                {
-                    name: "Test Collection Dupe",
-                    date: "YYYY-MM-DD ;)",
-                    uri: "col1",
-                    photos: [
-                        {
-                            src: IMG_DIR + "time-to-go-screenshot.jpg",
-                            thumbnail: IMG_DIR + "time-to-go-screenshot.jpg",
-                            w: 600,
-                            h: 400
-                        },
-                        {
-                            src: IMG_DIR + "gv-gold-screenshot.jpg",
-                            thumbnail: IMG_DIR + "gv-gold-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "you-salty-screenshot.jpg",
-                            thumbnail: IMG_DIR + "you-salty-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "res-not-found.jpg",
-                            thumbnail: IMG_DIR + "res-not-found.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        }
-                    ]
-                },
-                {
-                    name: "Test Collection Dupe",
-                    date: "YYYY-MM-DD ;)",
-                    uri: "col1",
-                    photos: [
-                        {
-                            src: IMG_DIR + "time-to-go-screenshot.jpg",
-                            thumbnail: IMG_DIR + "time-to-go-screenshot.jpg",
-                            w: 600,
-                            h: 400
-                        },
-                        {
-                            src: IMG_DIR + "gv-gold-screenshot.jpg",
-                            thumbnail: IMG_DIR + "gv-gold-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "you-salty-screenshot.jpg",
-                            thumbnail: IMG_DIR + "you-salty-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "res-not-found.jpg",
-                            thumbnail: IMG_DIR + "res-not-found.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        }
-                    ]
-                },
-                {
-                    name: "Test Collection Dupee",
-                    date: "YYYY-MM-DD ;)",
-                    uri: "col1",
-                    description: "",
-                    photos: [
-                        {
-                            src: IMG_DIR + "time-to-go-screenshot.jpg",
-                            thumbnail: IMG_DIR + "time-to-go-screenshot.jpg",
-                            w: 600,
-                            h: 400
-                        },
-                        {
-                            src: IMG_DIR + "gv-gold-screenshot.jpg",
-                            thumbnail: IMG_DIR + "gv-gold-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "you-salty-screenshot.jpg",
-                            thumbnail: IMG_DIR + "you-salty-screenshot.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
-                        },
-                        {
-                            src: IMG_DIR + "res-not-found.jpg",
-                            thumbnail: IMG_DIR + "res-not-found.jpg",
-                            w: 600,
-                            h: 400,
-                            title: 'Will be used for caption'
+                            src: PHOTO_COLS + "c0/" + "pub20180609-8.jpg",
+                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-8.jpg",
+                            w: 2000,
+                            h: 1333,
                         }
                     ]
                 }
@@ -386,7 +170,8 @@ export const store = new Vuex.Store({
                     {id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
                     {id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
                 ],
-                shareEl: false
+                shareEl: false,
+                captionEl: false
             },
             insta: "https://www.instagram.com/imyourmanzi/"
         },

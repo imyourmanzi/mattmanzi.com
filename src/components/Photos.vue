@@ -8,7 +8,7 @@
                         <h3>{{ col.name }}</h3>
                         <h5><em>{{ col.date }}</em></h5>
                         <div class="thumbnailSquare">
-                            <div class="thumbnailCorner" v-for="photo in col.photos">
+                            <div class="thumbnailCorner" v-for="photo in col.photos.slice(0, 4)">
                                 <img :src="photo.thumbnail" />
                             </div>
                         </div>
