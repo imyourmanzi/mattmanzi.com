@@ -3,7 +3,7 @@
         <h1>Collections</h1>
         <div id="photoCollections">
             <div class="photoCollectionBoundingBox" v-for="(col, i) in collections" >
-                <router-link class="custLink" :to="col.uri">
+                <router-link class="custLink" :to="$route.path + '/' + col.uri">
                     <div :class="['photoCollection', (activeCollection != i && activeCollection != -1) ? 'inactiveCollection' : ((activeCollection == i) ? 'activeCollection' : '')]" @mouseenter="activeCollection = i" @mouseleave="activeCollection = -1">
                         <h3>{{ col.name }}</h3>
                         <h5><em>{{ col.date }}</em></h5>

@@ -108,7 +108,7 @@ export const store = new Vuex.Store({
             collections: [
                 {
                     name: "Test Collection",
-                    uri: "/photos/col1",
+                    uri: "col1",
                     date: "YYYY-MM-DD",
                     photos: [
                         {
@@ -142,7 +142,7 @@ export const store = new Vuex.Store({
                 },
                 {
                     name: "Test Collection Dupe",
-                    uri: "/photos/col1",
+                    uri: "col1",
                     date: "YYYY-MM-DD ;)",
                     photos: [
                         {
@@ -176,7 +176,7 @@ export const store = new Vuex.Store({
                 },
                 {
                     name: "Test Collection Dupe",
-                    uri: "/photos/col1",
+                    uri: "col1",
                     date: "YYYY-MM-DD ;)",
                     photos: [
                         {
@@ -210,7 +210,7 @@ export const store = new Vuex.Store({
                 },
                 {
                     name: "Test Collection Dupe",
-                    uri: "/photos/col1",
+                    uri: "col1",
                     date: "YYYY-MM-DD ;)",
                     photos: [
                         {
@@ -244,7 +244,7 @@ export const store = new Vuex.Store({
                 },
                 {
                     name: "Test Collection Dupe",
-                    uri: "/photos/col1",
+                    uri: "col1",
                     date: "YYYY-MM-DD ;)",
                     photos: [
                         {
@@ -279,7 +279,7 @@ export const store = new Vuex.Store({
                 {
                     name: "Test Collection Dupe",
                     date: "YYYY-MM-DD ;)",
-                    uri: "/photos/col1",
+                    uri: "col1",
                     photos: [
                         {
                             src: IMG_DIR + "time-to-go-screenshot.jpg",
@@ -313,7 +313,7 @@ export const store = new Vuex.Store({
                 {
                     name: "Test Collection Dupe",
                     date: "YYYY-MM-DD ;)",
-                    uri: "/photos/col1",
+                    uri: "col1",
                     photos: [
                         {
                             src: IMG_DIR + "time-to-go-screenshot.jpg",
@@ -345,9 +345,10 @@ export const store = new Vuex.Store({
                     ]
                 },
                 {
-                    name: "Test Collection Dupe",
+                    name: "Test Collection Dupee",
                     date: "YYYY-MM-DD ;)",
-                    uri: "/photos/col1",
+                    uri: "col1",
+                    description: "",
                     photos: [
                         {
                             src: IMG_DIR + "time-to-go-screenshot.jpg",
@@ -379,15 +380,13 @@ export const store = new Vuex.Store({
                     ]
                 }
             ],
-            viewer: {
-                options: {
-                    shareButtons: [
-                        {id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
-                        {id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
-                        {id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
-                    ],
-                    shareEl: false
-                }
+            viewerOptions: {
+                shareButtons: [
+                    {id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
+                    {id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
+                    {id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
+                ],
+                shareEl: false
             },
             insta: "https://www.instagram.com/imyourmanzi/"
         },
