@@ -116,50 +116,50 @@ export const store = new Vuex.Store({
                         {
                             src: PHOTO_COLS + "c0/" + "pub20180609-1.jpg",
                             thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-1.jpg",
-                            w: 2000,
-                            h: 1333
+                            w: 1800,
+                            h: 1200
                         },
                         {
                             src: PHOTO_COLS + "c0/" + "pub20180609-2.jpg",
                             thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-2.jpg",
-                            w: 1333,
-                            h: 2000,
+                            w: 1200,
+                            h: 1800,
                         },
                         {
                             src: PHOTO_COLS + "c0/" + "pub20180609-3.jpg",
                             thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-3.jpg",
-                            w: 2000,
-                            h: 1333,
+                            w: 1800,
+                            h: 1200,
                         },
                         {
                             src: PHOTO_COLS + "c0/" + "pub20180609-4.jpg",
                             thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-4.jpg",
-                            w: 1333,
-                            h: 2000,
+                            w: 1200,
+                            h: 1800,
                         },
                         {
                             src: PHOTO_COLS + "c0/" + "pub20180609-5.jpg",
                             thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-5.jpg",
-                            w: 2000,
-                            h: 1333,
+                            w: 1800,
+                            h: 1200,
                         },
                         {
                             src: PHOTO_COLS + "c0/" + "pub20180609-6.jpg",
                             thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-6.jpg",
-                            w: 1333,
-                            h: 2000,
+                            w: 1200,
+                            h: 1800,
                         },
                         {
                             src: PHOTO_COLS + "c0/" + "pub20180609-7.jpg",
                             thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-7.jpg",
-                            w: 2000,
-                            h: 1333,
+                            w: 1800,
+                            h: 1200,
                         },
                         {
                             src: PHOTO_COLS + "c0/" + "pub20180609-8.jpg",
                             thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-8.jpg",
-                            w: 2000,
-                            h: 1333,
+                            w: 1800,
+                            h: 1200,
                         }
                     ]
                 }
