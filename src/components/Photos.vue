@@ -1,6 +1,6 @@
 <template>
     <div id="photosContainer" class="container">
-        <h1>Collections</h1>
+        <h1>Photo Collections</h1>
         <div id="photoCollections">
             <div class="photoCollectionBoundingBox" v-for="(col, i) in collections" >
                 <router-link class="custLink" :to="$route.path + '/' + col.uri">
@@ -63,6 +63,10 @@ export default {
     height: 14em;
 }
 
+.activeCollection > .thumbnailSquare > .thumbnailCorner > img {
+    border-radius: 0.4em;
+}
+
 .photoCollection h3 {
     margin-bottom: 0.2em;
 }
@@ -93,6 +97,9 @@ export default {
     width: inherit;
     height: inherit;
     object-fit: cover;
+
+    transition-property: border-radius;
+    transition-duration: 0.3s;
 }
 
 @media screen and (max-aspect-ratio: 767/1024) {
@@ -104,6 +111,10 @@ export default {
     .activeCollection > .thumbnailSquare {
         width: 12em;
         height: 12em;
+    }
+
+    .activeCollection > .thumbnailSquare > .thumbnailCorner > img {
+        border-radius: 0;
     }
 
 }

@@ -26,10 +26,10 @@ export const store = new Vuex.Store({
             //     title: "Music",
             //     uri: "/music"
             // },
-            {
-                title: "Photos",
-                uri: "/photos"
-            },
+            // {
+            //     title: "Photos",
+            //     uri: "/photos"
+            // },
             {
                 title: "Résumé",
                 uri: "/resume"
