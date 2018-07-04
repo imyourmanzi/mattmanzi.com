@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <div id="photoCollectionContainer" class="container">
         This collection: {{ $route.params.photo_collection }}
         <em>Enjoi some boi</em>
-        <vue-picture-swipe :items="viewer.imgs" :options="viewer.options">
-        </vue-picture-swipe>
+        <!-- <vue-picture-swipe :items="viewer.imgs" :options="viewer.options">
+        </vue-picture-swipe> -->
     </div>
 </template>
 
