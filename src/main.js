@@ -1,21 +1,28 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App'
+import App from './App.vue'
+import Vuex from 'vuex'
+import VueRouter from 'vue-router'
 import { sync } from 'vuex-router-sync' // import this with { }
+import store from './store/store'
 import router from './router/router'
-import { store } from './store/store' // import this with { }
 import VuePictureSwipe from 'vue-picture-swipe'
 
-sync(store, router) // done. Returns an unsync callback fn, assign if necessary
+Vue.use(Vuex)
+Vue.use(VueRouter)
+
+const vstore = new Vuex.Store(store)
+const vrouter = new VueRouter(router)
+
+// eslint-disable-next-line
+const unsync = sync(vstore, vrouter) // done. Returns an unsync callback fn
 
 Vue.component('vue-picture-swipe', VuePictureSwipe)
 Vue.config.productionTip = false
 
 new Vue({
-    el: '#app',
-    store: store,
-    router: router,
-    template: '<App/>',
-    components: { App }
-})
+    render: h => h(App),
+    store: vstore,
+    router: vrouter,
+}).$mount('#app')

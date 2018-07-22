@@ -1,21 +1,18 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-
 const M_DASH      = "\u2014"
 const DOMAIN_NAME = "mattmanzi.com"
 
 const RESUME_PREFIX  = "Matt R Manzi - "
 const RESUME_VERSION = "05-2018 Technical v1"
 
-const STATIC_DIR    = "../../static/"
+const STATIC_DIR    = "" // static dir changed to public in v3+, route needs to be abosolute
 const IMG_DIR       = STATIC_DIR + "img/"
-const PHOTO_COLS    = IMG_DIR + "photo-collections/"
+const DOCS_DIR      = STATIC_DIR + "docs/"
 const RES_NOT_FOUND = IMG_DIR + "res-not-found.jpg"
 
-Vue.use(Vuex)
+// const MEDIA_SVR_BASE = "https://media.mattmanzi.com/photo-collections/"
 
-export const store = new Vuex.Store({
-    strict: true,
+export default {
+    // strict: true,
     state: {
         sections: [
             {
@@ -106,71 +103,14 @@ export const store = new Vuex.Store({
             }
         },
         photos: {
-            collections: [
-                {
-                    name: "Erin Flannery",
-                    uri: "c0",
-                    date: "2018-06-09",
-                    description: "Welcome to her crib.",
-                    photos: [
-                        {
-                            src: PHOTO_COLS + "c0/" + "pub20180609-1.jpg",
-                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-1.jpg",
-                            w: 1800,
-                            h: 1200
-                        },
-                        {
-                            src: PHOTO_COLS + "c0/" + "pub20180609-2.jpg",
-                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-2.jpg",
-                            w: 1200,
-                            h: 1800,
-                        },
-                        {
-                            src: PHOTO_COLS + "c0/" + "pub20180609-3.jpg",
-                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-3.jpg",
-                            w: 1800,
-                            h: 1200,
-                        },
-                        {
-                            src: PHOTO_COLS + "c0/" + "pub20180609-4.jpg",
-                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-4.jpg",
-                            w: 1200,
-                            h: 1800,
-                        },
-                        {
-                            src: PHOTO_COLS + "c0/" + "pub20180609-5.jpg",
-                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-5.jpg",
-                            w: 1800,
-                            h: 1200,
-                        },
-                        {
-                            src: PHOTO_COLS + "c0/" + "pub20180609-6.jpg",
-                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-6.jpg",
-                            w: 1200,
-                            h: 1800,
-                        },
-                        {
-                            src: PHOTO_COLS + "c0/" + "pub20180609-7.jpg",
-                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-7.jpg",
-                            w: 1800,
-                            h: 1200,
-                        },
-                        {
-                            src: PHOTO_COLS + "c0/" + "pub20180609-8.jpg",
-                            thumbnail: PHOTO_COLS + "c0/" + "tbm20180609-8.jpg",
-                            w: 1800,
-                            h: 1200,
-                        }
-                    ]
-                }
-            ],
+            baseUrl: "https://media.mattmanzi.com/photo-collections",
             viewerOptions: {
                 shareButtons: [
                     {id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
                     {id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
                     {id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
                 ],
-                shareEl: false,
+                shareEl: true,
                 captionEl: false
             },
             insta: "https://www.instagram.com/imyourmanzi/"
@@ -329,7 +269,7 @@ export const store = new Vuex.Store({
         // Returns a function that accepts a filename and returns
         // the relative path to the file (if the extension is
         // recognized) from the `components` directory
-        resolve(state) {
+        resolve() {
 
             return function(filename) {
 
@@ -340,6 +280,7 @@ export const store = new Vuex.Store({
                     return IMG_DIR + filename
                 } else if (resumeRegex.test(filename)) {
                     return STATIC_DIR +
+                           DOCS_DIR +
                            RESUME_PREFIX +
                            RESUME_VERSION +
                            "." + filename.match(resumeRegex)[1] /* filetype */
@@ -348,7 +289,34 @@ export const store = new Vuex.Store({
                 return RES_NOT_FOUND
             }
 
-        }
+        },
+
+        // getPhotosFromCollection(state) {
+        //
+        //     return function(col, size) {
+        //
+        //         var photos = []
+        //
+        //         var collection = this.$store.state.photos.collections.find(col => col.id === $route.params.col_id)
+        //         if (collection === undefined) {
+        //             return photos
+        //         }
+        //
+        //         collections.forEach(function(col, i){
+        //             photos.push(
+        //                 {
+        //                     src: MEDIA_SVR_BASE + col.id + "/pub-" + size + "-" + i,
+        //                     thumbnail: "",
+        //                     w: size,
+        //                     h: (size * 2/3),
+        //                     title: ""
+        //                 }
+        //             )
+        //         })
+        //
+        //     }
+        //
+        // }
 
     },
     mutations: {
@@ -357,4 +325,4 @@ export const store = new Vuex.Store({
     actions: {
         // add actions for state here
     }
-})
+}

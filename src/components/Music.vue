@@ -23,7 +23,6 @@
                 <img :src="resolve(music.about.visual)" alt="Official Myx logo"/>
             </div>
         </div>
-</iframe>
     </div>
 </template>
 

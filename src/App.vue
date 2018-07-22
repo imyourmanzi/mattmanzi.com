@@ -5,7 +5,7 @@
             MattManzi<small>.com</small>
             </router-link>
             <div id="sectionLinks">
-                <div v-for="section in sections">
+                <div v-for="section in sections" :key="section.uri">
                     <router-link class="sectionLink" v-bind:class="{'currPage': pageName === section.uri}" :to="section.uri">{{ section.title }}</router-link>
                 </div>
             </div>
@@ -16,7 +16,7 @@
         <router-view></router-view>
         <footer :class="{'dividedBottom': pageName !== 'home'}">
             <div id="extLinks">
-                <a :href="ext.url" class="extLink" v-for="ext in externalLinks">
+                <a :href="ext.url" class="extLink" v-for="ext in externalLinks" :key="ext.imgRes">
                     <img :src="resolve(ext.imgRes)" :alt="ext.imgAlt" />
                 </a>
             </div>
@@ -55,7 +55,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background-color: #000a21;
+    background-color: #011f3a;
 }
 
 a {
@@ -113,7 +113,7 @@ a {
     width: 92%;
     padding: 2% 4% 1% 4%; /* top: 2%, bottom: 1%, left & right: 4% */
 
-    background-color: #000a21;
+    /* background-color: #000a21; */
 }
 
 .dividedTop {
@@ -198,7 +198,7 @@ footer {
     bottom: 0;
     padding: 0 0 1em 0;
 
-    background-color: #000a21;
+    /* background-color: #000a21; */
 
     font-size: 0.93em;
 }

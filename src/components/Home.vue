@@ -2,7 +2,7 @@
     <div id="homeContainer" class="container">
         <p class="direct">As we say it,<br/>so it shall be.</p>
         <div id="sectionBoxes">
-            <div v-for="section in sections">
+            <div v-for="section in sections" :key="section.uri">
                 <router-link class="sectionBoxLinkWrap" :to="section.uri">
                     <div class="sectionInnerBox">
                         <p>{{ section.title }}</p>

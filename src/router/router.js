@@ -1,5 +1,3 @@
-import Vue from 'vue'
-import Router from 'vue-router'
 import Home from '@/components/Home'
 import Tech from '@/components/Tech'
 import Music from '@/components/Music'
@@ -8,51 +6,47 @@ import Resume from '@/components/Resume'
 import Faq from '@/components/Faq'
 import PhotoCollection from '@/components/PhotoCollection'
 
-Vue.use(Router)
-
-const routes = [
-    {
-        path: '/',
-        name: 'home',
-        component: Home
-    },
-    {
-        path: '/home',
-        redirect: '/'
-    },
-    {
-        path: '/tech',
-        name: 'tech',
-        component: Tech
-    },
-    {
-        path: '/music',
-        name: 'music',
-        component: Music
-    },
-    {
-        path: '/photos',
-        name: 'photos',
-        component: Photos
-    },
-    {
-        path: '/photos/:photo_collection',
-        name: 'photo-collection',
-        component: PhotoCollection
-    },
-    {
-        path: '/resume',
-        name: 'resume',
-        component: Resume
-    },
-    {
-        path: '/faq',
-        name: 'faq',
-        component: Faq
-    }
-]
-
-export default new Router({
-    routes: routes,
+export default {
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/home',
+            redirect: '/'
+        },
+        {
+            path: '/tech',
+            name: 'tech',
+            component: Tech
+        },
+        {
+            path: '/music',
+            name: 'music',
+            component: Music
+        },
+        {
+            path: '/photos',
+            name: 'photos',
+            component: Photos
+        },
+        {
+            path: '/photos/:col_id',
+            name: 'photo-collection',
+            component: PhotoCollection
+        },
+        {
+            path: '/resume',
+            name: 'resume',
+            component: Resume
+        },
+        {
+            path: '/faq',
+            name: 'faq',
+            component: Faq
+        }
+    ],
     mode: 'history'
-})
+}

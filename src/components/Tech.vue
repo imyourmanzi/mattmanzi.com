@@ -7,7 +7,7 @@
             <h1 class="md"># Projects</h1>
             <h2 class="md">&nbsp;## iOS Apps</h2>
             <div id="iosProjects">
-                <div class="panel" v-for="(proj, i) in tech.iosProjects">
+                <div class="panel" v-for="(proj, i) in tech.iosProjects" :key="i">
                     <h3 class="md">{{ proj.name }}</h3>
                     <img :src="resolve(proj.imgRes)" class="screenshot" :alt="proj.imgAlt" />
                     <p>{{ proj.about }}</p>
@@ -51,13 +51,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="proj in tech.iosProjects">
+                    <tr v-for="proj in tech.iosProjects" :key="proj.name">
                         <td>{{ proj.name }}</td>
                         <td><a :href="'mailto:' + proj.contact" class="custLink">{{ proj.contact }}</a></td>
                     </tr>
                 </tbody>
             </table>
-            <table id="tiny" v-for="proj in tech.iosProjects">
+            <table id="tiny" v-for="proj in tech.iosProjects" :key="proj.name">
                 <tbody>
                     <tr>
                         <td>{{ proj.name }}</td>

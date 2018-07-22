@@ -1,6 +1,6 @@
 <template>
     <div id="faqContainer" class="container">
-        <div class="faqEntry" v-for="(faqEntry, i) in faqEntries">
+        <div class="faqEntry" v-for="(faqEntry, i) in faqEntries" :key="i">
             <div class="entryQuestion" @click="toggleShowAnswer(i)">
                 <h3>{{ faqEntry.question }}</h3>
                 <h3>{{ openFaqs.indexOf(i) === -1 ? "+" : "\u2013" }}</h3>

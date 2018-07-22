@@ -1,21 +1,21 @@
 <template>
     <div id="photosContainer" class="container">
         <h1>Photo Collections</h1>
-        <div id="photoCollections">
-            <div class="photoCollectionBoundingBox" v-for="(col, i) in collections" >
-                <router-link class="custLink" :to="$route.path + '/' + col.uri">
+        <!-- <div id="photoCollections">
+            <div class="photoCollectionBoundingBox" v-for="(col, i) in collections" :key="col.id">
+                <router-link class="custLink" :to="$route.path + '/' + col.id">
                     <div :class="['photoCollection', (activeCollection != i && activeCollection != -1) ? 'inactiveCollection' : ((activeCollection == i) ? 'activeCollection' : '')]" @mouseenter="activeCollection = i" @mouseleave="activeCollection = -1">
                         <h3>{{ col.name }}</h3>
                         <h5><em>{{ col.date }}</em></h5>
                         <div class="thumbnailSquare">
-                            <div class="thumbnailCorner" v-for="photo in col.photos.slice(0, 4)">
+                            <div class="thumbnailCorner" v-for="photo in col.photos.slice(0, 4)" :key="photo.id">
                                 <img :src="photo.thumbnail" />
                             </div>
                         </div>
                     </div>
                 </router-link>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -28,9 +28,9 @@ export default {
         }
     },
     computed: {
-        collections() {
-            return this.$store.state.photos.collections
-        }
+        // collections() {
+        //     return this.$store.state.photos.collections
+        // }
     }
 }
 </script>

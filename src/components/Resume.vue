@@ -21,7 +21,7 @@
         <!-- education section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.education) !== -1">
-                <div class="education" v-for="edu in resume.education">
+                <div class="education" v-for="edu in resume.education" :key="edu.schoolName">
                     <div class="detailLine">
                         <p><strong>{{ edu.schoolName }}</strong> {{ edu.location }}</p>
                         <p><em>{{ edu.gradDate }}</em></p>
@@ -43,7 +43,7 @@
         <!-- tech skills section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.skills) !== -1">
-                <div class="skill" v-for="skill in resume.skills">
+                <div class="skill" v-for="skill in resume.skills" :key="skill.subset">
                     <p class="sameWidth"><em>{{ skill.subset }}</em></p>
                     <p>{{ skill.values.join(", ") }}</p>
                 </div>
@@ -58,13 +58,13 @@
         <!-- experience section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.experience) !== -1">
-                <div class="experience" v-for="exp in resume.experience">
+                <div class="experience" v-for="exp in resume.experience" :key="exp.employerName">
                     <div class="detailLine">
                         <p>{{ exp.employerName ? exp.employerName + ", " : "" }}<em>{{ exp.title }}</em>{{ exp.location ? ", " + exp.location : "" }}</p>
                         <p><em>{{ exp.timeDetail }}</em></p>
                     </div>
                     <ul>
-                        <li v-for="point in exp.points">{{ point }}</li>
+                        <li v-for="point in exp.points" :key="point">{{ point }}</li>
                     </ul>
                 </div>
             </div>
@@ -78,13 +78,13 @@
         <!-- projects section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.projects) !== -1">
-                <div class="project" v-for="proj in resume.projects">
+                <div class="project" v-for="proj in resume.projects" :key="proj.name">
                     <div class="detailLine">
                         <p><em>{{ proj.name }}</em>{{ proj.organization ? ", " + proj.organization : "" }}</p>
                         <p><em>{{ proj.timeDetail }}</em></p>
                     </div>
                     <ul>
-                        <li v-for="point in proj.points">{{ point }}</li>
+                        <li v-for="point in proj.points" :key="point">{{ point }}</li>
                     </ul>
                 </div>
             </div>
@@ -98,13 +98,13 @@
         <!-- volunteer section -->
         <transition name="reveal">
             <div v-if="openSections.indexOf(resume.ids.volunteer) !== -1">
-                <div class="activity" v-for="activity in resume.volunteer">
+                <div class="activity" v-for="activity in resume.volunteer" :key="activity.name">
                     <div class="detailLine">
                         <p><em>{{ activity.name }}</em>{{ activity.organization ? ", " + activity.organization : "" }}</p>
                         <p><em>{{ activity.timeDetail }}</em></p>
                     </div>
                     <ul>
-                        <li v-for="point in activity.points">{{ point }}</li>
+                        <li v-for="point in activity.points" :key="point">{{ point }}</li>
                     </ul>
                 </div>
             </div>
