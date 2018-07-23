@@ -8,9 +8,12 @@ import { sync } from 'vuex-router-sync' // import this with { }
 import store from './store/store'
 import router from './router/router'
 import VuePictureSwipe from 'vue-picture-swipe'
+import VueResource from 'vue-resource'
+import http from './resource/resource'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
+Vue.use(VueResource)
 
 const vstore = new Vuex.Store(store)
 const vrouter = new VueRouter(router)
@@ -25,4 +28,5 @@ new Vue({
     render: h => h(App),
     store: vstore,
     router: vrouter,
+    http: http
 }).$mount('#app')

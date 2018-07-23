@@ -1,37 +1,58 @@
 <template>
     <div id="photoCollectionContainer" class="container">
-        <!-- <h1>a{{ collection.name }} <small>{{ collection.date }}</small></h1>
-        <div id="photoCollectionDescription">{{ collection.description }}</div>
-        <vue-picture-swipe :items="photos" :options="viewerOptions"></vue-picture-swipe> -->
+        <div class="errorBanner" v-if="fetchError !== null">
+            <strong>An error ({{ fetchError.status }} {{ fetchError.message }}) occurred fetching resource: {{ fetchError.resource }}</strong>
+        </div>
+        <h1>{{ name }} <small>{{ date }}</small></h1>
+        <div id="photoCollectionDescription">{{ description }}</div>
+        <vue-picture-swipe :items="photos" :options="viewerOptions"></vue-picture-swipe>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
     name: 'photo-collection',
-    // data() {
-    //     return {
-    //         nullCollection: {
-    //             id: "-1",
-    //             name: "Unknown Photo Collection: " + $route.params.col_id,
-    //             description: "The requested photo collection could not be found."
-    //         },
-    //         photos: []
-    //     }
-    // },
-    // computed: {
-    //     collection() {
-    //         var collection = this.$store.state.photos.collections.find(col => col.id === $route.params.col_id)
-    //         if (collection === undefined) {
-    //             return this.nullCollection
-    //         }
-    //
-    //         return collection
-    //     },
-    //     viewerOptions() {
-    //         return this.$store.state.photos.viewerOptions
-    //     }
-    // }
+    data() {
+        return {
+            fetchError: null,
+            id: -1,
+            name: "Unknown Photo Collection: " + this.$store.state.route.params.col_id,
+            date: "-",
+            description: "The requested photo collection could not be found.",
+            photos: []
+        }
+    },
+    computed: {
+        viewerOptions() {
+            return this.$store.state.photos.viewerOptions
+        },
+        ...mapGetters([
+            'getPhotosFromCollection'
+        ])
+    },
+    methods: {
+        getCollection() {
+            this.$http.get(this.$store.state.photos.baseUrl + this.$store.state.route.params.col_id).then(response => {
+                this.id = response.body.id
+                this.name = response.body.name
+                this.date = (new Date(response.body.date)).toLocaleDateString("en-US", {day: "numeric", month: "short", year: "numeric"})
+                this.description = response.body.description
+                this.photos = this.getPhotosFromCollection(response.body)
+                this.fetchError = null
+            }, response => {
+                this.fetchError = {
+                    status: response.status,
+                    message: response.statusText,
+                    resource: response.url
+                }
+            })
+        }
+    },
+    beforeMount() {
+        this.getCollection()
+    }
 }
 </script>
 

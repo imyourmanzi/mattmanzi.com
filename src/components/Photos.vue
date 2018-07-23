@@ -1,36 +1,61 @@
 <template>
     <div id="photosContainer" class="container">
         <h1>Photo Collections</h1>
-        <!-- <div id="photoCollections">
-            <div class="photoCollectionBoundingBox" v-for="(col, i) in collections" :key="col.id">
-                <router-link class="custLink" :to="$route.path + '/' + col.id">
-                    <div :class="['photoCollection', (activeCollection != i && activeCollection != -1) ? 'inactiveCollection' : ((activeCollection == i) ? 'activeCollection' : '')]" @mouseenter="activeCollection = i" @mouseleave="activeCollection = -1">
+        <div class="errorBanner" v-if="fetchError !== null">
+            <strong>An error ({{ fetchError.status }} {{ fetchError.message }}) occurred fetching resource: {{ fetchError.resource }}</strong>
+        </div>
+        <div id="photoCollections" v-else>
+            <div class="photoCollectionBoundingBox" v-for="col in collections" :key="col.id">
+                <router-link class="custLink" :to="$store.state.route.path + '/' + col.id">
+                    <div :class="['photoCollection', (activeCollection != col.id && activeCollection != -1) ? 'inactiveCollection' : ((activeCollection == col.id) ? 'activeCollection' : '')]" @mouseenter="activeCollection = col.id" @mouseleave="activeCollection = -1">
                         <h3>{{ col.name }}</h3>
-                        <h5><em>{{ col.date }}</em></h5>
+                        <h5><em>{{ (new Date(col.date)).toLocaleDateString("en-US", {day: "numeric", month: "short", year: "numeric"}) }}</em></h5>
                         <div class="thumbnailSquare">
-                            <div class="thumbnailCorner" v-for="photo in col.photos.slice(0, 4)" :key="photo.id">
+                            <div class="thumbnailCorner" v-for="photo in getPhotosFromCollection(col, '', 'tbm-150', 4)" :key="photo.thumbnail">
                                 <img :src="photo.thumbnail" />
                             </div>
                         </div>
                     </div>
                 </router-link>
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
     name: 'photos',
     data() {
         return {
-            activeCollection: -1
+            collections: [],
+            activeCollection: -1,
+            fetchError: null
         }
     },
     computed: {
-        // collections() {
-        //     return this.$store.state.photos.collections
-        // }
+        ...mapGetters([
+            'getPhotosFromCollection'
+        ])
+    },
+    methods: {
+        getCollections() {
+            this.$http.get(this.$store.state.photos.baseUrl).then(response => {
+                this.collections = response.body
+                this.fetchError = null
+            }, response => {
+                this.collections = []
+                this.fetchError = {
+                    status: response.status,
+                    message: response.statusText,
+                    resource: response.url
+                }
+            })
+        }
+    },
+    beforeMount() {
+        this.getCollections()
     }
 }
 </script>

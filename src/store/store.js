@@ -9,7 +9,7 @@ const IMG_DIR       = STATIC_DIR + "img/"
 const DOCS_DIR      = STATIC_DIR + "docs/"
 const RES_NOT_FOUND = IMG_DIR + "res-not-found.jpg"
 
-// const MEDIA_SVR_BASE = "https://media.mattmanzi.com/photo-collections/"
+const MEDIA_SVR_BASE = process.env.VUE_APP_MEDIA_API + "photo-collections/"
 
 export default {
     // strict: true,
@@ -23,10 +23,10 @@ export default {
             //     title: "Music",
             //     uri: "/music"
             // },
-            // {
-            //     title: "Photos",
-            //     uri: "/photos"
-            // },
+            {
+                title: "Photos",
+                uri: "/photos"
+            },
             {
                 title: "Résumé",
                 uri: "/resume"
@@ -103,7 +103,7 @@ export default {
             }
         },
         photos: {
-            baseUrl: "https://media.mattmanzi.com/photo-collections",
+            baseUrl: MEDIA_SVR_BASE,
             viewerOptions: {
                 shareButtons: [
                     {id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
@@ -291,32 +291,32 @@ export default {
 
         },
 
-        // getPhotosFromCollection(state) {
-        //
-        //     return function(col, size) {
-        //
-        //         var photos = []
-        //
-        //         var collection = this.$store.state.photos.collections.find(col => col.id === $route.params.col_id)
-        //         if (collection === undefined) {
-        //             return photos
-        //         }
-        //
-        //         collections.forEach(function(col, i){
-        //             photos.push(
-        //                 {
-        //                     src: MEDIA_SVR_BASE + col.id + "/pub-" + size + "-" + i,
-        //                     thumbnail: "",
-        //                     w: size,
-        //                     h: (size * 2/3),
-        //                     title: ""
-        //                 }
-        //             )
-        //         })
-        //
-        //     }
-        //
-        // }
+        getPhotosFromCollection() {
+
+            return function(collection, pubSize = "pub-1800", tbmSize = "tbm-200", maxPhotos = 0) {
+
+                var photos = []
+
+                if (collection === null) {
+                    return photos
+                }
+
+                collection.photos.forEach((p, i) => {
+                    if (maxPhotos === 0 || i < maxPhotos) {
+                        photos.push({
+                            src: MEDIA_SVR_BASE + collection.id + "/" + pubSize + "-" + p.id + ".jpg",
+                            thumbnail: MEDIA_SVR_BASE + collection.id + "/" + tbmSize + "-" + p.id + ".jpg",
+                            w: p.width,
+                            h: p.height,
+                            title: p.title
+                        })
+                    }
+                })
+
+                return photos
+            }
+
+        }
 
     },
     mutations: {

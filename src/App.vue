@@ -62,6 +62,7 @@ a {
     text-decoration: none;
 }
 
+/* Shared attributes */
 .container {
     position: relative;
     width: 92%;
@@ -84,7 +85,6 @@ a {
     vertical-align: middle;
 }
 
-/* custLink emulates the style of a button on iOS */
 .custLink {
     color: #6699cc;
 }
@@ -94,7 +94,18 @@ a {
     text-decoration: underline;
 }
 
-/* Layout-level attributes */
+.errorBanner {
+    margin-top: 0.5em;
+    padding: 0.2em;
+
+    text-align: center;
+    color: black;
+
+    border-radius: 1em;
+    background-color: #cc6666;
+}
+
+/* App attributes */
 #app {
     width: 100%;
 
@@ -107,13 +118,11 @@ a {
     color: white;
 }
 
-/* Normal attributes */
+/* Layout attributes */
 #header {
     position: relative;
     width: 92%;
     padding: 2% 4% 1% 4%; /* top: 2%, bottom: 1%, left & right: 4% */
-
-    /* background-color: #000a21; */
 }
 
 .dividedTop {
@@ -197,8 +206,6 @@ footer {
     width: 100%;
     bottom: 0;
     padding: 0 0 1em 0;
-
-    /* background-color: #000a21; */
 
     font-size: 0.93em;
 }
