@@ -7,7 +7,7 @@ const RESUME_VERSION = "05-2018 Technical v1"
 const STATIC_DIR    = "" // static dir changed to public in v3+, route needs to be abosolute
 const IMG_DIR       = STATIC_DIR + "img/"
 const DOCS_DIR      = STATIC_DIR + "docs/"
-const RES_NOT_FOUND = IMG_DIR + "res-not-found.jpg"
+const RES_NOT_FOUND = "res-not-found.jpg"
 
 const API_ENP_PREFIX = "api/"
 const PHOTO_COL_ENDP = "photo-collections/"
@@ -274,7 +274,7 @@ export default {
         // recognized) from the `components` directory
         resolve() {
 
-            return function(filename) {
+            return function(filename = RES_NOT_FOUND) {
 
                 var imgRegex    = /.*\.(png|jpg|svg)/
                 var resumeRegex = /resume_(pdf|docx)/
@@ -289,7 +289,7 @@ export default {
                            "." + filename.match(resumeRegex)[1] /* filetype */
                 }
 
-                return RES_NOT_FOUND
+                return IMG_DIR + RES_NOT_FOUND;
             }
 
         },
