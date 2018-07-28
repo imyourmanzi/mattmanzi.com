@@ -6,7 +6,7 @@
             </router-link>
             <div id="sectionLinks">
                 <div v-for="section in sections" :key="section.uri">
-                    <router-link class="sectionLink" v-bind:class="{'currPage': pageName === section.uri}" :to="section.uri">{{ section.title }}</router-link>
+                    <router-link class="sectionLink" :class="{'currPage': pageName === section.uri}" :to="section.uri">{{ section.title }}</router-link>
                 </div>
             </div>
         </div>

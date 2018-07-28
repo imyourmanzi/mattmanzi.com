@@ -7,12 +7,11 @@
             <h1>Featured Collections</h1>
             <div id="featuredCollections">
                 <div class="photoCollectionBoundingBox" v-for="feat in featuredCollections" :key="feat.id">
-                    <router-link class="custLink" :to="$store.state.route.path + '/' + feat.id">
-                        <div :class="['photoCollection', (activeCollection != feat.id && activeCollection != -1) ? 'inactiveCollection' : ((activeFeaturedCollection == feat.id) ? 'activeCollection' : '')]" @mouseenter="activeFeaturedCollection = feat.id" @mouseleave="activeFeaturedCollection = -1">
+                    <router-link class="custLink" :to="{ name: 'featured-photo-collection', params: { feat_id: feat.id }}">
+                        <div :class="['photoCollection', (activeFeaturedCollection != feat.id && activeFeaturedCollection != -1) ? 'inactiveCollection' : ((activeFeaturedCollection == feat.id) ? 'activeCollection' : '')]" @mouseenter="activeFeaturedCollection = feat.id" @mouseleave="activeFeaturedCollection = -1">
                             <h3>{{ feat.name }}</h3>
-                            <!-- <h5><em>{{ (new Date(feat.date)).toLocaleDateString("en-US", {day: "numeric", month: "short", year: "numeric"}) }}</em></h5> -->
                             <div class="thumbnailSquare">
-                                <div class="thumbnailCorner" v-for="photo in getPhotosFromFeaturedCollection(feat, '', 'tbm-150', 4)" :key="photo.thumbnail">
+                                <div class="thumbnailCorner" v-for="photo in getPhotosFromCollection(feat, '', 'tbm-150', 4)" :key="photo.thumbnail">
                                     <img :src="photo.thumbnail" />
                                 </div>
                             </div>
@@ -27,7 +26,7 @@
         </div>
         <div id="photoCollections" v-else>
             <div class="photoCollectionBoundingBox" v-for="col in collections" :key="col.id">
-                <router-link class="custLink" :to="$store.state.route.path + '/' + col.id">
+                <router-link class="custLink" :to="{ name: 'photo-collection', params: { col_id: col.id }}">
                     <div :class="['photoCollection', (activeCollection != col.id && activeCollection != -1) ? 'inactiveCollection' : ((activeCollection == col.id) ? 'activeCollection' : '')]" @mouseenter="activeCollection = col.id" @mouseleave="activeCollection = -1">
                         <h3>{{ col.name }}</h3>
                         <h5><em>{{ (new Date(col.date)).toLocaleDateString("en-US", {day: "numeric", month: "short", year: "numeric"}) }}</em></h5>
@@ -65,6 +64,18 @@ export default {
     },
     methods: {
         getCollections() {
+            this.$http.get(this.$store.state.photos.baseApiUrlFeatured).then(response => {
+                this.featuredCollections = response.body
+                this.fetchError = null
+            }, response => {
+                this.featuredCollections = []
+                this.featuredFetchError = {
+                    status: response.status,
+                    message: response.statusText,
+                    resource: response.url
+                }
+            })
+
             this.$http.get(this.$store.state.photos.baseApiUrl).then(response => {
                 this.collections = response.body
                 this.fetchError = null
@@ -85,6 +96,7 @@ export default {
 </script>
 
 <style scoped>
+
 #featuredCollections, #photoCollections {
     display: flex;
     justify-content: space-around;
@@ -93,7 +105,7 @@ export default {
 
 .photoCollectionBoundingBox {
     width: 16em;
-    height: 20em;
+    height: 17em;
 }
 
 .photoCollection {
@@ -122,6 +134,7 @@ export default {
 
 .photoCollection h5 {
     margin-top: 0.2em;
+    margin-bottom: 0.6em;
 }
 
 .thumbnailSquare {
