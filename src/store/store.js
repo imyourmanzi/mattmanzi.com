@@ -9,10 +9,13 @@ const IMG_DIR       = STATIC_DIR + "img/"
 const DOCS_DIR      = STATIC_DIR + "docs/"
 const RES_NOT_FOUND = IMG_DIR + "res-not-found.jpg"
 
-const MEDIA_SVR_BASE = process.env.VUE_APP_MEDIA_API + "photo-collections/"
+const API_ENP_PREFIX = "api/"
+const PHOTO_COL_ENDP = "photo-collections/"
+const PHOTO_COL_API  = process.env.VUE_APP_MEDIA_API + API_ENP_PREFIX + PHOTO_COL_ENDP
+const PHOTO_COL_ROOT = process.env.VUE_APP_MEDIA_API + PHOTO_COL_ENDP
 
 export default {
-    // strict: true,
+    strict: process.env.NODE_ENV !== "production",
     state: {
         sections: [
             {
@@ -103,7 +106,7 @@ export default {
             }
         },
         photos: {
-            baseUrl: MEDIA_SVR_BASE,
+            baseApiUrl: PHOTO_COL_API,
             viewerOptions: {
                 shareButtons: [
                     {id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
@@ -304,8 +307,8 @@ export default {
                 collection.photos.forEach((p, i) => {
                     if (maxPhotos === 0 || i < maxPhotos) {
                         photos.push({
-                            src: MEDIA_SVR_BASE + collection.id + "/" + pubSize + "-" + p.id + ".jpg",
-                            thumbnail: MEDIA_SVR_BASE + collection.id + "/" + tbmSize + "-" + p.id + ".jpg",
+                            src: PHOTO_COL_ROOT + collection.id + "/" + pubSize + "-" + p.id + ".jpg",
+                            thumbnail: PHOTO_COL_ROOT + collection.id + "/" + tbmSize + "-" + p.id + ".jpg",
                             w: p.width,
                             h: p.height,
                             title: p.title

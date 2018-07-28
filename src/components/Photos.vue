@@ -41,7 +41,7 @@ export default {
     },
     methods: {
         getCollections() {
-            this.$http.get(this.$store.state.photos.baseUrl).then(response => {
+            this.$http.get(this.$store.state.photos.baseApiUrl).then(response => {
                 this.collections = response.body
                 this.fetchError = null
             }, response => {

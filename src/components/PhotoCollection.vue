@@ -34,7 +34,7 @@ export default {
     },
     methods: {
         getCollection() {
-            this.$http.get(this.$store.state.photos.baseUrl + this.$store.state.route.params.col_id).then(response => {
+            this.$http.get(this.$store.state.photos.baseApiUrl + this.$store.state.route.params.col_id).then(response => {
                 this.id = response.body.id
                 this.name = response.body.name
                 this.date = (new Date(response.body.date)).toLocaleDateString("en-US", {day: "numeric", month: "short", year: "numeric"})
