@@ -1,8 +1,29 @@
 <template>
     <div id="photosContainer" class="container">
+        <div class="errorBanner" v-if="featuredFetchError !== null">
+            <strong>An error ({{ featuredFetchError.status }} {{ featuredFetchError.message }}) occurred fetching featured photo collections: {{ featuredFetchError.resource }}</strong>
+        </div>
+        <div id="featuredContainer" v-else-if="featuredCollections.length > 0">
+            <h1>Featured Collections</h1>
+            <div id="featuredCollections">
+                <div class="photoCollectionBoundingBox" v-for="feat in featuredCollections" :key="feat.id">
+                    <router-link class="custLink" :to="$store.state.route.path + '/' + feat.id">
+                        <div :class="['photoCollection', (activeCollection != feat.id && activeCollection != -1) ? 'inactiveCollection' : ((activeFeaturedCollection == feat.id) ? 'activeCollection' : '')]" @mouseenter="activeFeaturedCollection = feat.id" @mouseleave="activeFeaturedCollection = -1">
+                            <h3>{{ feat.name }}</h3>
+                            <!-- <h5><em>{{ (new Date(feat.date)).toLocaleDateString("en-US", {day: "numeric", month: "short", year: "numeric"}) }}</em></h5> -->
+                            <div class="thumbnailSquare">
+                                <div class="thumbnailCorner" v-for="photo in getPhotosFromFeaturedCollection(feat, '', 'tbm-150', 4)" :key="photo.thumbnail">
+                                    <img :src="photo.thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </router-link>
+                </div>
+            </div>
+        </div>
         <h1>Photo Collections</h1>
         <div class="errorBanner" v-if="fetchError !== null">
-            <strong>An error ({{ fetchError.status }} {{ fetchError.message }}) occurred fetching resource: {{ fetchError.resource }}</strong>
+            <strong>An error ({{ fetchError.status }} {{ fetchError.message }}) occurred fetching photo colletions: {{ fetchError.resource }}</strong>
         </div>
         <div id="photoCollections" v-else>
             <div class="photoCollectionBoundingBox" v-for="col in collections" :key="col.id">
@@ -29,9 +50,12 @@ export default {
     name: 'photos',
     data() {
         return {
+            featuredCollections: [],
+            featuredFetchError: null,
+            activeFeaturedCollection: -1,
             collections: [],
-            activeCollection: -1,
-            fetchError: null
+            fetchError: null,
+            activeCollection: -1
         }
     },
     computed: {
@@ -61,7 +85,7 @@ export default {
 </script>
 
 <style scoped>
-#photoCollections {
+#featuredCollections, #photoCollections {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
