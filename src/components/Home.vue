@@ -1,7 +1,7 @@
 <template>
     <div id="homeContainer" class="container">
-        <p class="direct">As we say it,<br/>so it shall be.</p>
-        <div id="sectionBoxes">
+        <p :class="{'direct': true, 'frontAndCenter': isFirstLoad}">As we say it,<br/>so it shall be.</p>
+        <div id="sectionBoxes" :class="{'noshow': isFirstLoad, 'opacityTransition': true}">
             <div v-for="section in sections" :key="section.uri">
                 <router-link class="sectionBoxLinkWrap" :to="section.uri">
                     <div class="sectionInnerBox">
@@ -19,6 +19,9 @@ export default {
     computed: {
         sections() {
             return this.$store.state.sections
+        },
+        isFirstLoad() {
+            return this.$store.state.isFirstLoad
         }
     }
 }
@@ -28,6 +31,11 @@ export default {
 <style scoped>
 #homeContainer {
     text-align: center !important;
+}
+
+.frontAndCenter {
+    margin-top: 7rem;
+    font-size: 10rem;
 }
 
 #sectionBoxes {
@@ -43,9 +51,8 @@ export default {
 }
 
 .sectionBoxLinkWrap {
-    padding: 0em 1em; /* top & bottom: 0em, left & right: 1em */
+    padding: 0em 1em;
 
-    /* font-size: 1.1em; */
     color: white;
 }
 
@@ -62,10 +69,22 @@ export default {
     height: 16rem;
 
     border: solid thin white;
+    border-radius: 5px;
 }
 
 .sectionInnerBox p {
     font-size: 2.5em;
 }
 
+/* Large text looks bad when animating on screens that are
+   near square or thinner */
+@media screen and (max-aspect-ratio: 6/5) {
+
+     /* same as .direct */
+    .frontAndCenter {
+        margin-top: 1rem;
+        font-size: 5.5rem;
+    }
+
+}
 </style>

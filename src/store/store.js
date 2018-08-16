@@ -19,6 +19,7 @@ const PHOTO_COL_ROOT      = process.env.VUE_APP_MEDIA_API + PHOTO_COL_ENDP
 export default {
     strict: process.env.NODE_ENV !== "production",
     state: {
+        isFirstLoad: true,
         sections: [
             {
                 title: "Tech",
@@ -326,9 +327,19 @@ export default {
 
     },
     mutations: {
-        // add mutations for state data here
+
+        toggleFirstLoad(state) {
+            state.isFirstLoad = !state.isFirstLoad
+        }
+
     },
     actions: {
-        // add actions for state here
+
+        toggleFirstLoad(context) {
+            setTimeout(function() {
+                context.commit('toggleFirstLoad')
+            }, 1200)
+        }
+
     }
 }

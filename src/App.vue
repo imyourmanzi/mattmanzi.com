@@ -4,7 +4,7 @@
             <router-link :to="'/'" id="titleLink">
             MattManzi<small>.com</small>
             </router-link>
-            <div id="sectionLinks">
+            <div id="sectionLinks" :class="{'noshow': isFirstLoad, 'opacityTransition': true}">
                 <div v-for="section in sections" :key="section.uri">
                     <router-link class="sectionLink" :class="{'currPage': pageName === section.uri}" :to="section.uri">{{ section.title }}</router-link>
                 </div>
@@ -14,12 +14,13 @@
             Notice: This website is still under construction, thank you for your understanding.
         </div>
         <router-view></router-view>
-        <footer :class="{'dividedBottom': pageName !== 'home'}">
+        <footer :class="{'noshow': isFirstLoad, 'opacityTransition': true, 'dividedBottom': pageName !== 'home'}">
             <div id="extLinks">
                 <a :href="ext.url" class="extLink" v-for="ext in externalLinks" :key="ext.imgRes">
                     <img :src="resolve(ext.imgRes)" :alt="ext.imgAlt" />
                 </a>
             </div>
+            <br/>
             &copy; Matt R. Manzi 2018
         </footer>
     </div>
@@ -40,9 +41,18 @@ export default {
         externalLinks() {
             return this.$store.state.externalLinks
         },
+        isFirstLoad() {
+            return this.$store.state.isFirstLoad
+        },
         ...mapGetters([
             'resolve'
         ])
+    },
+    mounted() {
+        // run after whole view has been loaded
+        this.$nextTick(function() {
+            this.$store.dispatch('toggleFirstLoad')
+        })
     }
 }
 </script>
@@ -62,7 +72,18 @@ a {
     text-decoration: none;
 }
 
+/* Shared transitions */
+.opacityTransition {
+    transition-property: opacity;
+    transition-duration: 1.5s;
+    transition-timing-function: cubic-bezier();
+}
+
 /* Shared attributes */
+.noshow {
+    opacity: 0;
+}
+
 .container {
     position: relative;
     width: 92%;
@@ -83,6 +104,10 @@ a {
     font-size: 5.5rem;
     font-weight: 300;
     vertical-align: middle;
+
+    transition-property: font-size, margin-top;
+    transition-duration: 1.5s;
+    transition-timing-function: cubic-bezier();
 }
 
 .custLink {
