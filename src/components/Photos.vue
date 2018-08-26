@@ -160,6 +160,8 @@ export default {
     height: inherit;
     object-fit: cover;
 
+    border-radius: 0.2em;
+
     transition-property: border-radius;
     transition-duration: 0.3s;
 }

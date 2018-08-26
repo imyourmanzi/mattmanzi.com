@@ -118,7 +118,10 @@ export default {
                     {id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
                 ],
                 shareEl: true,
-                captionEl: false
+                captionEl: false,
+                getTextForShare: function() {
+                    return "Check out this photo! -->"
+                }
             },
             insta: "https://www.instagram.com/imyourmanzi/"
         },
@@ -338,7 +341,7 @@ export default {
         toggleFirstLoad(context) {
             setTimeout(function() {
                 context.commit('toggleFirstLoad')
-            }, 1200)
+            }, 900)
         }
 
     }

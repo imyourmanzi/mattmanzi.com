@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="construction" :class="{'showConstruction': !['home', 'tech', 'resume'].includes(pageName)}">
+        <div class="construction" :class="{'showConstruction': ['faq', 'music'].includes(pageName)}">
             Notice: This website is still under construction, thank you for your understanding.
         </div>
         <router-view></router-view>
@@ -21,7 +21,7 @@
                 </a>
             </div>
             <br/>
-            &copy; Matt R. Manzi 2018
+            &copy; Matt Manzi 2018
         </footer>
     </div>
 </template>
