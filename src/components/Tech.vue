@@ -1,39 +1,44 @@
 <template>
     <div id="techContainer" class="container">
         <div id="contactJump">
-            Trouble with an App?&nbsp;&nbsp;&nbsp;<a href="#contact" class="custLink">Contact Support</a>
+            <div class="hanging full">
+                Trouble with an App?  <a href="#contact" class="custLink">Contact Support</a>
+            </div>
+            <div class="hanging tiny">
+                <a href="#contact" class="custLink">App Support</a>
+            </div>
         </div>
         <div id="projects">
-            <h1 class="md"># Projects</h1>
-            <h2 class="md">&nbsp;## iOS Apps</h2>
+            <h1>Projects</h1>
+            <h2>iOS Apps</h2>
             <div id="iosProjects">
                 <div class="panel" v-for="(proj, i) in tech.iosProjects" :key="i">
-                    <h3 class="md">{{ proj.name }}</h3>
+                    <h3>{{ proj.name }}</h3>
                     <img :src="resolve(proj.imgRes)" class="screenshot" :alt="proj.imgAlt" />
                     <p>{{ proj.about }}</p>
                     <a :href="proj.url" target="_blank"><img :src="resolve('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg')" /></a>
                 </div>
             </div>
             <!-- <div class="spacing"></div>
-            <h2 class="md">&nbsp;## Valley Match</h2>
+            <h2>Valley Match</h2>
             <p>
                 Purpose/intent, goals, about, etc.
             </p>
             <div id="valleyMatchSteps">
                 <div class="panel">
-                    <h3 class="md">Design and Approval</h3>
+                    <h3>Design and Approval</h3>
                     <p>
                         The desigadsfkfsdfkjl
                     </p>
                 </div>
                 <div class="panel">
-                    <h3 class="md">Development</h3>
+                    <h3>Development</h3>
                     <p>
                         The devgadsfkfsdfkjl
                     </p>
                 </div>
                 <div class="panel">
-                    <h3 class="md">Results</h3>
+                    <h3>Results</h3>
                     <p>
                         The resigadsfkfsdfkjl also a graph in here or something
                     </p>
@@ -42,9 +47,9 @@
         </div>
         <div class="spacing"></div>
         <div id="contact">
-            <h1 class="md"># Contact Support</h1>
-            <table id="standard">
-                <thead class="md">
+            <h1>Contact Support</h1>
+            <table class="full">
+                <thead>
                     <tr>
                         <th>App</th>
                         <th>Email</th>
@@ -57,7 +62,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table id="tiny" v-for="proj in tech.iosProjects" :key="proj.name">
+            <table class="tiny" v-for="proj in tech.iosProjects" :key="proj.name">
                 <tbody>
                     <tr>
                         <td>{{ proj.name }}</td>
@@ -89,23 +94,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#contactJump {
-    width: 19em;
-    margin-left: auto;
-    padding: 0.5em;
-
-    text-align: center;
-
-    border: solid thin white;
-    border-top: none;
-    background-color: #282828;
-}
-
-/* markdown style */
-.md {
-    padding: 0 1em;
-
-    font-family: 'Courier New', monospace;
+#contactJump .full {
+    position: relative;
+    width: 18em;
+    z-index: 99;
 }
 
 p {
@@ -115,8 +107,18 @@ p {
     padding: 0 3%;
 }
 
+h2 {
+    padding-left: 1em;
+}
+
 h3 {
     text-align: center;
+}
+
+#projects {
+    position: relative;
+    top: -2.25em;
+    z-index: 0;
 }
 
 .panel {
@@ -151,71 +153,74 @@ h3 {
     opacity: 1;
 }
 
-#valleyMatchSteps {
+/* #valleyMatchSteps {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
+} */
 
-#contact #tiny {
-    display: none;
-}
-
-#contact #standard {
+#contact .full {
+    display: table;
     margin: auto;
 
     border-collapse: collapse;
 }
 
-#contact #standard thead {
+#contact .full thead {
     background-color: black;
 
     text-align: center;
 }
 
-#contact #standard th, td {
+#contact .full th, td {
     padding: 0.3em 1.5em;
 
     border: 1px solid #494949;
 }
 
-#contact #standard tbody tr:nth-child(odd) {
+#contact .full tbody tr:nth-child(odd) {
     background-color: #282828;
 }
 
-#contact #standard tbody tr:nth-child(even) {
+#contact .full tbody tr:nth-child(even) {
     background-color: #191919;
 }
 
 @media screen and (max-aspect-ratio: 767/1024) {
 
-    #contact #standard {
+    #contactJump .tiny {
+        position: relative;
+        width: 6em;
+        z-index: 99;
+    }
+
+    #contact .full {
         display: none;
     }
 
-    #contact #tiny {
+    #contact .tiny {
+        width: 100%;
         margin: auto;
 
         display: table;
-        width: 80%;
     }
 
-    #contact #tiny {
+    #contact .tiny {
         margin-bottom: 1em;
 
         border-collapse: collapse;
     }
 
-    #contact #tiny tr:nth-child(odd) {
+    #contact .tiny tr:nth-child(odd) {
         background-color: black;
         border-bottom: 2px solid #494949;
     }
 
-    #contact #tiny tbody tr:nth-child(even) {
+    #contact .tiny tbody tr:nth-child(even) {
         background-color: #282828;
     }
 
-    #contact #tiny td {
+    #contact .tiny td {
         border: none;
     }
 

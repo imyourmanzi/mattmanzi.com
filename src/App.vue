@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Leckerli+One|Quicksand:300,400');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
 
 /* Root-level attributes */
 body {
@@ -119,6 +119,17 @@ a {
     text-decoration: underline;
 }
 
+.hanging {
+    margin-left: auto;
+    padding: 0.4em;
+
+    text-align: center;
+
+    border: solid thin white;
+    border-top: none;
+    background-color: #282828;
+}
+
 .errorBanner {
     margin-top: 0.5em;
     padding: 0.2em;
@@ -128,6 +139,14 @@ a {
 
     border-radius: 1em;
     background-color: #cc6666;
+}
+
+.full {
+    display: inherit;
+}
+
+.tiny {
+    display: none;
 }
 
 /* App attributes */
@@ -237,6 +256,14 @@ footer {
 
 /* Extra tall and skinny screens (i.e. smartphones) */
 @media screen and (max-aspect-ratio: 767/1024) {
+
+    .full {
+        display: none;
+    }
+
+    .tiny {
+        display: inherit;
+    }
 
     .container {
         width: 92%;

@@ -1,10 +1,10 @@
 <template>
     <div id="photosContainer" class="container">
-        <div class="errorBanner" v-if="featuredFetchError !== null">
-            <strong>An error ({{ featuredFetchError.status }} {{ featuredFetchError.message }}) occurred fetching featured photo collections: {{ featuredFetchError.resource }}</strong>
-        </div>
-        <div id="featuredContainer" v-else-if="featuredCollections.length > 0">
+        <div id="featuredContainer" v-if="featuredCollections.length > 0 || featuredFetchError !== null">
             <h1>Featured Collections</h1>
+            <div class="errorBanner" v-if="featuredFetchError !== null">
+                <strong>An error ({{ featuredFetchError.status }} {{ featuredFetchError.message }}) occurred fetching featured photo collections: {{ featuredFetchError.resource }}</strong>
+            </div>
             <div id="featuredCollections">
                 <div class="photoCollectionBoundingBox" v-for="feat in featuredCollections" :key="feat.id">
                     <router-link class="custLink" :to="{ name: 'featured-photo-collection', params: { feat_id: feat.id }}">

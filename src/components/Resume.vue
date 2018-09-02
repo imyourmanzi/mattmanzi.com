@@ -2,15 +2,22 @@
     <div id="resumeContainer" class="container">
         <!-- download box -->
         <div id="downloadContainer">
-            <a class="custLink" :href="resolve('resume_pdf')" target="_blank">
-                <!-- no space between image and text to avoid awkward underline -->
-                <img :src="resolve('dl.svg')" />Download PDF
-            </a>
+            <div class="hanging full">
+                <a class="custLink" :href="resolve('resume_pdf')" target="_blank">
+                    <!-- no space between image and text to avoid awkward underline -->
+                    <img :src="resolve('dl.svg')" />Download PDF
+                </a>
+            </div>
+            <div class="hanging tiny">
+                <a class="custLink" :href="resolve('resume_pdf')" target="_blank">
+                    <img :src="resolve('dl.svg')" />
+                </a>
+            </div>
         </div>
         <!-- resume header -->
         <div id="nameplate">
             <h1>Matt R. Manzi</h1>
-            WAA 3322B, UMBC 1000 Hilltop Circle, Baltimore, MD 21250 • (610) 368-4021 • <a href="mailto:manzi.matthewr@gmail.com">manzi.matthewr@gmail.com</a>
+            WAA&nbsp;3322B, UMBC&nbsp;1000&nbsp;Hilltop&nbsp;Circle, Baltimore,&nbsp;MD&nbsp;21250 • (610)&nbsp;368-4021 • <a href="mailto:manzi.matthewr@gmail.com">manzi.matthewr@gmail.com</a>
         </div>
         <!-- education header -->
         <div class="section" @click="toggleShowSection(resume.ids.education)">
@@ -148,15 +155,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#downloadContainer {
+#downloadContainer .full {
+    position: relative;
     width: 9em;
-    padding: 0.5em;
-
-    text-align: center;
-
-    border: solid thin white;
-    border-top: none;
-    background-color: #282828;
+    z-index: 99;
 }
 
 #downloadContainer img {
@@ -171,6 +173,10 @@ h1 {
 }
 
 #nameplate {
+    position: relative;
+    top: -2.25em;
+    z-index: 0;
+
     text-align: center;
 }
 
@@ -238,5 +244,15 @@ ul {
 
 .reveal-leave-active {
     transition: opacity 0.2s;
+}
+
+@media screen and (max-aspect-ratio: 767/1024) {
+
+    #downloadContainer .tiny {
+        position: relative;
+        width: 1em;
+        z-index: 99;
+    }
+
 }
 </style>
