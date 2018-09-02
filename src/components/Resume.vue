@@ -174,7 +174,7 @@ h1 {
 
 #nameplate {
     position: relative;
-    top: -2.25em;
+    top: -2.15em;
     z-index: 0;
 
     text-align: center;

@@ -45,7 +45,6 @@
                 </div>
             </div> -->
         </div>
-        <div class="spacing"></div>
         <div id="contact">
             <h1>Contact Support</h1>
             <table class="full">
@@ -117,7 +116,7 @@ h3 {
 
 #projects {
     position: relative;
-    top: -2.25em;
+    top: -2.15em;
     z-index: 0;
 }
 
