@@ -65,7 +65,9 @@ export default {
     methods: {
         getCollections() {
             this.$http.get(this.$store.state.photos.baseApiUrlFeatured).then(response => {
-                this.featuredCollections = response.body
+                this.featuredCollections = response.body.sort((a,b) => {
+                    return a.date < b.date
+                })
                 this.fetchError = null
             }, response => {
                 this.featuredCollections = []
@@ -77,7 +79,9 @@ export default {
             })
 
             this.$http.get(this.$store.state.photos.baseApiUrl).then(response => {
-                this.collections = response.body
+                this.collections = response.body.sort((a,b) => {
+                    return a.date < b.date
+                })
                 this.fetchError = null
             }, response => {
                 this.collections = []
