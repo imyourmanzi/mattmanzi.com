@@ -4,9 +4,8 @@
             <strong>An error ({{ fetchError.status }} {{ fetchError.message }}) occurred fetching resource: {{ fetchError.resource }}</strong>
         </div>
         <div id="backToCollections">
-            <router-link class="custLink" :to="{ name: 'photos' }">
-                <big>&lt;</big> All Collections
-            </router-link>
+            <big>&lt; </big>
+            <router-link class="custLink" :to="{ name: 'photos' }">All Collections</router-link>
         </div>
         <h1>{{ name }} <small>{{ date }}</small></h1>
         <div id="photoCollectionDescription">{{ description }}</div>
@@ -23,9 +22,9 @@ export default {
         return {
             fetchError: null,
             id: -1,
-            name: "Unknown Photo Collection: " + this.$store.state.route.params.col_id,
-            date: "-",
-            description: "The requested photo collection could not be found.",
+            name: "",
+            date: "",
+            description: "",
             photos: []
         }
     },
