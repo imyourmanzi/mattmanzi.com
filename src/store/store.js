@@ -1,7 +1,7 @@
 const DOMAIN_NAME = "mattmanzi.com"
 
 const RESUME_PREFIX  = "Matt R Manzi - "
-const RESUME_VERSION = "05-2018 Technical v1"
+const RESUME_VERSION = "08-2018 Technical v1"
 
 const STATIC_DIR    = "" // static dir changed to public in v3+, route needs to be abosolute
 const IMG_DIR       = STATIC_DIR + "img/"
@@ -148,15 +148,15 @@ export default {
             skills: [
                 {
                     subset: "Programming",
-                    values: ["Java", "Python", "C++", "C", "Swift (iOS)", "SQL", "Bash", "HTML", "CSS", "JavaScript", "C#"]
+                    values: ["Java", "Python", "C++", "C", "Swift (iOS)", "SQL", "Bash", "HTML", "CSS", "JavaScript", "Intel Assembly (x86-64)", "C#"]
                 },
                 {
                     subset: "Operating Systems",
-                    values: ["macOS 9-12", "Ubuntu Server/Desktop 16", "Windows 10"]
+                    values: ["macOS 9-12", "Ubuntu Server/Desktop 16", "CentOS 7", "Windows 10"]
                 },
                 {
                     subset: "Software",
-                    values: ["MS-Office", "Xcode", "NetBeans", "SQL Server Mgmt Studio", "Splunk 6.3 Power User", "VMware", "Eclipse"]
+                    values: ["MS-Office", "Xcode", "Splunk 6.3 Power User", "Elastic Stack", "Palo Alto NetFlow", "VMware"]
                 },
                 {
                     subset: "Hardware",
@@ -166,7 +166,7 @@ export default {
             experience: [
                 {
                     employerName: "UMBC",
-                    title: "Computer Science Teaching Assistant",
+                    title: "Computer Science Lead Teaching Assistant",
                     location: "Baltimore, MD",
                     timeDetail: "Aug 2017 – Present",
                     points: [
@@ -181,8 +181,19 @@ export default {
                     location: "Aston, PA",
                     timeDetail: "Sep 2014 – Present",
                     points: [
-                        "Design, develop and publish mobile applications through self-direction",
+                        "Design, develop, and publish mobile applications through self-direction",
                         "Three (3) applications available on the Apple App Store"
+                    ]
+                },
+                {
+                    employerName: "Parsons Cyber",
+                    title: "Cybersecurity Engineer Intern",
+                    location: "Columbia, MD",
+                    timeDetail: "Jun – Aug 2018",
+                    points: [
+                        "Defined, designed, developed, and implemented cybersecurity analytics and visualizations to identify and assess network and device security and vulnerabilities, and microservices for extensive, parallelized data correlation",
+                        "Analyzed network traffic for individual and overall anomalies in connections",
+                        "Researched, configured, and implemented offline region-mapping visualization solution for potential cybersecurity network risks"
                     ]
                 },
                 {
@@ -202,20 +213,25 @@ export default {
                     location: "",
                     timeDetail: "Aug 2016 – May 2017",
                     points: [
-                        "Built and integrated features to provide crucial website functionality and benefit user experience, including a payment system and product pages",
-                        "Collaborated with 5 team members to facilitate personal and other’s contributions to the startup of the company",
-                        "Contributed to formation of the business as a member of the management team"
+                        "Developed website payment system and product pages; company startup and formation"
                     ]
                 }
             ],
             projects: [
                 {
+                    name: "Summer Intern Presentation Showcase (SIPS), AFCEA Central Maryland",
+                    organization: "AFCEA Central Maryland",
+                    timeDetail: "Jul 2018",
+                    points: [
+                        "Presented solution to internal and external business leaders in AFCEA"
+                    ]
+                },
+                {
                     name: "Mid-Atlantic Collegiate Cyber Defense Competition Qualifiers",
                     organization: "UMBC",
                     timeDetail: "Feb 2018",
                     points: [
-                        "Managed and protected multiple Linux-based systems",
-                        "Managed firewall rules for each device"
+                        "Managed and protected multiple Linux-based systems and firewall rules for each device"
                     ]
                 },
                 {
@@ -232,14 +248,6 @@ export default {
                     timeDetail: "Apr 2017",
                     points: [
                         "Collaborated with 3 students to brainstorm, develop, launch, and present a winning web application (using Django API in Python on a Heroku app) in a 24-hour time constraint, aimed to help crime victims"
-                    ]
-                },
-                {
-                    name: "HackUMBC Hackathon",
-                    organization: "UMBC",
-                    timeDetail: "Oct 2016",
-                    points: [
-                        "Collaborated with 3 students to brainstorm, develop, launch, and present an original website in a 24-hour time constraint to provide users with crowdsourced restaurant wait times"
                     ]
                 }
             ],
