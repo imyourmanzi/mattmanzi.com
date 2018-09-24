@@ -16,12 +16,12 @@
         <router-view></router-view>
         <footer :class="{'noshow': isFirstLoad, 'opacityTransition': true, 'dividedBottom': pageName !== 'home'}">
             <div id="extLinks">
-                <a :href="ext.url" class="extLink" v-for="ext in externalLinks" :key="ext.imgRes">
+                <a :href="ext.url" class="extLink" v-for="ext in externalLinks" :key="ext.imgRes" target="_blank">
                     <img :src="resolve(ext.imgRes)" :alt="ext.imgAlt" />
                 </a>
             </div>
             <br/>
-            &copy; Matt Manzi 2018
+            👨‍💻 with ❤️ by <a class="sectionLink" :href="externalLinks[2].url" target="_blank">mmanzi1</a>
         </footer>
     </div>
 </template>
@@ -125,7 +125,7 @@ a {
 
     text-align: center;
 
-    border: solid thin white;
+    border: 1px solid gray;
     border-top: none;
     background-color: #282828;
 }
@@ -250,6 +250,12 @@ footer {
     width: 100%;
     bottom: 0;
     padding: 0 0 1em 0;
+
+    font-size: 0.93em;
+}
+
+footer .sectionLink {
+    padding: 0;
 
     font-size: 0.93em;
 }

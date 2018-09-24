@@ -1,22 +1,18 @@
 <template>
     <div id="techContainer" class="container">
-        <div id="contactJump">
-            <div class="hanging full">
-                Trouble with an App?  <a href="#contact" class="custLink">Contact Support</a>
-            </div>
-            <div class="hanging tiny">
-                <a href="#contact" class="custLink">App Support</a>
-            </div>
-        </div>
         <div id="projects">
             <h1>Projects</h1>
             <h2>iOS Apps</h2>
             <div id="iosProjects">
                 <div class="panel" v-for="(proj, i) in tech.iosProjects" :key="i">
                     <h3>{{ proj.name }}</h3>
+                    <div class="appStore">
+                        <a :href="proj.url" target="_blank">
+                            <img :src="resolve('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg')" />
+                        </a>
+                    </div>
                     <img :src="resolve(proj.imgRes)" class="screenshot" :alt="proj.imgAlt" />
                     <p>{{ proj.about }}</p>
-                    <a :href="proj.url" target="_blank"><img :src="resolve('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg')" /></a>
                 </div>
             </div>
             <!-- <div class="spacing"></div>
@@ -93,12 +89,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#contactJump .full {
-    position: relative;
-    width: 18em;
-    z-index: 99;
-}
-
 p {
     white-space: pre-line;
 
@@ -114,10 +104,10 @@ h3 {
     text-align: center;
 }
 
-#projects {
-    position: relative;
-    top: -2.15em;
-    z-index: 0;
+#iosProjects {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .panel {
@@ -125,10 +115,22 @@ h3 {
     width: 22em;
 }
 
-#iosProjects {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.panel h3 {
+    margin-bottom: 0.5em;
+}
+
+.appStore {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.5em;
+
+    text-align: center;
+}
+
+.appStore img {
+    height: 35px;
+
+    text-align: center;
 }
 
 .screenshot {
@@ -151,12 +153,6 @@ h3 {
     border-radius: 10px;
     opacity: 1;
 }
-
-/* #valleyMatchSteps {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-} */
 
 #contact .full {
     display: table;
@@ -186,12 +182,6 @@ h3 {
 }
 
 @media screen and (max-aspect-ratio: 767/1024) {
-
-    #contactJump .tiny {
-        position: relative;
-        width: 6em;
-        z-index: 99;
-    }
 
     #contact .full {
         display: none;
