@@ -17,7 +17,7 @@
         <!-- resume header -->
         <div id="nameplate">
             <h1>Matt R. Manzi</h1>
-            WAA&nbsp;3322B, UMBC&nbsp;1000&nbsp;Hilltop&nbsp;Circle, Baltimore,&nbsp;MD&nbsp;21250 • (610)&nbsp;368-4021 • <a href="mailto:manzi.matthewr@gmail.com">manzi.matthewr@gmail.com</a>
+            <a href="mailto:manzi.matthewr@gmail.com">manzi.matthewr@gmail.com</a> • (610)&nbsp;368-4021
         </div>
         <!-- education header -->
         <div class="section" @click="toggleShowSection(resume.ids.education)">
