@@ -1,5 +1,21 @@
 <template>
     <div id="app">
+        <div id="rightsBanner">
+            <div :class="{'rights': true, 'full': true, 'hanging': true, 'open': rightsOpen}">
+                {{ rightsBanner.content }}
+            </div>
+            <div :class="{'rights': true, 'tiny': true, 'hanging': true, 'open': rightsOpen}">
+                {{ rightsBanner.content }}
+            </div>
+        </div>
+
+        <!-- Add @click to this and method to toggle rightsOpen -->
+        <!-- Make pride flag a data string and change it to an 'X' when open (in same method as above) -->
+        <!-- Then add animation on `top` attr -->
+
+        <!-- Test, then do .tiny: same button, different banner, with full width and all that jazz -->
+        <div id="rightsBannerButton" :class="{'noshow': isFirstLoad, 'opacityTransition': true, 'rights': true, 'hanging': true, 'open': rightsOpen}" @click="toggleRightsBanner()"><strong>{{ (rightsOpen) ? rightsBanner.buttonClose : rightsBanner.buttonOpen }}</strong></div>
+
         <div id="header" :class="{'dividedTop': pageName !== 'home'}">
             <router-link :to="'/'" id="titleLink">
             MattManzi<small>.com</small>
@@ -31,7 +47,15 @@ import { mapGetters } from 'vuex'
 
 export default {
     name: 'app',
+    data() {
+        return {
+            rightsOpen: false
+        }
+    },
     computed: {
+        rightsBanner() {
+            return this.$store.state.rightsBanner
+        },
         sections() {
             return this.$store.state.sections
         },
@@ -53,6 +77,11 @@ export default {
         this.$nextTick(function() {
             this.$store.dispatch('toggleFirstLoad')
         })
+    },
+    methods: {
+        toggleRightsBanner() {
+            this.rightsOpen = !this.rightsOpen
+        }
     }
 }
 </script>
@@ -162,7 +191,51 @@ a {
     color: white;
 }
 
+.rights { /* Common attrs for rights banner elements */
+    font-size: 85%;
+
+    transition-property: top, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier();
+}
+
 /* Layout attributes */
+#rightsBannerButton {
+    position: absolute;
+    width: 2rem;
+    top:-0.5rem;
+    left: 5%;
+    right: auto;
+    padding-top: 0.7rem;
+    z-index: 99;
+
+    cursor: pointer;
+
+    /* modifications on .hanging class specs */
+    border: none;
+    border-radius: 5px;
+}
+
+#rightsBannerButton.open {
+    top: 6.7rem;
+}
+
+#rightsBanner .full {
+    position: absolute;
+    height: 6rem;
+    width: 12rem;
+    top: -8rem;
+    left: 4.5%;
+    padding-top: 1.5rem;
+    z-index: 100;
+
+    border-radius: 5px;
+}
+
+#rightsBanner .full.open {
+    top: -1rem;
+}
+
 #header {
     position: relative;
     width: 92%;

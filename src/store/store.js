@@ -19,6 +19,28 @@ export default {
     strict: process.env.NODE_ENV !== "production",
     state: {
         isFirstLoad: true,
+        rightsBanner: {
+            buttonOpen: "🏳️‍🌈",
+            buttonClose: "X",
+            content: "LGBT community asdfklasdfj kl;sajfsa ljsdf j;",
+            links: [
+                {
+                    actionWord: "",
+                    url: "",
+                    description: ""
+                },
+                {
+                    actionWord: "",
+                    url: "",
+                    description: ""
+                },
+                {
+                    actionWord: "",
+                    url: "",
+                    description: ""
+                }
+            ]
+        },
         sections: [
             {
                 title: "Tech",
