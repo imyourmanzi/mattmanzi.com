@@ -129,7 +129,7 @@ export default {
 }
 
 .activeCollection > .thumbnailSquare > .thumbnailCorner > img {
-    border-radius: 0.4em;
+    border-radius: 10px;
 }
 
 .photoCollection h3 {
@@ -164,8 +164,6 @@ export default {
     height: inherit;
     object-fit: cover;
 
-    border-radius: 0.2em;
-
     transition-property: border-radius;
     transition-duration: 0.3s;
 }
@@ -181,9 +179,9 @@ export default {
         height: 12em;
     }
 
-    .activeCollection > .thumbnailSquare > .thumbnailCorner > img {
-        border-radius: 0;
-    }
+    /* .activeCollection > .thumbnailSquare > .thumbnailCorner > img {
+        border-radius: 5px;
+    } */
 
 }
 </style>

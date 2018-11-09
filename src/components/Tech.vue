@@ -138,7 +138,7 @@ h3 {
     height: 85px;
     margin: 0 2%;
 
-    border-radius: 15px;
+    border-radius: 10px;
     object-fit: cover;
     opacity: 0.7;
 
@@ -150,7 +150,7 @@ h3 {
 .screenshot:hover {
     height: 675px;
 
-    border-radius: 10px;
+    border-radius: 5px;
     opacity: 1;
 }
 

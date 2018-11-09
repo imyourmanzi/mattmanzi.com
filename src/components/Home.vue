@@ -69,7 +69,6 @@ export default {
     height: 16rem;
 
     border: solid thin white;
-    border-radius: 5px;
 }
 
 .sectionInnerBox p {

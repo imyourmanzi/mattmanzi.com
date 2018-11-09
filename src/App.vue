@@ -12,8 +12,8 @@
         <!-- Add @click to this and method to toggle rightsOpen -->
         <!-- Make pride flag a data string and change it to an 'X' when open (in same method as above) -->
         <!-- Then add animation on `top` attr -->
-
         <!-- Test, then do .tiny: same button, different banner, with full width and all that jazz -->
+
         <div id="rightsBannerButton" :class="{'noshow': isFirstLoad, 'opacityTransition': true, 'rights': true, 'hanging': true, 'open': rightsOpen}" @click="toggleRightsBanner()"><strong>{{ (rightsOpen) ? rightsBanner.buttonClose : rightsBanner.buttonOpen }}</strong></div>
 
         <div id="header" :class="{'dividedTop': pageName !== 'home'}">
@@ -88,6 +88,10 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
+/* Global attributes */
+* {
+    border-radius: 5px;
+}
 
 /* Root-level attributes */
 body {
@@ -156,6 +160,8 @@ a {
 
     border: 1px solid gray;
     border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     background-color: #282828;
 }
 
@@ -166,7 +172,6 @@ a {
     text-align: center;
     color: black;
 
-    border-radius: 1em;
     background-color: #cc6666;
 }
 
@@ -191,49 +196,63 @@ a {
     color: white;
 }
 
+/* Layout attributes */
 .rights { /* Common attrs for rights banner elements */
     font-size: 85%;
 
-    transition-property: top, opacity;
-    transition-duration: 0.5s;
+    transition: top 0.5s,
+                opacity 1.5s;
     transition-timing-function: cubic-bezier();
 }
 
-/* Layout attributes */
 #rightsBannerButton {
     position: absolute;
     width: 2rem;
-    top:-0.5rem;
-    left: 5%;
+    top: 0;
+    left: 3%;
     right: auto;
-    padding-top: 0.7rem;
     z-index: 99;
-
     cursor: pointer;
 
     /* modifications on .hanging class specs */
     border: none;
-    border-radius: 5px;
 }
 
 #rightsBannerButton.open {
-    top: 6.7rem;
+    top: 10.8rem;
 }
 
 #rightsBanner .full {
     position: absolute;
-    height: 6rem;
+    height: 10rem;
     width: 12rem;
-    top: -8rem;
-    left: 4.5%;
-    padding-top: 1.5rem;
+    top: -12rem;
+    left: 2.5%;
     z-index: 100;
-
-    border-radius: 5px;
 }
 
 #rightsBanner .full.open {
-    top: -1rem;
+    top: 0rem;
+}
+
+#rightsBanner .tiny {
+    position: absolute;
+    height: 10rem;
+    top: -12rem;
+    left: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    z-index: 100;
+
+    /* modifications on .hanging class specs */
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+#rightsBanner .tiny.open {
+    position: relative;
+    top: 0rem;
 }
 
 #header {
