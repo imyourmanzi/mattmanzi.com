@@ -22,22 +22,22 @@ export default {
         rightsBanner: {
             buttonOpen: "🏳️‍🌈",
             buttonClose: "X",
-            content: "LGBT community asdfklasdfj kl;sajfsa ljsdf j;",
+            content: "In light of current legistature and public opinion, I would like to share some resources about people who are transgender and the LGBTQ community, as well as how to be a more understanding ally.",
             links: [
                 {
-                    actionWord: "",
-                    url: "",
-                    description: ""
+                    linkText: "here",
+                    url: "https://www.hrc.org/resources/understanding-the-transgender-community",
+                    text: "Transgender people exists like everyone else in their daily lives and are a part of our society, just as the rest of us.  Still, they don't receive the same recognition or respect as most others.  Read more"
                 },
                 {
-                    actionWord: "",
-                    url: "",
-                    description: ""
+                    linkText: "here",
+                    url: "https://www.psychologytoday.com/us/blog/the-truth-about-exercise-addiction/201612/why-transgender-people-experience-more-mental-health",
+                    text: "Many people believe that in some way transgender people are mentally ill or have a disorder.  Often, they do, but it is does not cause them to become transgender, rather it is because they are.  Read the full article"
                 },
                 {
-                    actionWord: "",
-                    url: "",
-                    description: ""
+                    linkText: "here",
+                    url: "https://www.glaad.org/transgender/allies",
+                    text: "Being an ally doesn't mean changing your entire lifestyle and bending over backwards to accomodate others.  However, there are small things that you can do to be courteous and accepting of transgender people.  Find out"
                 }
             ]
         },

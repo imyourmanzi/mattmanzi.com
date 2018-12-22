@@ -1,20 +1,27 @@
 <template>
     <div id="app">
-        <div id="rightsBanner">
+        <div id="rightsBanner" v-if="pageName == 'home'">
             <div :class="{'rights': true, 'full': true, 'hanging': true, 'open': rightsOpen}">
-                {{ rightsBanner.content }}
+                <strong>{{ rightsBanner.content }}</strong>
+                <p v-for="link in rightsBanner.links" :key="link.url">
+                    {{ link.text }} <a class="custLink" :href="link.url">{{ link.linkText }}</a>
+                </p>
             </div>
-            <div :class="{'rights': true, 'tiny': true, 'hanging': true, 'open': rightsOpen}">
-                {{ rightsBanner.content }}
+            <div v-show="rightsOpen" :class="{'rights': true, 'tiny': true, 'hanging': true, 'open': rightsOpen}">
+                <strong>{{ rightsBanner.content }}</strong>
+                <p v-for="link in rightsBanner.links" :key="link.url">
+                    {{ link.text }} <a class="custLink" :href="link.url">{{ link.linkText }}</a>
+                </p>
             </div>
         </div>
-
-        <!-- Add @click to this and method to toggle rightsOpen -->
-        <!-- Make pride flag a data string and change it to an 'X' when open (in same method as above) -->
-        <!-- Then add animation on `top` attr -->
-        <!-- Test, then do .tiny: same button, different banner, with full width and all that jazz -->
-
-        <div id="rightsBannerButton" :class="{'noshow': isFirstLoad, 'opacityTransition': true, 'rights': true, 'hanging': true, 'open': rightsOpen}" @click="toggleRightsBanner()"><strong>{{ (rightsOpen) ? rightsBanner.buttonClose : rightsBanner.buttonOpen }}</strong></div>
+        <div id="rightsBannerButton" v-if="pageName == 'home'">
+            <div :class="{'noshow': isFirstLoad, 'opacityTransition': true, 'rights': true, 'hanging': true, 'full': true, 'open': rightsOpen}" @click="toggleRightsBanner()">
+                <strong>{{ (rightsOpen) ? rightsBanner.buttonClose : rightsBanner.buttonOpen }}</strong>
+            </div>
+            <div :class="{'noshow': isFirstLoad, 'opacityTransition': true, 'rights': true, 'hanging': true, 'tiny': true, 'open': rightsOpen}" @click="toggleRightsBanner()">
+                <strong>{{ (rightsOpen) ? rightsBanner.buttonClose : '❔' }}</strong>
+            </div>
+        </div>
 
         <div id="header" :class="{'dividedTop': pageName !== 'home'}">
             <router-link :to="'/'" id="titleLink">
@@ -109,7 +116,7 @@ a {
 .opacityTransition {
     transition-property: opacity;
     transition-duration: 1.5s;
-    transition-timing-function: cubic-bezier();
+    transition-timing-function: ease;
 }
 
 /* Shared attributes */
@@ -202,57 +209,79 @@ a {
 
     transition: top 0.5s,
                 opacity 1.5s;
-    transition-timing-function: cubic-bezier();
+    transition-timing-function: ease;
 }
 
 #rightsBannerButton {
+    cursor: pointer;
+}
+
+#rightsBannerButton .full {
     position: absolute;
     width: 2rem;
-    top: 0;
+    top: 0rem;
     left: 3%;
     right: auto;
     z-index: 99;
-    cursor: pointer;
 
     /* modifications on .hanging class specs */
     border: none;
 }
 
-#rightsBannerButton.open {
-    top: 10.8rem;
+#rightsBannerButton .full.open {
+    top: 10rem;
+    margin-top: 1.1rem;
+}
+
+#rightsBannerButton .tiny {
+    height: 1.2rem;
+    padding: 0 0.5rem;
+    margin: 0;
+
+    text-align: left;
+    font-size: 70%;
+
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+
+    /* modifications on .hanging class specs */
+    border: none;
+    border-radius: 0;
+}
+
+#rightsBannerButton .tiny.open {
+    height: 1rem;
 }
 
 #rightsBanner .full {
     position: absolute;
     height: 10rem;
-    width: 12rem;
-    top: -12rem;
+    width: 22rem;
+    top: -10.05rem;
     left: 2.5%;
+    margin: 0;
+    padding: 0 0.25rem;
     z-index: 100;
+
+    overflow: scroll;
 }
 
 #rightsBanner .full.open {
     top: 0rem;
+    padding: 0.5rem 0.25rem;
 }
 
 #rightsBanner .tiny {
-    position: absolute;
     height: 10rem;
-    top: -12rem;
     left: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    z-index: 100;
+    margin: auto;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+
+    overflow: scroll;
 
     /* modifications on .hanging class specs */
-    border-left: none;
-    border-right: none;
+    border: none;
     border-radius: 0;
-}
-
-#rightsBanner .tiny.open {
-    position: relative;
-    top: 0rem;
 }
 
 #header {
@@ -263,10 +292,14 @@ a {
 
 .dividedTop {
     border-bottom: 1px solid gray;
+
+    border-radius: 0;
 }
 
 .dividedBottom {
     border-top: 1px solid gray;
+
+    border-radius: 0;
 }
 
 #header small {
