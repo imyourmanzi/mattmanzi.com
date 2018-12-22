@@ -262,7 +262,7 @@ a {
     padding: 0 0.25rem;
     z-index: 100;
 
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 #rightsBanner .full.open {
@@ -277,7 +277,7 @@ a {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
 
-    overflow: scroll;
+    overflow-y: scroll;
 
     /* modifications on .hanging class specs */
     border: none;
