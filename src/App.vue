@@ -4,13 +4,13 @@
             <div :class="{'rights': true, 'full': true, 'hanging': true, 'open': rightsOpen}">
                 <strong>{{ rightsBanner.content }}</strong>
                 <p v-for="link in rightsBanner.links" :key="link.url">
-                    {{ link.text }} <a class="custLink" :href="link.url">{{ link.linkText }}</a>
+                    {{ link.text }} <a class="custLink" :href="link.url" target="_blank">{{ link.linkText }}</a>
                 </p>
             </div>
             <div v-show="rightsOpen" :class="{'rights': true, 'tiny': true, 'hanging': true, 'open': rightsOpen}">
                 <strong>{{ rightsBanner.content }}</strong>
                 <p v-for="link in rightsBanner.links" :key="link.url">
-                    {{ link.text }} <a class="custLink" :href="link.url">{{ link.linkText }}</a>
+                    {{ link.text }}<a class="custLink" :href="link.url" target="_blank">{{ link.linkText }}</a>
                 </p>
             </div>
         </div>
@@ -95,12 +95,19 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
-/* Global attributes */
+
+/**
+    Global attributes
+**/
+
 * {
     border-radius: 5px;
 }
 
-/* Root-level attributes */
+/**
+    Root-level attributes
+**/
+
 body {
     margin: 0;
     padding: 0;
@@ -112,14 +119,20 @@ a {
     text-decoration: none;
 }
 
-/* Shared transitions */
+/**
+    Shared transitions
+**/
+
 .opacityTransition {
     transition-property: opacity;
     transition-duration: 1.5s;
     transition-timing-function: ease;
 }
 
-/* Shared attributes */
+/**
+    Shared attributes
+**/
+
 .noshow {
     opacity: 0;
 }
@@ -190,21 +203,30 @@ a {
     display: none;
 }
 
-/* App attributes */
+/**
+    App attributes
+**/
+
 #app {
     width: 100%;
 
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
-    font-size: 18px; /* make the whole site have a slighty larger font (default: 16px) */
+    /* make the whole site have a slighty larger font (default: 16px) */
+    font-size: 18px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: white;
 }
 
-/* Layout attributes */
-.rights { /* Common attrs for rights banner elements */
+/**
+    Layout attributes
+**/
+
+/* Common attrs for rights banner elements */
+.rights {
+
     font-size: 85%;
 
     transition: top 0.5s,
@@ -287,7 +309,7 @@ a {
 #header {
     position: relative;
     width: 92%;
-    padding: 2% 4% 1% 4%; /* top: 2%, bottom: 1%, left & right: 4% */
+    padding: 2% 4% 1% 4%;
 }
 
 .dividedTop {
@@ -321,7 +343,7 @@ a {
 }
 
 .sectionLink {
-    padding: 0em 1em; /* top & bottom: 0em, left & right: 1em */
+    padding: 0em 1em;
 
     font-size: 1.25em;
     color: white;
@@ -408,8 +430,8 @@ footer .sectionLink {
     }
 
     .sectionLink {
-        flex: 0 0 auto; /* flex grow and shrink: 0, basis: auto */
-        padding: 0em 0.6em; /* top & bottom: 0em, left & right: 0.6em */
+        flex: 0 0 auto;
+        padding: 0em 0.6em;
     }
 
 }

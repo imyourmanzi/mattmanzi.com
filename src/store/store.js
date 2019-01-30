@@ -22,22 +22,22 @@ export default {
         rightsBanner: {
             buttonOpen: "🏳️‍🌈",
             buttonClose: "X",
-            content: "In light of current legistature and public opinion, I would like to share some resources about people who are transgender and the LGBTQ community, as well as how to be a more understanding ally.",
+            content: "In light of current legistature, I would like to share some resources about becoming a better ally to those who are transgender.",
             links: [
                 {
-                    linkText: "here",
+                    linkText: "more than just my own perspective.",
                     url: "https://www.hrc.org/resources/understanding-the-transgender-community",
-                    text: "Transgender people exists like everyone else in their daily lives and are a part of our society, just as the rest of us.  Still, they don't receive the same recognition or respect as most others.  Read more"
+                    text: "There are more transgender people around us than we realize, and it's not always obvious nor does it need to be; they integrate into society like everyone else.  Still, I find it helpful to understand "
                 },
                 {
-                    linkText: "here",
+                    linkText: "why?",
                     url: "https://www.psychologytoday.com/us/blog/the-truth-about-exercise-addiction/201612/why-transgender-people-experience-more-mental-health",
-                    text: "Many people believe that in some way transgender people are mentally ill or have a disorder.  Often, they do, but it is does not cause them to become transgender, rather it is because they are.  Read the full article"
+                    text: "Being transgender often comes with a lot of baggage, but "
                 },
                 {
-                    linkText: "here",
+                    linkText: "support people being themselves.",
                     url: "https://www.glaad.org/transgender/allies",
-                    text: "Being an ally doesn't mean changing your entire lifestyle and bending over backwards to accomodate others.  However, there are small things that you can do to be courteous and accepting of transgender people.  Find out"
+                    text: "As an ally, I didn't need to change my lifestyle or bend over backwards to accomodate others.  I just do small things to be courteous (like respecting pronouns) to show that I "
                 }
             ]
         },
