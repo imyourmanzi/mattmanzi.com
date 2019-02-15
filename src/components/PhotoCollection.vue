@@ -7,8 +7,11 @@
             <big>&lt; </big>
             <router-link class="custLink" :to="{ name: 'photos' }">All Collections</router-link>
         </div>
-        <h1>{{ name }} <small>{{ date }}</small></h1>
-        <div id="photoCollectionDescription">{{ description }}</div>
+        <div id="collectionHeader">
+            <h1>{{ name }} <small>{{ photos.length }} Photo{{ (photos.length > 1) ? "s" : "" }}</small></h1>
+            <div>{{ date }}</div>
+            <div id="photoCollectionDescription">{{ description }}</div>
+        </div>
         <vue-picture-swipe :items="photos" :options="viewerOptions"></vue-picture-swipe>
     </div>
 </template>
@@ -70,6 +73,14 @@ export default {
     vertical-align: text-bottom;
 }
 
+#collectionHeader {
+    margin: 0 0.5em 0 0.5em;
+}
+
+h1 {
+    margin-bottom: 0.25em;
+}
+
 h1 small {
     font-size: 55%;
     font-weight: lighter;
@@ -77,6 +88,6 @@ h1 small {
 }
 
 #photoCollectionDescription {
-    padding: 0 2em 2em 2em;
+    padding: 0.25em 2em 2em 0;
 }
 </style>

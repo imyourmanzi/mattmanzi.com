@@ -179,9 +179,9 @@ export default {
         height: 12em;
     }
 
-    /* .activeCollection > .thumbnailSquare > .thumbnailCorner > img {
+    .activeCollection > .thumbnailSquare > .thumbnailCorner > img {
         border-radius: 5px;
-    } */
+    }
 
 }
 </style>
