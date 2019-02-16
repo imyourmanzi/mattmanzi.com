@@ -4,6 +4,9 @@ test:
 prod:
 	npm run build
 
+clean:
+	rm -rf ./dist/
+
 install:
 	npm install
 
