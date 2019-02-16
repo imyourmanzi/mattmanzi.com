@@ -347,12 +347,13 @@ export default {
                             thumbnail: PHOTO_COL_ROOT + p.colId + "/" + tbmSize + "-" + p.seqId + ".jpg",
                             w: p.width,
                             h: p.height,
-                            title: p.title
+                            title: p.title,
+                            seq: p.seqId
                         })
                     }
                 })
 
-                return photos
+                return photos.sort((a, b) => (a.seq > b.seq))
             }
 
         }
