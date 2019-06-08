@@ -3,7 +3,6 @@ import Tech from '@/components/Tech'
 import Music from '@/components/Music'
 import Photos from '@/components/Photos'
 import Resume from '@/components/Resume'
-import Faq from '@/components/Faq'
 import PhotoCollection from '@/components/PhotoCollection'
 import FeaturedPhotoCollection from '@/components/FeaturedPhotoCollection'
 
@@ -47,11 +46,6 @@ export default {
             path: '/resume',
             name: 'resume',
             component: Resume
-        },
-        {
-            path: '/faq',
-            name: 'faq',
-            component: Faq
         }
     ],
     mode: 'history'

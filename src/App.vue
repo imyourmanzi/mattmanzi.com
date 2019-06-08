@@ -19,7 +19,7 @@
                 <strong>{{ (rightsOpen) ? rightsBanner.buttonClose : rightsBanner.buttonOpen }}</strong>
             </div>
             <div :class="{'noshow': isFirstLoad, 'opacityTransition': true, 'rights': true, 'hanging': true, 'tiny': true, 'open': rightsOpen}" @click="toggleRightsBanner()">
-                <strong>{{ (rightsOpen) ? rightsBanner.buttonClose : '❔' }}</strong>
+                <strong>{{ (rightsOpen) ? rightsBanner.buttonClose : '' }}</strong>
             </div>
         </div>
 
@@ -256,14 +256,14 @@ a {
 }
 
 #rightsBannerButton .tiny {
-    height: 1.2rem;
+    height: 0.75rem;
     padding: 0 0.5rem;
     margin: 0;
 
     text-align: left;
     font-size: 70%;
 
-    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    background-image: linear-gradient(to right, rgb(91, 207, 246), rgb(245, 169, 184) 20%, rgb(255, 255, 255), rgb(245, 169, 184) 80%, rgb(91, 207, 246));
 
     /* modifications on .hanging class specs */
     border: none;
@@ -272,6 +272,7 @@ a {
 
 #rightsBannerButton .tiny.open {
     height: 1rem;
+    top: 0;
 }
 
 #rightsBanner .full {
