@@ -1,10 +1,17 @@
-import Home from '@/components/Home'
-import Tech from '@/components/Tech'
-import Music from '@/components/Music'
-import Photos from '@/components/Photos'
-import Resume from '@/components/Resume'
-import PhotoCollection from '@/components/PhotoCollection'
-import FeaturedPhotoCollection from '@/components/FeaturedPhotoCollection'
+// import Home from '@/components/Home'
+const Home = () => import('../components/Home.vue')
+// import Tech from '@/components/Tech'
+const Tech = () => import('../components/Tech.vue')
+// import Music from '@/components/Music'
+const Music = () => import('../components/Music.vue')
+// import Photos from '@/components/Photos'
+const Photos = () => import('../components/Photos.vue')
+// import Resume from '@/components/Resume'
+const Resume = () => import('../components/Resume.vue')
+// import PhotoCollection from '@/components/PhotoCollection'
+const PhotoCollection = () => import('../components/PhotoCollection.vue')
+// import FeaturedPhotoCollection from '@/components/FeaturedPhotoCollection'
+const FeaturedPhotoCollection = () => import('../components/FeaturedPhotoCollection.vue')
 
 export default {
     routes: [
