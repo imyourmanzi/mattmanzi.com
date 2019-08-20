@@ -1,7 +1,7 @@
 const DOMAIN_NAME = "mattmanzi.com"
 
-const RESUME_PREFIX  = "Matt R Manzi - "
-const RESUME_VERSION = "08-2018 Technical v1"
+const RESUME_PREFIX  = "Matt R Manzi."
+const RESUME_VERSION = "2019.07.Technical.1"
 
 const STATIC_DIR    = "" // static dir changed to public in v3+, route needs to be abosolute
 const IMG_DIR       = STATIC_DIR + "img/"

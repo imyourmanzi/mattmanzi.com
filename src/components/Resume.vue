@@ -17,7 +17,7 @@
         <!-- resume header -->
         <div id="nameplate">
             <h1>Matt R. Manzi</h1>
-            <a href="mailto:manzi.matthewr@gmail.com">manzi.matthewr@gmail.com</a> • (610)&nbsp;368-4021
+            <a href="mailto:manzi.matthewr@gmail.com">manzi.matthewr@gmail.com</a>
         </div>
         <!-- education header -->
         <div class="section" @click="toggleShowSection(resume.ids.education)">
