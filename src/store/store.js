@@ -174,7 +174,7 @@ export default {
                 },
                 {
                     subset: "Operating Systems",
-                    values: ["macOS 9-12", "Ubuntu Server/Desktop 16", "CentOS 7", "Windows 10"]
+                    values: ["macOS", "Ubuntu Server 16", "CentOS 7", "Windows 10"]
                 },
                 {
                     subset: "Software",
@@ -182,21 +182,10 @@ export default {
                 },
                 {
                     subset: "Hardware",
-                    values: ["Raspberry Pi", "Rack Servers", "Networking Equipment", "PC Components", "Arduino"]
+                    values: ["HP Servers", "Juniper Networking Devices", "PC Components", "Arduino", "Raspberry Pi"]
                 }
             ],
             experience: [
-                {
-                    employerName: "UMBC",
-                    title: "Computer Science Lead Teaching Assistant",
-                    location: "Baltimore, MD",
-                    timeDetail: "Aug 2017 – Present",
-                    points: [
-                        "Assist students and grade assignments for Computer Science I for Majors (CMSC 201)",
-                        "Lead discussion groups for students, covering material in Python programming language",
-                        "Hold weekly office hours to aid students outside of class"
-                    ]
-                },
                 {
                     employerName: "Self-Employed",
                     title: "iOS Application Developer",
@@ -205,6 +194,17 @@ export default {
                     points: [
                         "Design, develop, and publish mobile applications through self-direction",
                         "Three (3) applications available on the Apple App Store"
+                    ]
+                },
+                {
+                    employerName: "UMBC",
+                    title: "Computer Science Lead Teaching Assistant",
+                    location: "Baltimore, MD",
+                    timeDetail: "Aug 2017 – May 2019",
+                    points: [
+                        "Assisted students and graded assignments for Computer Science I for Majors (CMSC 201)",
+                        "Led discussion groups for students, covering material in Python programming language",
+                        "Held weekly office hours to aid students outside of class"
                     ]
                 },
                 {
@@ -291,17 +291,7 @@ export default {
                     ]
                 }
             ]
-        },
-        faqEntries: [
-            {
-                question: "Are you a nerd?",
-                answer: "Yes, of course."
-            },
-            {
-                question: "Where did you learn all this programming stuff?",
-                answer: "I am currently pursuing a bachelor of science degree in computer science at the University of Maryland, Baltimore County.\n\nThat's...not the full answer.  Now ramble about self-taught stuff from my notes."
-            }
-        ]
+        }
     },
     getters: {
 
