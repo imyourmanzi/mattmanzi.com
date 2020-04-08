@@ -82,7 +82,7 @@ export default {
             {
                 imgRes: "ext_in.png",
                 imgAlt: "Link to LinkedIn profile",
-                url: "https://www.linkedin.com/in/mmanzir/"
+                url: "https://www.linkedin.com/in/mattrmanzi/"
             }
         ],
         tech: {
