@@ -1,7 +1,6 @@
 const DOMAIN_NAME = "mattmanzi.com"
 
 const RESUME_PREFIX  = "Matt R Manzi."
-const RESUME_VERSION = "2019.07.Technical.1"
 
 const STATIC_DIR    = "" // static dir changed to public in v3+, route needs to be abosolute
 const IMG_DIR       = STATIC_DIR + "img/"
@@ -47,6 +46,10 @@ export default {
                 uri: "/tech"
             },
             // {
+            //     title: "Blog",
+            //     uri: "/blog"
+            // },
+            // {
             //     title: "Music",
             //     uri: "/music"
             // },
@@ -57,11 +60,7 @@ export default {
             {
                 title: "Résumé",
                 uri: "/resume"
-            }/*,
-            {
-                title: "FAQ",
-                uri: "/faq"
-            }*/
+            }
         ],
         externalLinks: [
             // {
@@ -152,20 +151,14 @@ export default {
             insta: "https://www.instagram.com/imyourmanzi/"
         },
         resume: {
-            ids: {
-                education: 0,
-                skills: 1,
-                experience: 2,
-                projects: 3,
-                volunteer: 4
-            },
+            version: "2020.04.Full.1",
             education: [
                 {
                     schoolName: "University of Maryland, Baltimore County (UMBC)",
                     location: "Baltimore, MD",
                     gradDate: "May 2020",
-                    major: "Bachelor of Science, Computer Science",
-                    gpa: 4.0,
+                    major: "Bachelor of Science, Computer Science; Certificate in Chinese Studies",
+                    gpa: 3.97,
                     honors: [
                         "Dean’s Fellow",
                         "Center for Women in Technology (CWIT) Cyber Scholar"
@@ -175,22 +168,78 @@ export default {
             skills: [
                 {
                     subset: "Programming",
-                    values: ["Java", "Python", "C++", "C", "Swift (iOS)", "SQL", "Bash", "HTML", "CSS", "JavaScript", "Intel Assembly (x86-64)", "C#"]
+                    values: ["Python", "Java", "C/C++", "C#", "Swift", "HTML/CSS", "JavaScript", "SQL", "Shell Scripting", "Intel Assembly (x86-64)"]
                 },
                 {
                     subset: "Operating Systems",
-                    values: ["macOS", "Ubuntu Server 16", "CentOS 7", "Windows 10"]
+                    values: ["Ubuntu Server 16", "CentOS 7", "macOS", "Windows 10"]
                 },
                 {
                     subset: "Software",
-                    values: ["MS-Office", "Xcode", "Splunk 6.3 Power User", "Elastic Stack", "Palo Alto NetFlow", "VMware"]
+                    values: ["Xcode", "Eclipse", "Proxmox", "VMware", "Splunk 6.3 (Power User certified)", "Elastic Stack", "MS-Office"]
                 },
                 {
                     subset: "Hardware",
-                    values: ["HP Servers", "Juniper Networking Devices", "PC Components", "Arduino", "Raspberry Pi"]
+                    values: ["HP Servers", "Juniper Networking Devices", "Arduino", "Raspberry Pi"]
                 }
             ],
             experience: [
+                {
+                    employerName: "Juniper Networks",
+                    title: "Systems Engineering Intern",
+                    location: "Sunnyvale, CA",
+                    timeDetail: "May – Aug 2019",
+                    points: [
+                        "Evaluated a new product in order to write and produce a 50-page guide designed to expedite the learning process for other pre-sales systems engineers",
+                        "Presented the deliverable at a company-wide showcase to employees of all business verticals",
+                        "Shadowed other systems engineers in sales and customer meetings to learn sales and business principles"
+                    ]
+                },
+                {
+                    employerName: "Parsons Cyber",
+                    title: "Cybersecurity Engineer Intern",
+                    location: "Columbia, MD",
+                    timeDetail: "Jun – Aug 2018",
+                    points: [
+                        "Defined, designed, and implemented cybersecurity analytics and visualizations to identify and assess network and device security, and microservices for parallelized data correlation",
+                        "Analyzed network traffic for individual and overall anomalies in connections",
+                        "Researched, configured, and implemented an offline region-mapping visualization solution for threat identification in a secure environment",
+                        "Presented solution to business leaders in AFCEA Central Maryland at their Summer Intern Presentation Showcase"
+                    ]
+                },
+                {
+                    employerName: "WSFS Bank",
+                    title: "Software Developer Intern",
+                    location: "Wilmington, DE",
+                    timeDetail: "Jun – Aug 2017, Jan 2018",
+                    points: [
+                        "Collaborated with developers and project managers over a 3-sprint, Agile project to successfully deliver a check processing application to an internal customer by the end of the summer",
+                        "Contributed to the design and implemented the RESTful API and database for the product, a web application",
+                        "Participated in daily standups with team to identify highs and lows of the current sprint and overall project"
+                    ]
+                },
+                {
+                    employerName: "UMBC",
+                    title: "Computer Science Lead Teaching Assistant",
+                    location: "Baltimore, MD",
+                    timeDetail: "Aug 2017 – May 2019",
+                    points: [
+                        "Headed a team of 20+ TAs, working with course faculty to delegate tasks and ensure consistent education",
+                        "Assisted students and graded assignments for Computer Science I for Majors (CMSC 201)",
+                        "Led discussion groups covering material in Python programming language",
+                        "Held weekly office hours to aid students outside of class",
+                        "Wrote and maintained scripts to optimize student assignment submission and grading processes"
+                    ]
+                },
+                {
+                    employerName: "Cratr LLC",
+                    title: "Senior Programmer",
+                    location: "",
+                    timeDetail: "Aug 2016 – May 2017",
+                    points: [
+                        "Developed website payment system and product pages; collaborated on company startup and formation"
+                    ]
+                },
                 {
                     employerName: "Self-Employed",
                     title: "iOS Application Developer",
@@ -200,73 +249,36 @@ export default {
                         "Design, develop, and publish mobile applications through self-direction",
                         "Three (3) applications available on the Apple App Store"
                     ]
-                },
+                }
+            ],
+            additionalExp: [
                 {
-                    employerName: "UMBC",
-                    title: "Computer Science Lead Teaching Assistant",
-                    location: "Baltimore, MD",
-                    timeDetail: "Aug 2017 – May 2019",
+                    employerName: "Self-Employed",
+                    title: "DJ and Master of Ceremonies",
+                    location: "Aston, PA",
+                    timeDetail: "Sep 2013 – Present",
                     points: [
-                        "Assisted students and graded assignments for Computer Science I for Majors (CMSC 201)",
-                        "Led discussion groups for students, covering material in Python programming language",
-                        "Held weekly office hours to aid students outside of class"
+                        "Provide music, lighting and announcement for private parties of up to 100 people"
                     ]
                 },
                 {
-                    employerName: "Parsons Cyber",
-                    title: "Cybersecurity Engineer Intern",
-                    location: "Columbia, MD",
-                    timeDetail: "Jun – Aug 2018",
+                    employerName: "IceWorks Skating Complex",
+                    title: "DJ and Video Producer",
+                    location: "Aston, PA",
+                    timeDetail: "Nov 2012 – Sep 2015",
                     points: [
-                        "Defined, designed, developed, and implemented cybersecurity analytics and visualizations to identify and assess network and device security and vulnerabilities, and microservices for extensive, parallelized data correlation",
-                        "Analyzed network traffic for individual and overall anomalies in connections",
-                        "Researched, configured, and implemented offline region-mapping visualization solution for potential cybersecurity network risks"
-                    ]
-                },
-                {
-                    employerName: "WSFS Bank",
-                    title: "Software Developer Intern",
-                    location: "Wilmington, DE",
-                    timeDetail: "Jun – Aug 2017, Jan 2018",
-                    points: [
-                        "Collaborated with 3 developers and 2 project managers over a 3-sprint, Agile project to provide a working product (check processing application) to an internal customer by the end of the summer",
-                        "Contributed to the design of and implemented the RESTful API and database for the product, a web application",
-                        "Participated in daily standup meetings team members to discuss progress, speed bumps, and successes of the current sprint and project"
-                    ]
-                },
-                {
-                    employerName: "Cratr LLC",
-                    title: "Senior Programmer",
-                    location: "",
-                    timeDetail: "Aug 2016 – May 2017",
-                    points: [
-                        "Developed website payment system and product pages; company startup and formation"
+                        "Created an exciting and social environment for audiences of all ages to enjoy public skating",
+                        "Produced commercials for skating complex and junior pro hockey team to advertise opportunities and increase sales and public awareness"
                     ]
                 }
             ],
             projects: [
-                {
-                    name: "Summer Intern Presentation Showcase (SIPS), AFCEA Central Maryland",
-                    organization: "AFCEA Central Maryland",
-                    timeDetail: "Jul 2018",
-                    points: [
-                        "Presented solution to internal and external business leaders in AFCEA"
-                    ]
-                },
                 {
                     name: "Mid-Atlantic Collegiate Cyber Defense Competition Qualifiers",
                     organization: "UMBC",
                     timeDetail: "Feb 2018",
                     points: [
                         "Managed and protected multiple Linux-based systems and firewall rules for each device"
-                    ]
-                },
-                {
-                    name: "CyberDawgs Cyber Defense Exercise",
-                    organization: "UMBC",
-                    timeDetail: "Nov 2017",
-                    points: [
-                        "Defended a Linux server, while supporting team efforts to complete offensive business objectives"
                     ]
                 },
                 {
@@ -280,11 +292,27 @@ export default {
             ],
             volunteer: [
                 {
+                    name: "Retriever Music Society",
+                    organization: "UMBC",
+                    timeDetail: "Feb 2017 – Present",
+                    points: [
+                        "Perform as a DJ and master of ceremonies for on-campus events and organizations"
+                    ]
+                },
+                {
                     name: "Bits and Bytes & Cyber 101",
                     organization: "UMBC CWIT",
-                    timeDetail: "Feb 2017, Sep 2017",
+                    timeDetail: "Feb, Sep 2017 & Feb 2020",
                     points: [
-                        "Assisted participants in a programming workshop intended to promote STEM fields to high school junior girls"
+                        "Helped organize an overnight program for high school junior girls to visit UMBC and engage in meaningful activities related to their interests in STEM, as well as held presentations and assisted participants throughout the program"
+                    ]
+                },
+                {
+                    name: "Internet Day",
+                    organization: "Juniper Networks",
+                    timeDetail: "Jul 2019",
+                    points: [
+                        "Planned and coordinated an intern-led, all-day event over two weeks to educate underprivileged elementary school students on the technologies and concepts that drive the modern Internet"
                     ]
                 },
                 {
@@ -316,7 +344,7 @@ export default {
                     return STATIC_DIR +
                            DOCS_DIR +
                            RESUME_PREFIX +
-                           RESUME_VERSION +
+                           this.$store.state.resume.version +
                            "." + filename.match(resumeRegex)[1] /* filetype */
                 }
 
