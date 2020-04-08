@@ -77,7 +77,7 @@ export default {
             {
                 imgRes: "ext_git.svg",
                 imgAlt: "Link to GitHub profile",
-                url: "https://github.com/mmanzi1"
+                url: "https://github.com/imyourmanzi"
             },
             {
                 imgRes: "ext_in.png",

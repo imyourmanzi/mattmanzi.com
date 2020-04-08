@@ -44,7 +44,7 @@
                 </a>
             </div>
             <br/>
-            👨‍💻 with ❤️ by <a class="sectionLink" :href="externalLinks[2].url" target="_blank">mmanzi1</a>
+            👨‍💻 with ❤️ by <a class="sectionLink" :href="externalLinks[2].url" target="_blank">imyourmanzi</a>
         </footer>
     </div>
 </template>
