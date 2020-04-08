@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div id="rightsBanner" v-if="pageName == 'home'">
+        <!-- <div id="rightsBanner" v-if="pageName == 'home'">
             <div :class="{'rights': true, 'full': true, 'hanging': true, 'open': rightsOpen}">
                 <strong>{{ rightsBanner.content }}</strong>
                 <p v-for="link in rightsBanner.links" :key="link.url">
@@ -21,7 +21,7 @@
             <div :class="{'noshow': isFirstLoad, 'opacityTransition': true, 'rights': true, 'hanging': true, 'tiny': true, 'open': rightsOpen}" @click="toggleRightsBanner()">
                 <strong>{{ (rightsOpen) ? rightsBanner.buttonClose : '' }}</strong>
             </div>
-        </div>
+        </div> -->
 
         <div id="header" :class="{'dividedTop': pageName !== 'home'}">
             <router-link :to="'/'" id="titleLink">
