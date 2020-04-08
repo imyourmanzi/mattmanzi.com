@@ -64,20 +64,25 @@ export default {
             }*/
         ],
         externalLinks: [
+            // {
+            //     imgRes: "ext_fb.svg",
+            //     imgAlt: "Link to Facebook profile",
+            //     url: "https://www.facebook.com/imyourmanzi"
+            // },
             {
-                imgRes: "ext_fb.svg",
-                imgAlt: "Link to Facebook profile",
-                url: "https://www.facebook.com/imyourmanzi"
+                imgRes: "ext_git.svg",
+                imgAlt: "Link to GitHub profile",
+                url: "https://github.com/imyourmanzi"
+            },
+            {
+                imgRes: "ext_ig.svg",
+                imgAlt: "Link to Instagram profile",
+                url: "https://www.instagram.com/imyourmanzi/"
             },
             {
                 imgRes: "ext_tw.svg",
                 imgAlt: "Link to Twitter profile",
                 url: "https://twitter.com/imyourmanzi"
-            },
-            {
-                imgRes: "ext_git.svg",
-                imgAlt: "Link to GitHub profile",
-                url: "https://github.com/imyourmanzi"
             },
             {
                 imgRes: "ext_in.png",
