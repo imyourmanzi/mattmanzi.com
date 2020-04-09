@@ -112,7 +112,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background-color: #011f3a;
+    background-color: #011f3a
 }
 
 a {
@@ -203,6 +203,14 @@ a {
     display: none;
 }
 
+.lightMode {
+    display: none;
+}
+
+.darkMode {
+    display: inherit;
+}
+
 /**
     App attributes
 **/
@@ -217,7 +225,8 @@ a {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: white;
+
+    color: white
 }
 
 /**
@@ -347,7 +356,7 @@ a {
     padding: 0em 1em;
 
     font-size: 1.25em;
-    color: white;
+    color: inherit;
 }
 
 .sectionLink:hover {
@@ -435,5 +444,32 @@ footer .sectionLink {
         padding: 0em 0.6em;
     }
 
+}
+
+/* Light mode vs. dark mode (default) */
+@media screen and (prefers-color-scheme: light) {
+    body {
+        background-color: #fcfbf7;
+    }
+
+    #app {
+        color: #011f3a;
+    }
+
+    .darkMode {
+        display: none;
+    }
+
+    .lightMode {
+        display: inherit;
+    }
+
+    .extLink img {
+        filter: invert();
+    }
+
+    .hanging {
+        background-color: #656565;
+    }
 }
 </style>

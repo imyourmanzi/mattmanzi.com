@@ -53,7 +53,7 @@ export default {
 .sectionBoxLinkWrap {
     padding: 0em 1em;
 
-    color: white;
+    color: inherit;
 }
 
 .sectionBoxLinkWrap:hover {
@@ -85,5 +85,11 @@ export default {
         font-size: 5.5rem;
     }
 
+}
+
+@media screen and (prefers-color-scheme: light) {
+    .sectionInnerBox {
+        border: solid thin #011f3a;
+    }
 }
 </style>

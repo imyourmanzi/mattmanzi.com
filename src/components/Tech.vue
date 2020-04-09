@@ -10,37 +10,12 @@
                         <a :href="proj.url" target="_blank">
                             <img :src="resolve('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg')" />
                         </a>
-                        <p v-if="i == 2" style="position: relative; width: 90px; margin: -36px auto 0; top: -0.3em; background-color: rgba(26,26,26,0.4); backdrop-filter: blur(4px); vertical-align: top; text-align: center; font-weight: bold; font-size: 80%;">Temporarily Unavailable</p>
+                        <p v-if="i == 2" style="position: relative; width: 90px; margin: -36px auto 0; top: -0.3em; background-color: rgba(26,26,26,0.4); backdrop-filter: blur(4px); vertical-align: top; text-align: center; font-weight: bold; font-size: 80%; color: white;">Temporarily Unavailable</p>
                     </div>
                     <img :src="resolve(proj.imgRes)" class="screenshot" :alt="proj.imgAlt" />
                     <p>{{ proj.about }}</p>
                 </div>
             </div>
-            <!-- <div class="spacing"></div>
-            <h2>Valley Match</h2>
-            <p>
-                Purpose/intent, goals, about, etc.
-            </p>
-            <div id="valleyMatchSteps">
-                <div class="panel">
-                    <h3>Design and Approval</h3>
-                    <p>
-                        The desigadsfkfsdfkjl
-                    </p>
-                </div>
-                <div class="panel">
-                    <h3>Development</h3>
-                    <p>
-                        The devgadsfkfsdfkjl
-                    </p>
-                </div>
-                <div class="panel">
-                    <h3>Results</h3>
-                    <p>
-                        The resigadsfkfsdfkjl also a graph in here or something
-                    </p>
-                </div>
-            </div> -->
         </div>
         <div id="contact">
             <h1>Contact Support</h1>
@@ -155,6 +130,10 @@ h3 {
     opacity: 1;
 }
 
+#contact thead, th, td {
+    border-radius: 0 0 0 0;
+}
+
 #contact .full {
     display: table;
     margin: auto;
@@ -171,7 +150,7 @@ h3 {
 #contact .full th, td {
     padding: 0.3em 1.5em;
 
-    border: 1px solid #494949;
+    border-bottom: 1px solid #494949;
 }
 
 #contact .full tbody tr:nth-child(odd) {
@@ -212,6 +191,26 @@ h3 {
 
     #contact .tiny td {
         border: none;
+    }
+
+}
+
+@media screen and (prefers-color-scheme: light) {
+
+    #contact thead {
+        background-color: #BBBBBB !important;
+    }
+
+    #contact th, td {
+        border-color: black !important;
+    }
+
+    #contact tbody tr:nth-child(odd) {
+        background-color: #CFCFCF !important;
+    }
+
+    #contact tbody tr:nth-child(even) {
+        background-color: #EBEBEB !important;
     }
 
 }
