@@ -468,8 +468,12 @@ footer .sectionLink {
         filter: invert();
     }
 
+    .custLink:hover {
+        color: black;
+    }
+
     .hanging {
-        background-color: #656565;
+        background-color: #CFCFCF;
     }
 }
 </style>
