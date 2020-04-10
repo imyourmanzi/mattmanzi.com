@@ -10,7 +10,7 @@
                         <a :href="proj.url" target="_blank">
                             <img :src="resolve('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg')" />
                         </a>
-                        <p v-if="i == 2" style="position: relative; width: 90px; margin: -36px auto 0; top: -0.3em; background-color: rgba(26,26,26,0.4); backdrop-filter: blur(4px); vertical-align: top; text-align: center; font-weight: bold; font-size: 80%; color: white;">Temporarily Unavailable</p>
+                        <p v-if="i == 2" style="position: relative; width: 90px; margin: -36px auto 0; top: -0.3em; background-color: rgba(26,26,26,0.4); backdrop-filter: blur(4px); vertical-align: top; text-align: center; font-weight: bold; font-size: 80%; color: white;">No Longer Unavailable</p>
                     </div>
                     <img :src="resolve(proj.imgRes)" class="screenshot" :alt="proj.imgAlt" />
                     <p>{{ proj.about }}</p>
