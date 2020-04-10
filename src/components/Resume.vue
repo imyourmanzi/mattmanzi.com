@@ -212,7 +212,7 @@ h1 {
 }
 
 #nameplate a {
-    color: white;
+    color: inherit;
 }
 
 #nameplate a:hover {
@@ -287,9 +287,10 @@ ul {
 }
 
 #resumeVersion {
-    padding-top: 6em;
-    padding-bottom: 0.25em;
+    padding-top: 1em;
+    padding-bottom: 4em;
 
+    text-align: right;
     color: rgba(130, 130, 130, 0.7);
     font-size: 80%;
 }
