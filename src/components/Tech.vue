@@ -170,17 +170,14 @@ h3 {
     #contact .tiny {
         width: 100%;
         margin: auto;
+        margin-bottom: 1em;
 
         display: table;
-    }
-
-    #contact .tiny {
-        margin-bottom: 1em;
 
         border-collapse: collapse;
     }
 
-    #contact .tiny tr:nth-child(odd) {
+    #contact .tiny tbody tr:nth-child(odd) {
         background-color: black;
         border-bottom: 2px solid #494949;
     }
@@ -190,7 +187,13 @@ h3 {
     }
 
     #contact .tiny td {
+        max-width: 0;
+
         border: none;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
 }

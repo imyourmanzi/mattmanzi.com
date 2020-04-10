@@ -384,7 +384,7 @@ a {
 #extLinks {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
 

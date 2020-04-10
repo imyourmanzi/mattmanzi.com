@@ -304,6 +304,8 @@ ul {
     }
 
     .skill .scrollable {
+        height: 2.25em;
+
         white-space: nowrap;
         overflow: scroll;
     }
