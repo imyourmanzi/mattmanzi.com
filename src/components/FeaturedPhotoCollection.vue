@@ -4,9 +4,8 @@
             <strong>An error ({{ fetchError.status }} {{ fetchError.message }}) occurred fetching resource: {{ fetchError.resource }}</strong>
         </div>
         <div id="backToCollections">
-            <router-link class="custLink" :to="{ name: 'photos' }">
-                <big>&lt;</big> All Collections
-            </router-link>
+            <big>&lt; </big>
+            <router-link class="custLink" :to="{ name: 'photos' }">All Collections</router-link>
         </div>
         <h1>{{ name }}</h1>
         <vue-picture-swipe :items="photos" :options="viewerOptions"></vue-picture-swipe>
