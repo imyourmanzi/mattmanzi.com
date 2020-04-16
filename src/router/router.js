@@ -1,19 +1,14 @@
-// import Home from '@/components/Home'
 const Home = () => import('../components/Home.vue')
-// import Tech from '@/components/Tech'
 const Tech = () => import('../components/Tech.vue')
-// import Music from '@/components/Music'
 const Music = () => import('../components/Music.vue')
-// import Photos from '@/components/Photos'
 const Photos = () => import('../components/Photos.vue')
-// import Resume from '@/components/Resume'
 const Resume = () => import('../components/Resume.vue')
-// import PhotoCollection from '@/components/PhotoCollection'
 const PhotoCollection = () => import('../components/PhotoCollection.vue')
-// import FeaturedPhotoCollection from '@/components/FeaturedPhotoCollection'
 const FeaturedPhotoCollection = () => import('../components/FeaturedPhotoCollection.vue')
+const NotFound = () => import('../components/NotFound.vue')
 
 export default {
+    mode: 'history',
     routes: [
         {
             path: '/',
@@ -53,7 +48,15 @@ export default {
             path: '/resume',
             name: 'resume',
             component: Resume
+        },
+        {
+            path: '/not-found',
+            name: 'not-found',
+            component: NotFound
+        },
+        {
+            path: '*',
+            redirect: '/not-found'
         }
-    ],
-    mode: 'history'
+    ]
 }
