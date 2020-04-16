@@ -27,7 +27,7 @@
             <router-link :to="'/'" id="titleLink">
             MattManzi<small>.com</small>
             </router-link>
-            <div id="sectionLinks" :class="{'noshow': isFirstLoad && pageName == 'home', 'opacityTransition': pageName == 'home'}">
+            <div id="sectionLinks" :class="{'noshow': isFirstLoad && pageName === 'home', 'opacityTransition': pageName === 'home'}">
                 <div v-for="section in sections" :key="section.uri">
                     <router-link class="sectionLink" :class="{'currPage': pageName === section.uri}" :to="section.uri">{{ section.title }}</router-link>
                 </div>
@@ -37,7 +37,7 @@
             Notice: This website is still under construction, thank you for your understanding.
         </div>
         <router-view></router-view>
-        <footer :class="{'noshow': isFirstLoad && pageName == 'home', 'opacityTransition': pageName == 'home', 'dividedBottom': pageName !== 'home'}">
+        <footer :class="{'noshow': isFirstLoad && pageName === 'home', 'opacityTransition': pageName === 'home', 'dividedBottom': pageName !== 'home'}">
             <div id="extLinks">
                 <a :href="ext.url" class="extLink" v-for="ext in externalLinks" :key="ext.imgRes" target="_blank">
                     <img :src="resolve(ext.imgRes)" :alt="ext.imgAlt" />
