@@ -56,13 +56,13 @@ export default {
     name: 'app',
     data() {
         return {
-            rightsOpen: false
+            // rightsOpen: false
         }
     },
     computed: {
-        rightsBanner() {
-            return this.$store.state.rightsBanner
-        },
+        // rightsBanner() {
+        //     return this.$store.state.rightsBanner
+        // },
         sections() {
             return this.$store.state.sections
         },
@@ -86,9 +86,9 @@ export default {
         })
     },
     methods: {
-        toggleRightsBanner() {
-            this.rightsOpen = !this.rightsOpen
-        }
+        // toggleRightsBanner() {
+        //     this.rightsOpen = !this.rightsOpen
+        // }
     }
 }
 </script>
