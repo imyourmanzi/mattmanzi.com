@@ -1,21 +1,27 @@
-# matt-manzi-ui
+# MattManzi.com
+_Frontend UI_  
 
-## Project setup
+This repository compiles into the relevant frontend resources needed for my personal website at [mattmanzi.com](https://mattmanzi.com).
+
+## General Usage
+
+Initially, run
 ```
 npm install
 ```
+to download all dependencies needed and setup the project.  
 
-### Compiles and hot-reloads for development
+To build the project, run
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
+for development with hot-reloads or
 ```
 npm run build
 ```
+for minified production code.
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Other Useful `npm` Commands
+* `npm run lint` to independently lint code
+* `npm run build --report` to report statistics on the build
+* `rm -r ./dist/` to remove the build folder
