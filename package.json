@@ -1,5 +1,5 @@
 {
-  "name": "matt-manzi-ui",
+  "name": "mattmanzi-ui",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ajv": "^6.12.2",
+    "npm": "^6.14.5",
     "vue": "^2.6.11",
     "vue-picture-swipe": "^0.4.0",
     "vue-resource": "^1.5.1",
