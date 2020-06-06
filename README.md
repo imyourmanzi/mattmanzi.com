@@ -11,15 +11,14 @@ npm install
 ```
 to download all dependencies needed and setup the project.  
 
-To build the project, run
+To build the project for development with hot-reloads, run:
 ```
 npm run serve
 ```
-for development with hot-reloads or
+or for minified production code, run:
 ```
 npm run build
 ```
-for minified production code.
 
 ## Other Useful `npm` Commands
 * `npm run lint` to independently lint code
