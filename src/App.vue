@@ -44,7 +44,7 @@
                 </a>
             </div>
             <br/>
-            👨‍💻 with ❤️ by <a class="sectionLink" :href="externalLinks[0].url" target="_blank">imyourmanzi</a>
+            👨‍💻 with ❤️ by <a class="sectionLink" href="https://github.com/imyourmanzi/MattManzi-UI" target="_blank">imyourmanzi</a>
         </footer>
     </div>
 </template>
