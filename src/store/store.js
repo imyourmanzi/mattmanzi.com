@@ -151,14 +151,15 @@ export default {
             insta: "https://www.instagram.com/imyourmanzi/"
         },
         resume: {
-            version: "2020.04.Full.1",
+            version: "2020.06.Full.1",
             education: [
                 {
                     schoolName: "University of Maryland, Baltimore County (UMBC)",
                     location: "Baltimore, MD",
                     gradDate: "May 2020",
                     major: "Bachelor of Science, Computer Science; Certificate in Chinese Studies",
-                    gpa: 3.97,
+                    gpa: 3.975,
+                    majorGpa: 4.0,
                     honors: [
                         "Dean’s Fellow",
                         "Center for Women in Technology (CWIT) Cyber Scholar"
@@ -168,11 +169,15 @@ export default {
             skills: [
                 {
                     subset: "Programming",
-                    values: ["Python", "Java", "C/C++", "C#", "Swift", "HTML/CSS", "JavaScript", "SQL", "Shell Scripting", "Intel Assembly (x86-64)"]
+                    values: ["Python", "Java", "C/C++", "C#", "Swift", "HTML/CSS", "JavaScript", "Shell Scripting", "Intel Assembly (x86-64)"]
+                },
+                {
+                    subset: "Technologies",
+                    values: ["RESTful Services", "SQL Databases", "Vue.js", "Virtual Machines"]
                 },
                 {
                     subset: "Operating Systems",
-                    values: ["Ubuntu Server 16", "CentOS 7", "macOS", "Windows 10"]
+                    values: ["Ubuntu Server 16", "CentOS 7", "macOS", "Windows & Windows Server"]
                 },
                 {
                     subset: "Software",
@@ -180,7 +185,7 @@ export default {
                 },
                 {
                     subset: "Hardware",
-                    values: ["HP Servers", "Juniper Networking Devices", "Arduino", "Raspberry Pi"]
+                    values: ["Rackmount Servers", "Juniper Networking Equipment", "Arduino", "Raspberry Pi"]
                 }
             ],
             experience: [
@@ -294,7 +299,7 @@ export default {
                 {
                     name: "Retriever Music Society",
                     organization: "UMBC",
-                    timeDetail: "Feb 2017 – Present",
+                    timeDetail: "Feb 2017 – May 2020",
                     points: [
                         "Perform as a DJ and master of ceremonies for on-campus events and organizations"
                     ]

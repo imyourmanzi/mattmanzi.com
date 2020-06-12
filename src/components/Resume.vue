@@ -31,11 +31,15 @@
                 <div class="education" v-for="edu in resume.education" :key="edu.schoolName">
                     <div class="detailLine">
                         <p><strong>{{ edu.schoolName }}</strong> {{ edu.location }}</p>
-                        <p><em>{{ edu.gradDate }}</em></p>
+                        <p v-if="edu.majorGpa">
+                            <em>GPA: {{ edu.gpa.toPrecision(4) }} (major: {{ edu.majorGpa.toPrecision(2) }}), {{ edu.gradDate }}</em>
+                        </p>
+                        <p v-else>
+                            <em>GPA: {{ edu.gpa.toPrecision(4) }}, {{ edu.gradDate }}</em>
+                        </p>
                     </div>
                     <div class="detailLine">
                         <p>{{ edu.major }}</p>
-                        <p><em>GPA: {{ edu.gpa.toPrecision(3) }}</em></p>
                     </div>
                     <p><em>Honors:</em> {{ edu.honors.join(", ") }}</p>
                 </div>
