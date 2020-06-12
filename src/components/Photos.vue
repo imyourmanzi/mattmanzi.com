@@ -19,6 +19,7 @@
                     </router-link>
                 </div>
             </div>
+            <div id="scrollCover"></div>
         </div>
         <h1>Photo Collections</h1>
         <div class="errorBanner" v-if="fetchError !== null">
@@ -29,7 +30,7 @@
                 <router-link class="custLink" :to="{ name: 'photo-collection', params: { col_id: col.id }}">
                     <div :class="['photoCollection', (activeCollection != col.id && activeCollection != -1) ? 'inactiveCollection' : ((activeCollection == col.id) ? 'activeCollection' : '')]" @mouseenter="activeCollection = col.id" @mouseleave="activeCollection = -1">
                         <h3>{{ col.name }}</h3>
-                        <h5><em>{{ (new Date(col.date)).toLocaleDateString("en-US", {day: "numeric", month: "short", year: "numeric"}) }}</em></h5>
+                        <h5><em>{{ (new Date(col.date)).toLocaleDateString("en-US", {timeZone: "UTC", day: "numeric", month: "short", year: "numeric"}) }}</em></h5>
                         <div class="thumbnailSquare">
                             <div class="thumbnailCorner" v-for="photo in getPhotosFromCollection(col, '', 'tbm-150', 4)" :key="photo.thumbnail">
                                 <img :src="photo.thumbnail" />
@@ -64,9 +65,15 @@ export default {
     },
     methods: {
         getCollections() {
+            // featured collections
             this.$http.get(this.$store.state.photos.baseApiUrlFeatured).then(response => {
-                this.featuredCollections = response.body.sort((a,b) => {
-                    return a.date < b.date
+
+                // 1. filter out non-enabled collections
+                // 2. sort by name, A->Z
+                this.featuredCollections = response.body.filter((col) => {
+                    return col.enabled // 1
+                }).sort((a,b) => {
+                    return a.name > b.name // 2
                 })
                 this.fetchError = null
             }, response => {
@@ -78,6 +85,7 @@ export default {
                 }
             })
 
+            // normal collections
             this.$http.get(this.$store.state.photos.baseApiUrl).then(response => {
                 this.collections = response.body.sort((a,b) => {
                     return a.date < b.date
@@ -101,15 +109,39 @@ export default {
 
 <style scoped>
 
-#featuredCollections, #photoCollections {
+#photoCollections {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
+#featuredCollections {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+
+    overflow-x: scroll;
+
+    z-index: 1;
+}
+
+#scrollCover {
+    position: relative;
+    width: 4.6em;
+    height: 17em;
+    margin-right: -0.1em;
+    margin-left: auto;
+    margin-top: -17em;
+
+    background-image: linear-gradient(to right, rgba(1, 31, 58, 0), rgba(1, 31, 58, 1));
+
+    z-index: 2;
+}
+
 .photoCollectionBoundingBox {
     width: 16em;
     height: 17em;
+    padding-right: 4.5em;
 }
 
 .photoCollection {
@@ -168,7 +200,21 @@ export default {
     transition-duration: 0.3s;
 }
 
+/* Extra tall and skinny screens (i.e. smartphones) */
 @media screen and (max-aspect-ratio: 767/1024) {
+
+    #featuredCollections {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #scrollCover {
+        display: none;
+    }
+
+    .photoCollectionBoundingBox {
+        padding-right: 0;
+    }
 
     .inactiveCollection {
         opacity: 1;
@@ -183,5 +229,12 @@ export default {
         border-radius: 5px;
     }
 
+}
+
+/* Light mode vs. dark mode (default) */
+@media screen and (prefers-color-scheme: light) {
+    #scrollCover {
+        background-image: linear-gradient(to right, rgba(252, 251, 247, 0), rgba(252, 251, 247, 1));
+    }
 }
 </style>

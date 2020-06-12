@@ -112,7 +112,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background-color: #011f3a
+    background-color: #011f3a; /* rbg(1, 31, 58) */
 }
 
 a {
@@ -449,7 +449,7 @@ footer .sectionLink {
 /* Light mode vs. dark mode (default) */
 @media screen and (prefers-color-scheme: light) {
     body {
-        background-color: #fcfbf7;
+        background-color: #fcfbf7; /* rgb(252, 251, 247) */
     }
 
     #app {
