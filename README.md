@@ -20,6 +20,11 @@ or for minified production code, run:
 npm run build
 ```
 
+To update the version string of the UI, please run:
+```
+npm version [major|minor|patch]
+```
+
 ## Other Useful `npm` Commands
 * `npm run lint` to independently lint code
 * `npm run build --report` to report statistics on the build
