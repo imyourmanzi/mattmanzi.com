@@ -151,7 +151,7 @@ export default {
             insta: "https://www.instagram.com/imyourmanzi/"
         },
         resume: {
-            version: "2020.06.Full.1",
+            version: "2020.07.Full.1",
             education: [
                 {
                     schoolName: "University of Maryland, Baltimore County (UMBC)",
@@ -244,16 +244,6 @@ export default {
                     points: [
                         "Developed website payment system and product pages; collaborated on company startup and formation"
                     ]
-                },
-                {
-                    employerName: "Self-Employed",
-                    title: "iOS Application Developer",
-                    location: "Aston, PA",
-                    timeDetail: "Sep 2014 – Present",
-                    points: [
-                        "Design, develop, and publish mobile applications through self-direction",
-                        "Three (3) applications available on the Apple App Store"
-                    ]
                 }
             ],
             additionalExp: [
@@ -292,6 +282,15 @@ export default {
                     timeDetail: "Apr 2017",
                     points: [
                         "Collaborated with 3 students to brainstorm, develop, launch, and present a winning web application (using Django API in Python on a Heroku app) in a 24-hour time constraint, aimed to help crime victims"
+                    ]
+                },
+                {
+                    name: "iOS Application Developer",
+                    organization: "",
+                    timeDetail: "Sep 2014 – Present",
+                    points: [
+                        "Design, develop, and publish mobile applications through self-direction",
+                        "Three (3) applications available on the Apple App Store"
                     ]
                 }
             ],
