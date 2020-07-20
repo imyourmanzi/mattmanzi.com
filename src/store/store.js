@@ -151,7 +151,7 @@ export default {
             insta: "https://www.instagram.com/imyourmanzi/"
         },
         resume: {
-            version: "2020.07.Full.1",
+            version: "2020.07.Full.2",
             education: [
                 {
                     schoolName: "University of Maryland, Baltimore County (UMBC)",
@@ -238,7 +238,7 @@ export default {
                 },
                 {
                     employerName: "Cratr LLC",
-                    title: "Senior Programmer",
+                    title: "Senior Programmer and Management Team Member",
                     location: "",
                     timeDetail: "Aug 2016 – May 2017",
                     points: [
