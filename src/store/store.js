@@ -63,11 +63,6 @@ export default {
             }
         ],
         externalLinks: [
-            // {
-            //     imgRes: "ext_fb.svg",
-            //     imgAlt: "Link to Facebook profile",
-            //     url: "https://www.facebook.com/imyourmanzi"
-            // },
             {
                 imgRes: "ext_git.svg",
                 imgAlt: "Link to GitHub profile",
@@ -77,6 +72,11 @@ export default {
                 imgRes: "ext_ig.svg",
                 imgAlt: "Link to Instagram profile",
                 url: "https://www.instagram.com/imyourmanzi/"
+            },
+            {
+                imgRes: "ext_fb.svg",
+                imgAlt: "Link to Facebook profile",
+                url: "https://www.facebook.com/imyourmanzi"
             },
             {
                 imgRes: "ext_tw.svg",
@@ -151,7 +151,7 @@ export default {
             insta: "https://www.instagram.com/imyourmanzi/"
         },
         resume: {
-            version: "2020.07.Full.2",
+            version: "2020.07.3.Full",
             education: [
                 {
                     schoolName: "University of Maryland, Baltimore County (UMBC)",

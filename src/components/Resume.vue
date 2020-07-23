@@ -56,7 +56,7 @@
             <div v-if="openSections.indexOf(1) !== -1">
                 <div class="skill" v-for="skill in resume.skills" :key="skill.subset">
                     <div>
-                        <p class="typeName"><em>{{ skill.subset }}</em></p>
+                        <p class="typeName"><em>{{ skill.subset }}:</em></p>
                     </div>
                     <div class="scrollable">
                         <p>{{ skill.values.join(", ") }}</p>
