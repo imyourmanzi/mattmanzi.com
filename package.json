@@ -8,20 +8,20 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "ajv": "^6.12.3",
-    "npm": "^6.14.7",
-    "vue": "^2.6.11",
+    "ajv": "^6.12.6",
+    "npm": "^7.0.5",
+    "vue": "^2.6.12",
     "vue-picture-swipe": "^0.4.0",
     "vue-resource": "^1.5.1",
-    "vue-router": "^3.3.4",
+    "vue-router": "^3.4.7",
     "vuex": "^3.5.1",
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.1",
     "@vue/cli-plugin-eslint": "^3.12.1",
-    "@vue/cli-service": "^4.4.6",
-    "vue-template-compiler": "^2.6.11"
+    "@vue/cli-service": "^4.5.8",
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,
