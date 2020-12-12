@@ -39,12 +39,12 @@
         <router-view></router-view>
         <footer :class="{'noshow': isFirstLoad && pageName === 'home', 'opacityTransition': pageName === 'home', 'dividedBottom': pageName !== 'home'}">
             <div id="extLinks">
-                <a :href="ext.url" class="extLink" v-for="ext in externalLinks" :key="ext.imgRes" target="_blank">
+                <a :href="ext.url" class="extLink" rel="noopener" v-for="ext in externalLinks" :key="ext.imgRes" target="_blank">
                     <img :src="resolve(ext.imgRes)" :alt="ext.imgAlt" />
                 </a>
             </div>
             <br/>
-            👨‍💻 with ❤️ by <a class="sectionLink" href="https://github.com/imyourmanzi/MattManzi-UI" target="_blank">imyourmanzi</a>
+            👨‍💻 with ❤️ by <a class="sectionLink" href="https://github.com/imyourmanzi/MattManzi-UI" target="_blank" rel="noopener">imyourmanzi</a>
         </footer>
     </div>
 </template>
