@@ -385,10 +385,14 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content:space-around;
+    justify-content: center;
     align-items: center;
 
     padding: 1em 1em;
+}
+
+.extLink {
+    padding: 0 1.5em;
 }
 
 .extLink:hover {
@@ -438,6 +442,14 @@ footer .sectionLink {
     .sectionLink {
         flex: 0 0 auto;
         padding: 0em 0.6em;
+    }
+
+    #extLinks {
+        justify-content: space-around;
+    }
+
+    .extLink {
+        padding: 0 0;
     }
 
 }
