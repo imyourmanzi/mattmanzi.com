@@ -69,7 +69,7 @@ export default {
                 url: "https://github.com/imyourmanzi"
             },
             {
-                imgRes: "ext_ig.svg",
+                imgRes: "ext_ig.png",
                 imgAlt: "Link to Instagram profile",
                 url: "https://www.instagram.com/imyourmanzi/"
             },
