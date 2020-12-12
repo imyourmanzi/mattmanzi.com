@@ -385,14 +385,10 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
 
     padding: 1em 1em;
-}
-
-.extLink {
-    padding: 0 1.5em;
 }
 
 .extLink:hover {
