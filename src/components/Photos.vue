@@ -19,7 +19,7 @@
                     </router-link>
                 </div>
             </div>
-            <div id="scrollCover"></div>
+            <div id="scrollCover" v-if="featuredCollections.length > 0 && featuredFetchError !== null"></div>
         </div>
         <h1>Photo Collections</h1>
         <div class="errorBanner" v-if="fetchError !== null">
