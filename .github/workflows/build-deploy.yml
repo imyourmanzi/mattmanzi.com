@@ -41,4 +41,4 @@ jobs:
         key: ${{ secrets.SERVER_KEY }}
         passphrase: ${{ secrets.SERVER_KEY_PASSPHRASE }}
         source: "./dist/*"
-        target: "./on-deck"
+        target: "on-deck"
