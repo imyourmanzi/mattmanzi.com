@@ -447,7 +447,7 @@ footer .sectionLink {
     #extLinks {
         justify-content: space-around;
 
-        padding: 0;
+        padding: 1em 0;
     }
 
     .extLink {
