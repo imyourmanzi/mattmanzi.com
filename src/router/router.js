@@ -8,7 +8,6 @@ const FeaturedPhotoCollection = () => import('../components/FeaturedPhotoCollect
 const NotFound = () => import('../components/NotFound.vue')
 
 export default {
-    mode: 'history',
     routes: [
         {
             path: '/',
