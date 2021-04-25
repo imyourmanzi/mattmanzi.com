@@ -1,7 +1,4 @@
-.DS_Store
-node_modules/
-/dist/
-npm-debug.log*
+/node_modules/
+/public/build/
 
-# No large media files
-offline-res/
+.DS_Store

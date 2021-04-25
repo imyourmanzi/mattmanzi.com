@@ -1,0 +1,50 @@
+{
+  "name": "mattmanzi-ui",
+  "version": "1.0.6",
+  "private": true,
+  "scripts": {
+    "local": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "npm": "^7.0.5",
+    "vue": "^2.6.12",
+    "vue-picture-swipe": "^0.4.0",
+    "vue-resource": "^1.5.1",
+    "vue-router": "^3.4.7",
+    "vuex": "^3.5.1",
+    "vuex-router-sync": "^5.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-eslint": "^3.12.1",
+    "@vue/cli-service": "^4.5.8",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
