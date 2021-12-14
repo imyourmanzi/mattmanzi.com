@@ -9,15 +9,15 @@
   const sections = [
     {
       title: 'Tech',
-      destination: '/tech',
+      destination: 'tech',
     },
     {
       title: 'Photos',
-      destination: '/photos',
+      destination: 'photos',
     },
     {
       title: 'Résumé',
-      destination: '/resume',
+      destination: 'resume',
     },
   ];
 
@@ -67,7 +67,7 @@
       {/each}
     </nav>
   </header>
-  <Route component="{Resume}" />
+  <Route path="resume" component="{Resume}" />
 </Router>
 <footer class:dividedBottom="{pageName !== 'home'}">
   <div id="socialLinks">
