@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Router, Link, Route } from 'svelte-navigator';
+
   // temp
   const pageName = 'home';
   // end temp
@@ -47,23 +49,25 @@
   ];
 </script>
 
-<header class:dividedTop="{pageName !== 'home'}">
-  <a id="siteTitleAnchor" href="/">
-    <span id="siteTitle">MattManzi<span id="dotCom">.com</span></span>
-  </a>
-  <div id="layoutLinks">
-    {#each sections as section (section.destination)}
-      <a
-        class="layoutLink"
-        class:currentPage="{pageName === section.destination}"
-        href="{section.destination}"
-      >
-        {section.title}
-      </a>
-    {/each}
-  </div>
-</header>
-<!-- <main><router-view></router-view></main> -->
+<Router>
+  <header class:dividedTop="{pageName !== 'home'}">
+    <span id="siteTitleWrapper">
+      <Link class="siteTitleLink" to="/">
+        <span id="siteTitle">MattManzi<span id="dotCom">.com</span></span>
+      </Link>
+    </span>
+    <nav id="navLinks">
+      {#each sections as section (section.destination)}
+        <Link class="layoutLink" to="{section.destination}">
+          <span class:currentPage="{pageName === section.destination}"
+            >{section.title}</span
+          >
+        </Link>
+      {/each}
+    </nav>
+  </header>
+  <Route />
+</Router>
 <footer class:dividedBottom="{pageName !== 'home'}">
   <div id="socialLinks">
     {#each socialLinks as social (social.url)}
@@ -92,9 +96,7 @@
     padding: 2% 4% 1% 4%;
   }
 
-  #siteTitleAnchor:visited,
-  #siteTitleAnchor:hover,
-  #siteTitleAnchor:active {
+  #siteTitleWrapper :global(.siteTitleLink) {
     color: inherit;
   }
 
@@ -119,7 +121,7 @@
     border-radius: 0;
   }
 
-  #layoutLinks {
+  #navLinks {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -127,14 +129,16 @@
     align-items: center;
   }
 
-  .layoutLink {
+  header :global(.layoutLink),
+  footer :global(.layoutLink) {
     padding: 0em 1em;
 
     font-size: 1.25em;
     color: inherit;
   }
 
-  .layoutLink:hover {
+  header :global(.layoutLink:hover),
+  footer :global(.layoutLink:hover) {
     color: gray;
     text-decoration: underline;
   }
@@ -183,14 +187,15 @@
 
   /* Extra tall and skinny screens (i.e. smartphones) */
   @media screen and (max-aspect-ratio: 767/1024) {
-    #layoutLinks {
+    #navLinks {
       justify-content: space-around;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       -ms-overflow-style: -ms-autohiding-scrollbar;
     }
 
-    .layoutLink {
+    header :global(.layoutLink),
+    footer :global(.layoutLink) {
       flex: 0 0 auto;
       padding: 0em 0.6em;
     }
