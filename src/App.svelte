@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Router, Link, Route } from 'svelte-navigator';
+  import Resume from './sections/Resume.svelte';
 
   // temp
   const pageName = 'home';
@@ -22,27 +23,27 @@
 
   const socialLinks = [
     {
-      imgResource: 'ext_git.svg',
+      imgResource: 'social_git.svg',
       imgAlt: 'Link to GitHub profile',
       url: 'https://github.com/imyourmanzi',
     },
     {
-      imgResource: 'ext_ig.png',
+      imgResource: 'social_ig.png',
       imgAlt: 'Link to Instagram profile',
       url: 'https://www.instagram.com/imyourmanzi/',
     },
     {
-      imgResource: 'ext_fb.svg',
+      imgResource: 'social_fb.svg',
       imgAlt: 'Link to Facebook profile',
       url: 'https://www.facebook.com/imyourmanzi',
     },
     {
-      imgResource: 'ext_tw.svg',
+      imgResource: 'social_tw.svg',
       imgAlt: 'Link to Twitter profile',
       url: 'https://twitter.com/imyourmanzi',
     },
     {
-      imgResource: 'ext_in.png',
+      imgResource: 'social_in.png',
       imgAlt: 'Link to LinkedIn profile',
       url: 'https://www.linkedin.com/in/mattrmanzi/',
     },
@@ -66,7 +67,7 @@
       {/each}
     </nav>
   </header>
-  <Route />
+  <Route component="{Resume}" />
 </Router>
 <footer class:dividedBottom="{pageName !== 'home'}">
   <div id="socialLinks">
