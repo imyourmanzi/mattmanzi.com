@@ -28,16 +28,16 @@ a {
 }
 
 /* Shared transitions */
-.opacityTransition {
+/* .opacityTransition {
   transition-property: opacity;
   transition-duration: 1.5s;
   transition-timing-function: ease;
-}
+} */
 
 /* Shared attributes */
-.noshow {
+/* .noshow {
   opacity: 0;
-}
+} */
 
 .container {
   position: relative;
@@ -65,11 +65,11 @@ a {
   transition-timing-function: cubic-bezier();
 }
 
-.custLink {
+.customLink {
   color: #6699cc;
 }
 
-.custLink:hover {
+.customLink:hover {
   color: white;
   text-decoration: underline;
 }
@@ -143,7 +143,7 @@ a {
     display: inherit;
   }
 
-  .custLink:hover {
+  .customLink:hover {
     color: black;
   }
 
