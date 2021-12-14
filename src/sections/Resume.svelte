@@ -251,7 +251,6 @@
   </button>
   <hr />
   <!-- education section -->
-  <!-- <transition name="reveal"> -->
   {#if expandedSections.indexOf(0) !== -1}
     {#each resume.education as edu (edu.schoolName)}
       <div class="education">
@@ -276,14 +275,12 @@
       </div>
     {/each}
   {/if}
-  <!-- </transition> -->
   <!-- tech skills header -->
   <button class="sectionButton" on:click="{toggleShowSection(1)}">
     {expandedSections.indexOf(1) === -1 ? '+' : '\u2013'} Technical Skills
   </button>
   <hr />
   <!-- tech skills section -->
-  <!-- <transition name="reveal"> -->
   {#if expandedSections.indexOf(1) !== -1}
     {#each resume.skills as skill (skill.subset)}
       <div class="skill">
@@ -296,14 +293,12 @@
       </div>
     {/each}
   {/if}
-  <!-- </transition> -->
   <!-- experience header -->
   <button class="sectionButton" on:click="{toggleShowSection(2)}">
     {expandedSections.indexOf(2) === -1 ? '+' : '\u2013'} Relevant Experience
   </button>
   <hr />
   <!-- experience section -->
-  <!-- <transition name="reveal"> -->
   {#if expandedSections.indexOf(2) !== -1}
     {#each resume.experience as exp (exp.employerName)}
       <div class="experience">
@@ -322,14 +317,12 @@
       </div>
     {/each}
   {/if}
-  <!-- </transition> -->
   <!-- additional experience header -->
   <button class="sectionButton" on:click="{toggleShowSection(3)}">
     {expandedSections.indexOf(3) === -1 ? '+' : '\u2013'} Additional Experience
   </button>
   <hr />
   <!-- additional experience section -->
-  <!-- <transition name="reveal"> -->
   {#if expandedSections.indexOf(3) !== -1}
     {#each resume.additionalExp as exp (exp.employerName)}
       <div class="experience">
@@ -348,14 +341,12 @@
       </div>
     {/each}
   {/if}
-  <!-- </transition> -->
   <!-- projects header -->
   <button class="sectionButton" on:click="{toggleShowSection(4)}">
     {expandedSections.indexOf(4) === -1 ? '+' : '\u2013'} Projects
   </button>
   <hr />
   <!-- projects section -->
-  <!-- <transition name="reveal"> -->
   {#if expandedSections.indexOf(4) !== -1}
     {#each resume.projects as proj (proj.name)}
       <div class="project">
@@ -371,14 +362,12 @@
       </div>
     {/each}
   {/if}
-  <!-- </transition> -->
   <!-- volunteer header -->
   <button class="sectionButton" on:click="{toggleShowSection(5)}">
     {expandedSections.indexOf(5) === -1 ? '+' : '\u2013'} Volunteer Activities
   </button>
   <hr />
   <!-- volunteer section -->
-  <!-- <transition name="reveal"> -->
   {#if expandedSections.indexOf(5) !== -1}
     {#each resume.volunteer as activity (activity.name)}
       <div class="activity">
@@ -398,7 +387,6 @@
       </div>
     {/each}
   {/if}
-  <!-- </transition> -->
   <div id="resumeVersion">
     Version: {resume.version}
   </div>
@@ -458,6 +446,7 @@
     margin-bottom: 0em;
     margin-top: 0.7em;
 
+    color: white;
     border: none;
     background: none;
 
@@ -494,19 +483,6 @@
     padding: 0;
   }
 
-  /* .reveal-enter,
-  .reveal-leave-to {
-    opacity: 0;
-  }
-
-  .reveal-enter-active {
-    transition: opacity 0.7s;
-  }
-
-  .reveal-leave-active {
-    transition: opacity 0.2s;
-  } */
-
   #resumeVersion {
     padding-top: 1em;
     padding-bottom: 4em;
@@ -528,6 +504,12 @@
 
       white-space: nowrap;
       overflow: scroll;
+    }
+  }
+
+  @media screen and (prefers-color-scheme: light) {
+    .sectionButton {
+      color: #011f3a;
     }
   }
 </style>
