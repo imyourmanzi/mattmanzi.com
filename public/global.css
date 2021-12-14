@@ -27,18 +27,6 @@ a {
   text-decoration: none;
 }
 
-/* Shared transitions */
-/* .opacityTransition {
-  transition-property: opacity;
-  transition-duration: 1.5s;
-  transition-timing-function: ease;
-} */
-
-/* Shared attributes */
-/* .noshow {
-  opacity: 0;
-} */
-
 .container {
   position: relative;
   width: 92%;
