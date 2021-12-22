@@ -247,7 +247,12 @@
   </div>
   <!-- education header -->
   <button class="sectionButton" on:click="{toggleShowSection(0)}">
-    {expandedSections.indexOf(0) === -1 ? '+' : '\u2013'} Education
+    {#if expandedSections.indexOf(0) === -1}
+      <i class="fas fa-plus"></i>
+    {:else}
+      <i class="fas fa-minus"></i>
+    {/if}
+    <span> Education</span>
   </button>
   <hr />
   <!-- education section -->
@@ -277,7 +282,12 @@
   {/if}
   <!-- tech skills header -->
   <button class="sectionButton" on:click="{toggleShowSection(1)}">
-    {expandedSections.indexOf(1) === -1 ? '+' : '\u2013'} Technical Skills
+    {#if expandedSections.indexOf(1) === -1}
+      <i class="fas fa-plus"></i>
+    {:else}
+      <i class="fas fa-minus"></i>
+    {/if}
+    <span> Technical Skills</span>
   </button>
   <hr />
   <!-- tech skills section -->
@@ -295,7 +305,12 @@
   {/if}
   <!-- experience header -->
   <button class="sectionButton" on:click="{toggleShowSection(2)}">
-    {expandedSections.indexOf(2) === -1 ? '+' : '\u2013'} Relevant Experience
+    {#if expandedSections.indexOf(2) === -1}
+      <i class="fas fa-plus"></i>
+    {:else}
+      <i class="fas fa-minus"></i>
+    {/if}
+    <span> Relevant Experience</span>
   </button>
   <hr />
   <!-- experience section -->
@@ -319,7 +334,12 @@
   {/if}
   <!-- additional experience header -->
   <button class="sectionButton" on:click="{toggleShowSection(3)}">
-    {expandedSections.indexOf(3) === -1 ? '+' : '\u2013'} Additional Experience
+    {#if expandedSections.indexOf(3) === -1}
+      <i class="fas fa-plus"></i>
+    {:else}
+      <i class="fas fa-minus"></i>
+    {/if}
+    <span> Additional Experience</span>
   </button>
   <hr />
   <!-- additional experience section -->
@@ -343,7 +363,12 @@
   {/if}
   <!-- projects header -->
   <button class="sectionButton" on:click="{toggleShowSection(4)}">
-    {expandedSections.indexOf(4) === -1 ? '+' : '\u2013'} Projects
+    {#if expandedSections.indexOf(4) === -1}
+      <i class="fas fa-plus"></i>
+    {:else}
+      <i class="fas fa-minus"></i>
+    {/if}
+    <span> Projects</span>
   </button>
   <hr />
   <!-- projects section -->
@@ -364,7 +389,12 @@
   {/if}
   <!-- volunteer header -->
   <button class="sectionButton" on:click="{toggleShowSection(5)}">
-    {expandedSections.indexOf(5) === -1 ? '+' : '\u2013'} Volunteer Activities
+    {#if expandedSections.indexOf(5) === -1}
+      <i class="fas fa-plus"></i>
+    {:else}
+      <i class="fas fa-minus"></i>
+    {/if}
+    <span> Volunteer Activities</span>
   </button>
   <hr />
   <!-- volunteer section -->
@@ -457,6 +487,13 @@
     text-transform: uppercase;
 
     cursor: pointer;
+  }
+
+  .fa-plus,
+  .fa-minus {
+    transform: translateY(-2.5px);
+
+    font-size: 0.65em;
   }
 
   .detailLine {
