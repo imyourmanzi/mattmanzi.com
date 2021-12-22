@@ -1,13 +1,15 @@
 <script lang="ts">
-  import { Link } from 'svelte-navigator';
+  import { Link, useFocus } from 'svelte-navigator';
   import type { Section } from '../types';
 
   export let sections: Section[];
+
+  const registerFocus = useFocus();
 </script>
 
 <template>
   <div id="homeContainer" class="container">
-    <p class="direct">As we say it,<br />so it shall be.</p>
+    <p use:registerFocus class="direct">As we say it,<br />so it shall be.</p>
     <div id="sectionBoxes">
       {#each sections as section (section.destination)}
         <div>
@@ -54,7 +56,7 @@
     flex-direction: column;
     justify-content: center;
 
-    width: 12rem;
+    width: 21rem;
     height: 16rem;
 
     border: solid thin white;
