@@ -79,7 +79,7 @@
   </div>
   <br />
   <span
-    >👨🏻‍💻 with ❤️ by
+    ><i class="fas fa-laptop-code"></i> with <i class="fas fa-heart"></i> by
     <a
       class="layoutLink"
       href="https://github.com/imyourmanzi/MattManzi-UI"
