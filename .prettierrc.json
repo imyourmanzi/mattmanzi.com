@@ -11,6 +11,7 @@
   "htmlWhitespaceSensitivity": "css",
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
+  "plugins": ["prettier-plugin-svelte"],
   "printWidth": 90,
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
@@ -18,5 +19,13 @@
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "all",
-  "useTabs": false
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": "*.svelte",
+      "options": {
+        "parser": "svelte"
+      }
+    }
+  ]
 }
