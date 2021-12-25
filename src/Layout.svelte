@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Link, Route, useLocation } from 'svelte-navigator';
   import Home from './sections/Home.svelte';
+  import Photography from './sections/Photography.svelte';
   import Resume from './sections/Resume.svelte';
   import type { Section } from './types';
 
@@ -10,7 +11,7 @@
   const sections: Section[] = [
     {
       title: 'Photography',
-      destination: 'photography',
+      destination: 'photos',
     },
     {
       title: 'Résumé',
@@ -65,6 +66,9 @@
 </header>
 <Route path="/">
   <Home sections="{sections}" />
+</Route>
+<Route path="photos">
+  <Photography />
 </Route>
 <Route path="resume">
   <Resume />
