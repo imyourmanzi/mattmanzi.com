@@ -219,26 +219,18 @@
 
 <div id="resumeContainer" class="container">
   <!-- download box -->
-  <div id="downloadContainer">
-    <div class="hanging full">
-      <a
-        class="customLink"
-        href="{`docs/${resume.name}.${resume.version}.pdf`}"
-        target="_blank"
-      >
-        <!-- no space between image and text to avoid awkward underline -->
-        <img src="img/download.svg" alt="Download PDF" />Download PDF
-      </a>
-    </div>
-    <div class="hanging tiny">
-      <a
-        class="customLink"
-        href="{`docs/${resume.name}.${resume.version}.pdf`}"
-        target="_blank"
-      >
-        <img src="img/download.svg" alt="Download PDF" />
-      </a>
-    </div>
+  <div id="downloadContainer" class="hanging">
+    <a
+      class="customLink"
+      href="{`docs/${resume.name}.${resume.version}.pdf`}"
+      target="_blank"
+      alt="Download PDF"
+    >
+      <!-- no space between image and text to avoid awkward underline -->
+      <i class="fas fa-file-download"></i>
+      <span style="text-decoration: none"></span>
+      <span class="full">Download PDF</span>
+    </a>
   </div>
   <!-- resume header -->
   <div id="nameplate">
@@ -427,15 +419,8 @@
     padding-bottom: 0;
   }
 
-  #downloadContainer .full {
-    position: relative;
-    width: 9em;
-    z-index: 99;
-  }
-
-  #downloadContainer img {
-    height: 1em;
-    padding-right: 0.3em;
+  #downloadContainer {
+    width: fit-content;
   }
 
   h1 {
@@ -534,12 +519,6 @@
   }
 
   @media screen and (max-aspect-ratio: 767/1024) {
-    #downloadContainer .tiny {
-      position: relative;
-      width: 1em;
-      z-index: 99;
-    }
-
     .skill .scrollable {
       height: 2.25em;
 

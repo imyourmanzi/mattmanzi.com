@@ -54,12 +54,16 @@ a {
 }
 
 .customLink {
-  color: #6699cc;
+  color: #97b0ca;
 }
 
-.customLink:hover {
+.customLink:hover * {
   color: white;
   text-decoration: underline;
+}
+
+.customLink:hover i {
+  text-decoration: none;
 }
 
 .hanging {
@@ -67,12 +71,13 @@ a {
   padding: 0.4em;
 
   text-align: center;
+  font-weight: bolder;
 
   border: 1px solid gray;
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  background-color: #282828;
+  background-color: #0f0f0f;
 }
 
 .errorBanner {
@@ -131,11 +136,15 @@ a {
     display: inherit;
   }
 
-  .customLink:hover {
+  .customLink {
+    color: #6699cc;
+  }
+
+  .customLink:hover * {
     color: black;
   }
 
   .hanging {
-    background-color: #cfcfcf;
+    background-color: #ececec;
   }
 }
