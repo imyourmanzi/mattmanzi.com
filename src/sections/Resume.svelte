@@ -489,6 +489,10 @@
     cursor: pointer;
   }
 
+  hr {
+    margin-top: 2px;
+  }
+
   .fa-plus,
   .fa-minus {
     transform: translateY(-2.5px);
