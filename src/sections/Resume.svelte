@@ -1,65 +1,84 @@
 <script lang="ts">
   const resume = {
-    version: '2020.07.3.Full',
+    version: '2021.12.22.Full',
     name: 'Matt R. Manzi',
     email: 'manzi.mattr@gmail.com',
+    profile: {
+      text: "Self-driven, hardworking technology solutions developer.  Team-oriented and versatile, with the proven ability to step up and lead.  Emphasis on communication and iteration early and often.  Passionate about collaboration and documentation.  Summa cum laude graduate with a B.S. in Computer Science and Certificate in Chinese Studies, along with certifications in AWS and Splunk.  I'm intentional in what I do, and I don't let that stop me from failing forward.",
+    },
     education: [
       {
         schoolName: 'University of Maryland, Baltimore County (UMBC)',
         location: 'Baltimore, MD',
         gradDate: 'May 2020',
-        major: 'Bachelor of Science, Computer Science; Certificate in Chinese Studies',
-        gpa: 3.975,
-        majorGpa: 4.0,
-        honors: ['Dean’s Fellow', 'Center for Women in Technology (CWIT) Cyber Scholar'],
+        major:
+          'Bachelor of Science, Computer Science, Cybersecurity Track; Certificate in Chinese Studies',
+        gpa: null,
+        majorGpa: null,
+        honors: [
+          'Summa Cum Laude',
+          'Center for Women in Technology (CWIT) Cyber Scholar',
+          "Dean's Fellow",
+        ],
       },
     ],
     skills: [
       {
         subset: 'Programming',
         values: [
+          'TypeScript',
           'Python',
-          'Java',
-          'C/C++',
-          'C#',
+          'HTML & CSS',
           'Swift',
-          'HTML/CSS',
-          'JavaScript',
           'Shell Scripting',
-          'Intel Assembly (x86-64)',
+          'Java',
+          'C & C++',
         ],
       },
       {
         subset: 'Technologies',
-        values: ['RESTful Services', 'SQL Databases', 'Vue.js', 'Virtual Machines'],
-      },
-      {
-        subset: 'Operating Systems',
-        values: ['Ubuntu Server 16', 'CentOS 7', 'macOS', 'Windows & Windows Server'],
-      },
-      {
-        subset: 'Software',
         values: [
-          'Xcode',
-          'Eclipse',
-          'Proxmox',
-          'VMware',
-          'Splunk 6.3 (Power User certified)',
-          'Elastic Stack',
+          'Node.js',
+          'RESTful Services',
+          'CloudFormation',
+          'Splunk',
+          'pfSense',
+          'Networking',
+          'SQL Databases',
           'MS-Office',
         ],
       },
       {
-        subset: 'Hardware',
+        subset: 'Platforms',
         values: [
-          'Rackmount Servers',
-          'Juniper Networking Equipment',
-          'Arduino',
-          'Raspberry Pi',
+          'AWS',
+          'macOS',
+          'Linux (Debian-based, Fedora-based)',
+          'Windows Desktop & Server',
         ],
+      },
+      {
+        subset: 'Practices',
+        values: ['Serverless Architecture', 'Peer Review', 'BDD-style Testing'],
+      },
+      {
+        subset: 'Management',
+        values: ['Task Planning & Prioritization', 'Documentation'],
       },
     ],
     experience: [
+      {
+        employerName: 'Relay Network',
+        title: 'Full Stack Software Engineer',
+        location: 'Radnor, PA',
+        timeDetial: 'Sep 2020 \u2013 Present',
+        points: [
+          'Design, develop, and maintain new, customer-facing applications and features, specialized solutions for backend services, and systems for internal engineering initiatives',
+          'Provide on-call support for critical systems',
+          'Participate in project and sprint planning',
+          'Train and mentor new hires',
+        ],
+      },
       {
         employerName: 'Juniper Networks',
         title: 'Systems Engineering Intern',
@@ -94,9 +113,21 @@
           'Participated in daily standups with team to identify highs and lows of the current sprint and overall project',
         ],
       },
+    ],
+    additionalExperience: [
+      {
+        employerName: 'Self-Employed',
+        title: 'DJ and Master of Ceremonies',
+        location: 'Aston, PA',
+        timeDetail: 'Sep 2013 \u2013 Present',
+        points: [
+          'Provide music, lighting and announcement for private parties of up to 100 people',
+          'Manage all business finances and logistics',
+        ],
+      },
       {
         employerName: 'UMBC',
-        title: 'Computer Science Lead Teaching Assistant',
+        title: 'Computer Science Lead Teaching Assistant (TA)',
         location: 'Baltimore, MD',
         timeDetail: 'Aug 2017 \u2013 May 2019',
         points: [
@@ -107,38 +138,16 @@
           'Wrote and maintained scripts to optimize student assignment submission and grading processes',
         ],
       },
-      {
-        employerName: 'Cratr LLC',
-        title: 'Senior Programmer and Management Team Member',
-        location: '',
-        timeDetail: 'Aug 2016 \u2013 May 2017',
-        points: [
-          'Developed website payment system and product pages; collaborated on company startup and formation',
-        ],
-      },
-    ],
-    additionalExp: [
-      {
-        employerName: 'Self-Employed',
-        title: 'DJ and Master of Ceremonies',
-        location: 'Aston, PA',
-        timeDetail: 'Sep 2013 \u2013 Present',
-        points: [
-          'Provide music, lighting and announcement for private parties of up to 100 people',
-        ],
-      },
-      {
-        employerName: 'IceWorks Skating Complex',
-        title: 'DJ and Video Producer',
-        location: 'Aston, PA',
-        timeDetail: 'Nov 2012 \u2013 Sep 2015',
-        points: [
-          'Created an exciting and social environment for audiences of all ages to enjoy public skating',
-          'Produced commercials for skating complex and junior pro hockey team to advertise opportunities and increase sales and public awareness',
-        ],
-      },
     ],
     projects: [
+      {
+        name: 'MattManzi.com',
+        organization: '',
+        timeDetail: 'Sep 2015 \u2013 Present',
+        points: [
+          'Design and develop personal website to communicate professional and personal interests while exploring new technologies',
+        ],
+      },
       {
         name: 'Mid-Atlantic Collegiate Cyber Defense Competition Qualifiers',
         organization: 'UMBC',
@@ -148,73 +157,44 @@
         ],
       },
       {
-        name: 'Innovate Good Hackathon',
-        organization: 'UMBC',
-        timeDetail: 'Apr 2017',
-        points: [
-          'Collaborated with 3 students to brainstorm, develop, launch, and present a winning web application (using Django API in Python on a Heroku app) in a 24-hour time constraint, aimed to help crime victims',
-        ],
-      },
-      {
-        name: 'iOS Application Developer',
+        name: 'iOS Application Development',
         organization: '',
-        timeDetail: 'Sep 2014 \u2013 Present',
+        timeDetail: 'Sep 2014 \u2013 May 2020',
         points: [
-          'Design, develop, and publish mobile applications through self-direction',
-          'Three (3) applications available on the Apple App Store',
-        ],
-      },
-    ],
-    volunteer: [
-      {
-        name: 'Retriever Music Society',
-        organization: 'UMBC',
-        timeDetail: 'Feb 2017 \u2013 May 2020',
-        points: [
-          'Perform as a DJ and master of ceremonies for on-campus events and organizations',
-        ],
-      },
-      {
-        name: 'Bits and Bytes & Cyber 101',
-        organization: 'UMBC CWIT',
-        timeDetail: 'Feb, Sep 2017 & Feb 2020',
-        points: [
-          'Helped organize an overnight program for high school junior girls to visit UMBC and engage in meaningful activities related to their interests in STEM, as well as held presentations and assisted participants throughout the program',
-        ],
-      },
-      {
-        name: 'Internet Day',
-        organization: 'Juniper Networks',
-        timeDetail: 'Jul 2019',
-        points: [
-          'Planned and coordinated an intern-led, all-day event over two weeks to educate underprivileged elementary school students on the technologies and concepts that drive the modern Internet',
-        ],
-      },
-      {
-        name: 'Photo Club',
-        organization: 'UMBC',
-        timeDetail: 'Aug 2017 \u2013 May 2018',
-        points: [
-          'Served as Treasurer; responsible for managing funds, fundraising, and contributing to overall club management',
+          'Designed, developed, and published mobile applications to the Apple App Store through self-direction',
         ],
       },
     ],
   };
 
-  let expandedSections = [0];
-  const toggleShowSection = (sectionId: number) => {
+  let openSections = ['profile'];
+
+  /**
+   * Toggle if a resume section is open or closed.
+   *
+   * @param sectionKey the name/key of the section
+   */
+  const toggleShowSection = (sectionKey: string) => {
     return () => {
-      const sectionIndex = expandedSections.indexOf(sectionId);
+      const sectionIndex = openSections.indexOf(sectionKey);
 
       // if section is not yet expanded...
       if (sectionIndex === -1) {
-        expandedSections = [...expandedSections, sectionId];
+        openSections = [...openSections, sectionKey];
       } else {
-        expandedSections.splice(sectionIndex, 1);
-        expandedSections = expandedSections;
+        openSections.splice(sectionIndex, 1);
+        openSections = openSections;
       }
     };
   };
+
+  /**
+   * Check if the section is open.
+   *
+   * @param sectionKey the name/key of the section
+   * @returns true if the section is open
+   */
+  const isOpen = (sectionKey: string) => openSections.indexOf(sectionKey) !== -1;
 </script>
 
 <div id="resumeContainer" class="container">
@@ -237,53 +217,32 @@
     <h1>{resume.name}</h1>
     <a href="{`mailto:${resume.email}`}">{resume.email}</a>
   </div>
-  <!-- education header -->
-  <button class="sectionButton" on:click="{toggleShowSection(0)}">
-    {#if expandedSections.indexOf(0) === -1}
+  <!-- profile header -->
+  <button class="sectionButton" on:click="{toggleShowSection('profile')}">
+    {#if openSections.indexOf('profile') === -1}
       <i class="fas fa-plus"></i>
     {:else}
       <i class="fas fa-minus"></i>
     {/if}
-    <span> Education</span>
+    <span> Profile</span>
   </button>
   <hr />
-  <!-- education section -->
-  {#if expandedSections.indexOf(0) !== -1}
-    {#each resume.education as edu (edu.schoolName)}
-      <div class="education">
-        <div class="detailLine">
-          <p><strong>{edu.schoolName}</strong> {edu.location}</p>
-          {#if edu.majorGpa}
-            <p>
-              <em
-                >GPA: {edu.gpa.toPrecision(4)} (major: {edu.majorGpa.toPrecision(2)}), {edu.gradDate}</em
-              >
-            </p>
-          {:else}
-            <p>
-              <em>GPA: {edu.gpa.toPrecision(4)}, {edu.gradDate}</em>
-            </p>
-          {/if}
-        </div>
-        <div class="detailLine">
-          <p>{edu.major}</p>
-        </div>
-        <p><em>Honors:</em> {edu.honors.join(', ')}</p>
-      </div>
-    {/each}
+  <!-- profile section -->
+  {#if openSections.indexOf('profile') !== -1}
+    <p>{resume.profile.text}</p>
   {/if}
   <!-- tech skills header -->
-  <button class="sectionButton" on:click="{toggleShowSection(1)}">
-    {#if expandedSections.indexOf(1) === -1}
+  <button class="sectionButton" on:click="{toggleShowSection('skills')}">
+    {#if openSections.indexOf('skills') === -1}
       <i class="fas fa-plus"></i>
     {:else}
       <i class="fas fa-minus"></i>
     {/if}
-    <span> Technical Skills</span>
+    <span> Skills</span>
   </button>
   <hr />
   <!-- tech skills section -->
-  {#if expandedSections.indexOf(1) !== -1}
+  {#if openSections.indexOf('skills') !== -1}
     {#each resume.skills as skill (skill.subset)}
       <div class="skill">
         <div>
@@ -295,18 +254,18 @@
       </div>
     {/each}
   {/if}
-  <!-- experience header -->
-  <button class="sectionButton" on:click="{toggleShowSection(2)}">
-    {#if expandedSections.indexOf(2) === -1}
+  <!-- industry experience header -->
+  <button class="sectionButton" on:click="{toggleShowSection('industryExperience')}">
+    {#if openSections.indexOf('industryExperience') === -1}
       <i class="fas fa-plus"></i>
     {:else}
       <i class="fas fa-minus"></i>
     {/if}
-    <span> Relevant Experience</span>
+    <span> Industry Experience</span>
   </button>
   <hr />
-  <!-- experience section -->
-  {#if expandedSections.indexOf(2) !== -1}
+  <!-- industry experience section -->
+  {#if openSections.indexOf('industryExperience') !== -1}
     {#each resume.experience as exp (exp.employerName)}
       <div class="experience">
         <div class="detailLine">
@@ -325,8 +284,8 @@
     {/each}
   {/if}
   <!-- additional experience header -->
-  <button class="sectionButton" on:click="{toggleShowSection(3)}">
-    {#if expandedSections.indexOf(3) === -1}
+  <button class="sectionButton" on:click="{toggleShowSection('additionalExperience')}">
+    {#if openSections.indexOf('additionalExperience') === -1}
       <i class="fas fa-plus"></i>
     {:else}
       <i class="fas fa-minus"></i>
@@ -335,8 +294,8 @@
   </button>
   <hr />
   <!-- additional experience section -->
-  {#if expandedSections.indexOf(3) !== -1}
-    {#each resume.additionalExp as exp (exp.employerName)}
+  {#if openSections.indexOf('additionalExperience') !== -1}
+    {#each resume.additionalExperience as exp (exp.employerName)}
       <div class="experience">
         <div class="detailLine">
           <p>
@@ -354,8 +313,8 @@
     {/each}
   {/if}
   <!-- projects header -->
-  <button class="sectionButton" on:click="{toggleShowSection(4)}">
-    {#if expandedSections.indexOf(4) === -1}
+  <button class="sectionButton" on:click="{toggleShowSection('projects')}">
+    {#if openSections.indexOf('projects') === -1}
       <i class="fas fa-plus"></i>
     {:else}
       <i class="fas fa-minus"></i>
@@ -364,7 +323,7 @@
   </button>
   <hr />
   <!-- projects section -->
-  {#if expandedSections.indexOf(4) !== -1}
+  {#if openSections.indexOf('projects') !== -1}
     {#each resume.projects as proj (proj.name)}
       <div class="project">
         <div class="detailLine">
@@ -379,33 +338,36 @@
       </div>
     {/each}
   {/if}
-  <!-- volunteer header -->
-  <button class="sectionButton" on:click="{toggleShowSection(5)}">
-    {#if expandedSections.indexOf(5) === -1}
+  <!-- education header -->
+  <button class="sectionButton" on:click="{toggleShowSection('education')}">
+    {#if openSections.indexOf('education') === -1}
       <i class="fas fa-plus"></i>
     {:else}
       <i class="fas fa-minus"></i>
     {/if}
-    <span> Volunteer Activities</span>
+    <span> Education</span>
   </button>
   <hr />
-  <!-- volunteer section -->
-  {#if expandedSections.indexOf(5) !== -1}
-    {#each resume.volunteer as activity (activity.name)}
-      <div class="activity">
+  <!-- education section -->
+  {#if openSections.indexOf('education') !== -1}
+    {#each resume.education as edu (edu.schoolName)}
+      <div class="education">
         <div class="detailLine">
+          <p><strong>{edu.schoolName}</strong> {edu.location}</p>
           <p>
-            <em>{activity.name}</em>{activity.organization
-              ? ', ' + activity.organization
-              : ''}
+            <em
+              >{#if edu.gpa}GPA: {edu.gpa.toPrecision(4)}
+                {#if edu.majorGpa}
+                  (major: {edu.majorGpa.toPrecision(2)}){/if},
+              {/if}
+              {edu.gradDate}</em
+            >
           </p>
-          <p><em>{activity.timeDetail}</em></p>
         </div>
-        <ul>
-          {#each activity.points as point (point)}
-            <li>{point}</li>
-          {/each}
-        </ul>
+        <div class="detailLine">
+          <p>{edu.major}</p>
+        </div>
+        <p><em>Honors:</em> {edu.honors.join(', ')}</p>
       </div>
     {/each}
   {/if}
