@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
+  export let className: string;
   export let once = false;
   export let top = 0;
   export let bottom = 0;
@@ -32,7 +33,7 @@
   });
 </script>
 
-<div bind:this="{container}">
+<div class="{className}" bind:this="{container}">
   <slot intersecting="{intersecting}" />
 </div>
 
