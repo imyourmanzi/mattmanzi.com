@@ -71,7 +71,7 @@
         employerName: 'Relay Network',
         title: 'Full Stack Software Engineer',
         location: 'Radnor, PA',
-        timeDetial: 'Sep 2020 \u2013 Present',
+        timeDetail: 'Sep 2020 \u2013 Present',
         points: [
           'Design, develop, and maintain new, customer-facing applications and features, specialized solutions for backend services, and systems for internal engineering initiatives',
           'Provide on-call support for critical systems',
