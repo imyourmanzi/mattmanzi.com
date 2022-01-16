@@ -2,8 +2,9 @@
   import LazyImage from './photos/LazyImage.svelte';
 </script>
 
-<div id="photosBackground">
-  <h1>Photography</h1>
+<h1>Photography</h1>
+<div id="fadedSpacer"></div>
+<div id="photosBackdrop">
   <div id="photosContainer">
     <LazyImage
       className="photo selfPortait3"
@@ -73,15 +74,15 @@
 </div>
 
 <style>
-  #photosBackground {
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 1)
-    );
+  #fadedSpacer {
+    height: 4rem;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
     border-radius: 0;
+  }
+
+  #photosBackdrop {
+    background-color: black;
   }
 
   #photosContainer {
