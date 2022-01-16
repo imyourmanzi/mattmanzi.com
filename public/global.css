@@ -47,10 +47,6 @@ a {
   font-size: 5.5rem;
   font-weight: 300;
   vertical-align: middle;
-
-  transition-property: font-size, margin-top;
-  transition-duration: 1.5s;
-  transition-timing-function: cubic-bezier();
 }
 
 .customLink {
