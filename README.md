@@ -10,7 +10,7 @@ Install dependencies
 
 ```sh
 cd mattmanzi-ui
-npm install
+npm ci
 ```
 
 Start [Rollup](https://rollupjs.org) (the dev server):
@@ -19,7 +19,7 @@ Start [Rollup](https://rollupjs.org) (the dev server):
 npm run dev
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). The app will hot-reload on file saves.
+Navigate to [localhost:5555](http://localhost:5555). The app will hot-reload on file saves.
 
 ### Tools
 
@@ -32,6 +32,15 @@ To create an optimised version of the app
 ```sh
 npm run build
 ```
+
+### To Firebase
+
+```sh
+npx firebase login
+npx firebase deploy
+```
+
+### To Servers
 
 To run and serve the newly built app
 
