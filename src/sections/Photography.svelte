@@ -7,17 +7,17 @@
 <div id="photosBackdrop">
   <div id="photosContainer">
     <LazyImage
-      className="photo selfPortait3"
+      className="photo selfPortaitLeft"
       src="img/2020-11-29-Self-Portrait-Wide.3.png"
       alt="Self portrait (left)"
     />
     <LazyImage
-      className="photo selfPortait2"
+      className="photo selfPortaitMiddle"
       src="img/2020-11-29-Self-Portrait-Wide.2.png"
-      alt="Self portrait (center)"
+      alt="Self portrait (middle)"
     />
     <LazyImage
-      className="photo selfPortait1"
+      className="photo selfPortaitRight"
       src="img/2020-11-29-Self-Portrait-Wide.1.png"
       alt="Self portrait (right)"
     />
@@ -55,17 +55,17 @@
       alt="Teddy eye"
     />
     <LazyImage
-      className="photo teddy3"
+      className="photo teddyLeft"
       src="img/insta-2020-03-14-Teddy-Wide.3.png"
       alt="Teddy wide (left)"
     />
     <LazyImage
-      className="photo teddy2"
+      className="photo teddyMiddle"
       src="img/insta-2020-03-14-Teddy-Wide.2.png"
       alt="Teddy wide (middle)"
     />
     <LazyImage
-      className="photo teddy1"
+      className="photo teddyRight"
       src="img/insta-2020-03-14-Teddy-Wide.1.png"
       alt="Teddy wide (right)"
     />
@@ -75,13 +75,15 @@
 
 <style>
   #fadedSpacer {
-    height: 4rem;
+    height: 2rem;
 
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
     border-radius: 0;
   }
 
   #photosBackdrop {
+    padding-bottom: 1rem;
+
     background-color: black;
   }
 
@@ -92,110 +94,175 @@
     margin-right: 2%;
 
     grid-template-columns: [left-edge] repeat(9, minmax(20px, 1fr)) [right-edge];
-    grid-template-rows: [top-edge] repeat(4, minmax(20px, 1fr)) [bottom-edge];
+    grid-template-rows: [top-edge] repeat(4, fit-content(20px)) [bottom-edge];
     gap: 7px;
   }
 
-  #photosContainer :global(.photo.selfPortait3) {
+  #photosContainer :global(.photo.selfPortaitLeft) {
     grid-column: left-edge / 3;
     grid-row: top-edge / 3;
-    place-self: center;
   }
 
-  #photosContainer :global(.photo.selfPortait2) {
+  #photosContainer :global(.photo.selfPortaitMiddle) {
     grid-column: 3 / 5;
     grid-row: top-edge / 3;
-    place-self: center;
   }
 
-  #photosContainer :global(.photo.selfPortait1) {
+  #photosContainer :global(.photo.selfPortaitRight) {
     grid-column: 5 / 7;
     grid-row: top-edge / 3;
-    place-self: center;
   }
 
   #photosContainer :global(.photo.dsc05900) {
     grid-column: 7 / 8;
     grid-row: top-edge / 2;
-    place-self: center;
   }
 
   #photosContainer :global(.photo.dsc05982) {
     grid-column: 7 / 8;
     grid-row: 2 / 3;
-    place-self: center;
   }
 
   #photosContainer :global(.photo.dsc05907) {
     grid-column: 8 / right-edge;
     grid-row: top-edge / 3;
-    place-self: center;
   }
 
   #photosContainer :global(.photo.dsc00738Edit) {
     grid-column: left-edge / 4;
     grid-row: 3 / 4;
-    place-self: center;
   }
 
   #photosContainer :global(.photo.dsc06553) {
     grid-column: 4 / 5;
     grid-row: 3 / 4;
-    place-self: center;
   }
 
   #photosContainer :global(.photo.dsc01523Edit) {
     grid-column: left-edge / 2;
     grid-row: 4 / 5;
-    place-self: center;
   }
 
   #photosContainer :global(.photo.dsc01518) {
     grid-column: 2 / 3;
     grid-row: 4 / 5;
-    place-self: center;
   }
 
   #photosContainer :global(.photo.dsc06523Edit) {
     grid-column: 5 / 6;
     grid-row: 4 / 5;
-    place-self: center;
   }
 
   #photosContainer :global(.photo.dsc06548) {
     grid-column: 4 / 5;
     grid-row: 4 / 5;
-    place-self: center;
   }
 
-  #photosContainer :global(.photo.teddy3) {
+  #photosContainer :global(.photo.teddyLeft) {
     grid-column: 5 / 6;
     grid-row: 3 / 4;
-    place-self: center;
   }
 
-  #photosContainer :global(.photo.teddy2) {
+  #photosContainer :global(.photo.teddyMiddle) {
     grid-column: 6 / 8;
     grid-row: 3 / 5;
-    place-self: center;
   }
 
-  #photosContainer :global(.photo.teddy1) {
+  #photosContainer :global(.photo.teddyRight) {
     grid-column: 8 / right-edge;
     grid-row: 3 / 5;
-    place-self: center;
   }
 
   #photosContainer :global(.photo.dsc01530) {
     grid-column: 3 / 4;
     grid-row: 4 / 5;
-    place-self: center;
   }
 
   @media screen and (max-aspect-ratio: 767/1024) {
     #photosContainer {
-      grid-template-columns: [left-edge] repeat(4, minmax(20px, 1fr)) [right-edge];
-      grid-template-rows: [top-edge] repeat(6, minmax(100px, 1fr)) [bottom-edge];
+      grid-template-columns: [left-edge] repeat(8, minmax(20px, 1fr)) [right-edge];
+      grid-template-rows: [top-edge] repeat(7, fit-content(20px)) [bottom-edge];
+      gap: 4px;
+    }
+
+    #photosContainer :global(.photo.selfPortaitLeft) {
+      grid-column: left-edge / 3;
+      grid-row: top-edge / 2;
+    }
+
+    #photosContainer :global(.photo.selfPortaitMiddle) {
+      grid-column: 3 / 5;
+      grid-row: top-edge / 2;
+    }
+
+    #photosContainer :global(.photo.selfPortaitRight) {
+      grid-column: 5 / 7;
+      grid-row: top-edge / 2;
+    }
+
+    #photosContainer :global(.photo.dsc05900) {
+      grid-column: 7 / right-edge;
+      grid-row: top-edge / 2;
+    }
+
+    #photosContainer :global(.photo.dsc01523Edit) {
+      grid-column: left-edge / 3;
+      grid-row: 2 / 3;
+    }
+
+    #photosContainer :global(.photo.dsc01530) {
+      grid-column: 3 / 5;
+      grid-row: 2 / 3;
+    }
+
+    #photosContainer :global(.photo.dsc05907) {
+      grid-column: 5 / 7;
+      grid-row: 2 / 3;
+    }
+
+    #photosContainer :global(.photo.dsc05982) {
+      grid-column: 7 / right-edge;
+      grid-row: 2 / 3;
+    }
+
+    #photosContainer :global(.photo.dsc01518) {
+      grid-column: left-edge / 3;
+      grid-row: 3 / 4;
+    }
+
+    #photosContainer :global(.photo.dsc00738Edit) {
+      grid-column: 3 / right-edge;
+      grid-row: 3 / 4;
+    }
+
+    #photosContainer :global(.photo.teddyLeft) {
+      grid-column: left-edge / 3;
+      grid-row: 4 / 5;
+    }
+
+    #photosContainer :global(.photo.dsc06553) {
+      grid-column: left-edge / 2;
+      grid-row: 5 / 6;
+    }
+
+    #photosContainer :global(.photo.dsc06548) {
+      grid-column: 2 / 3;
+      grid-row: 5 / 6;
+    }
+
+    #photosContainer :global(.photo.teddyMiddle) {
+      grid-column: 3 / 6;
+      grid-row: 4 / 6;
+    }
+
+    #photosContainer :global(.photo.teddyRight) {
+      grid-column: 6 / right-edge;
+      grid-row: 4 / 6;
+    }
+
+    #photosContainer :global(.photo.dsc06523Edit) {
+      grid-column: left-edge / right-edge;
+      grid-row: 6 / bottom-edge;
     }
   }
 </style>
