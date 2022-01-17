@@ -8,17 +8,17 @@
   <div id="photosContainer">
     <LazyImage
       className="photo selfPortaitLeft"
-      src="img/2020-11-29-Self-Portrait-Wide.3.png"
+      src="img/2020-11-29-Self-Portrait-Wide.3.jpg"
       alt="Self portrait (left)"
     />
     <LazyImage
       className="photo selfPortaitMiddle"
-      src="img/2020-11-29-Self-Portrait-Wide.2.png"
+      src="img/2020-11-29-Self-Portrait-Wide.2.jpg"
       alt="Self portrait (middle)"
     />
     <LazyImage
       className="photo selfPortaitRight"
-      src="img/2020-11-29-Self-Portrait-Wide.1.png"
+      src="img/2020-11-29-Self-Portrait-Wide.1.jpg"
       alt="Self portrait (right)"
     />
     <LazyImage className="photo dsc05900" src="img/insta-DSC05900.jpg" alt="Pumpkin" />
@@ -26,7 +26,7 @@
     <LazyImage className="photo dsc05907" src="img/insta-DSC05907.jpg" alt="Pumpkin" />
     <LazyImage
       className="photo dsc00738Edit"
-      src="img/DSC00738-Edit.png"
+      src="img/DSC00738-Edit.jpg"
       alt="Mountain"
     />
     <LazyImage
@@ -56,17 +56,17 @@
     />
     <LazyImage
       className="photo teddyLeft"
-      src="img/insta-2020-03-14-Teddy-Wide.3.png"
+      src="img/insta-2020-03-14-Teddy-Wide.3.jpg"
       alt="Teddy wide (left)"
     />
     <LazyImage
       className="photo teddyMiddle"
-      src="img/insta-2020-03-14-Teddy-Wide.2.png"
+      src="img/insta-2020-03-14-Teddy-Wide.2.jpg"
       alt="Teddy wide (middle)"
     />
     <LazyImage
       className="photo teddyRight"
-      src="img/insta-2020-03-14-Teddy-Wide.1.png"
+      src="img/insta-2020-03-14-Teddy-Wide.1.jpg"
       alt="Teddy wide (right)"
     />
     <LazyImage className="photo dsc01530" src="img/standard-DSC01530.jpg" alt="Trolley" />
