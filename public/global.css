@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
+
+/* Global attributes */
+* {
+  border-radius: 5px;
+}
+
+/* Root-level attributes */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  background-color: #011f3a; /* rbg(1, 31, 58) */
+  color: white;
+
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  /* make the whole site have a slighty larger font (default: 16px) */
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  width: 92%;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+
+  text-align: left;
+}
+
+.spacing {
+  margin: 7em 0;
+}
+
+.direct {
+  width: 86%;
+  margin: 1rem auto;
+
+  font-size: 5.5rem;
+  font-weight: 300;
+  vertical-align: middle;
+}
+
+.customLink {
+  color: #97b0ca;
+}
+
+.customLink:hover * {
+  color: white;
+  text-decoration: underline;
+}
+
+.customLink:hover i {
+  text-decoration: none;
+}
+
+.hanging {
+  margin-left: auto;
+  padding: 0.4em;
+
+  text-align: center;
+  font-weight: bolder;
+
+  border: 1px solid gray;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: #0f0f0f;
+}
+
+.errorBanner {
+  margin-top: 0.5em;
+  padding: 0.2em;
+
+  text-align: center;
+  color: black;
+
+  background-color: #cc6666;
+}
+
+.full {
+  display: inherit;
+}
+
+.tiny {
+  display: none;
+}
+
+.lightMode {
+  display: none;
+}
+
+.darkMode {
+  display: inherit;
+}
+
+/* Extra tall and skinny screens (i.e. smartphones) */
+@media screen and (max-aspect-ratio: 767/1024) {
+  .full {
+    display: none;
+  }
+
+  .tiny {
+    display: inherit;
+  }
+
+  .container {
+    width: 92%;
+  }
+}
+
+/* Light mode vs. dark mode (default) */
+@media screen and (prefers-color-scheme: light) {
+  body {
+    background-color: #fcfbf7; /* rgb(252, 251, 247) */
+    color: #011f3a;
+  }
+
+  .darkMode {
+    display: none;
+  }
+
+  .lightMode {
+    display: inherit;
+  }
+
+  .customLink {
+    color: #6699cc;
+  }
+
+  .customLink:hover * {
+    color: black;
+  }
+
+  .hanging {
+    background-color: #ececec;
+  }
+}

@@ -1,7 +1,12 @@
-.DS_Store
-node_modules/
-/dist/
+# Node
+/node_modules/
 npm-debug.log*
+
+# Build files
+/public/build/
+
+# macOS
+.DS_Store
 
 # No large media files
 offline-res/

@@ -4,36 +4,39 @@ _Frontend UI_
 
 This repository compiles into the relevant frontend resources needed for my personal website at [mattmanzi.com](https://mattmanzi.com).
 
-## General Usage
+## Development
 
-Initially, run
+Install dependencies
 
-```
+```sh
+cd mattmanzi-ui
 npm install
 ```
 
-to download all dependencies needed and setup the project.
+Start [Rollup](https://rollupjs.org) (the dev server):
 
-To build the project for local development with hot-reloads, run:
-
-```
-npm run local
+```sh
+npm run dev
 ```
 
-or for minified production code, run:
+Navigate to [localhost:5000](http://localhost:5000). The app will hot-reload on file saves.
 
-```
+### Tools
+
+On [VS Code](https://code.visualstudio.com/) there's an official extension: [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+
+## Deployment
+
+To create an optimised version of the app
+
+```sh
 npm run build
 ```
 
-To update the version string of the UI, please run:
+To run and serve the newly built app
 
+```sh
+npm run start
 ```
-npm version [major|minor|patch]
-```
 
-## Other Useful `npm` Commands
-
-- `npm run lint` to independently lint code
-- `npm run build --report` to report statistics on the build
-- `rm -r ./dist/` to remove the build folder
+This uses [sirv](https://github.com/lukeed/sirv), which is included in your **package.json**'s `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
