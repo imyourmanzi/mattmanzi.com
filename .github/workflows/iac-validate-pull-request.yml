@@ -1,0 +1,24 @@
+name: Validate IaC in PRs
+'on':
+  pull_request:
+    paths:
+      - '**/*.tf'
+      - '.terraform.lock.hcl'
+      - '.github/workflows/terraform-validate-pull-request.yml'
+
+jobs:
+  validate:
+    name: Terraform Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Format Check
+        run: terraform fmt -check
+      - name: Terraform Init
+        run: terraform init
+      - name: Validate Check
+        run: terraform validate
