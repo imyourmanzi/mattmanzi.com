@@ -5,12 +5,12 @@ name: Deploy to Firebase Hosting on PR
 'on':
   pull_request:
     paths-ignore:
-      - '**.hcl'
-      - '**.tf'
-      - '**.md'
-      - '**.prettier*'
-      - '.github/workflows/terraform-validate-pull-request.yml'
+      - '**/*.hcl'
+      - '**/*.tf'
+      - '**/*.md'
+      - '**/.prettier*'
       - '**/.gitignore'
+      - '.github/workflows/terraform-validate-pull-request.yml'
 
 jobs:
   build_and_preview:
