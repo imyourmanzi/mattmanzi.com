@@ -27,20 +27,32 @@ On [VS Code](https://code.visualstudio.com/) there's an official extension: [Sve
 
 ## Deployment
 
+### Infrastructure
+
+Get Terraform service account GCP credentials:
+
+```sh
+gcloud iam service-accounts keys create key.json --iam-account=terraform@mattmanzi-com.iam.gserviceaccount.com
+mv key.json gcp_credentials.json
+export GOOGLE_APPLICATION_CREDENTIALS=./gcp_credentials.json
+```
+
+### Code
+
 To create an optimised version of the app
 
 ```sh
 npm run build
 ```
 
-### To Firebase
+#### To Firebase
 
 ```sh
 npx firebase login
 npx firebase deploy
 ```
 
-### To Servers
+#### To Servers
 
 To run and serve the newly built app
 

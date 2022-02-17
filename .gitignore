@@ -10,3 +10,13 @@ npm-debug.log*
 
 # No large media files
 offline-res/
+
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# GCP credentials
+gcp_credentials.json
