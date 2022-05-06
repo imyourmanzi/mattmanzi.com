@@ -10,7 +10,8 @@ name: Deploy to Firebase Hosting on PR
       - '**/*.md'
       - '**/.prettier*'
       - '**/.gitignore'
-      - '.github/workflows/terraform-validate-pull-request.yml'
+      - '.github/workflows/iac-validate-pull-request.yml'
+      - '.github/workflows/version-pull-request.yml'
 
 jobs:
   build_and_preview:
