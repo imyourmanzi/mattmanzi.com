@@ -7,7 +7,6 @@ on:
       - 'src/**'
       - 'package*.json'
       - 'public/**'
-      - '.github/workflows/version-pull-request.yml'
 
 jobs:
   check:
