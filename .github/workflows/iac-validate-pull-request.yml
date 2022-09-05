@@ -4,7 +4,6 @@ name: Validate IaC in PRs
     paths:
       - '**/*.tf'
       - '.terraform.lock.hcl'
-      - '.github/workflows/terraform-validate-pull-request.yml'
 
 jobs:
   validate:
