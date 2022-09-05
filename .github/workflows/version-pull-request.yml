@@ -10,6 +10,4 @@ on:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: imyourmanzi/GitHubWorkflows/.github/workflows/package-json-version-check.yml@main
+    uses: imyourmanzi/GitHubWorkflows/.github/workflows/package-json-version-check.yml@main
