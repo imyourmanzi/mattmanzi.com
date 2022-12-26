@@ -12,10 +12,12 @@
     {
       title: 'Photography',
       destination: 'photos',
+      component: Photography,
     },
     {
       title: 'Résumé',
       destination: 'resume',
+      component: Resume,
     },
   ];
 
@@ -67,12 +69,9 @@
 <Route path="/">
   <Home sections="{sections}" />
 </Route>
-<Route path="photos">
-  <Photography />
-</Route>
-<Route path="resume">
-  <Resume />
-</Route>
+{#each sections as section (section.destination)}
+  <Route path="{section.destination}" component="{section.component}" />
+{/each}
 <footer class:dividedBottom="{!!sectionUri}">
   <div id="socialLinks">
     {#each socialLinks as social (social.url)}
