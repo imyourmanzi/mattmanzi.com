@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Link, Route, useLocation } from 'svelte-navigator';
   import Home from './sections/Home.svelte';
+  import Software from './sections/Software.svelte';
   import Photography from './sections/Photography.svelte';
   import Resume from './sections/Resume.svelte';
   import type { Section } from './types';
@@ -9,6 +10,11 @@
   $: sectionUri = $location.pathname.split('/')[1];
 
   const sections: Section[] = [
+    {
+      title: 'Software',
+      destination: 'software',
+      component: Software,
+    },
     {
       title: 'Photography',
       destination: 'photos',
