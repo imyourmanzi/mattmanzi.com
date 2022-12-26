@@ -2,11 +2,11 @@
 
 ## Development
 
-Install dependencies
+Download the repository and install dependencies.
 
 ```sh
-cd mattmanzi-ui
-npm ci
+nvm use
+npm install
 ```
 
 Start [Rollup](https://rollupjs.org) (the dev server):
@@ -19,7 +19,7 @@ Navigate to [localhost:5555](http://localhost:5555). The app will hot-reload on 
 
 ### Tools
 
-On [VS Code](https://code.visualstudio.com/) there's an official extension: [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+Recommended tooling will either be installed in npm dependencies or in recommended by VS Code.
 
 ## Deployment
 
@@ -35,7 +35,7 @@ export GOOGLE_APPLICATION_CREDENTIALS=./gcp_credentials.json
 
 ### Code
 
-To create an optimized version of the app
+To create an optimized version of the app:
 
 ```sh
 npm run build
@@ -50,7 +50,7 @@ npx firebase deploy
 
 #### To Servers
 
-To run and serve the newly built app
+To run and serve the newly built app:
 
 ```sh
 npm run start
