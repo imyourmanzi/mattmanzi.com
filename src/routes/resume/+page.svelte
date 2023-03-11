@@ -4,7 +4,7 @@
     name: 'Matt R. Manzi',
     email: 'manzi.mattr@gmail.com',
     profile: {
-      text: "Self-driven, hardworking technology solutions developer.  Team-oriented and versatile, with the proven ability to step up and lead.  Emphasis on communication and iteration early and often.  Passionate about collaboration and documentation.  Summa cum laude graduate with a B.S. in Computer Science and Certificate in Chinese Studies, along with certifications in AWS and Splunk.  I'm intentional in what I do, and I don't let that stop me from failing forward.",
+      text: "Self-driven, hardworking technology solutions developer.  Team-oriented and versatile, with the proven ability to step up and lead.  Emphasis on communication and iteration early and often.  Passionate about collaboration and documentation.  Summa cum laude graduate with a B.S. in Computer Science and Certificate in Chinese Studies, along with certifications in AWS and Splunk.  I'm intentional in what I do, and I don't let that stop me from failing forward."
     },
     education: [
       {
@@ -13,14 +13,14 @@
         gradDate: 'May 2020',
         major:
           'Bachelor of Science, Computer Science, Cybersecurity Track; Certificate in Chinese Studies',
-        gpa: null,
-        majorGpa: null,
+        gpa: null as number | null,
+        majorGpa: null as number | null,
         honors: [
           'Summa Cum Laude',
           'Center for Women in Technology (CWIT) Cyber Scholar',
-          "Dean's Fellow",
-        ],
-      },
+          "Dean's Fellow"
+        ]
+      }
     ],
     skills: [
       {
@@ -32,8 +32,8 @@
           'Swift',
           'Shell Scripting',
           'Java',
-          'C & C++',
-        ],
+          'C & C++'
+        ]
       },
       {
         subset: 'Technologies',
@@ -45,8 +45,8 @@
           'pfSense',
           'Networking',
           'SQL Databases',
-          'MS-Office',
-        ],
+          'MS-Office'
+        ]
       },
       {
         subset: 'Platforms',
@@ -54,17 +54,17 @@
           'AWS',
           'macOS',
           'Linux (Debian-based, Fedora-based)',
-          'Windows Desktop & Server',
-        ],
+          'Windows Desktop & Server'
+        ]
       },
       {
         subset: 'Practices',
-        values: ['Serverless Architecture', 'Peer Review', 'BDD-style Testing'],
+        values: ['Serverless Architecture', 'Peer Review', 'BDD-style Testing']
       },
       {
         subset: 'Management',
-        values: ['Task Planning & Prioritization', 'Documentation'],
-      },
+        values: ['Task Planning & Prioritization', 'Documentation']
+      }
     ],
     experience: [
       {
@@ -76,8 +76,8 @@
           'Design, develop, and maintain new, customer-facing applications and features, specialized solutions for backend services, and systems for internal engineering initiatives',
           'Provide on-call support for critical systems',
           'Participate in project and sprint planning',
-          'Train and mentor new hires',
-        ],
+          'Train and mentor new hires'
+        ]
       },
       {
         employerName: 'Juniper Networks',
@@ -87,8 +87,8 @@
         points: [
           'Evaluated a new product in order to write and produce a 50-page guide designed to expedite the learning process for other pre-sales systems engineers',
           'Presented the deliverable at a company-wide showcase to employees of all business verticals',
-          'Shadowed other systems engineers in sales and customer meetings to learn sales and business principles',
-        ],
+          'Shadowed other systems engineers in sales and customer meetings to learn sales and business principles'
+        ]
       },
       {
         employerName: 'Parsons Cyber',
@@ -99,8 +99,8 @@
           'Defined, designed, and implemented cybersecurity analytics and visualizations to identify and assess network and device security, and microservices for parallelized data correlation',
           'Analyzed network traffic for individual and overall anomalies in connections',
           'Researched, configured, and implemented an offline region-mapping visualization solution for threat identification in a secure environment',
-          'Presented solution to business leaders in AFCEA Central Maryland at their Summer Intern Presentation Showcase',
-        ],
+          'Presented solution to business leaders in AFCEA Central Maryland at their Summer Intern Presentation Showcase'
+        ]
       },
       {
         employerName: 'WSFS Bank',
@@ -110,9 +110,9 @@
         points: [
           'Collaborated with developers and project managers over a 3-sprint, Agile project to successfully deliver a check processing application to an internal customer by the end of the summer',
           'Contributed to the design and implemented the RESTful API and database for the product, a web application',
-          'Participated in daily standups with team to identify highs and lows of the current sprint and overall project',
-        ],
-      },
+          'Participated in daily standups with team to identify highs and lows of the current sprint and overall project'
+        ]
+      }
     ],
     additionalExperience: [
       {
@@ -122,8 +122,8 @@
         timeDetail: 'Sep 2013 \u2013 Present',
         points: [
           'Provide music, lighting and announcement for private parties of up to 100 people',
-          'Manage all business finances and logistics',
-        ],
+          'Manage all business finances and logistics'
+        ]
       },
       {
         employerName: 'UMBC',
@@ -135,9 +135,9 @@
           'Assisted students and graded assignments for Computer Science I for Majors (CMSC 201)',
           'Led discussion groups covering material in Python programming language',
           'Held weekly office hours to aid students outside of class',
-          'Wrote and maintained scripts to optimize student assignment submission and grading processes',
-        ],
-      },
+          'Wrote and maintained scripts to optimize student assignment submission and grading processes'
+        ]
+      }
     ],
     projects: [
       {
@@ -145,26 +145,26 @@
         organization: '',
         timeDetail: 'Sep 2015 \u2013 Present',
         points: [
-          'Design and develop personal website to communicate professional and personal interests while exploring new technologies',
-        ],
+          'Design and develop personal website to communicate professional and personal interests while exploring new technologies'
+        ]
       },
       {
         name: 'Mid-Atlantic Collegiate Cyber Defense Competition Qualifiers',
         organization: 'UMBC',
         timeDetail: 'Feb 2018',
         points: [
-          'Managed and protected multiple Linux-based systems and firewall rules for each device',
-        ],
+          'Managed and protected multiple Linux-based systems and firewall rules for each device'
+        ]
       },
       {
         name: 'iOS Application Development',
         organization: '',
         timeDetail: 'Sep 2014 \u2013 May 2020',
         points: [
-          'Designed, developed, and published mobile applications to the Apple App Store through self-direction',
-        ],
-      },
-    ],
+          'Designed, developed, and published mobile applications to the Apple App Store through self-direction'
+        ]
+      }
+    ]
   };
 
   let openSections = ['profile'];
@@ -187,14 +187,6 @@
       }
     };
   };
-
-  /**
-   * Check if the section is open.
-   *
-   * @param sectionKey the name/key of the section
-   * @returns true if the section is open
-   */
-  const isOpen = (sectionKey: string) => openSections.indexOf(sectionKey) !== -1;
 </script>
 
 <div id="resumeContainer" class="container">
@@ -204,7 +196,6 @@
       class="customLink"
       href="{`docs/${resume.name}.${resume.version}.pdf`}"
       target="_blank"
-      alt="Download PDF"
     >
       <!-- no space between image and text to avoid awkward underline -->
       <i class="fas fa-file-download"></i>

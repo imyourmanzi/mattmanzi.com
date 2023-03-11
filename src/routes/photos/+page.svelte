@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LazyImage from './photos/LazyImage.svelte';
+  import LazyImage from './LazyImage.svelte';
 </script>
 
 <h1>Photography</h1>
@@ -8,68 +8,72 @@
   <div id="photosContainer">
     <LazyImage
       className="photo selfPortaitLeft"
-      src="img/2020-11-29-Self-Portrait-Wide.3.jpg"
+      src="./img/2020-11-29-Self-Portrait-Wide.3.jpg"
       alt="Self portrait (left)"
     />
     <LazyImage
       className="photo selfPortaitMiddle"
-      src="img/2020-11-29-Self-Portrait-Wide.2.jpg"
+      src="./img/2020-11-29-Self-Portrait-Wide.2.jpg"
       alt="Self portrait (middle)"
     />
     <LazyImage
       className="photo selfPortaitRight"
-      src="img/2020-11-29-Self-Portrait-Wide.1.jpg"
+      src="./img/2020-11-29-Self-Portrait-Wide.1.jpg"
       alt="Self portrait (right)"
     />
-    <LazyImage className="photo dsc05900" src="img/insta-DSC05900.jpg" alt="Pumpkin" />
-    <LazyImage className="photo dsc05982" src="img/insta-DSC05982.jpg" alt="Pumpkin" />
-    <LazyImage className="photo dsc05907" src="img/insta-DSC05907.jpg" alt="Pumpkin" />
+    <LazyImage className="photo dsc05900" src="./img/insta-DSC05900.jpg" alt="Pumpkin" />
+    <LazyImage className="photo dsc05982" src="./img/insta-DSC05982.jpg" alt="Pumpkin" />
+    <LazyImage className="photo dsc05907" src="./img/insta-DSC05907.jpg" alt="Pumpkin" />
     <LazyImage
       className="photo dsc00738Edit"
-      src="img/DSC00738-Edit.jpg"
+      src="./img/DSC00738-Edit.jpg"
       alt="Mountain"
     />
     <LazyImage
       className="photo dsc06553"
-      src="img/standard-DSC06553.jpg"
+      src="./img/standard-DSC06553.jpg"
       alt="Teddy nose"
     />
     <LazyImage
       className="photo dsc01523Edit"
-      src="img/standard-DSC01523-Edit.jpg"
+      src="./img/standard-DSC01523-Edit.jpg"
       alt="Building"
     />
     <LazyImage
       className="photo dsc01518"
-      src="img/standard-DSC01518.jpg"
+      src="./img/standard-DSC01518.jpg"
       alt="Building"
     />
     <LazyImage
       className="photo dsc06523Edit"
-      src="img/standard-DSC06523-Edit.jpg"
+      src="./img/standard-DSC06523-Edit.jpg"
       alt="Teddy face bed"
     />
     <LazyImage
       className="photo dsc06548"
-      src="img/standard-DSC06548.jpg"
+      src="./img/standard-DSC06548.jpg"
       alt="Teddy eye"
     />
     <LazyImage
       className="photo teddyLeft"
-      src="img/insta-2020-03-14-Teddy-Wide.3.jpg"
+      src="./img/insta-2020-03-14-Teddy-Wide.3.jpg"
       alt="Teddy wide (left)"
     />
     <LazyImage
       className="photo teddyMiddle"
-      src="img/insta-2020-03-14-Teddy-Wide.2.jpg"
+      src="./img/insta-2020-03-14-Teddy-Wide.2.jpg"
       alt="Teddy wide (middle)"
     />
     <LazyImage
       className="photo teddyRight"
-      src="img/insta-2020-03-14-Teddy-Wide.1.jpg"
+      src="./img/insta-2020-03-14-Teddy-Wide.1.jpg"
       alt="Teddy wide (right)"
     />
-    <LazyImage className="photo dsc01530" src="img/standard-DSC01530.jpg" alt="Trolley" />
+    <LazyImage
+      className="photo dsc01530"
+      src="./img/standard-DSC01530.jpg"
+      alt="Trolley"
+    />
   </div>
 </div>
 

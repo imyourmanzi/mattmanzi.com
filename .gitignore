@@ -1,9 +1,19 @@
+# Svelte
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+
 # Node
-/node_modules/
+node_modules
 npm-debug.log*
 
 # Build files
-/public/build/
+/build
 
 # macOS
 .DS_Store

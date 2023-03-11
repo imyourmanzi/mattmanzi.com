@@ -1,28 +1,25 @@
 <script lang="ts">
-  import { Link, useFocus } from 'svelte-navigator';
-  import type { Section } from '../types';
+  import type { PageData } from './$types';
 
-  export let sections: Section[];
+  export let data: PageData;
 
-  const registerFocus = useFocus();
+  const { sections } = data;
 </script>
 
-<template>
-  <div id="homeContainer" class="container">
-    <p use:registerFocus class="direct">As we say it,<br />so it shall be.</p>
-    <div id="sectionBoxes">
-      {#each sections as section (section.destination)}
-        <div>
-          <Link class="sectionBoxLinkWrap" to="{section.destination}">
-            <div class="sectionInnerBox">
-              <p>{section.title}</p>
-            </div>
-          </Link>
-        </div>
-      {/each}
-    </div>
+<div id="homeContainer" class="container">
+  <p class="direct">As we say it,<br />so it shall be.</p>
+  <div id="sectionBoxes">
+    {#each sections as section (section.destination)}
+      <div>
+        <a class="sectionBoxLinkWrap" href="{section.destination}">
+          <div class="sectionInnerBox">
+            <p>{section.title}</p>
+          </div>
+        </a>
+      </div>
+    {/each}
   </div>
-</template>
+</div>
 
 <style>
   #homeContainer {
