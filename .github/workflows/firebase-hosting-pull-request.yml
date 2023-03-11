@@ -10,6 +10,7 @@ name: Deploy to Firebase Hosting on PR
       - '**/*.md'
       - '**/.prettier*'
       - '**/.gitignore'
+      - '.eslint*'
       - '.github/**'
 
 jobs:
