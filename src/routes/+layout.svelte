@@ -1,78 +1,31 @@
 <script lang="ts">
-  import { Link, Route, useLocation } from 'svelte-navigator';
-  import Home from './sections/Home.svelte';
-  import Photography from './sections/Photography.svelte';
-  import Resume from './sections/Resume.svelte';
-  import type { Section } from './types';
+  import { page } from '$app/stores';
+  import type { PageData } from './$types';
 
-  const location = useLocation();
-  $: sectionUri = $location.pathname.split('/')[1];
+  $: sectionUri = $page.route.id?.split('/')[1];
 
-  const sections: Section[] = [
-    {
-      title: 'Photography',
-      destination: 'photos',
-    },
-    {
-      title: 'Résumé',
-      destination: 'resume',
-    },
-  ];
+  export let data: PageData;
 
-  const socialLinks = [
-    {
-      imgResource: 'social_git.svg',
-      imgAlt: 'Link to GitHub profile',
-      url: 'https://github.com/imyourmanzi',
-    },
-    {
-      imgResource: 'social_ig.png',
-      imgAlt: 'Link to Instagram profile',
-      url: 'https://www.instagram.com/imyourmanzi/',
-    },
-    {
-      imgResource: 'social_fb.svg',
-      imgAlt: 'Link to Facebook profile',
-      url: 'https://www.facebook.com/imyourmanzi',
-    },
-    {
-      imgResource: 'social_tw.svg',
-      imgAlt: 'Link to Twitter profile',
-      url: 'https://twitter.com/imyourmanzi',
-    },
-    {
-      imgResource: 'social_in.png',
-      imgAlt: 'Link to LinkedIn profile',
-      url: 'https://www.linkedin.com/in/mattrmanzi/',
-    },
-  ];
+  const { sections, socialLinks } = data;
 </script>
 
 <header class:dividedTop="{!!sectionUri}">
   <span id="siteTitleWrapper">
-    <Link class="siteTitleLink" to="/">
+    <a class="siteTitleLink" href="/">
       <span id="siteTitle">MattManzi<span id="dotCom">.com</span></span>
-    </Link>
+    </a>
   </span>
   <nav id="navLinks">
     {#each sections as section (section.destination)}
-      <Link class="layoutLink" to="{section.destination}">
+      <a class="layoutLink" href="{section.destination}">
         <span class:currentPage="{sectionUri === section.destination}"
           >{section.title}</span
         >
-      </Link>
+      </a>
     {/each}
   </nav>
 </header>
-<Route path="/">
-  <Home sections="{sections}" />
-</Route>
-<Route path="photos">
-  <Photography />
-</Route>
-<Route path="resume">
-  <Resume />
-</Route>
+<slot />
 <footer class:dividedBottom="{!!sectionUri}">
   <div id="socialLinks">
     {#each socialLinks as social (social.url)}

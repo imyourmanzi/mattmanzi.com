@@ -14,7 +14,13 @@
   });
 </script>
 
-<img alt="{alt}" src="{src}" class:loaded bind:this="{thisImage}" loading="lazy" />
+<img
+  alt="{alt}"
+  src="{src}"
+  class:loaded="{loaded}"
+  bind:this="{thisImage}"
+  loading="lazy"
+/>
 
 <style>
   img {
