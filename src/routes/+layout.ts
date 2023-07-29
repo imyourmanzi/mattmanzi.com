@@ -30,11 +30,6 @@ export const load: LayoutLoad = () => {
         url: 'https://www.facebook.com/imyourmanzi'
       },
       {
-        imgResource: 'social_tw.svg',
-        imgAlt: 'Link to Twitter profile',
-        url: 'https://twitter.com/imyourmanzi'
-      },
-      {
         imgResource: 'social_in.png',
         imgAlt: 'Link to LinkedIn profile',
         url: 'https://www.linkedin.com/in/mattrmanzi/'
