@@ -10,7 +10,6 @@
   "htmlWhitespaceSensitivity": "css",
   "jsxSingleQuote": false,
   "plugins": ["prettier-plugin-svelte"],
-  "pluginSearchDirs": ["."],
   "printWidth": 90,
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
