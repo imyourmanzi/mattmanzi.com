@@ -11,4 +11,4 @@ on:
 jobs:
   check:
     name: Check
-    uses: imyourmanzi/GitHubWorkflows/.github/workflows/package-json-version-check.yml@main
+    uses: imyourmanzi/GitHubWorkflows/.github/workflows/npm-check-version.yml@main
