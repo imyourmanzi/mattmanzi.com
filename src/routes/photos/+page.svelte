@@ -2,7 +2,7 @@
   import LazyImage from './LazyImage.svelte';
 </script>
 
-<h1>Photography</h1>
+<!-- <h1>Photography</h1> -->
 <div id="fadedSpacer"></div>
 <div id="photosBackdrop">
   <div id="photosContainer">
@@ -76,19 +76,30 @@
     />
   </div>
 </div>
+<div id="fadedSpacer" class="flipped"></div>
 
 <style>
   #fadedSpacer {
-    height: 2rem;
+    height: 0.5rem;
+    margin-top: 2rem;
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    background-image: linear-gradient(rgba(113, 114, 133, 0), rgba(113, 114, 133, 1));
     border-radius: 0;
   }
 
-  #photosBackdrop {
-    padding-bottom: 1rem;
+  #fadedSpacer.flipped {
+    margin-top: 0;
+    margin-bottom: 2rem;
 
-    background-color: black;
+    transform: rotate(0.5turn);
+  }
+
+  #photosBackdrop {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0;
+
+    background-color: rgb(113, 114, 133);
   }
 
   #photosContainer {

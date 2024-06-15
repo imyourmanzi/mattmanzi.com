@@ -5,12 +5,12 @@ export const load: LayoutLoad = () => {
   return {
     sections: [
       {
-        title: 'Photography',
-        destination: 'photos'
-      },
-      {
         title: 'Résumé',
         destination: 'resume'
+      },
+      {
+        title: 'Photography',
+        destination: 'photos'
       }
     ] as Section[],
     socialLinks: [
