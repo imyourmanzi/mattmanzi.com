@@ -1,16 +1,24 @@
 <script lang="ts">
   const resume = {
-    version: '2021.12.22.Full',
+    version: '2024.05.19.3',
     name: 'Matt R. Manzi',
     email: 'manzi.mattr@gmail.com',
     profile: {
-      text: "Self-driven, hardworking technology solutions developer.  Team-oriented and versatile, with the proven ability to step up and lead.  Emphasis on communication and iteration early and often.  Passionate about collaboration and documentation.  Summa cum laude graduate with a B.S. in Computer Science and Certificate in Chinese Studies, along with certifications in AWS and Splunk.  I'm intentional in what I do, and I don't let that stop me from failing forward."
+      text: 'Self-driven, hardworking technology solutions developer.  Team-oriented and versatile, with the proven ability to step up and lead.  Emphasis on communication and iteration early and often.  Passionate about collaboration and documentation.  Summa cum laude graduate with a B.S. in Computer Science, certified AWS Developer and Splunk Power User, and foundationally proficient Mandarin Chinese speaker returning from 6 months in Taiwan.  I\u2019m intentional in what I do, and I don\u2019t let that stop me from failing forward.'
     },
     education: [
       {
+        schoolName: 'International Chinese Language Program (ICLP)',
+        location: 'Taipei, Taiwan',
+        gradDate: 'Sep \u2013 Dec 2023, Mar \u2013 Jun 2024',
+        major:
+          'Studied Mandarin full-time, including daily one-on-one classes, all the while reaping the benefits of valuable language practice outside the classroom that come with studying abroad',
+        honors: []
+      },
+      {
         schoolName: 'University of Maryland, Baltimore County (UMBC)',
         location: 'Baltimore, MD',
-        gradDate: 'May 2020',
+        gradDate: 'Aug 2016 \u2013 May 2020',
         major:
           'Bachelor of Science, Computer Science, Cybersecurity Track; Certificate in Chinese Studies',
         gpa: null as number | null,
@@ -29,10 +37,11 @@
           'TypeScript',
           'Python',
           'HTML & CSS',
-          'Swift',
           'Shell Scripting',
+          'Swift',
+          'C & C++',
           'Java',
-          'C & C++'
+          'Go'
         ]
       },
       {
@@ -49,21 +58,24 @@
         ]
       },
       {
-        subset: 'Platforms',
+        subset: 'Practices',
         values: [
-          'AWS',
-          'macOS',
-          'Linux (Debian-based, Fedora-based)',
-          'Windows Desktop & Server'
+          'REST APIs',
+          'Containerized Architecture',
+          'Serverless Architecture',
+          'Peer Review',
+          'BDD-style Testing'
         ]
       },
       {
-        subset: 'Practices',
-        values: ['Serverless Architecture', 'Peer Review', 'BDD-style Testing']
-      },
-      {
         subset: 'Management',
-        values: ['Task Planning & Prioritization', 'Documentation']
+        values: [
+          'Leading by Example',
+          'Incident Response',
+          'Mentorship',
+          'Documentation',
+          'Project Management'
+        ]
       }
     ],
     experience: [
@@ -71,21 +83,26 @@
         employerName: 'Relay Network',
         title: 'Full Stack Software Engineer',
         location: 'Radnor, PA',
-        timeDetail: 'Sep 2020 \u2013 Present',
+        remote: true,
+        timeDetail: 'Sep 2020 \u2013 Mar 2024',
         points: [
-          'Design, develop, and maintain new, customer-facing applications and features, specialized solutions for backend services, and systems for internal engineering initiatives',
-          'Provide on-call support for critical systems',
-          'Participate in project and sprint planning',
-          'Train and mentor new hires'
+          'Designed, developed, and maintained new and existing customer-facing applications and features, specialized solutions for backend services, and systems for internal engineering initiatives, accounting for 901 story points across 319 tickets, representing 150% of the average team member productivity during my recent tenure',
+          'Recognized by senior leadership for demonstrating passion, technical curiosity, and whatever-it-takes mentality',
+          'Led the planning & development of 3 product initiatives and 5 internal projects, and contributed to several more',
+          'Served as interim team lead assuming scrum master and leadership communication responsibilities',
+          'Trained and mentored 3 junior developers through peer programming, code reviews, one-on-one meetings, and creating and maintaining onboarding documentation, resulting in up to 100% increased output in 3 months',
+          'Interviewed and evaluated prospective employees and made hiring recommendations',
+          'Proactively performed an average of over 20 peer code reviews per month',
+          'Provided on-call support and self-driven root cause analysis and related application enhancement for critical systems resulting in increased system reliability and reduced engineering triage time by 90%'
         ]
       },
       {
         employerName: 'Juniper Networks',
-        title: 'Systems Engineering Intern',
+        title: 'Systems Engineer Intern',
         location: 'Sunnyvale, CA',
         timeDetail: 'May \u2013 Aug 2019',
         points: [
-          'Evaluated a new product in order to write and produce a 50-page guide designed to expedite the learning process for other pre-sales systems engineers',
+          'Evaluated a new product to write and produce a 50-page guide designed to expedite the learning process for other pre-sales systems engineers',
           'Presented the deliverable at a company-wide showcase to employees of all business verticals',
           'Shadowed other systems engineers in sales and customer meetings to learn sales and business principles'
         ]
@@ -116,13 +133,12 @@
     ],
     additionalExperience: [
       {
-        employerName: 'Self-Employed',
+        employerName: '',
         title: 'DJ and Master of Ceremonies',
         location: 'Aston, PA',
-        timeDetail: 'Sep 2013 \u2013 Present',
+        timeDetail: 'Sep 2013 \u2013 Jan 2020',
         points: [
-          'Provide music, lighting and announcement for private parties of up to 100 people',
-          'Manage all business finances and logistics'
+          'Managed all logistics to provide music, lighting, and announcement for private parties of up to 100 people'
         ]
       },
       {
@@ -131,29 +147,33 @@
         location: 'Baltimore, MD',
         timeDetail: 'Aug 2017 \u2013 May 2019',
         points: [
-          'Headed a team of 20+ TAs, working with course faculty to delegate tasks and ensure consistent education',
-          'Assisted students and graded assignments for Computer Science I for Majors (CMSC 201)',
-          'Led discussion groups covering material in Python programming language',
-          'Held weekly office hours to aid students outside of class',
-          'Wrote and maintained scripts to optimize student assignment submission and grading processes'
+          'Led and participated in a team of 20+ TAs teaching Python, holding office hours, and grading assignments'
         ]
       }
     ],
     projects: [
       {
+        name: 'Open Source Contribution',
+        organization: '',
+        timeDetail: 'Feb 2022 \u2013 Present',
+        points: [
+          'Contribute research and code to various projects to support the open source software community'
+        ]
+      },
+      {
         name: 'MattManzi.com',
         organization: '',
         timeDetail: 'Sep 2015 \u2013 Present',
         points: [
-          'Design and develop personal website to communicate professional and personal interests while exploring new technologies'
+          'Design, develop, and maintain personal website to showcase interests and explore new technologies, including hosting on bare-metal Linux servers & Google Cloud Platform, and utilizing web frameworks Vue.js & Svelte'
         ]
       },
       {
-        name: 'Mid-Atlantic Collegiate Cyber Defense Competition Qualifiers',
-        organization: 'UMBC',
-        timeDetail: 'Feb 2018',
+        name: 'Spotify Playlist Manager',
+        organization: '',
+        timeDetail: 'Aug 2022 \u2013 May 2023',
         points: [
-          'Managed and protected multiple Linux-based systems and firewall rules for each device'
+          'Utilized various modern technologies in a personal project to become more proficient in full stack Node.js development'
         ]
       },
       {
@@ -162,6 +182,14 @@
         timeDetail: 'Sep 2014 \u2013 May 2020',
         points: [
           'Designed, developed, and published mobile applications to the Apple App Store through self-direction'
+        ]
+      },
+      {
+        name: 'Cyber Defense Exercise - Team Lead',
+        organization: '',
+        timeDetail: 'Oct 2019',
+        points: [
+          'Placed 1st out of 10+ teams in a UMBC-run equivalent of the Collegiate Cyber Defense Competition, designed for cybersecurity students to demonstrate a combination of the following skills: identify, inspect, and neutralize malware on multiple Windows & Linux servers, manage competing technical and unrelated business priorities (designed to distract from security priorities), and communicate regular status updates'
         ]
       }
     ]
@@ -261,8 +289,14 @@
       <div class="experience">
         <div class="detailLine">
           <p>
-            {exp.employerName ? exp.employerName + ', ' : ''}<em>{exp.title}</em
-            >{exp.location ? ', ' + exp.location : ''}
+            <strong>{exp.title}</strong>{#if exp.employerName}<span
+                style="font-style: italic;"
+              >
+                &nbsp;at
+              </span>{exp.employerName}{/if}{exp.location
+              ? ', ' + exp.location
+              : ''}{#if exp.remote}
+              &nbsp;| Remote{/if}
           </p>
           <p><em>{exp.timeDetail}</em></p>
         </div>
@@ -290,8 +324,11 @@
       <div class="experience">
         <div class="detailLine">
           <p>
-            {exp.employerName ? exp.employerName + ', ' : ''}<em>{exp.title}</em
-            >{exp.location ? ', ' + exp.location : ''}
+            <strong>{exp.title}</strong>{#if exp.employerName}<span
+                style="font-style: italic;"
+              >
+                &nbsp;at
+              </span>{exp.employerName}{/if}{exp.location ? ', ' + exp.location : ''}
           </p>
           <p><em>{exp.timeDetail}</em></p>
         </div>
@@ -318,7 +355,11 @@
     {#each resume.projects as proj (proj.name)}
       <div class="project">
         <div class="detailLine">
-          <p><em>{proj.name}</em>{proj.organization ? ', ' + proj.organization : ''}</p>
+          <p>
+            <strong>{proj.name}</strong>{proj.organization
+              ? ', ' + proj.organization
+              : ''}
+          </p>
           <p><em>{proj.timeDetail}</em></p>
         </div>
         <ul>
@@ -344,7 +385,7 @@
     {#each resume.education as edu (edu.schoolName)}
       <div class="education">
         <div class="detailLine">
-          <p><strong>{edu.schoolName}</strong> {edu.location}</p>
+          <p><strong>{edu.schoolName}</strong>, {edu.location}</p>
           <p>
             <em
               >{#if edu.gpa}GPA: {edu.gpa.toPrecision(4)}
@@ -358,7 +399,10 @@
         <div class="detailLine">
           <p>{edu.major}</p>
         </div>
-        <p><em>Honors:</em> {edu.honors.join(', ')}</p>
+        {#if edu.honors.length}
+          <p><em>Honors:</em> {edu.honors.join(', ')}</p>
+        {/if}
+        <br />
       </div>
     {/each}
   {/if}
