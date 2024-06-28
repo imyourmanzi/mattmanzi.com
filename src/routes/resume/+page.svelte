@@ -195,7 +195,7 @@
     ]
   };
 
-  let openSections = ['profile'];
+  let openSections = ['profile', 'industryExperience'];
 
   /**
    * Toggle if a resume section is open or closed.
