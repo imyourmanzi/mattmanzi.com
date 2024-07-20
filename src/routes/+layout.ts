@@ -16,11 +16,6 @@ export const load: LayoutLoad = () => {
         url: 'https://github.com/imyourmanzi'
       },
       {
-        imgResource: 'social_fb.svg',
-        imgAlt: 'Link to Facebook profile',
-        url: 'https://www.facebook.com/imyourmanzi'
-      },
-      {
         imgResource: 'social_in.png',
         imgAlt: 'Link to LinkedIn profile',
         url: 'https://www.linkedin.com/in/mattrmanzi/'
