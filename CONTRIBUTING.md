@@ -26,6 +26,7 @@ On [VS Code](https://code.visualstudio.com/) there's an official extension: [Sve
 1. Commit changes early and often
 1. Bump app version with `npm version <patch|minor|major>`
 1. Push branch and open a PR, named after the branch `MFE-**: ...`
+1. Wait for checks to pass and merge
 
 ## Building
 
