@@ -23,8 +23,29 @@ body {
   text-align: center;
 }
 
+h1 {
+  margin-bottom: 0;
+
+  font-weight: 400;
+}
+
 a {
   text-decoration: none;
+}
+
+button {
+  background: none;
+  color: #277ad3;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.5rem;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .container {
@@ -50,7 +71,7 @@ a {
 }
 
 .customLink {
-  color: #97b0ca;
+  color: #277ad3;
 }
 
 .customLink:hover * {

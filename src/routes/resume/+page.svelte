@@ -420,12 +420,6 @@
     width: fit-content;
   }
 
-  h1 {
-    margin-bottom: 0;
-
-    font-weight: 400;
-  }
-
   #nameplate {
     position: relative;
     top: -2.15em;
