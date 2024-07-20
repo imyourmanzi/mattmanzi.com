@@ -40,12 +40,15 @@ button {
   border-radius: 0.5rem;
   padding: 0.4rem 0.5rem;
 
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
+
+  transition: letter-spacing 0.4s ease;
 }
 
 button:hover {
   cursor: pointer;
+  letter-spacing: 0.07rem;
 }
 
 .container {

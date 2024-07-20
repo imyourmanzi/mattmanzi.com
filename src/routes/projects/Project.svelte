@@ -20,12 +20,12 @@
   };
 </script>
 
-<div class="container">
-  <div class="summary">
+<div class="projectContainer">
+  <div class="projectSummary">
     <img src="{imageSource}" alt="{imageAltText}" />
-    <div class="textContainer">
-      <h2 class="name">{name}</h2>
-      <div class="description">
+    <div class="projectTextContainer">
+      <h2 class="projectName">{name}</h2>
+      <div class="projectDescription">
         <div><p><strong>Solution: </strong>{description.solution}</p></div>
         <div><p><strong>Tech Highlight: </strong>{description.technology}</p></div>
         <div><p><strong>Takeaways: </strong>{description.takeaways}</p></div>
@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div class="deepDive">
+  <div class="projectDeepDive">
     {#if $$slots.deepDive}
       <button on:click="{toggleDeepDive}"
         >{deepDiveIsOpen ? 'Collapse' : 'Dive Deeper'}&nbsp;<i
@@ -48,7 +48,7 @@
 </div>
 
 <style>
-  .container {
+  .projectContainer {
     width: 80vw;
 
     margin-left: 10vw;
@@ -57,42 +57,42 @@
     margin-bottom: 1rem;
   }
 
-  .summary {
+  .projectSummary {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
-  .summary > img {
-    max-width: 30vw;
-    min-width: 15vw;
+  .projectSummary > img {
+    width: 25vw;
+    max-height: 27vh;
+    padding-top: 3vh;
     object-fit: contain;
   }
 
-  .textContainer {
-    width: 40vw;
+  .projectTextContainer {
+    width: 50vw;
   }
 
-  .name {
+  .projectName {
     text-align: center;
   }
 
-  .description {
+  .projectDescription {
     text-align: left;
   }
 
-  .deepDive {
-    width: 60vw;
-    margin-left: 10vw;
+  .projectDeepDive {
+    width: 80vw;
     margin-top: 0rem;
 
     text-align: center;
   }
 
-  .deepDive > button::before {
+  .projectDeepDive > button::before {
     content: '— ';
   }
 
-  .deepDive > button::after {
+  .projectDeepDive > button::after {
     content: ' —';
   }
 
@@ -100,18 +100,24 @@
     max-height: 0;
     overflow: hidden;
 
+    color: rgb(246, 240, 237);
+    background-color: rgb(84, 97, 118);
+    padding: 0 2rem;
+    box-shadow: inset black 0 0 5rem -1.3rem;
+
     text-align: justify;
 
-    transition: max-height 0.5s ease-out;
+    transition: max-height 0.5s;
   }
 
   .deepDiveOpen {
-    max-height: 200vh;
-    transition: max-height 0.5s ease-in;
+    max-height: 100vh;
+    transition: max-height 0.8s;
   }
 
   .fa-solid.fa-chevron-down {
-    transition: transform 0.5s ease-in;
+    transition: transform 0.5s;
+    transition-delay: 0.3s;
   }
 
   .fa-solid.fa-chevron-down.chevronFlip {
