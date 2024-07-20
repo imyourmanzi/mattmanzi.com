@@ -26,6 +26,15 @@
     text-align: center !important;
   }
 
+  .direct {
+    width: 86%;
+    margin: 1rem auto;
+
+    font-size: 5.5rem;
+    font-weight: 300;
+    vertical-align: middle;
+  }
+
   #sectionBoxes {
     position: relative;
     display: flex;

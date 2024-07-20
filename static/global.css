@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 /* Global attributes */
 * {
   border-radius: 5px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* Root-level attributes */
@@ -14,9 +15,8 @@ body {
   background-color: #011f3a; /* rbg(1, 31, 58) */
   color: white;
 
-  font-family: 'Quicksand', sans-serif;
   font-weight: 400;
-  /* make the whole site have a slighty larger font (default: 16px) */
+  /* make the whole site have a slighty larger font */
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,11 +26,16 @@ body {
 h1 {
   margin-bottom: 0;
 
-  font-weight: 400;
+  font-weight: 550;
 }
 
 a {
   text-decoration: none;
+  color: #97b0ca;
+}
+
+a:hover {
+  opacity: 0.5;
 }
 
 button {
@@ -40,8 +45,7 @@ button {
   border-radius: 0.5rem;
   padding: 0.4rem 0.5rem;
 
-  font-size: 15px;
-  font-weight: 500;
+  font-weight: 450;
 
   transition: letter-spacing 0.4s ease;
 }
@@ -51,93 +55,30 @@ button:hover {
   letter-spacing: 0.07rem;
 }
 
+/* Every page ideally uses this class */
 .container {
   position: relative;
   width: 92%;
+  max-width: 90rem;
   margin: 0 auto;
   padding-bottom: 5rem;
 
   text-align: left;
 }
 
-.spacing {
-  margin: 7em 0;
-}
-
-.direct {
-  width: 86%;
-  margin: 1rem auto;
-
-  font-size: 5.5rem;
-  font-weight: 300;
-  vertical-align: middle;
-}
-
-.customLink {
-  color: #277ad3;
-}
-
-.customLink:hover * {
-  color: white;
-  text-decoration: underline;
-}
-
-.customLink:hover i {
-  text-decoration: none;
-}
-
-.hanging {
-  margin-left: auto;
-  padding: 0.4em;
-
+/* Each page title should be centered */
+.container > h1 {
   text-align: center;
-  font-weight: bolder;
-
-  border: 1px solid gray;
-  border-top: none;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  background-color: #0f0f0f;
 }
 
-.errorBanner {
-  margin-top: 0.5em;
-  padding: 0.2em;
-
-  text-align: center;
-  color: black;
-
-  background-color: #cc6666;
-}
-
-.full {
-  display: inherit;
-}
-
-.tiny {
-  display: none;
-}
-
-.lightMode {
-  display: none;
-}
-
-.darkMode {
+.wideScreensOnly {
   display: inherit;
 }
 
 /* Extra tall and skinny screens (i.e. smartphones) */
 @media screen and (max-aspect-ratio: 767/1024) {
-  .full {
+  .wideScreensOnly {
     display: none;
-  }
-
-  .tiny {
-    display: inherit;
-  }
-
-  .container {
-    width: 92%;
   }
 }
 
@@ -148,23 +89,7 @@ button:hover {
     color: #011f3a;
   }
 
-  .darkMode {
-    display: none;
-  }
-
-  .lightMode {
-    display: inherit;
-  }
-
-  .customLink {
-    color: #6699cc;
-  }
-
-  .customLink:hover * {
-    color: black;
-  }
-
-  .hanging {
-    background-color: #ececec;
+  a {
+    color: #277ad3;
   }
 }

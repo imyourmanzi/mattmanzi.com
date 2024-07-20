@@ -36,7 +36,8 @@
   <div class="projectDeepDive">
     {#if $$slots.deepDive}
       <button on:click="{toggleDeepDive}"
-        >{deepDiveIsOpen ? 'Collapse' : 'Dive Deeper'}&nbsp;<i
+        ><i class="{`fa-solid fa-chevron-down ${deepDiveIsOpen && 'chevronFlip'}`}"
+        ></i>&nbsp;Dive Deeper&nbsp;<i
           class="{`fa-solid fa-chevron-down ${deepDiveIsOpen && 'chevronFlip'}`}"
         ></i></button
       >
@@ -49,9 +50,9 @@
 
 <style>
   .projectContainer {
-    width: 80vw;
+    max-width: 80%;
 
-    margin-left: 10vw;
+    margin-left: 10%;
     margin-right: auto;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -63,14 +64,14 @@
   }
 
   .projectSummary > img {
-    width: 25vw;
+    width: 25%;
     max-height: 27vh;
-    padding-top: 3vh;
+    padding-top: 3rem;
     object-fit: contain;
   }
 
   .projectTextContainer {
-    width: 50vw;
+    width: 50%;
   }
 
   .projectName {
@@ -82,28 +83,24 @@
   }
 
   .projectDeepDive {
-    width: 80vw;
+    width: 90%;
+    margin-left: 5%;
     margin-top: 0rem;
 
     text-align: center;
   }
 
-  .projectDeepDive > button::before {
-    content: '— ';
-  }
-
-  .projectDeepDive > button::after {
-    content: ' —';
+  .projectDeepDive > button {
+    font-size: 1.2rem;
   }
 
   .deepDiveContent {
     max-height: 0;
     overflow: hidden;
 
-    color: rgb(246, 240, 237);
-    background-color: rgb(84, 97, 118);
+    background-color: #f8ecd2;
     padding: 0 2rem;
-    box-shadow: inset black 0 0 5rem -1.3rem;
+    box-shadow: inset black 0 0 2rem -1rem;
 
     text-align: justify;
 
