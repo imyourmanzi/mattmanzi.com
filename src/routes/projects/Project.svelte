@@ -4,9 +4,10 @@
   }
   type ProjectDescription = { solution: string; technology: string; takeaways: string };
 
-  export let imageSource: string;
-  export let imageAltText: string;
+  export let imageSource: string | null = null;
+  export let imageAltText: string | null = null;
   export let name: string;
+  export let dateRange: string;
   export let description: ProjectDescription;
 
   let deepDiveIsOpen = false;
@@ -22,9 +23,12 @@
 
 <div class="projectContainer">
   <div class="projectSummary">
-    <img src="{imageSource}" alt="{imageAltText}" />
+    {#if imageSource && imageAltText}
+      <img src="{imageSource}" alt="{imageAltText}" />
+    {/if}
     <div class="projectTextContainer">
       <h2 class="projectName">{name}</h2>
+      <div class="projectDateRange">{dateRange}</div>
       <div class="projectDescription">
         <div><p><strong>Solution: </strong>{description.solution}</p></div>
         <div><p><strong>Tech Highlight: </strong>{description.technology}</p></div>
@@ -75,7 +79,15 @@
   }
 
   .projectName {
+    margin-bottom: 0;
+
     text-align: center;
+  }
+
+  .projectDateRange {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
   }
 
   .projectDescription {
