@@ -98,9 +98,9 @@
     max-height: 0;
     overflow: hidden;
 
-    background-color: #f8ecd2;
+    background-color: #0a3052;
     padding: 0 2rem;
-    box-shadow: inset black 0 0 2rem -1rem;
+    box-shadow: inset rgb(1, 31, 58) 0 0 4rem 0.5rem;
 
     text-align: justify;
 
@@ -120,5 +120,13 @@
   .fa-solid.fa-chevron-down.chevronFlip {
     transform: rotateX(0.5turn);
     transition: transform 0.5s;
+  }
+
+  /* Light mode vs. dark mode (default) */
+  @media screen and (prefers-color-scheme: light) {
+    .deepDiveContent {
+      background-color: #f5f4ee;
+      box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 2rem -1.2rem;
+    }
   }
 </style>
