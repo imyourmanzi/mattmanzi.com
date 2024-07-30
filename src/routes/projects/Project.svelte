@@ -1,14 +1,19 @@
 <script lang="ts">
+  /**
+   * This is a "hack" that Svelte sorta recommends because TypeScript support is
+   * [still incomplete](https://svelte.dev/docs/typescript#experimental-advanced-typings).
+   */
   interface $$Slots {
+    solution: any;
+    technology: any;
+    takeaways: any;
     deepDive: any;
   }
-  type ProjectDescription = { solution: string; technology: string; takeaways: string };
 
   export let imageSource: string | null = null;
   export let imageAltText: string | null = null;
   export let name: string;
   export let dateRange: string;
-  export let description: ProjectDescription;
 
   const projectHasImage = imageSource != null && imageAltText != null;
   let deepDiveIsOpen = false;
@@ -31,9 +36,9 @@
       <h2 class="projectName">{name}</h2>
       <div class="projectDateRange">{dateRange}</div>
       <div class="projectDescription">
-        <div><p><strong>Solution: </strong>{description.solution}</p></div>
-        <div><p><strong>Tech Highlight: </strong>{description.technology}</p></div>
-        <div><p><strong>Takeaways: </strong>{description.takeaways}</p></div>
+        <div><p><strong>Solution: </strong><slot name="solution"></slot></p></div>
+        <div><p><strong>Tech Highlight: </strong><slot name="technology"></slot></p></div>
+        <div><p><strong>Takeaways: </strong><slot name="takeaways"></slot></p></div>
       </div>
     </div>
   </div>
