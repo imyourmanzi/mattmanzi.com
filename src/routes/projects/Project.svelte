@@ -10,6 +10,7 @@
   export let dateRange: string;
   export let description: ProjectDescription;
 
+  const projectHasImage = imageSource != null && imageAltText != null;
   let deepDiveIsOpen = false;
 
   const toggleDeepDive = () => {
@@ -23,10 +24,10 @@
 
 <div class="projectContainer">
   <div class="projectSummary">
-    {#if imageSource && imageAltText}
-      <img src="{imageSource}" alt="{imageAltText}" />
+    {#if projectHasImage}
+      <img class="wideScreensOnly" src="{imageSource}" alt="{imageAltText}" />
     {/if}
-    <div class="projectTextContainer">
+    <div class="projectTextContainer" class:projectWithoutImage="{!projectHasImage}">
       <h2 class="projectName">{name}</h2>
       <div class="projectDateRange">{dateRange}</div>
       <div class="projectDescription">
@@ -40,12 +41,13 @@
   <div class="projectDeepDive">
     {#if $$slots.deepDive}
       <button on:click="{toggleDeepDive}"
-        ><i class="{`fa-solid fa-chevron-down ${deepDiveIsOpen && 'chevronFlip'}`}"
+        ><i class="fa-solid fa-chevron-down" class:chevronFlip="{deepDiveIsOpen}"
         ></i>&nbsp;Dive Deeper&nbsp;<i
-          class="{`fa-solid fa-chevron-down ${deepDiveIsOpen && 'chevronFlip'}`}"
+          class="fa-solid fa-chevron-down"
+          class:chevronFlip="{deepDiveIsOpen}"
         ></i></button
       >
-      <div class="{`deepDiveContent ${deepDiveIsOpen && 'deepDiveOpen'}`}">
+      <div class="deepDiveContent" class:deepDiveOpen="{deepDiveIsOpen}">
         <slot name="deepDive"></slot>
       </div>
     {/if}
@@ -54,9 +56,6 @@
 
 <style>
   .projectContainer {
-    max-width: 80%;
-
-    margin-left: 10%;
     margin-right: auto;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -76,6 +75,10 @@
 
   .projectTextContainer {
     width: 50%;
+  }
+
+  .projectWithoutImage {
+    width: 60%;
   }
 
   .projectName {
@@ -132,6 +135,17 @@
   .fa-solid.fa-chevron-down.chevronFlip {
     transform: rotateX(0.5turn);
     transition: transform 0.5s;
+  }
+
+  /* Extra tall and skinny screens (i.e. smartphones) */
+  @media screen and (max-aspect-ratio: 767/1024) {
+    .projectTextContainer {
+      width: 100%;
+    }
+
+    .projectWithoutImage {
+      width: 100%;
+    }
   }
 
   /* Light mode vs. dark mode (default) */
