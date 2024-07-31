@@ -14,6 +14,7 @@
   export let imageAltText: string | null = null;
   export let name: string;
   export let dateRange: string;
+  export let projectLink: string | null = null;
 
   const projectHasImage = imageSource != null && imageAltText != null;
   let deepDiveIsOpen = false;
@@ -39,6 +40,17 @@
         <div><p><strong>Solution: </strong><slot name="solution"></slot></p></div>
         <div><p><strong>Tech Highlight: </strong><slot name="technology"></slot></p></div>
         <div><p><strong>Takeaways: </strong><slot name="takeaways"></slot></p></div>
+        {#if projectLink}
+          <div class="projectLink">
+            <p>
+              <a href="{projectLink}" target="_blank"
+                >Project Link <sup
+                  ><i class="fa-solid fa-arrow-up-right-from-square"></i></sup
+                ></a
+              >
+            </p>
+          </div>
+        {/if}
       </div>
     </div>
   </div>
