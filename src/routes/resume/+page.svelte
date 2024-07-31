@@ -435,12 +435,12 @@
     background-color: #0f0f0f;
   }
 
-  #resumeDownloadLink:hover * {
-    text-decoration: underline;
+  #resumeDownloadLink {
+    text-decoration: none;
   }
 
-  #resumeDownloadLink:hover i {
-    text-decoration: none;
+  #resumeDownloadLink > span {
+    text-decoration: underline;
   }
 
   #nameplate {

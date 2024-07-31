@@ -58,6 +58,7 @@
     color: inherit;
     font-size: 3em;
     font-weight: 300;
+    text-decoration: none;
   }
 
   #siteTitleWrapper :global(.siteTitleLink):hover {
@@ -94,6 +95,7 @@
 
     font-size: 1.25em;
     color: inherit;
+    text-decoration: none;
   }
 
   header :global(.layoutLink:hover),

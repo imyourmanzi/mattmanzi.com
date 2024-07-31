@@ -51,6 +51,7 @@
     padding: 0em 1em;
 
     color: inherit;
+    text-decoration: none;
   }
 
   #sectionBoxes :global(.sectionBoxLinkWrap:hover) {
