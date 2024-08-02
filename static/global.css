@@ -17,7 +17,7 @@ body {
   color: white;
 
   font-family: 'Quicksand', sans-serif;
-  font-weight: 400;
+  font-weight: 460;
   /* make the whole site have a slighty larger font */
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
@@ -50,7 +50,8 @@ button {
   border-radius: 0.5rem;
   padding: 0.4rem 0.5rem;
 
-  font-weight: 450;
+  font-family: inherit;
+  font-weight: 500;
 
   transition: letter-spacing 0.4s ease;
 }
