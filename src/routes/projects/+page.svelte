@@ -148,7 +148,8 @@ a {
           </p>
           <CodeBlock
             language="css"
-            code="{`#navigationLinks {
+            code="{`/* Default styles for a wide screen */
+#navigationLinks {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
