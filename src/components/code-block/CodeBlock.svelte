@@ -17,7 +17,9 @@
 
 <style>
   pre {
+    max-width: fit-content;
     padding: 1em;
+
     font-family: 'dm';
     font-size: 0.9em;
     overflow: auto;

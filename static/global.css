@@ -60,6 +60,13 @@ button:hover {
   letter-spacing: 0.07rem;
 }
 
+code {
+  padding: 1px 5px;
+
+  font-size: 0.88em;
+  background-color: #172029;
+}
+
 /* Every page ideally uses this class */
 .container {
   position: relative;
@@ -96,5 +103,9 @@ button:hover {
 
   a {
     color: #277ad3;
+  }
+
+  code {
+    background-color: #d5dbe2;
   }
 }

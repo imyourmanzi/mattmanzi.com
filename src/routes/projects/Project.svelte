@@ -115,8 +115,8 @@
   }
 
   .projectDeepDive {
-    width: 90%;
-    margin-left: 5%;
+    width: 85%;
+    margin-left: 7.5%;
     margin-top: 0rem;
 
     text-align: center;
@@ -134,13 +134,13 @@
     padding: 0 2rem;
     box-shadow: inset rgb(1, 31, 58) 0 0 4rem 0.5rem;
 
-    text-align: justify;
+    text-align: left;
 
     transition: max-height 0.5s;
   }
 
   .deepDiveOpen {
-    max-height: 100vh;
+    max-height: 1000rem;
     transition: max-height 0.8s;
   }
 
