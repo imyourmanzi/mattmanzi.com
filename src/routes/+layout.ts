@@ -1,6 +1,26 @@
+import hljs from 'highlight.js/lib/core';
+import css from 'highlight.js/lib/languages/css';
+import javascript from 'highlight.js/lib/languages/javascript';
 import type { Section, SocialLink } from '$lib/types';
 import type { LayoutLoad } from './$types';
 
+/**
+ * Languages supported for code highlighting (see `CodeBlock` component).
+ */
+const supportedLanguages = [
+  ['css', css],
+  ['javascript', javascript]
+] as const;
+export type SupportedLanguages = (typeof supportedLanguages)[number][0];
+
+// register all supported languages
+supportedLanguages.forEach(([supportedLanguage, languageFn]) => {
+  hljs.registerLanguage(supportedLanguage, languageFn);
+});
+
+/**
+ * Sections of the website.
+ */
 const sections: Section[] = [
   {
     title: 'Résumé',
@@ -12,6 +32,9 @@ const sections: Section[] = [
   }
 ];
 
+/**
+ * Links in the footer that send people to social media and the like.
+ */
 const socialLinks: SocialLink[] = [
   {
     imgResource: 'social_git.svg',

@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('./styles/night-owl.css') only screen and (prefers-color-scheme: dark);
+@import url('./styles/night-owl-light.css') only screen and (prefers-color-scheme: light);
 
 /* Global attributes */
 * {
   border-radius: 5px;
-  font-family: 'Quicksand', sans-serif;
 }
 
 /* Root-level attributes */
@@ -15,6 +16,7 @@ body {
   background-color: #011f3a; /* rgb(1, 31, 58) */
   color: white;
 
+  font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   /* make the whole site have a slighty larger font */
   font-size: 18px;
