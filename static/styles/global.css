@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-@import url('./styles/night-owl.css') only screen and (prefers-color-scheme: dark);
-@import url('./styles/night-owl-light.css') only screen and (prefers-color-scheme: light);
+@import url('./night-owl.css') only screen and (prefers-color-scheme: dark);
+@import url('./night-owl-light.css') only screen and (prefers-color-scheme: light);
 
 /* Global attributes */
 * {
@@ -13,7 +13,7 @@ body {
   padding: 0;
   width: 100%;
 
-  background-color: #011f3a; /* rgb(1, 31, 58) */
+  background-color: #011f3a;
   color: white;
 
   font-family: 'Quicksand', sans-serif;
@@ -98,7 +98,7 @@ code {
 /* Light mode vs. dark mode (default) */
 @media screen and (prefers-color-scheme: light) {
   body {
-    background-color: #fcfbf7; /* rgb(252, 251, 247) */
+    background-color: #fcfbf7;
     color: #011f3a;
   }
 
