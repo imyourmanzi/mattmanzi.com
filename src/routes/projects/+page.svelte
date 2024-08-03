@@ -8,6 +8,7 @@
 
   <Project
     name="MattManzi.com (This Website)"
+    active="{true}"
     dateRange="since 2015"
     projectLink="https://github.com/imyourmanzi/MattManziUI"
   >
@@ -209,6 +210,13 @@ a {
       <br />
     </div>
   </Project>
+
+  <Project
+    name="iOS: You Salty? & Time To Go"
+    dateRange="Sep 2014 – May 2020"
+    imageSource="/img/iosappicons.png"
+    imageAltText="Icons from the two iOS apps I developed"
+  ></Project>
 </div>
 
 <style>

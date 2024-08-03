@@ -13,6 +13,7 @@
   export let imageSource: string | null = null;
   export let imageAltText: string | null = null;
   export let name: string;
+  export let active: boolean = false;
   export let dateRange: string;
   export let projectLink: string | null = null;
 
@@ -35,7 +36,12 @@
     {/if}
     <div class="projectTextContainer" class:projectWithoutImage="{!projectHasImage}">
       <h2 class="projectName">{name}</h2>
-      <div class="projectDateRange">{dateRange}</div>
+      <div class="projectDetail">
+        {#if active}
+          <span class="projectActiveTag">Active</span>
+        {/if}
+        <span class="projectDateRange">{dateRange}</span>
+      </div>
       <div class="projectDescription">
         <div><p><strong>Solution: </strong><slot name="solution"></slot></p></div>
         <div><p><strong>Tech Highlight: </strong><slot name="technology"></slot></p></div>
@@ -91,7 +97,7 @@
   }
 
   .projectTextContainer {
-    width: 50%;
+    width: 55%;
   }
 
   .projectWithoutImage {
@@ -104,10 +110,25 @@
     text-align: center;
   }
 
-  .projectDateRange {
+  .projectDetail {
+    display: flex;
+    justify-content: center;
+
     text-align: center;
-    font-style: italic;
     font-size: 0.9em;
+  }
+
+  .projectActiveTag {
+    padding: 1px 6px;
+    margin: auto 0.75em;
+
+    background-color: #218e61;
+
+    font-weight: 600;
+  }
+
+  .projectDateRange {
+    font-style: italic;
   }
 
   .projectDescription {
@@ -167,6 +188,10 @@
 
   /* Light mode vs. dark mode (default) */
   @media screen and (prefers-color-scheme: light) {
+    .projectActiveTag {
+      background-color: rgb(136, 223, 161);
+    }
+
     .deepDiveContent {
       background-color: #f5f4ee;
       box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 2rem -1.2rem;
