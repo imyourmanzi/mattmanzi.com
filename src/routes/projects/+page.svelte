@@ -22,8 +22,8 @@
       hosting it on GCP.</span
     >
     <span slot="takeaways"
-      >Putting the work in to build and maintain this website has encouraged me to keep up
-      with web technologies and given me a platform to experiment with them.</span
+      >Putting the work in to build and maintain this website encourages me to keep up
+      with web technologies and serves as a sandbox for experimentation.</span
     >
     <div slot="deepDive">
       <p>
@@ -126,12 +126,10 @@ a {
             for text in the <code>body</code> and <code>a</code> tags. Then, a media query
             watches for when the user’s device is set to light mode and applies the
             overriding styles. This makes it extremely useful for users whose devices are
-            set to “auto” and will transition from light to dark around sunset (a setting
-            I
-            <a href="https://www.youtube.com/watch?v=Ieq5sNEoc1E"> highly recommend</a>).
-            This CSS will ensure that site visitors never miss a beat and they don’t have
-            to fiddle with an individual toggle for the website. And finally, it’s a
-            JS-free solution that works on
+            set to “auto” and will transition from light to dark around sunset. This CSS
+            will ensure that site visitors never miss a beat and they don’t have to fiddle
+            with an individual toggle for the website. And finally, it’s a JS-free
+            solution that works on
             <a href="https://caniuse.com/prefers-color-scheme">all modern browsers</a>.
           </p>
         </div>
