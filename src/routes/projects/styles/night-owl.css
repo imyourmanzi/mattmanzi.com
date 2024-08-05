@@ -2,6 +2,8 @@
 
 Night Owl for highlight.js (c) Carl Baxter <carl@cbax.tech>
 
+Modified by Matt Manzi <imyourmanzi1@gmail.com>
+
 An adaptation of Sarah Drasner's Night Owl VS Code Theme
 https://github.com/sdras/night-owl-vscode-theme
 
@@ -26,6 +28,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 */
+
+pre {
+  max-width: fit-content;
+  padding: 1em;
+
+  background: #011627;
+
+  overflow: auto;
+}
+
+pre > code {
+  font-family: 'dm';
+  font-size: 0.88em;
+}
 
 .hljs {
   background: #011627;

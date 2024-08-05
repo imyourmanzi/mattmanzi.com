@@ -4,20 +4,24 @@
    * [still incomplete](https://svelte.dev/docs/typescript#experimental-advanced-typings).
    */
   interface $$Slots {
-    solution: any;
-    technology: any;
-    takeaways: any;
+    /**
+     * Expects HTML
+     */
+    description: any;
+    /**
+     * Expects HTML
+     */
     deepDive: any;
   }
 
   export let imageSource: string | null = null;
-  export let imageAltText: string | null = null;
+  export let imageAlternateText: string | null = null;
   export let name: string;
   export let active: boolean = false;
   export let dateRange: string;
   export let projectLink: string | null = null;
 
-  const projectHasImage = imageSource != null && imageAltText != null;
+  const projectHasImage = imageSource != null && imageAlternateText != null;
   let deepDiveIsOpen = false;
 
   const toggleDeepDive = () => {
@@ -32,7 +36,7 @@
 <div class="projectContainer">
   <div class="projectSummary">
     {#if projectHasImage}
-      <img class="wideScreensOnly" src="{imageSource}" alt="{imageAltText}" />
+      <img class="wideScreensOnly" src="{imageSource}" alt="{imageAlternateText}" />
     {/if}
     <div class="projectTextContainer" class:projectWithoutImage="{!projectHasImage}">
       <h2 class="projectName">{name}</h2>
@@ -43,9 +47,7 @@
         <span class="projectDateRange">{dateRange}</span>
       </div>
       <div class="projectDescription">
-        <div><p><strong>Solution: </strong><slot name="solution"></slot></p></div>
-        <div><p><strong>Tech Highlight: </strong><slot name="technology"></slot></p></div>
-        <div><p><strong>Takeaways: </strong><slot name="takeaways"></slot></p></div>
+        <slot name="description"></slot>
         {#if projectLink}
           <div class="projectLink">
             <p>
@@ -62,18 +64,16 @@
   </div>
 
   <div class="projectDeepDive">
-    {#if $$slots.deepDive}
-      <button on:click="{toggleDeepDive}"
-        ><i class="fa-solid fa-chevron-down" class:chevronFlip="{deepDiveIsOpen}"
-        ></i>&nbsp;Dive Deeper&nbsp;<i
-          class="fa-solid fa-chevron-down"
-          class:chevronFlip="{deepDiveIsOpen}"
-        ></i></button
-      >
-      <div class="deepDiveContent" class:deepDiveOpen="{deepDiveIsOpen}">
-        <slot name="deepDive"></slot>
-      </div>
-    {/if}
+    <button on:click="{toggleDeepDive}"
+      ><i class="fa-solid fa-chevron-down" class:chevronFlip="{deepDiveIsOpen}"
+      ></i>&nbsp;Dive Deeper&nbsp;<i
+        class="fa-solid fa-chevron-down"
+        class:chevronFlip="{deepDiveIsOpen}"
+      ></i></button
+    >
+    <div class="deepDiveContent" class:deepDiveOpen="{deepDiveIsOpen}">
+      <slot name="deepDive"></slot>
+    </div>
   </div>
 </div>
 

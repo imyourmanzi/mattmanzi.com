@@ -1,248 +1,150 @@
 <script lang="ts">
-  import CodeBlock from '../../components/code-block/CodeBlock.svelte';
+  import DOMPurify from 'dompurify';
+  import hljs from 'highlight.js/lib/core';
+  import css from 'highlight.js/lib/languages/css';
+  import javascript from 'highlight.js/lib/languages/javascript';
+  import { Marked } from 'marked';
+  import { markedHighlight } from 'marked-highlight';
   import Project from './Project.svelte';
+  import './styles/projects.css';
+
+  /**
+   * The structure of a project.
+   */
+  type ProjectType = {
+    /**
+     * Source URI for a project image, if available
+     */
+    imageSource?: string;
+    /**
+     * Alternate text for the project image
+     */
+    imageAlternateText?: string;
+    /**
+     * Name to use in the heading
+     */
+    name: string;
+    /**
+     * Is the project currently being developed/maintained?
+     */
+    active?: boolean;
+    /**
+     * When was the project active?
+     */
+    dateRange: string;
+    /**
+     * Link to the best example of it, probably a GitHub link
+     */
+    projectLink?: string;
+    /**
+     * Filename prefix used to identify content to be display for this project
+     *
+     * There are two options for this file:
+     *   - ${prefix}_description.md
+     *   - ${prefix}_deepdive.md
+     *
+     * This content will show up in the similarly-named sections under the project heading.
+     */
+    markdownFilePrefix: string;
+  };
+
+  const projects: ProjectType[] = [
+    {
+      name: 'MattManzi.com (This Website)',
+      active: true,
+      dateRange: 'since 2015',
+      projectLink: 'https://github.com/imyourmanzi/MattManziUI',
+      markdownFilePrefix: 'mattmanzi-com'
+    },
+    {
+      imageSource: '/img/projects/iosappicons.png',
+      imageAlternateText: 'Icons of two iOS apps I developed',
+      name: 'iOS: You Salty? & Time To Go',
+      dateRange: 'Sep 2014 – May 2020',
+      markdownFilePrefix: 'iosapps'
+    }
+  ];
+
+  const projectMarkdownParser = new Marked();
+  projectMarkdownParser.use(
+    markedHighlight({
+      langPrefix: 'hljs language-',
+      highlight(code, detectedLanguage) {
+        const language = hljs.getLanguage(detectedLanguage)
+          ? detectedLanguage
+          : 'plaintext';
+
+        return hljs.highlight(code, { language }).value;
+      }
+    })
+  );
+
+  /**
+   * Laod in project content from relevant Markdown files and parse & sanitized them into
+   * valid HTML.
+   *
+   * @param project the project whose content should be loaded
+   * @returns an object with the relevant project content
+   */
+  const loadProjectContent = async (project: ProjectType) => {
+    // import the content files
+    const imports: Promise<typeof import('*?raw')>[] = [
+      import(`./data/${project.markdownFilePrefix}_description.md?raw`),
+      import(`./data/${project.markdownFilePrefix}_deepdive.md?raw`)
+    ];
+
+    // if a file imports properly, immediately get its raw value, parse, and sanitize it
+    const chainedImports = imports.map((i) =>
+      i
+        .then((module) => module.default)
+        .then((raw) => projectMarkdownParser.parse(raw))
+        .then((parsed) => DOMPurify.sanitize(parsed))
+    );
+
+    const settledImports = await Promise.allSettled(chainedImports);
+
+    // get either the final HTML of an imported file or nullify it
+    const final = settledImports.map(
+      (settled) => settled.status === 'fulfilled' && settled.value
+    );
+
+    return { description: final[0], deepDive: final[1] };
+  };
+
+  /**
+   * Languages supported for code highlighting.
+   */
+  const supportedLanguages = [
+    ['css', css],
+    ['javascript', javascript]
+  ] as const;
+
+  // register all supported languages
+  supportedLanguages.forEach(([supportedLanguage, languageFn]) => {
+    hljs.registerLanguage(supportedLanguage, languageFn);
+  });
 </script>
 
 <div id="projectsContainer" class="container">
   <h1>Projects</h1>
 
-  <Project
-    name="MattManzi.com (This Website)"
-    active="{true}"
-    dateRange="since 2015"
-    projectLink="https://github.com/imyourmanzi/MattManziUI"
-  >
-    <span slot="solution"
-      >A personal website for me to showcase my experience, hobbies, and new technologies
-      I’m learning.</span
-    >
-    <span slot="technology"
-      >Probably the most interesting aspect is that this website has transformed from pure
-      HTML/CSS running on bare metal nginx to using the latest Svelte framework and
-      hosting it on GCP.</span
-    >
-    <span slot="takeaways"
-      >Putting the work in to build and maintain this website encourages me to keep up
-      with web technologies and serves as a sandbox for experimentation.</span
-    >
-    <div slot="deepDive">
-      <p>
-        I have maintained this site since 2015, where I originally used it to host "lesson
-        downloads" for a students I tutored in my senior year of high school. That, and
-        showcase my high school fixation on narwhals (more below).
-      </p>
-
-      <h3>Technologies</h3>
-
-      <p>
-        Over the years, I taught myself (varying degrees of fluency in) different web
-        technologies. Since this is the deep dive, I get to list them all out.
-      </p>
-
-      <div class="multiColumn">
-        <div>
-          <h4>Front-end</h4>
-          <ul>
-            <li>HTML+CSS</li>
-            <li>npm</li>
-            <li>JavaScript</li>
-            <li>Vue 1.x–3.x</li>
-            <li>Svelte 1.x–3.x</li>
-            <li>TypeScript</li>
-          </ul>
+  {#each projects as project}
+    {#await loadProjectContent(project) then content}
+      <Project
+        imageSource="{project.imageSource}"
+        imageAlternateText="{project.imageAlternateText}"
+        name="{project.name}"
+        active="{project.active}"
+        dateRange="{project.dateRange}"
+        projectLink="{project.projectLink}"
+      >
+        <div slot="description">
+          {@html content.description}
         </div>
-        <div>
-          <h4>Backend/Cloud</h4>
-          <ul>
-            <li>Django</li>
-            <li>ASP.NET</li>
-            <li>Go</li>
-            <li>Perfect (Swift)</li>
-          </ul>
+        <div slot="deepDive">
+          {@html content.deepDive}
         </div>
-        <div>
-          <h4>Server and Tooling</h4>
-          <ul>
-            <li>git</li>
-            <li>Linux CLI and scripting</li>
-            <li>nginx</li>
-            <li>Apache</li>
-            <li>Ansible</li>
-            <li>GCP/Firebase</li>
-            <li>Terraform</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>Really Nerdy Stuff</h3>
-
-      <p>
-        Owing to the fact that I started off learning just HTML and CSS (and for a while
-        stubbornly refused to learn JavaScript), I picked up a trick that I thought was
-        pretty cool back in high school: <a
-          href="https://css-tricks.com/a-complete-guide-to-css-media-queries/"
-          >CSS <code>@media</code> queries</a
-        >. Two in particular have stood the test of time throughout the many iterations of
-        the codebase.
-      </p>
-
-      <div class="multiColumn">
-        <div>
-          <h4>Color Scheme</h4>
-          <p>
-            It is my personal opinion—and I’m sure many of you will agree—that every
-            modern application should not only have light and dark themes, but also adhere
-            to the user’s preference. In recent years, this can be done almost
-            effortlessly with browsers pulling color scheme preference from the operating
-            system and then passing it along to this media query.
-          </p>
-          <CodeBlock
-            language="css"
-            code="{`/* Default colors for dark mode */
-body {
-  background-color: #011f3a;
-  color: white;
-  font-weight: 400;
-}
-
-a {
-  color: #97b0ca;
-}
-
-/* Modifications for light mode */
-@media screen and (prefers-color-scheme: light) {
-  body {
-    background-color: #fcfbf7;
-    color: #011f3a;
-  }
-
-  a {
-    color: #277ad3;
-  }
-}`}"
-          />
-          <p>
-            What you see above is an excerpt of CSS from this site. Global colors are set
-            for text in the <code>body</code> and <code>a</code> tags. Then, a media query
-            watches for when the user’s device is set to light mode and applies the
-            overriding styles. This makes it extremely useful for users whose devices are
-            set to “auto” and will transition from light to dark around sunset. This CSS
-            will ensure that site visitors never miss a beat and they don’t have to fiddle
-            with an individual toggle for the website. And finally, it’s a JS-free
-            solution that works on
-            <a href="https://caniuse.com/prefers-color-scheme">all modern browsers</a>.
-          </p>
-        </div>
-        <div>
-          <h4>Aspect Ratio</h4>
-          <p>
-            When I started building my website, “mobile-first design” was a big buzzword
-            and I was not going to be left out. 😤 So, with the CSS-only chip on my
-            shoulder, I set out to find a solution that would solve my mobile-first woes.
-            Media queries gives us access to a number of details about the device screen,
-            but my favorite is the <a
-              href="https://caniuse.com/mdn-css_at-rules_media_aspect-ratio"
-              ><code>aspect-ratio</code></a
-            >.
-          </p>
-          <CodeBlock
-            language="css"
-            code="{`/* Default styles for a wide screen */
-#navigationLinks {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-/* Extra tall and skinny screens (i.e. smartphones) */
-@media screen and (max-aspect-ratio: 767/1024) {
-  #navigationLinks {
-    justify-content: space-around;
-  }
-}`}"
-          />
-          <p>
-            A common first pass at solving the mobile-first design problem was to pick a
-            screen resolution width that couldn’t possibly be computer (because it would
-            have such small value) so it must be a phone. However, at the time, mobile
-            screens were boasting increasingly higher resolutions. Between that, certain
-            operating system settings to tweak effective screen size, and tablets, it was
-            near impossible to pick one number and have your website look how you wanted
-            it to on most devices.
-          </p>
-          <p>
-            Enter <code>max-aspect-ratio</code>, which redefined the problem statement. It
-            wasn’t “is this screen big or small?” but rather “is it wide or tall?” Now,
-            elements that needed to be shifted due to width constraints could know the
-            exact point where they should start saving width over height. And if you’re
-            wondering about the obscure <code>767/1024</code> ratio, it was inspired by the
-            aspect ratio of my iPhone 5S at the time.
-          </p>
-        </div>
-      </div>
-
-      <h3>Time Capsule</h3>
-
-      <p>
-        Here's a snapshot of my a page from my original site in its infancy. Remember how
-        I said “fixation on narwhals”? Well, the domain used to be <code
-          >narwhalsandcode[.]com</code
-        >. At this point in the timeline, I didn't understand JavaScript and the whole
-        website was me using just HTML and CSS to build everything from scratch.
-        Unfortunately, all that code is lost to time since I didn’t really start
-        understanding git until I
-        <a
-          href="https://github.com/imyourmanzi/MattManziUI/tree/29f792fb163ff2d44c248539f412b122a1bd3722"
-          >ported to Vue</a
-        >.
-      </p>
-
-      <div class="centeredImage">
-        <img
-          src="/img/timecapsule.jpg"
-          alt="A screenshot of a clearly very dated version of my personal website."
-        />
-      </div>
-      <br />
-    </div>
-  </Project>
-
-  <Project
-    name="iOS: You Salty? & Time To Go"
-    dateRange="Sep 2014 – May 2020"
-    imageSource="/img/iosappicons.png"
-    imageAltText="Icons from the two iOS apps I developed"
-  ></Project>
+      </Project>
+    {/await}
+  {/each}
 </div>
-
-<style>
-  .multiColumn {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-
-  .multiColumn > div {
-    margin: 0 0.5em;
-    max-width: calc(100% - 1em);
-  }
-
-  /* no idea but it works: https://stackoverflow.com/a/57643770/15114520 */
-  .multiColumn p {
-    width: 0;
-    min-width: 100%;
-  }
-
-  .centeredImage {
-    text-align: center;
-  }
-
-  .centeredImage > img {
-    width: 100%;
-    max-width: 500px;
-
-    object-fit: contain;
-  }
-</style>

@@ -27,6 +27,20 @@ SOFTWARE.
 
 */
 
+pre {
+  max-width: fit-content;
+  padding: 1em;
+
+  background: #fbfbfb;
+
+  overflow: auto;
+}
+
+pre > code {
+  font-family: 'dm';
+  font-size: 0.88em;
+}
+
 .hljs {
   background: #fbfbfb;
   color: #403f53;
