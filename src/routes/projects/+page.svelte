@@ -50,6 +50,14 @@
 
   const projects: ProjectType[] = [
     {
+      imageSource: '/img/projects/valleymatchposter.jpg',
+      imageAlternateText: 'Official poster for the Valley Match fundraiser',
+      name: 'Valley Match',
+      dateRange: 'Jan – Feb 2016',
+      projectLink: 'https://github.com/imyourmanzi/ValleyMatch',
+      markdownFilePrefix: 'valleymatch'
+    },
+    {
       name: 'MattManzi.com (This Website)',
       active: true,
       dateRange: 'since 2015',
