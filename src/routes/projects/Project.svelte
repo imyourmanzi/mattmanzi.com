@@ -91,7 +91,7 @@
 
   .projectSummary > img {
     width: 25%;
-    max-height: 27vh;
+    max-height: 325px;
     padding-top: 3rem;
     object-fit: contain;
   }
