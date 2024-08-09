@@ -162,12 +162,12 @@
 
   .deepDiveOpen {
     max-height: 1000rem;
-    transition: max-height 0.8s;
+    transition: max-height 0.8s ease-in;
   }
 
   .fa-solid.fa-chevron-down {
     transition: transform 0.5s;
-    transition-delay: 0.3s;
+    transition-delay: 0.3s ease-out;
   }
 
   .fa-solid.fa-chevron-down.chevronFlip {
