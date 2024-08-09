@@ -51,7 +51,7 @@
         {#if projectLink}
           <div class="projectLink">
             <p>
-              <a href="{projectLink}" target="_blank"
+              <a href="{projectLink}" target="_blank" rel="external noreferrer"
                 >Project Link <sup
                   ><i class="fa-solid fa-arrow-up-right-from-square"></i></sup
                 ></a

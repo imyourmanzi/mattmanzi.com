@@ -86,6 +86,14 @@
       }
     })
   );
+  projectMarkdownParser.use({
+    renderer: {
+      link(tokens) {
+        const link = projectMarkdownParser.Renderer.prototype.link.call(this, tokens);
+        return link.replace('<a', "<a target='_blank' rel='external noreferrer' ");
+      }
+    }
+  });
 
   /**
    * Laod in project content from relevant Markdown files and parse & sanitized them into

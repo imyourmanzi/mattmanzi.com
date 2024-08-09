@@ -29,7 +29,7 @@
 <footer class:dividedBottom="{!!sectionUri}">
   <div id="socialLinks">
     {#each socialLinks as social (social.url)}
-      <a href="{social.url}" class="socialLink" rel="noopener" target="_blank">
+      <a href="{social.url}" class="socialLink" rel="external noreferrer" target="_blank">
         <img src="{`img/${social.imgResource}`}" alt="{social.imgAlt}" />
       </a>
     {/each}
@@ -41,7 +41,7 @@
       class="layoutLink"
       href="https://github.com/imyourmanzi/MattManzi-UI"
       target="_blank"
-      rel="noopener">imyourmanzi</a
+      rel="external noreferrer">imyourmanzi</a
     >
   </span>
 </footer>
