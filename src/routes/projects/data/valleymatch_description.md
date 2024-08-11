@@ -1,6 +1,6 @@
-**Opportunity:** Make some money for my high school robotics team.
+**Opportunity:** Raise money for my high school robotics team.
 
-**Solution:** A “friendship matching” program where students, a custom personality matchmaking program, can get paired with others that they’re likely to be friends with.
+**Solution:** A “friendship matching” program where students, using a custom personality matchmaking program, can get paired with others that they’re likely to be friends with.
 
 **Tech Highlight:** A Java + MySQL batch process ingesting data from Google Forms.
 

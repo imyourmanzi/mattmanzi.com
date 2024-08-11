@@ -67,8 +67,9 @@
     {
       imageSource: '/img/projects/iosappicons.png',
       imageAlternateText: 'Icons of two iOS apps I developed',
-      name: 'iOS: You Salty? & Time To Go',
+      name: 'iOS: You Salty? & It’s Time To Go',
       dateRange: 'Sep 2014 – May 2020',
+      projectLink: 'https://github.com/stars/imyourmanzi/lists/ios-archives',
       markdownFilePrefix: 'iosapps'
     }
   ];
