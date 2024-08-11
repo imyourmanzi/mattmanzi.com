@@ -88,10 +88,9 @@
     })
   );
   projectMarkdownParser.use({
-    renderer: {
-      link(tokens) {
-        const link = projectMarkdownParser.Renderer.prototype.link.call(this, tokens);
-        return link.replace('<a', "<a target='_blank' rel='external noreferrer' ");
+    hooks: {
+      postprocess(html) {
+        return html.replaceAll('<a', '<a target="_blank" rel="external noreferrer" ');
       }
     }
   });
@@ -115,7 +114,12 @@
       i
         .then((module) => module.default)
         .then((raw) => projectMarkdownParser.parse(raw))
-        .then((parsed) => DOMPurify.sanitize(parsed))
+        .then((parsed) =>
+          DOMPurify.sanitize(parsed, {
+            USE_PROFILES: { html: true, svg: true, svgFilters: true },
+            ADD_ATTR: ['target']
+          })
+        )
     );
 
     const settledImports = await Promise.allSettled(chainedImports);
