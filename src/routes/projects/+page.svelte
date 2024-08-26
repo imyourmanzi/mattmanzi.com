@@ -3,6 +3,7 @@
   import hljs from 'highlight.js/lib/core';
   import css from 'highlight.js/lib/languages/css';
   import javascript from 'highlight.js/lib/languages/javascript';
+  import swift from 'highlight.js/lib/languages/swift';
   import { Marked } from 'marked';
   import { markedHighlight } from 'marked-highlight';
   import Project from './Project.svelte';
@@ -65,12 +66,27 @@
       markdownFilePrefix: 'mattmanzi-com'
     },
     {
-      imageSource: '/img/projects/iosappicons.png',
-      imageAlternateText: 'Icons of two iOS apps I developed',
-      name: 'iOS: You Salty? & It’s Time To Go',
-      dateRange: 'Sep 2014 – May 2020',
-      projectLink: 'https://github.com/stars/imyourmanzi/lists/ios-archives',
-      markdownFilePrefix: 'iosapps'
+      imageSource: '/img/projects/gvgold0.png',
+      imageAlternateText: 'Icon and main screen of my GV Gold Tour app',
+      name: 'iOS App #3: GV Gold Tour',
+      dateRange: 'Oct 2015',
+      markdownFilePrefix: 'gvgold'
+    },
+    {
+      imageSource: '/img/projects/timetogo0.png',
+      imageAlternateText: "Icon and main screen of my It's Time To Go app",
+      name: 'iOS App #2: It’s Time To Go',
+      dateRange: 'Jun 2015 – May 2020',
+      projectLink: 'https://github.com/imyourmanzi/TimeToGo',
+      markdownFilePrefix: 'timetogo'
+    },
+    {
+      imageSource: '/img/projects/yousalty0.png',
+      imageAlternateText: 'Icon and main screen of my You Salty? app',
+      name: 'iOS App #1: You Salty?',
+      dateRange: 'Nov 2014 – May 2017',
+      projectLink: 'https://github.com/imyourmanzi/YouSalty',
+      markdownFilePrefix: 'yousalty'
     }
   ];
 
@@ -137,7 +153,8 @@
    */
   const supportedLanguages = [
     ['css', css],
-    ['javascript', javascript]
+    ['javascript', javascript],
+    ['swift', swift]
   ] as const;
 
   // register all supported languages

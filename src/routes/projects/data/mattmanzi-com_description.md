@@ -4,4 +4,4 @@
 
 **Tech Highlight:** Probably the most interesting aspect is that this website has transformed from pure HTML/CSS running on bare metal nginx to using the latest Svelte framework and hosting it on GCP.
 
-**Takeaways:** Solving the technical problems of this project helped prepare me for a career in software development.
+**Takeaway:** Solving the technical problems of this project helped prepare me for a career in software development.
