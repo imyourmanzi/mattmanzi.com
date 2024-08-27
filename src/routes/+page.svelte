@@ -17,7 +17,7 @@
       <h1 title="Matt Manzi (he/him)">Hi, I'm Matt Manzi.</h1>
       <div>
         <p>Versatile, Self-Driven Technology Solutions Developer</p>
-        <p id="profileQuote">As we say it, so it shall be.</p>
+        <p id="profileQuote">"As we say it, so it shall be."</p>
       </div>
     </div>
   </div>
