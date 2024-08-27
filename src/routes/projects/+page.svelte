@@ -49,44 +49,76 @@
     markdownFilePrefix: string;
   };
 
-  const projects: ProjectType[] = [
+  /**
+   * A grouping of projects that have their own section/timeline on this page.
+   */
+  type Era = {
+    /**
+     * Name of the era
+     */
+    name: string;
+    /**
+     * Colors of the timeline line and its name, for both dark and light themes
+     *
+     * Must be hex strings so they can be passed to CSS for use as color variables.
+     */
+    colors: {
+      dark: `#${string}`;
+      light: `#${string}`;
+    };
+    /**
+     * The projects that are in this era
+     */
+    projects: ProjectType[];
+  };
+
+  const eras: Era[] = [
     {
-      imageSource: '/img/projects/valleymatchposter.jpg',
-      imageAlternateText: 'Official poster for the Valley Match fundraiser',
-      name: 'Valley Match',
-      dateRange: 'Jan – Feb 2016',
-      projectLink: 'https://github.com/imyourmanzi/ValleyMatch',
-      markdownFilePrefix: 'valleymatch'
-    },
-    {
-      name: 'MattManzi.com (This Website)',
-      active: true,
-      dateRange: 'since 2015',
-      projectLink: 'https://github.com/imyourmanzi/MattManziUI',
-      markdownFilePrefix: 'mattmanzi-com'
-    },
-    {
-      imageSource: '/img/projects/gvgold0.png',
-      imageAlternateText: 'Icon and main screen of my GV Gold Tour app',
-      name: 'iOS App #3: GV Gold Tour',
-      dateRange: 'Oct 2015',
-      markdownFilePrefix: 'gvgold'
-    },
-    {
-      imageSource: '/img/projects/timetogo0.png',
-      imageAlternateText: "Icon and main screen of my It's Time To Go app",
-      name: 'iOS App #2: It’s Time To Go',
-      dateRange: 'Jun 2015 – May 2020',
-      projectLink: 'https://github.com/imyourmanzi/TimeToGo',
-      markdownFilePrefix: 'timetogo'
-    },
-    {
-      imageSource: '/img/projects/yousalty0.png',
-      imageAlternateText: 'Icon and main screen of my You Salty? app',
-      name: 'iOS App #1: You Salty?',
-      dateRange: 'Nov 2014 – May 2017',
-      projectLink: 'https://github.com/imyourmanzi/YouSalty',
-      markdownFilePrefix: 'yousalty'
+      name: 'High School',
+      colors: {
+        dark: '#38d978',
+        light: '#44915c'
+      },
+      projects: [
+        {
+          imageSource: '/img/projects/valleymatchposter.jpg',
+          imageAlternateText: 'Official poster for the Valley Match fundraiser',
+          name: 'Valley Match',
+          dateRange: 'Jan – Feb 2016',
+          projectLink: 'https://github.com/imyourmanzi/ValleyMatch',
+          markdownFilePrefix: 'valleymatch'
+        },
+        {
+          name: 'MattManzi.com (This Website)',
+          active: true,
+          dateRange: 'since 2015',
+          projectLink: 'https://github.com/imyourmanzi/MattManziUI',
+          markdownFilePrefix: 'mattmanzi-com'
+        },
+        {
+          imageSource: '/img/projects/gvgold0.png',
+          imageAlternateText: 'Icon and main screen of my GV Gold Tour app',
+          name: 'iOS App #3: GV Gold Tour',
+          dateRange: 'Oct 2015',
+          markdownFilePrefix: 'gvgold'
+        },
+        {
+          imageSource: '/img/projects/timetogo0.png',
+          imageAlternateText: "Icon and main screen of my It's Time To Go app",
+          name: 'iOS App #2: It’s Time To Go',
+          dateRange: 'Jun 2015 – May 2020',
+          projectLink: 'https://github.com/imyourmanzi/TimeToGo',
+          markdownFilePrefix: 'timetogo'
+        },
+        {
+          imageSource: '/img/projects/yousalty0.png',
+          imageAlternateText: 'Icon and main screen of my You Salty? app',
+          name: 'iOS App #1: You Salty?',
+          dateRange: 'Nov 2014 – May 2017',
+          projectLink: 'https://github.com/imyourmanzi/YouSalty',
+          markdownFilePrefix: 'yousalty'
+        }
+      ]
     }
   ];
 
@@ -166,23 +198,76 @@
 <div id="projectsContainer" class="container">
   <h1>Projects</h1>
 
-  {#each projects as project}
-    {#await loadProjectContent(project) then content}
-      <Project
-        imageSource="{project.imageSource}"
-        imageAlternateText="{project.imageAlternateText}"
-        name="{project.name}"
-        active="{project.active}"
-        dateRange="{project.dateRange}"
-        projectLink="{project.projectLink}"
-      >
-        <div slot="description">
-          {@html content.description}
-        </div>
-        <div slot="deepDive">
-          {@html content.deepDive}
-        </div>
-      </Project>
-    {/await}
+  {#each eras as era}
+    <div
+      class="timeline"
+      style="--era-color-dark: {era.colors.dark}; --era-color-light: {era.colors.light}"
+    >
+      <p class="timelineName">{era.name}</p>
+      {#each era.projects as project}
+        {#await loadProjectContent(project) then content}
+          <Project
+            imageSource="{project.imageSource}"
+            imageAlternateText="{project.imageAlternateText}"
+            name="{project.name}"
+            active="{project.active}"
+            dateRange="{project.dateRange}"
+            projectLink="{project.projectLink}"
+          >
+            <div slot="description">
+              {@html content.description}
+            </div>
+            <div slot="deepDive">
+              {@html content.deepDive}
+            </div>
+          </Project>
+        {/await}
+      {/each}
+    </div>
   {/each}
 </div>
+
+<style>
+  .timeline {
+    padding: 0;
+    margin: 1.5rem 0;
+    padding-left: 0.5rem;
+    border-left: solid 5px var(--era-color-dark);
+    border-radius: 0;
+  }
+
+  .timelineName {
+    display: inline-block;
+    margin-top: 0;
+    transform: rotate(-0.25turn) translate(-2.75rem, -3rem);
+
+    color: var(--era-color-dark);
+    text-align: right;
+    font-size: 1.15em;
+    font-weight: 520;
+    font-variant-caps: small-caps;
+  }
+
+  /* Extra tall and skinny screens (i.e. smartphones) */
+  @media screen and (max-aspect-ratio: 767/1024) {
+    #projectsContainer {
+      width: 100%;
+    }
+
+    .timeline {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+  /* Light mode vs. dark mode (default) */
+  @media screen and (prefers-color-scheme: light) {
+    .timeline {
+      border-left-color: var(--era-color-light);
+    }
+
+    .timelineName {
+      color: var(--era-color-light);
+    }
+  }
+</style>
