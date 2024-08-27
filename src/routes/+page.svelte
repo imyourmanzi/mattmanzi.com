@@ -62,7 +62,7 @@
 <style>
   #profileHeader {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-content: baseline;
 
     margin: 20px auto auto auto;
