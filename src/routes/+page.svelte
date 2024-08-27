@@ -152,7 +152,7 @@
   /* Light mode vs. dark mode (default) */
   @media screen and (prefers-color-scheme: light) {
     #profileContactRow a {
-      background-color: aliceblue;
+      background-color: #f0f8ff;
     }
   }
 </style>
