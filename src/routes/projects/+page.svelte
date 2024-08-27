@@ -138,7 +138,9 @@
   projectMarkdownParser.use({
     hooks: {
       postprocess(html) {
-        return html.replaceAll('<a', '<a target="_blank" rel="external noreferrer" ');
+        return html
+          .replaceAll('<a', '<a target="_blank" rel="external noreferrer" ')
+          .replaceAll('<img', '<img loading="lazy" ');
       }
     }
   });
@@ -165,7 +167,7 @@
         .then((parsed) =>
           DOMPurify.sanitize(parsed, {
             USE_PROFILES: { html: true, svg: true, svgFilters: true },
-            ADD_ATTR: ['target']
+            ADD_ATTR: ['target', 'loading']
           })
         )
     );
