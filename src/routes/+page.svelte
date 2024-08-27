@@ -5,11 +5,17 @@
   <div id="profileHeader">
     <div id="profileButtonsAndImage">
       <div id="profileContactRow">
-        <a href="tel:14433847455" title="Phone"><i class="fa-solid fa-phone"></i></a>
-        <a href="mailto:manzi.mattr@gmail.com" title="Email"
+        <a href="tel:14433847455" title="Phone: +1 (443) 384-7455"
+          ><i class="fa-solid fa-phone"></i></a
+        >
+        <a href="mailto:manzi.mattr@gmail.com" title="Email: manzi.mattr@gmail.com"
           ><i class="fa-solid fa-at"></i></a
         >
-        <a href="/docs/key.asc" title="PGP: "><i class="fa-solid fa-key"></i></a>
+        <a
+          href="/docs/key.asc"
+          title="PGP: 665C 3199 D621 6EFC 90FF F11C A5FF 3F30 E4B8 3E20"
+          ><i class="fa-solid fa-key"></i></a
+        >
       </div>
       <img alt="Matt R. Manzi profile" src="/img/profile_Trees.jpg" />
     </div>
