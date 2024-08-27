@@ -3,14 +3,16 @@
 
 <div id="homeContainer" class="container">
   <div id="profileHeader">
-    <div id="profileContactRow">
-      <a href="tel:14433847455" title="Phone"><i class="fa-solid fa-phone"></i></a>
-      <a href="mailto:manzi.mattr@gmail.com" title="Email"
-        ><i class="fa-solid fa-at"></i></a
-      >
-      <a href="/docs/key.asc" title="PGP: "><i class="fa-solid fa-key"></i></a>
+    <div id="profileButtonsAndImage">
+      <div id="profileContactRow">
+        <a href="tel:14433847455" title="Phone"><i class="fa-solid fa-phone"></i></a>
+        <a href="mailto:manzi.mattr@gmail.com" title="Email"
+          ><i class="fa-solid fa-at"></i></a
+        >
+        <a href="/docs/key.asc" title="PGP: "><i class="fa-solid fa-key"></i></a>
+      </div>
+      <img alt="Matt R. Manzi profile" src="/img/profile_Trees.jpg" />
     </div>
-    <img alt="Matt R. Manzi profile" src="/img/profile_Trees.jpg" />
     <div>
       <h1 title="Matt Manzi (he/him)">Hi, I'm Matt Manzi.</h1>
       <div>
@@ -60,10 +62,19 @@
 <style>
   #profileHeader {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-content: baseline;
 
     margin: 20px auto auto auto;
     width: 60%;
+  }
+
+  #profileButtonsAndImage {
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 250px;
+    max-height: 250px;
   }
 
   #profileContactRow {
@@ -113,24 +124,35 @@
 
   /* Extra tall and skinny screens (i.e. smartphones) */
   @media screen and (max-aspect-ratio: 767/1024) {
+    #profileHeader {
+      width: 100%;
+    }
+
+    #profileContactRow {
+      flex-direction: row;
+    }
+    #profileButtonsAndImage {
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+
     #profileHeader img {
-      margin: auto 1em;
+      margin: 1em 1em;
     }
 
     #profileHeader h1 {
-      font-size: 2em;
+      font-size: 1.5em;
+    }
+
+    #profileText {
+      width: 90%;
     }
   }
 
   /* Light mode vs. dark mode (default) */
   @media screen and (prefers-color-scheme: light) {
     #profileContactRow a {
-      padding: 5px;
-      width: 1.25em;
-
       background-color: aliceblue;
-
-      text-align: center;
     }
   }
 </style>
