@@ -19,14 +19,14 @@
     {#each sections as section (section.destination)}
       <a class="layoutLink" href="{section.destination}">
         <span class:currentPage="{sectionUri === section.destination}"
-          >{section.title}</span
+          ><i class="{section.iconClass}"></i>{section.title}</span
         >
       </a>
     {/each}
   </nav>
 </header>
 <slot />
-<footer class:dividedBottom="{!!sectionUri}">
+<footer class="dividedBottom">
   <div id="socialLinks">
     {#each socialLinks as social (social.url)}
       <a href="{social.url}" class="socialLink" rel="external noreferrer" target="_blank">
@@ -94,6 +94,15 @@
     text-decoration: none;
   }
 
+  header :global(.layoutLink i),
+  footer :global(.layoutLink i) {
+    padding: 0em 0.35em;
+
+    font-size: 0.9375em;
+    color: inherit;
+    text-decoration: none;
+  }
+
   header :global(.layoutLink:hover),
   footer :global(.layoutLink:hover) {
     text-decoration: underline;
@@ -150,16 +159,6 @@
     footer :global(.layoutLink) {
       flex: 0 0 auto;
       padding: 0em 0.6em;
-    }
-
-    #socialLinks {
-      justify-content: space-around;
-
-      padding: 1em 0;
-    }
-
-    .socialLink {
-      padding: 0;
     }
   }
 

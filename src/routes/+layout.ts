@@ -7,10 +7,12 @@ import type { LayoutLoad } from './$types';
 const sections: Section[] = [
   {
     title: 'Résumé',
+    iconClass: 'fa-solid fa-file-lines',
     destination: 'resume'
   },
   {
     title: 'Projects',
+    iconClass: 'fa-solid fa-flask',
     destination: 'projects'
   }
 ];
