@@ -39,8 +39,18 @@ blockquote {
 .centeredImage > img {
   max-height: 425px;
   max-width: 500px;
-  width: 100%;
-  height: 100%;
+}
 
-  object-fit: contain;
+/* Extra tall and skinny screens (i.e. smartphones) */
+@media screen and (max-aspect-ratio: 767/1024) {
+  /*
+  this is kind of a hack because we really only need to worry about object-fit when
+  there's not a lot of horizontal space to spare
+  */
+  .centeredImage > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
 }
