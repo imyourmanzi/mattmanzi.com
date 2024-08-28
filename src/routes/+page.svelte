@@ -20,7 +20,11 @@
       <img alt="Matt R. Manzi profile" src="/img/profile_Trees.jpg" />
     </div>
     <div>
-      <h1 title="Matt Manzi (he/him)">Hi, I'm Matt Manzi.</h1>
+      <h1 title="Matt Manzi (he/him)">
+        <span class="wideScreensOnly">Hi, I'm </span>Matt Manzi<span
+          class="wideScreensOnly">.</span
+        >
+      </h1>
       <div>
         <p>Versatile, Self-Driven Technology Solutions Developer</p>
         <p id="profileQuote">"As we say it, so it shall be."</p>
@@ -107,7 +111,8 @@
   }
 
   #profileHeader h1 {
-    font-size: 2.5em;
+    display: inline;
+    text-align: left;
   }
 
   #profileHeader p {
@@ -137,6 +142,7 @@
     #profileContactRow {
       flex-direction: row;
     }
+
     #profileButtonsAndImage {
       flex-direction: column-reverse;
       justify-content: center;
@@ -147,7 +153,7 @@
     }
 
     #profileHeader h1 {
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
 
     #profileText {
