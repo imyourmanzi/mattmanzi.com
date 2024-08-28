@@ -22,13 +22,11 @@ const sections: Section[] = [
  */
 const socialLinks: SocialLink[] = [
   {
-    imgResource: 'social_git.svg',
-    imgAlt: 'Link to GitHub profile',
+    iconClass: 'fa-brands fa-square-github',
     url: 'https://github.com/imyourmanzi'
   },
   {
-    imgResource: 'social_in.png',
-    imgAlt: 'Link to LinkedIn profile',
+    iconClass: 'fa-brands fa-linkedin',
     url: 'https://www.linkedin.com/in/mattrmanzi/'
   }
 ];
