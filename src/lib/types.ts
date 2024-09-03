@@ -21,13 +21,9 @@ export type Section = {
  */
 export type SocialLink = {
   /**
-   * Name of the icon asset in **\/static** to display for the link
+   * CSS class specifying which icon to use when displaying the link
    */
-  imgResource: string;
-  /**
-   * Alt text for the link icon
-   */
-  imgAlt: string;
+  iconClass: string;
   /**
    * Full URL where the link directs to
    */
