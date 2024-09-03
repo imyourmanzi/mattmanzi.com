@@ -1,10 +1,12 @@
 <script lang="ts">
   const resume = {
-    version: '2024.05.19.3',
+    version: '2024.05.19.5.Phone',
     name: 'Matt R. Manzi',
     email: 'manzi.mattr@gmail.com',
+    phone: '(443) 384-7455',
+    location: 'East Coast, USA',
     profile: {
-      text: 'Self-driven, hardworking technology solutions developer.  Team-oriented and versatile, with the proven ability to step up and lead.  Emphasis on communication and iteration early and often.  Passionate about collaboration and documentation.  Summa cum laude graduate with a B.S. in Computer Science, certified AWS Developer and Splunk Power User, and foundationally proficient Mandarin Chinese speaker returning from 6 months in Taiwan.  I\u2019m intentional in what I do, and I don\u2019t let that stop me from failing forward.'
+      text: 'Self-driven, hardworking, technology solutions developer.  Team-oriented and versatile, with the proven ability to step up and lead.  Emphasis on communication and iteration early and often.  Passionate about collaboration and documentation.  Summa cum laude graduate with a B.S. in Computer Science, certified AWS Developer and Splunk Power User, and foundationally proficient Mandarin Chinese speaker returning from 6 months in Taiwan.  I\u2019m intentional in what I do, and I don\u2019t let that stop me from failing forward.'
     },
     education: [
       {
@@ -108,7 +110,7 @@
         ]
       },
       {
-        employerName: 'Parsons Cyber',
+        employerName: 'Parsons',
         title: 'Cybersecurity Engineer Intern',
         location: 'Columbia, MD',
         timeDetail: 'Jun \u2013 Aug 2018',
@@ -233,7 +235,8 @@
   <!-- resume header -->
   <div id="nameplate">
     <h1>{resume.name}</h1>
-    <a href="{`mailto:${resume.email}`}">{resume.email}</a>
+    <a href="{`mailto:${resume.email}`}">{resume.email}</a> •
+    <a href="{`tel:${resume.phone.replace(/[\(\)\s-]/g, '')}`}">{resume.phone}</a> • {resume.location}
   </div>
   <!-- profile header -->
   <button class="resumeSectionHeader" on:click="{toggleShowSection('profile')}">
