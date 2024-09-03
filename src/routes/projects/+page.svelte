@@ -94,7 +94,7 @@
           name: 'MattManzi.com (This Website)',
           active: true,
           dateRange: 'since 2015',
-          projectLink: 'https://github.com/imyourmanzi/MattManziUI',
+          projectLink: 'https://github.com/imyourmanzi/mattmanzi.com',
           markdownFilePrefix: 'mattmanzi-com'
         },
         {

@@ -1,6 +1,6 @@
 {
-  "name": "mattmanzi-ui",
-  "version": "3.3.2",
+  "name": "mattmanzi.com",
+  "version": "3.3.3",
   "private": true,
   "scripts": {
     "build": "vite build",
