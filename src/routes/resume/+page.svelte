@@ -220,6 +220,15 @@
 </script>
 
 <div id="resumeContainer" class="container">
+  <!-- resume header -->
+  <div id="nameplate">
+    <h1>{resume.name}</h1>
+    <a class="noWrap" href="{`mailto:${resume.email}`}">{resume.email}</a> •
+    <a class="noWrap" href="{`tel:${resume.phone.replace(/[\(\)\s-]/g, '')}`}"
+      >{resume.phone}</a
+    >
+    • <span class="noWrap">{resume.location}</span>
+  </div>
   <!-- download box -->
   <div id="resumeDownloadContainer">
     <a
@@ -229,15 +238,10 @@
     >
       <!-- no space between image and text to avoid awkward underline -->
       <i class="fas fa-file-download"></i>
-      <span class="wideScreensOnly">Download PDF</span>
-    </a>
+      <span>Download PDF</span></a
+    >
   </div>
-  <!-- resume header -->
-  <div id="nameplate">
-    <h1>{resume.name}</h1>
-    <a href="{`mailto:${resume.email}`}">{resume.email}</a> •
-    <a href="{`tel:${resume.phone.replace(/[\(\)\s-]/g, '')}`}">{resume.phone}</a> • {resume.location}
-  </div>
+  <div></div>
   <!-- profile header -->
   <button class="resumeSectionHeader" on:click="{toggleShowSection('profile')}">
     {#if openSections.indexOf('profile') === -1}
@@ -426,19 +430,14 @@
 
   #resumeDownloadContainer {
     width: fit-content;
-    margin-left: auto;
-    padding: 0.4em;
+    margin: 0.5em auto;
 
     text-align: center;
-
-    border: 1px solid gray;
-    border-top: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    background-color: #0f0f0f;
   }
 
   #resumeDownloadLink {
+    padding-left: 1px;
+
     text-decoration: none;
   }
 
@@ -448,14 +447,18 @@
 
   #nameplate {
     position: relative;
-    top: -2.15em;
     z-index: 0;
 
     text-align: center;
   }
 
+  #nameplate .noWrap {
+    text-wrap: nowrap;
+  }
+
   #nameplate a {
     color: inherit;
+    text-decoration: none;
   }
 
   #nameplate a:hover {
@@ -543,10 +546,6 @@
   }
 
   @media screen and (prefers-color-scheme: light) {
-    #resumeDownloadContainer {
-      background-color: #ececec;
-    }
-
     .resumeSectionHeader {
       color: #011f3a;
     }
