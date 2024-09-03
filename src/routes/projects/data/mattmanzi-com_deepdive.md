@@ -117,5 +117,5 @@ Enter `max-aspect-ratio`, which redefined the problem statement. It wasn’t “
 Here's a snapshot of my a page from my original site in its infancy. Remember how I said “fixation on narwhals”? Well, the domain used to be `narwhalsandcode[.]com`. At this point in the timeline, I didn't understand JavaScript and the whole website was me using just HTML and CSS to build everything from scratch. Unfortunately, all that code is lost to time since I didn’t really start understanding git until I [ported to Vue](https://github.com/imyourmanzi/MattManziUI/tree/29f792fb163ff2d44c248539f412b122a1bd3722).
 
 <div class="centeredImage">
-<img alt="Screenshot of the original design of my personal website" src="/img/projects/timecapsule.jpg" />
+<img alt="Screenshot of the original design of my personal website" src="/img/projects/mattmanzi-com1.jpg" />
 </div>
