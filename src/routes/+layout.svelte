@@ -71,14 +71,10 @@
 
   .dividedTop {
     border-bottom: 1px solid gray;
-
-    border-radius: 0;
   }
 
   .dividedBottom {
     border-top: 1px solid gray;
-
-    border-radius: 0;
   }
 
   #navigationLinks {

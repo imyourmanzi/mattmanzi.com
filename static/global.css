@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-/* Global attributes */
-* {
-  border-radius: 5px;
-}
-
 /* Root-level attributes */
 body {
   margin: 0;
@@ -45,7 +40,6 @@ button {
   background: none;
   color: #277ad3;
   border: none;
-  border-radius: 0.5rem;
   padding: 0.4rem 0.5rem;
 
   font-family: inherit;

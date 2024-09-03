@@ -238,7 +238,6 @@
     padding-left: 0.5rem;
 
     border-left: solid 5px var(--era-color-dark);
-    border-radius: 0;
   }
 
   .timelineName {
