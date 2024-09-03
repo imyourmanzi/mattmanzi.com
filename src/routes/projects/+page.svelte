@@ -233,9 +233,10 @@
 
 <style>
   .timeline {
-    padding: 0;
     margin: 1.5rem 0;
+    padding: 0;
     padding-left: 0.5rem;
+
     border-left: solid 5px var(--era-color-dark);
     border-radius: 0;
   }
@@ -243,7 +244,7 @@
   .timelineName {
     display: inline-block;
     margin-top: 0;
-    transform: rotate(-0.25turn) translate(-2.75rem, -3rem);
+    transform: rotate(-0.25turn) translate(-2.75rem, -2.75rem);
 
     color: var(--era-color-dark);
     text-align: right;
@@ -259,8 +260,8 @@
     }
 
     .timeline {
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 

@@ -34,7 +34,7 @@
 
 <div class="projectContainer">
   <div class="projectSummary">
-      <img class="wideScreensOnly" src="{imageSource}" alt="{imageAlternateText}" />
+    <img class="wideScreensOnly" src="{imageSource}" alt="{imageAlternateText}" />
     <div class="projectTextContainer">
       <h2 class="projectName">{name}</h2>
       <div class="projectDetail">
@@ -79,6 +79,11 @@
     margin-right: auto;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    padding-bottom: 1em;
+  }
+
+  .projectContainer:nth-child(2n + 1) {
+    background-color: rgba(181, 160, 77, 0.05);
   }
 
   .projectSummary {
@@ -177,6 +182,10 @@
 
   /* Light mode vs. dark mode (default) */
   @media screen and (prefers-color-scheme: light) {
+    .projectContainer:nth-child(2n + 1) {
+      background-color: rgba(181, 161, 77, 0.07);
+    }
+
     .projectActiveTag {
       background-color: rgb(136, 223, 161);
     }
