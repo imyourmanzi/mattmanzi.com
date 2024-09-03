@@ -1,81 +1,162 @@
 <script lang="ts">
-  import type { PageData } from './$types';
+  import { Marked } from 'marked';
+  import profileText from './profile_text.md?raw';
+  import DOMPurify from 'dompurify';
 
-  export let data: PageData;
+  const projectMarkdownParser = new Marked();
+  projectMarkdownParser.use({
+    hooks: {
+      postprocess(html) {
+        return html.replaceAll('<a', '<a target="_blank" rel="external noreferrer" ');
+      }
+    }
+  });
 
-  const { sections } = data;
+  const loadProfileText = async () => {
+    const parsed = await projectMarkdownParser.parse(profileText);
+
+    const sanitized = DOMPurify.sanitize(parsed, {
+      USE_PROFILES: { html: true, svg: true, svgFilters: true },
+      ADD_ATTR: ['target']
+    });
+
+    return sanitized;
+  };
 </script>
 
 <div id="homeContainer" class="container">
-  <p class="direct">As we say it,<br />so it shall be.</p>
-  <div id="sectionBoxes">
-    {#each sections as section (section.destination)}
-      <div>
-        <a class="sectionBoxLinkWrap" href="{section.destination}">
-          <div class="sectionInnerBox">
-            <p>{section.title}</p>
-          </div>
-        </a>
+  <div id="profileHeader">
+    <div id="profileButtonsAndImage">
+      <div id="profileContactRow">
+        <a href="tel:14433847455" title="Phone: +1 (443) 384-7455"
+          ><i class="fa-solid fa-phone"></i></a
+        >
+        <a href="mailto:manzi.mattr@gmail.com" title="Email: manzi.mattr@gmail.com"
+          ><i class="fa-solid fa-at"></i></a
+        >
+        <a
+          href="/docs/key.asc"
+          title="PGP: 665C 3199 D621 6EFC 90FF F11C A5FF 3F30 E4B8 3E20"
+          ><i class="fa-solid fa-key"></i></a
+        >
       </div>
-    {/each}
+      <img alt="Matt R. Manzi profile" src="/img/profile_Trees.jpg" />
+    </div>
+    <div>
+      <h1 title="Matt Manzi (he/him)">
+        <span class="wideScreensOnly">Hi, I'm </span>Matt Manzi<span
+          class="wideScreensOnly">.</span
+        >
+      </h1>
+      <div>
+        <p>Versatile & Self-Driven Technology Solutions Developer</p>
+        <p id="profileQuote">"As we say it, so it shall be."</p>
+      </div>
+    </div>
   </div>
+  {#await loadProfileText() then loadedProfileText}
+    <div id="profileText">
+      {@html loadedProfileText}
+    </div>
+  {/await}
 </div>
 
 <style>
-  #homeContainer {
-    text-align: center !important;
-  }
-
-  .direct {
-    width: 86%;
-    margin: 1rem auto;
-
-    font-size: 5.5rem;
-    font-weight: 300;
-    vertical-align: middle;
-  }
-
-  #sectionBoxes {
-    position: relative;
+  #profileHeader {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-content: baseline;
 
-    width: 86%;
-    margin: auto;
-    max-width: 1200px;
+    margin: 20px auto auto auto;
+    width: 60%;
   }
 
-  #sectionBoxes :global(.sectionBoxLinkWrap) {
-    padding: 0em 1em;
+  #profileButtonsAndImage {
+    display: flex;
+    justify-content: space-evenly;
 
-    color: inherit;
-    text-decoration: none;
+    width: 250px;
+    max-height: 250px;
   }
 
-  #sectionBoxes :global(.sectionBoxLinkWrap:hover) {
-    color: gray;
-  }
-
-  .sectionInnerBox {
+  #profileContactRow {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-    width: 21rem;
-    height: 16rem;
-
-    border: solid thin white;
+    justify-content: space-evenly;
   }
 
-  .sectionInnerBox p {
-    font-size: 2.5em;
+  #profileContactRow a {
+    padding: 5px;
+    width: 1.28em;
+
+    background-color: #222537;
+
+    text-align: center;
   }
 
+  #profileHeader img {
+    margin: auto 1.5em auto 0.75em;
+    width: 200px;
+    max-width: 35vw;
+
+    border-radius: 50%;
+  }
+
+  #profileHeader h1 {
+    display: inline;
+    text-align: left;
+  }
+
+  #profileHeader p {
+    margin: 0.4em auto;
+  }
+
+  #profileQuote {
+    font-style: italic;
+    font-weight: 350;
+  }
+
+  #profileText {
+    margin: auto;
+    width: 60%;
+  }
+
+  #profileContactLine {
+    font-style: italic;
+  }
+
+  /* Extra tall and skinny screens (i.e. smartphones) */
+  @media screen and (max-aspect-ratio: 767/1024) {
+    #profileHeader {
+      width: 100%;
+    }
+
+    #profileContactRow {
+      flex-direction: row;
+    }
+
+    #profileButtonsAndImage {
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+
+    #profileHeader img {
+      margin: 1em 1em;
+    }
+
+    #profileHeader h1 {
+      font-size: 1.4em;
+    }
+
+    #profileText {
+      width: 90%;
+    }
+  }
+
+  /* Light mode vs. dark mode (default) */
   @media screen and (prefers-color-scheme: light) {
-    .sectionInnerBox {
-      border: solid thin #011f3a;
+    #profileContactRow a {
+      background-color: #f0f8ff;
     }
   }
 </style>

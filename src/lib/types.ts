@@ -7,6 +7,10 @@ export type Section = {
    */
   title: string;
   /**
+   * CSS class specifying which icon to use on the home page link
+   */
+  iconClass: string;
+  /**
    * Destination base URI to reach the section
    */
   destination: string;
