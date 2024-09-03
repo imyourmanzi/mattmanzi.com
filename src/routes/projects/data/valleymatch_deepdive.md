@@ -17,7 +17,7 @@ While the meeting itself was a hurdle and perhaps a bit nerve-wracking, I didn�
 It turned out two things were of critical importance, which is clear in hindsight since we were collecting the data of minors.
 
 1. The match-making tool had to be explicitly for friendship, _not_ dating. To make the matching algorithm compliant, we removed the ability for students to select what kind of people they’d be interested in being matched with.
-2. All personally identifiable information (PII) was to be deleted after the fundraiser was over. That was easy enough since we used school accounts and computers to manage and process the data.
+2. All personally identifiable information was to be deleted after the fundraiser was over. That was easy enough since we used school accounts and computers to manage and process the data.
 
 We submitted our course-corrected project plan and got our stamp of approval.
 
@@ -37,6 +37,6 @@ I am giving myself a +1 for using doc-strings to document each file and some cha
 
 - I remember juggling a lot of overlapping code changes and it would have been nice to have used git for that.
 - Containerizing the application dependencies would have saved me a lot of trouble recreating the environment on school computers.
-- This project would have benefitted from a “control center” or some centralized executable, but instead I had to manually run the `javac` command multiple times to process a single batch.
+- This project would have benefitted from a “control center” or some centralized executable, but instead I had to manually run the `java` command multiple times to process a single batch.
 - Knowing now about the joys of understanding what your program is doing, I absolutely would have used a proper logger.
   - The same goes for a code linter.

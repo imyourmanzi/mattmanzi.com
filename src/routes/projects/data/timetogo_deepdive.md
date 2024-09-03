@@ -2,7 +2,7 @@
 
 > Never be late again. Within seconds, easily create a schedule of activities and tasks to make sure you get to your event on time.
 
-It’s Time To Go was the “magnum opus” of my high school career. Everything I knew about technology, software, and app design went into making this app. While the core idea is credited to my father, I personally designed and produced every other part of the app. From code to colors to calendar integration, I worked through each feature from inception to delivery. Over the five years that I developed and maintained the project, I experienced what it was like to design a minimum viable product (MVP), iterate on it, and eventually overhaul it.
+It’s Time To Go was the “magnum opus” of my high school career. From formal education to obscure online tutorials, everything I knew about technology, software, and app design went into making this app. While the core idea is credited to my father, I personally designed and produced every other part of the app. From code to colors to calendar integration, I worked through each feature from inception to delivery. Over the five years that I developed and maintained the project, I experienced what it was like to design a minimum viable product (MVP), iterate on it, and eventually overhaul it.
 
 ### `let i = 0`
 
@@ -47,4 +47,4 @@ In December 2017, version 2.0 was ready for release. After revisiting old ideas,
 <img alt="Screenshot of a schedule screen that I had used back in 2022" src="/img/projects/timetogo8.jpg" />
 </div>
 
-Here’s an example of how I’ve personally used the app for more than just catching flights. For context, I was helping a friend-of-a-friend bring a stray kitten he’d found to a local shelter, since he was leaving the country that day. I already had the prior engagement of going to the climbing gym so my schedule got a bit more complex when I was called on for this favor.
+Here’s an example of how I’ve personally used the app for more than just catching flights. For context, a friend-of-a-friend caught a stray kitten and, since he was leaving the country that day, needed someone to bring it to a local shelter. I already had the prior engagement of going to the climbing gym so my schedule got just a bit more complex when I was called on for this favor. With the schedule from this app, I had a solid plan that could handle the kind of uncertainty that comes with dealing with stray kittens. In the end, the friend made his flight, the kitten found a shelter, and I got to the gym.

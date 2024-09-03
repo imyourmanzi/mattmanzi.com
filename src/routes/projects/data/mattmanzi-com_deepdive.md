@@ -1,4 +1,4 @@
-I have maintained this site since 2015, where I originally used it to host "lesson downloads" for students I tutored in my senior year of high school. That, and to showcase my high school fixation on narwhals (more below).
+I have maintained this site since 2015, where I originally used it to host "lesson downloads" for students I tutored in my senior year of high school. That, and to showcase my interests at the time.
 
 ### Technologies
 
@@ -9,11 +9,11 @@ Over the years, I taught myself (varying degrees of fluency in) different web te
 
 #### Front-end
 
-- HTML+CSS
+- HTML & CSS
 - npm
 - JavaScript
 - Vue 1.x–3.x
-- Svelte 1.x–3.x
+- Svelte 1.x–4.x
 - TypeScript
 
 </div>
@@ -44,14 +44,14 @@ Over the years, I taught myself (varying degrees of fluency in) different web te
 
 ### Really Nerdy Stuff
 
-Owing to the fact that I started off learning just HTML and CSS (and for a while stubbornly refused to learn JavaScript), I picked up a few tricks that I thought were pretty cool back in high school: [CSS `@media` queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/). Two, as seen below, have stood the test of time throughout the many iterations of the codebase.
+Owing to the fact that I started off learning just HTML and CSS (and, for a while, stubbornly refused to learn JavaScript), I picked up a neat trick that I thought was pretty cool back in high school: [CSS `@media` queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/). Two of these, as seen below, have stood the test of time throughout the many iterations of the codebase.
 
 <div class="multiColumn">
 <div>
 
 #### Color Scheme
 
-It is my personal opinion—and I’m sure many of you will agree—that every modern application should not only have light and dark themes, _but also_ adhere to the user’s preference. In recent years, this can be done almost effortlessly with browsers pulling the user’s color scheme preference from the operating system and then passing it along to this media query.
+It is my personal opinion—and I’m sure many of you will agree—that every modern application should not only have light and dark themes, but _also_ adhere to the user’s preference. In recent years, this can be done almost effortlessly with browsers pulling the user’s color scheme preference from the operating system and then seamlessly passing it along to this media query.
 
 ```css
 /* Default colors for dark mode */
@@ -78,7 +78,7 @@ a {
 }
 ```
 
-What you see above is an excerpt of CSS from this site. Global colors are set for text in the `body` and `a` tags. Then, a media query watches for when the user’s device is set to light mode and applies the overriding styles. This makes it extremely useful for users whose devices are set to “auto” and will transition from light to dark around sunset. This CSS will ensure that site visitors never miss a beat and they don’t have to fiddle with an individual toggle for the website. And finally, it’s a JS-free solution that works on [all modern browsers](https://caniuse.com/prefers-color-scheme).
+What you see above is an excerpt of CSS from this site. Global colors for text are set with the `body` and `a` tag selectors. Then, a media query watches for when the user’s device is set to light mode and applies the overriding styles to the same selectors. This makes it extremely useful for users whose devices are set to “auto” and will transition from light to dark around sunset (🙋🏻‍♂️). This CSS will ensure that site visitors never miss a beat and they don’t have to fiddle with an individual toggle for the website. And finally, it’s a JS-free solution that works on [all modern browsers](https://caniuse.com/prefers-color-scheme).
 
 </div>
 <div>
@@ -105,7 +105,7 @@ When I started building my website, “mobile-first design” was a big buzzword
 }
 ```
 
-A common first pass at solving the mobile-first design problem was to pick a screen resolution width that couldn’t possibly be computer (because it would have such a small value) so it must be a phone. However, at the time, mobile screens were boasting increasingly higher resolutions. Between that, certain operating system settings to tweak effective screen size, and tablets, it was near impossible to pick one number and have your website look how you wanted it to on most devices.
+A common first pass at solving the mobile-first design problem was to pick a screen resolution width that couldn’t possibly be computer (because it would have such a small value) and therefore must have been a phone. However, at the time, new smartphones were boasting increasingly higher resolutions each year. Between that, certain operating system settings to tweak effective screen size, and tablets, it was nearly impossible to pick one number and have your website look the way you wanted on all devices.
 
 Enter `max-aspect-ratio`, which redefined the problem statement. It wasn’t “is this screen big or small?” but rather “is it wide or tall?” Now, elements that needed to be shifted due to width constraints could know the exact point where they should start saving width over height. And if you’re wondering about the obscure `767/1024` ratio, it was inspired by the aspect ratio of my iPhone 5S at the time.
 
@@ -114,7 +114,7 @@ Enter `max-aspect-ratio`, which redefined the problem statement. It wasn’t “
 
 ### Time Capsule
 
-Here's a snapshot of a page from my original site in its infancy. Remember how I said “fixation on narwhals”, well, the domain used to be `narwhalsandcode[.]com`. At this point in the timeline, I didn't understand JavaScript and the whole website was me using just HTML and CSS to build everything from scratch. Unfortunately, all that code is lost to time since I didn’t really start understanding git until I [ported to Vue](https://github.com/imyourmanzi/MattManziUI/tree/29f792fb163ff2d44c248539f412b122a1bd3722).
+Here's a snapshot of a page from my original site in its infancy. Remember how I said “showcase my interests?” Well, one of those was narwhals and the website domain used to be `narwhalsandcode.com`. This was all from my pre-JavaScript era, a whirlwind of bright colors and a blossoming understanding of Photoshop. Unfortunately, all that code is lost to time since I didn’t really start understanding git until I [ported to Vue](https://github.com/imyourmanzi/MattManziUI/tree/29f792fb163ff2d44c248539f412b122a1bd3722).
 
 <div class="centeredImage">
 <img alt="Screenshot of the original design of my personal website" src="/img/projects/mattmanzi-com1.jpg" />

@@ -1,4 +1,4 @@
-**Opportunity:** A chance to prove that I could build a complete working application.
+**Opportunity:** A chance to prove that I could build a complete working iPhone app.
 
 **Solution:** A virtual “salt shaker” app for iOS.
 

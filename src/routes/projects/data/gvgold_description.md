@@ -4,4 +4,4 @@
 
 **Tech Highlight:** All Swift, all day, featuring dynamically populated view controllers.
 
-**Takeaway:** Hardcoding data and application behaviors is simple to to do, but eventually the benefits are outweighed by the time it takes to manually construct these systems.
+**Takeaway:** Hardcoding data and application behaviors is simple to to do, but eventually the benefits are outweighed by the time it takes to put them in place.
