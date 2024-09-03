@@ -14,14 +14,13 @@
     deepDive: any;
   }
 
-  export let imageSource: string | null = null;
-  export let imageAlternateText: string | null = null;
+  export let imageSource: string;
+  export let imageAlternateText: string;
   export let name: string;
   export let active: boolean = false;
   export let dateRange: string;
   export let projectLink: string | null = null;
 
-  const projectHasImage = imageSource != null && imageAlternateText != null;
   let deepDiveIsOpen = false;
 
   const toggleDeepDive = () => {
@@ -35,10 +34,8 @@
 
 <div class="projectContainer">
   <div class="projectSummary">
-    {#if projectHasImage}
       <img class="wideScreensOnly" src="{imageSource}" alt="{imageAlternateText}" />
-    {/if}
-    <div class="projectTextContainer" class:projectWithoutImage="{!projectHasImage}">
+    <div class="projectTextContainer">
       <h2 class="projectName">{name}</h2>
       <div class="projectDetail">
         {#if active}
@@ -98,10 +95,6 @@
 
   .projectTextContainer {
     width: 55%;
-  }
-
-  .projectWithoutImage {
-    width: 60%;
   }
 
   .projectName {
@@ -178,11 +171,7 @@
   /* Extra tall and skinny screens (i.e. smartphones) */
   @media screen and (max-aspect-ratio: 767/1024) {
     .projectTextContainer {
-      width: 100%;
-    }
-
-    .projectWithoutImage {
-      width: 100%;
+      width: 96%;
     }
   }
 

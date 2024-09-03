@@ -16,11 +16,11 @@
     /**
      * Source URI for a project image, if available
      */
-    imageSource?: string;
+    imageSource: string;
     /**
      * Alternate text for the project image
      */
-    imageAlternateText?: string;
+    imageAlternateText: string;
     /**
      * Name to use in the heading
      */
@@ -89,6 +89,8 @@
           markdownFilePrefix: 'valleymatch'
         },
         {
+          imageSource: '/img/projects/mattmanzi-com0.jpg',
+          imageAlternateText: 'Logo of MattManzi.com',
           name: 'MattManzi.com (This Website)',
           active: true,
           dateRange: 'since 2015',
