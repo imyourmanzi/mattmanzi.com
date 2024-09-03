@@ -15,7 +15,7 @@
       <span id="siteTitle">MattManzi<span id="dotCom">.com</span></span>
     </a>
   </span>
-  <nav id="navLinks">
+  <nav id="navigationLinks">
     {#each sections as section (section.destination)}
       <a class="layoutLink" href="{section.destination}">
         <span class:currentPage="{sectionUri === section.destination}"
@@ -29,7 +29,7 @@
 <footer class:dividedBottom="{!!sectionUri}">
   <div id="socialLinks">
     {#each socialLinks as social (social.url)}
-      <a href="{social.url}" class="socialLink" rel="noopener" target="_blank">
+      <a href="{social.url}" class="socialLink" rel="external noreferrer" target="_blank">
         <img src="{`img/${social.imgResource}`}" alt="{social.imgAlt}" />
       </a>
     {/each}
@@ -41,7 +41,7 @@
       class="layoutLink"
       href="https://github.com/imyourmanzi/MattManzi-UI"
       target="_blank"
-      rel="noopener">imyourmanzi</a
+      rel="external noreferrer">imyourmanzi</a
     >
   </span>
 </footer>
@@ -56,11 +56,13 @@
 
   #siteTitleWrapper :global(.siteTitleLink) {
     color: inherit;
-  }
-
-  #siteTitle {
     font-size: 3em;
     font-weight: 300;
+    text-decoration: none;
+  }
+
+  #siteTitleWrapper :global(.siteTitleLink):hover {
+    opacity: 1;
   }
 
   #siteTitle > #dotCom {
@@ -69,17 +71,13 @@
 
   .dividedTop {
     border-bottom: 1px solid gray;
-
-    border-radius: 0;
   }
 
   .dividedBottom {
     border-top: 1px solid gray;
-
-    border-radius: 0;
   }
 
-  #navLinks {
+  #navigationLinks {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -93,15 +91,15 @@
 
     font-size: 1.25em;
     color: inherit;
+    text-decoration: none;
   }
 
   header :global(.layoutLink:hover),
   footer :global(.layoutLink:hover) {
-    color: gray;
     text-decoration: underline;
   }
 
-  .currentPage {
+  a > span.currentPage {
     text-decoration: underline !important;
   }
 
@@ -121,12 +119,8 @@
     cursor: pointer;
   }
 
-  .socialLink:hover {
-    opacity: 0.5;
-  }
-
   .socialLink img {
-    height: 32px;
+    height: 2rem;
   }
 
   footer {
@@ -145,7 +139,7 @@
 
   /* Extra tall and skinny screens (i.e. smartphones) */
   @media screen and (max-aspect-ratio: 767/1024) {
-    #navLinks {
+    #navigationLinks {
       justify-content: space-around;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;

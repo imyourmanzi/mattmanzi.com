@@ -1,0 +1,55 @@
+@import url('./dmvendor.css');
+@import url('./night-owl.css') only screen and (prefers-color-scheme: dark);
+@import url('./night-owl-light.css') only screen and (prefers-color-scheme: light);
+
+blockquote {
+  padding-left: 0.5em;
+
+  border-left: solid black;
+
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+.multiColumn {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.multiColumn > div {
+  margin: 0 0.5em;
+  max-width: calc(100% - 1em);
+}
+
+/* no idea but it works: https://stackoverflow.com/a/57643770/15114520 */
+.multiColumn p:not(:has(.centeredImage)) {
+  width: 0;
+  min-width: 100%;
+}
+
+.centeredImage {
+  padding: 0.75rem 0;
+
+  text-align: center;
+}
+
+.centeredImage > img {
+  max-height: 425px;
+  max-width: 500px;
+}
+
+/* Extra tall and skinny screens (i.e. smartphones) */
+@media screen and (max-aspect-ratio: 767/1024) {
+  /*
+  this is kind of a hack because we really only need to worry about object-fit when
+  there's not a lot of horizontal space to spare
+  */
+  .centeredImage > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+}
