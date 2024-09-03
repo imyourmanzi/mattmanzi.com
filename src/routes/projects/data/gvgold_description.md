@@ -2,6 +2,6 @@
 
 **Solution:** An app for alumni that would take them on a tour around the school, showcasing points of interest.
 
-**Tech Highlight:** All Swift, all day, featuring dynamically-populated view controllers.
+**Tech Highlight:** All Swift, all day, featuring dynamically populated view controllers.
 
-**Takeaway:** There’s a threshold where hardcoding becomes less productive than the dynamic solution.
+**Takeaway:** Hardcoding data and application behaviors is simple to to do, but eventually the benefits are outweighed by the time it takes to manually construct these systems.

@@ -4,4 +4,4 @@
 
 **Tech Highlight:** 100% Swift.
 
-**Takeaway:** Real-world software development must includes product development & design. Achieving this requires iteration.
+**Takeaway:** Real-world software development must include product development & design. Achieving this requires iteration and close collaboration with the client.

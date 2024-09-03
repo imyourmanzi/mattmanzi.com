@@ -17,26 +17,26 @@ While the meeting itself was a hurdle and perhaps a bit nerve-wracking, I didn�
 It turned out two things were of critical importance, which is clear in hindsight since we were collecting the data of minors.
 
 1. The match-making tool had to be explicitly for friendship, _not_ dating. To make the matching algorithm compliant, we removed the ability for students to select what kind of people they’d be interested in being matched with.
-2. All PII was to be deleted after the fundraiser was over. That was easy enough since we used school accounts and computers to manage and process the data.
+2. All personally identifiable information (PII) was to be deleted after the fundraiser was over. That was easy enough since we used school accounts and computers to manage and process the data.
 
 We submitted our course-corrected project plan and got our stamp of approval.
 
 #### Access Codes
 
-This was my favorite part of the system. I remember the process of brainstorming with the team about how to ensure people couldn’t submit entries for free. As we put the pieces together, I felt the sophistication of our fundraiser jump from hobbyist project to real world solution.
+This was my favorite part of the system. I remember the process of brainstorming with the team about how to ensure that people couldn’t submit entries for free. As we put the pieces together, I felt the sophistication of our fundraiser jump from hobbyist project to real world solution.
 
 We settled on manually generating a bunch of random strings (access codes) to place in a reference table that could be marked as used by someone when the database batch update was performed. I also implemented graceful handling for reused or invalid access codes that would even notify entrants of an error with their submissions.
 
 ### Code Review
 
-As much I enjoyed building the system and still value it as an exceptional testament to my abilities at the time, it’s time now to dig up all the heinous decisions I made that can still be found in the GitHub repo (rant incoming).
+As much I enjoyed building the system and still value it as an exceptional testament to my abilities at the time, it’s time now to dig up all the heinous decisions I made that can still be found in the GitHub repository (rant incoming).
 
-Why did I use XLS files instead of CSVs for exporting form responses??……SQL injection from any form submission would have been trivially easy, and with almost no bounds.……To find access codes in a relational database I should _not_ have been LOOPING through the entire table!……In fact, I didn’t use _any_ `WHERE` clauses.……Instead of generating access codes manually, a library like [Nano ID](https://zelark.github.io/nano-id-cc/) would have been much easier.……To ensure uniqueness of access codes, I just needed a [set](<https://en.wikipedia.org/wiki/Set_(mathematics)>) instead of a nested validation loop…….I handled Windows vs macOS differences, not by any kind of program logic, but by duplicating all the code?! It was Java for crying out loud!
+Why did I use XLS files instead of CSVs for exporting form responses??……SQL injection from any form submission would have been trivially easy, and with almost no bounds.……To find access codes in a relational database I should _not_ have been LOOPING through the entire table!……In fact, I didn’t use _any_ `WHERE` clauses.……Instead of generating access codes manually, a library like [Nano ID](https://zelark.github.io/nano-id-cc/) would have been much easier.……To ensure uniqueness of access codes, I just needed a [set](<https://en.wikipedia.org/wiki/Set_(mathematics)>) instead of a nested validation loop…….I handled Windows vs. macOS differences, not by any kind of program logic, but by duplicating all the code?! It was Java for crying out loud!
 
 I am giving myself a +1 for using doc-strings to document each file and some changes. A few other, more constructive thoughts also occurred when looking back at this code.
 
 - I remember juggling a lot of overlapping code changes and it would have been nice to have used git for that.
 - Containerizing the application dependencies would have saved me a lot of trouble recreating the environment on school computers.
-- This project would have benefitted from a “control center” or some centralized executable, but instead I had to manually run the `javac` multiple times to process a single batch.
+- This project would have benefitted from a “control center” or some centralized executable, but instead I had to manually run the `javac` command multiple times to process a single batch.
 - Knowing now about the joys of understanding what your program is doing, I absolutely would have used a proper logger.
   - The same goes for a code linter.
