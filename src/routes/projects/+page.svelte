@@ -81,7 +81,7 @@
       },
       projects: [
         {
-          imageSource: '/img/projects/valleymatchposter.jpg',
+          imageSource: '/img/projects/valleymatch0.jpg',
           imageAlternateText: 'Official poster for the Valley Match fundraiser',
           name: 'Valley Match',
           dateRange: 'Jan – Feb 2016',
