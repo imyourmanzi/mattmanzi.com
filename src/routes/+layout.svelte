@@ -48,7 +48,7 @@
         class="layoutLink attributionLink"
         href="https://github.com/imyourmanzi/MattManzi-UI"
         target="_blank"
-        rel="external noreferrer">imyourmanzi</a
+        rel="external noreferrer">@imyourmanzi</a
       >
     </span>
   </div>
