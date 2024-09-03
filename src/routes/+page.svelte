@@ -121,10 +121,6 @@
     width: 60%;
   }
 
-  #profileContactLine {
-    font-style: italic;
-  }
-
   /* Extra tall and skinny screens (i.e. smartphones) */
   @media screen and (max-aspect-ratio: 767/1024) {
     #profileHeader {
