@@ -12,7 +12,7 @@ const sections: Section[] = [
   },
   {
     title: 'Projects',
-    iconClass: 'fa-solid fa-flask',
+    iconClass: 'fa-solid fa-code',
     destination: 'projects'
   }
 ];
