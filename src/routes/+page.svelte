@@ -42,7 +42,7 @@
       </div>
       <img alt="Matt R. Manzi profile" src="/img/profile_Trees.jpg" />
     </div>
-    <div>
+    <div id="profileNameAndTitle">
       <h1 title="Matt Manzi (he/him)">
         <span class="wideScreensOnly">Hi, I'm </span>Matt Manzi<span
           class="wideScreensOnly">.</span
@@ -66,6 +66,7 @@
     display: flex;
     justify-content: center;
     align-content: baseline;
+    align-items: center;
 
     margin: 20px auto auto auto;
     width: 60%;
@@ -100,6 +101,10 @@
     max-width: 35vw;
 
     border-radius: 50%;
+  }
+
+  #profileNameAndTitle {
+    height: fit-content;
   }
 
   #profileHeader h1 {
