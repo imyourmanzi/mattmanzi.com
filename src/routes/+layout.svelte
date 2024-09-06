@@ -46,7 +46,7 @@
       ><i class="fas fa-laptop-code"></i> with <i class="fas fa-heart"></i> by
       <a
         class="layoutLink attributionLink"
-        href="https://github.com/imyourmanzi/mattmanzi.com"
+        href="https://github.com/imyourmanzi/mattmanzi.com/pulls?page=1&q=is%3Apr+author%3Aimyourmanzi"
         target="_blank"
         rel="external noreferrer">@imyourmanzi</a
       >
