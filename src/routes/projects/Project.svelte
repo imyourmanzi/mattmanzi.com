@@ -117,9 +117,10 @@
   }
 
   .projectActiveTag {
-    padding: 1px 6px;
+    padding: 1px 5px 1px 6px;
     margin: auto 0.75em;
 
+    border-radius: 5px;
     background-color: #218e61;
 
     font-weight: 600;
