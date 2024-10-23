@@ -1,4 +1,4 @@
-**Opportunity:** Demonstrate my ability to both reverse engineer and write a function program in assembly.
+**Opportunity:** Demonstrate my ability to both reverse engineer and write a functioning program in assembly.
 
 **Solution:** A special game of Tic Tac Toe where mines can be placed on the board to foil your opponent’s plan.
 
