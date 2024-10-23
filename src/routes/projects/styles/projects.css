@@ -21,6 +21,7 @@ blockquote {
 .multiColumn > div {
   margin: 0 0.5em;
   max-width: calc(100% - 1em);
+  min-width: 8em;
 }
 
 /* no idea but it works: https://stackoverflow.com/a/57643770/15114520 */
