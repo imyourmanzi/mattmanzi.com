@@ -4,6 +4,8 @@
   import css from 'highlight.js/lib/languages/css';
   import javascript from 'highlight.js/lib/languages/javascript';
   import swift from 'highlight.js/lib/languages/swift';
+  import plaintext from 'highlight.js/lib/languages/plaintext';
+  import x86asm from 'highlight.js/lib/languages/x86asm';
   import { Marked } from 'marked';
   import { markedHighlight } from 'marked-highlight';
   import Project from './Project.svelte';
@@ -74,6 +76,24 @@
 
   const eras: Era[] = [
     {
+      name: 'College',
+      colors: {
+        dark: '#FF0000',
+        light: '#FF0000'
+      },
+      projects: [
+        {
+          imageSource: '/img/projects/tictacsweeper0.jpg',
+          imageAlternateText:
+            'A screenshot of probably the most gnarly block of code from the project, an array of 400 numbers',
+          name: 'Assignment: Tic Tac Sweeper',
+          dateRange: 'Mar – Apr 2018',
+          projectLink: 'https://github.com/imyourmanzi/TicTacSweeper',
+          markdownFilePrefix: 'tictacsweeper'
+        }
+      ]
+    },
+    {
       name: 'High School',
       colors: {
         dark: '#38d978',
@@ -123,6 +143,22 @@
       ]
     }
   ];
+
+  /**
+   * Languages supported for code highlighting.
+   */
+  const supportedLanguages = [
+    ['css', css],
+    ['javascript', javascript],
+    ['nasm', x86asm],
+    ['plaintext', plaintext],
+    ['swift', swift]
+  ] as const;
+
+  // register all supported languages
+  supportedLanguages.forEach(([supportedLanguage, languageFn]) => {
+    hljs.registerLanguage(supportedLanguage, languageFn);
+  });
 
   const projectMarkdownParser = new Marked();
   projectMarkdownParser.use(
@@ -183,20 +219,6 @@
 
     return { description: final[0], deepDive: final[1] };
   };
-
-  /**
-   * Languages supported for code highlighting.
-   */
-  const supportedLanguages = [
-    ['css', css],
-    ['javascript', javascript],
-    ['swift', swift]
-  ] as const;
-
-  // register all supported languages
-  supportedLanguages.forEach(([supportedLanguage, languageFn]) => {
-    hljs.registerLanguage(supportedLanguage, languageFn);
-  });
 </script>
 
 <div id="projectsContainer" class="container">
@@ -233,17 +255,20 @@
 
 <style>
   .timeline {
+    height: calc(100% + 2.15em); /* compensate for the translate below */
     margin: 1.5rem 0;
     padding: 0;
     padding-left: 0.5rem;
+    transform: translateY(-2.15em); /* font-size plus bottom margin of .timelineName */
 
     border-left: solid 5px var(--era-color-dark);
   }
 
   .timelineName {
     display: inline-block;
+    width: 15em;
     margin-top: 0;
-    transform: rotate(-0.25turn) translate(-2.75rem, -2.75rem);
+    transform: rotate(-0.25turn) translate(-7em, -9rem);
 
     color: var(--era-color-dark);
     text-align: right;
