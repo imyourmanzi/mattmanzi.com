@@ -22,7 +22,7 @@ He claimed that reverse-engineering his code would still be faster than trying t
 - `c` is `2 x <number of possible winning lines in tic tac toe for the corresponding spot> - 1`, and
 - `a` is used after every move to “check win conditions.”
 
-What does all this mean? The win-checking subroutine takes advantage of the values of ASCII of a players’ marks (`X` or `O`) and the _relatively_ limited scope of win conditions in tic tac toe. `a` a kind of (hard-coded) map for all the potential three-in-a-row options based on where the most recent play was made. As it’s laid out visually, the row indicates where the piece was played and the columns are all the other spots to check that could lead to a win. Here’s a visually example of how the algorithm does this. This shows the progression of program’s processing of the game board over time, from left to right.
+What does all this mean? The win-checking subroutine takes advantage of the values of ASCII of a players’ marks (`X` or `O`) and the _relatively_ limited scope of win conditions in tic tac toe. `a` is a kind of (hard-coded) map for all the potential three-in-a-row options based on where the most recent play was made. As it’s laid out visually, the row indicates where the piece was played and the columns are all the other spots to check that could lead to a win. Here’s a visually example of how the algorithm does this. This shows the progression of program’s processing of the game board over time, from left to right.
 
 <div class="multiColumn" style="flex-wrap: nowrap; overflow-x: scroll;">
 <div>
@@ -140,7 +140,7 @@ a4x4  db   3, 2, 1,12, 8, 4,15,10, 5,16,16,16,16,16,16,16, \
            9, 5, 1,15,14,12,16,16,16,16,16,16,16,16,16,16, \
            10, 6, 2,15,13,12,16,16,16,16,16,16,16,16,16,16, \
            10, 5, 0,11, 7, 3,14,13,12,16,16,16,16,16,16,16
-b4x4  equ  god_s4+15
+b4x4  equ  a4x4+15
 c4x4  db   8,5,5,8, \
            5,8,8,5, \
            5,8,8,5, \
@@ -176,7 +176,7 @@ a5x5  db   4, 3, 2, 1,20,15,10, 5,24,18,12, 6,25,25,25,25, \
            17,12, 7, 2,24,23,21,20,25,25,25,25,25,25,25,25, \
            18,13, 8, 3,24,22,21,20,25,25,25,25,25,25,25,25, \
            18,12, 6, 0,19,14, 9, 4,23,22,21,20,25,25,25,25
-b5x5  equ  god_s5+15
+b5x5  equ  a5x5+15
 c5x5  db   11, 7, 7, 7,11, \
            7,11, 7,11, 7, \
            7, 7,15, 7, 7, \
