@@ -1,6 +1,8 @@
 <script lang="ts">
   import DOMPurify from 'dompurify';
   import hljs from 'highlight.js/lib/core';
+  import bash from 'highlight.js/lib/languages/bash';
+  import c from 'highlight.js/lib/languages/c';
   import css from 'highlight.js/lib/languages/css';
   import javascript from 'highlight.js/lib/languages/javascript';
   import swift from 'highlight.js/lib/languages/swift';
@@ -83,6 +85,15 @@
       },
       projects: [
         {
+          imageSource: '/img/projects/linuxfirewall0.gif',
+          imageAlternateText:
+            'Output of a compilation and test run for the project, showing all passing results except for one test',
+          name: 'Assignment: Linux Firewall',
+          dateRange: 'Mar – May 2019',
+          projectLink: 'https://github.com/imyourmanzi/LinuxFirewall',
+          markdownFilePrefix: 'linuxfirewall'
+        },
+        {
           imageSource: '/img/projects/tictacsweeper0.jpg',
           imageAlternateText:
             'A screenshot of probably the most gnarly block of code from the project, an array of 400 numbers',
@@ -148,6 +159,8 @@
    * Languages supported for code highlighting.
    */
   const supportedLanguages = [
+    ['bash', bash],
+    ['c', c],
     ['css', css],
     ['javascript', javascript],
     ['nasm', x86asm],
