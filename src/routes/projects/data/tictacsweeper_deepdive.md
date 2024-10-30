@@ -1,4 +1,4 @@
-As I mentioned, this project started out as a reverse-engineering exercise. The professor gave us his undocumented assembly code that ran a normal game of tic tac toe on a 3x3 board and tasked us with figuring out how it worked and then expanding its functionality. The gameplay was straightforward, but there was this strange block of data in his source code:
+This project started out as a reverse engineering exercise. The professor gave us his undocumented assembly code that ran a normal game of tic tac toe on a 3x3 board and “tasked us” with figuring out how it worked and then expanding its functionality. The gameplay was straightforward, but there was this strange block of data in his source code that will be the main focus of this deep dive.
 
 ```nasm
 a  db   2,1,6,3,8,4,9,9, \
@@ -16,13 +16,13 @@ c  db   5,3,5, \
         5,3,5
 ```
 
-He claimed that reverse-engineering his code would still be faster than trying to write the whole thing from scratch, but definitely didn’t make it easy on us. These two arrays haunted me for weeks as I tried to reason about how the rest of the program would use them. Eventually, I discovered the following:
+He claimed that starting over from scratch would actually take less time than reverse engineering his code, but my ambition had other plans. These two arrays haunted me for days as I tried to reason about how the rest of the program would use them. Eventually, I discovered the following:
 
 - `b` is the total number of turns remaining in the game,
 - `c` is `2 x <number of possible winning lines in tic tac toe for the corresponding spot> - 1`, and
 - `a` is used after every move to “check win conditions.”
 
-What does all this mean? The win-checking subroutine takes advantage of the values of ASCII of a players’ marks (`X` or `O`) and the _relatively_ limited scope of win conditions in tic tac toe. `a` is a kind of (hard-coded) map for all the potential three-in-a-row options based on where the most recent play was made. As it’s laid out visually, the row indicates where the piece was played and the columns are all the other spots to check that could lead to a win. Here’s a visually example of how the algorithm does this. This shows the progression of program’s processing of the game board over time, from left to right.
+What does all this mean? The win-checking subroutine takes advantage of the values of ASCII of a players’ marks (`X` or `O`) and the _relatively_ limited scope of win conditions in tic tac toe. `a` is a kind of (hard-coded) map for all the potential three-in-a-row options based on where the most recent play was made. As it’s laid out visually in the code, the row indicates where the piece was played and the columns are all the other spots to check that could lead to a win. Following is a visual example of how the algorithm does this. It shows the progression of program’s processing of the game board over time, from left to right.
 
 <div class="multiColumn" style="flex-wrap: nowrap; overflow-x: scroll;">
 <div>
@@ -115,10 +115,13 @@ Those last two both matched, Player `X` got three in a row and wins!
 
 The additional functionality part of the assignment included the following:
 
-- Allow each player to place a “mine” on the game board that, if their opponent chose that spot, would eliminate them.
-- Support tic tac toe games on 4x4 and 5x5 boards, in addition to the 3x3.
+- [x] Allow each player to place a “mine” on the game board that, if their opponent chose that spot, would eliminate them.
+- [x] Support tic tac toe games on 4x4 and 5x5 boards, in addition to the 3x3.
+- [x] Add extra debugging features to the program.
+- [x] Make user input “bullet proof.” _(sort of)_
+- [ ] Avoid using too much memory
 
-As you might imagine, in order to make that win-checking algorithm work for the 4x4 and 5x5 games, we’d need a lot more data. While I’m sure there’s a better way to accomplish this (I haven’t taken the time yet to try), the following, in conjunction with meeting the other requirements, did earn me a passing grade on the project.
+As you might imagine, in order to make that win-checking algorithm work for the 4x4 and 5x5 games, we’d need a lot more data. While I’m sure there’s a better way to accomplish this (I haven’t taken the time yet to try), the following is what I derived for my working 4x4 and 5x5 tic tac toe gameplay:
 
 <div class="multiColumn" style="flex-wrap: nowrap; overflow-x: scroll;">
 <div>
@@ -186,3 +189,5 @@ c5x5  db   11, 7, 7, 7,11, \
 
 </div>
 </div>
+
+After all was said and done, I received a half-decent grade on the project. If my memory serves me correctly, the professor did not want us to use R8–R15 registers (oops) and he didn’t quite appreciate my clunky error handling, though I earned some respect for reverse engineering his algorithm.
