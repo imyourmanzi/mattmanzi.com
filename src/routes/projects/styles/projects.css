@@ -30,6 +30,11 @@ blockquote {
   min-width: 100%;
 }
 
+.multiColumn.noWrap {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+
 .centeredImage {
   padding: 0.75rem 0;
 

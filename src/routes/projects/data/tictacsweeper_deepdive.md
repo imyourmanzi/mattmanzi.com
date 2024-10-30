@@ -24,7 +24,7 @@ He claimed that starting over from scratch would actually take less time than re
 
 What does all this mean? The win-checking subroutine takes advantage of the values of ASCII of a players’ marks (`X` or `O`) and the _relatively_ limited scope of win conditions in tic tac toe. `a` is a kind of (hard-coded) map for all the potential three-in-a-row options based on where the most recent play was made. As it’s laid out visually in the code, the row indicates where the piece was played and the columns are all the other spots to check that could lead to a win. Following is a visual example of how the algorithm does this. It shows the progression of program’s processing of the game board over time, from left to right.
 
-<div class="multiColumn" style="flex-wrap: nowrap; overflow-x: scroll;">
+<div class="multiColumn noWrap">
 <div>
 
 ```plaintext
@@ -123,7 +123,7 @@ The additional functionality part of the assignment included the following:
 
 As you might imagine, in order to make that win-checking algorithm work for the 4x4 and 5x5 games, we’d need a lot more data. While I’m sure there’s a better way to accomplish this (I haven’t taken the time yet to try), the following is what I derived for my working 4x4 and 5x5 tic tac toe gameplay:
 
-<div class="multiColumn" style="flex-wrap: nowrap; overflow-x: scroll;">
+<div class="multiColumn noWrap">
 <div>
 
 ```nasm
