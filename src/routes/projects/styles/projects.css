@@ -16,10 +16,11 @@ blockquote {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  gap: 0.5em;
 }
 
 .multiColumn > div {
-  margin: 0 0.5em;
+  /* margin: 0 0.5em; */
   max-width: calc(100% - 1em);
   min-width: 8em;
 }
@@ -28,11 +29,6 @@ blockquote {
 .multiColumn p:not(:has(.centeredImage)) {
   width: 0;
   min-width: 100%;
-}
-
-.multiColumn.noWrap {
-  flex-wrap: nowrap;
-  overflow-x: scroll;
 }
 
 .centeredImage {

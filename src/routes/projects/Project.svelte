@@ -135,8 +135,8 @@
   }
 
   .projectDeepDive {
-    width: 85%;
-    margin-left: 7.5%;
+    width: 88%;
+    margin-left: 6%;
     margin-top: 0rem;
 
     text-align: center;

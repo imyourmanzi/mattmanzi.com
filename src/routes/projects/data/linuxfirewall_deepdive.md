@@ -16,7 +16,7 @@ Before I knew it, I had written my own custom assertion library in C for simple 
 
 I’ve reproduced select excerpts of the test code here to demonstrate its simplicity.
 
-<div class="multiColumn noWrap">
+<div class="multiColumn">
 <div>
 
 ```c
