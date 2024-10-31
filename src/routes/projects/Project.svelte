@@ -23,6 +23,24 @@
 
   let deepDiveIsOpen = false;
 
+  const projectId =
+    // prefix the id with the year (if there's more than one the starting year is used)
+    (dateRange.match(/\d{4}/)?.[0]?.concat('-') ?? '') +
+    // add on the project name (everything after the last colon)
+    // - remove any portion with parentheses
+    // - remove excess whitespace
+    // - replace spaces with hyphens
+    // - remove all other non-alphabetical characters
+    // - convert to lower case
+    name
+      .split(':')
+      .pop()
+      ?.replaceAll(/\(.+\)/g, '')
+      .trim()
+      .replaceAll(/\s+/g, '-')
+      .replaceAll(/((?!-)\W)/g, '')
+      .toLowerCase();
+
   const toggleDeepDive = () => {
     if (deepDiveIsOpen) {
       deepDiveIsOpen = false;
@@ -33,10 +51,10 @@
 </script>
 
 <div class="projectContainer">
-  <div class="projectSummary">
+  <div id="{projectId}" class="projectSummary">
     <img class="wideScreensOnly" src="{imageSource}" alt="{imageAlternateText}" />
     <div class="projectTextContainer">
-      <h2 class="projectName">{name}</h2>
+      <h2 class="projectName"><a href="#{projectId}">{name}</a></h2>
       <div class="projectDetail">
         {#if active}
           <span class="projectActiveTag">Active</span>
@@ -108,6 +126,20 @@
     text-align: center;
   }
 
+  .projectName > a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .projectName > a::before {
+    content: '# ';
+    color: transparent;
+  }
+
+  .projectName > a:hover::before {
+    color: inherit;
+  }
+
   .projectDetail {
     display: flex;
     justify-content: center;
@@ -117,9 +149,10 @@
   }
 
   .projectActiveTag {
-    padding: 1px 6px;
+    padding: 1px 5px 1px 6px;
     margin: auto 0.75em;
 
+    border-radius: 5px;
     background-color: #218e61;
 
     font-weight: 600;
@@ -134,8 +167,8 @@
   }
 
   .projectDeepDive {
-    width: 85%;
-    margin-left: 7.5%;
+    width: 88%;
+    margin-left: 6%;
     margin-top: 0rem;
 
     text-align: center;
