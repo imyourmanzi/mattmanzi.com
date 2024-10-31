@@ -1,12 +1,12 @@
-**Foreword**
+### Foreword
 
-This project isn’t a clone of `iptables` or native file ACLs. Instead, it’s a tool to let sysadmins (i.e. `root`) block files and network communications at a kernel so that not even `root` can access them without first unblocking the resource. It denies access to sending & receiving UDP & TCP communications via IPv4 & IPv6 for specified port numbers and access to individual files (i.e. [inodes](https://unix.stackexchange.com/questions/4402/what-is-a-superblock-inode-dentry-and-a-file)). The project’s ultimate goal was to utilize the elegance of Linux—everything is a file—and locate a single “nexus point” in the kernel where a “blocked/not blocked?” check could be placed to handle all of the requirements.
+This project isn’t a clone of `iptables` or native file system ACLs. Instead, it’s a tool to let sysadmins (i.e. `root`) block files and network communications at a kernel level so that not even `root` can access them without first unblocking the resource. It denies access to sending & receiving UDP & TCP communications via IPv4 & IPv6 for specified port numbers and access to individual files (i.e. [inodes](https://unix.stackexchange.com/questions/4402/what-is-a-superblock-inode-dentry-and-a-file)). The project’s ultimate goal was to utilize the elegance of Linux—everything is a file—and locate a single “nexus point” in the kernel where a “blocked/not blocked?” check could be placed to handle all of the requirements.
 
-This project was one of the most difficult, yet rewarding, I've ever worked on. It gave me a whole new appreciation for operating systems and software systems. Despite my receiving 105% on this assignment (due to extra credit and a curve), I did not meet all the requirements of the assignment. I plan to return to this project one day and accomplish this goal. When I do, I’ll add a full write-up here.
+This project was one of the most difficult, yet rewarding, I've ever worked on. It gave me a whole new appreciation for operating systems and software. Despite my receiving 105% on this assignment (due to extra credit and a curve), I did not meet all the requirements of the assignment. I plan to return to this project one day and accomplish this goal. When I do, I’ll add a full write-up here.
 
 However, in the meantime. I’d like to talk about…
 
-**Test Suites**
+### Test Suites
 
 Believe it or not, tests (yes, the ones you see above) are what earned me extra credit on this project. While it wasn’t a requirement to have a formal test system for all the different use cases that the system would have to block, it was generally understood that there were a number of possibilities, and not all of them immediately obvious.
 
