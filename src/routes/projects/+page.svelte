@@ -78,10 +78,37 @@
 
   const eras: Era[] = [
     {
+      name: 'Post-College',
+      colors: {
+        dark: '#92B5DC',
+        light: '#3660A3'
+      },
+      projects: [
+        {
+          imageSource: '/img/projects/spm0.jpg',
+          imageAlternateText: 'The landing page of Spotify Playlist Manager',
+          name: 'Spotify Playlist Manager',
+          dateRange: 'Aug 2022 – May 2023',
+          projectLink: 'https://github.com/imyourmanzi/SpotifyPlaylistManager',
+          markdownFilePrefix: 'spm'
+        },
+        {
+          imageSource: 'img/projects/figtree0.svg',
+          imageAlternateText:
+            'A nice fig graphic that I adopted as the logo for my project',
+          name: 'Fig Tree',
+          dateRange: 'since Nov 2020',
+          active: true,
+          projectLink: 'https://github.com/imyourmanzi/FigTree',
+          markdownFilePrefix: 'figtree'
+        }
+      ]
+    },
+    {
       name: 'College',
       colors: {
-        dark: '#FF0000',
-        light: '#FF0000'
+        dark: '#DC5A58',
+        light: '#D44C4A'
       },
       projects: [
         {
