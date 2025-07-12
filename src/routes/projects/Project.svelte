@@ -206,8 +206,7 @@
     transition: transform 0.5s;
   }
 
-  /* Extra tall and skinny screens (i.e. smartphones) */
-  @media screen and (max-aspect-ratio: 767/1024) {
+  @media screen and (max-aspect-ratio: 1167/1024) {
     .projectTextContainer {
       width: 96%;
     }

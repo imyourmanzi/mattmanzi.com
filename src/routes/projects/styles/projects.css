@@ -41,8 +41,7 @@ blockquote {
   max-width: 500px;
 }
 
-/* Extra tall and skinny screens (i.e. smartphones) */
-@media screen and (max-aspect-ratio: 767/1024) {
+@media screen and (max-aspect-ratio: 1167/1024) {
   /*
   this is kind of a hack because we really only need to worry about object-fit when
   there's not a lot of horizontal space to spare

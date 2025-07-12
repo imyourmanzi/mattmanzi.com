@@ -27,13 +27,20 @@
 <div id="homeContainer" class="container">
   <div id="profileHeader">
     <div id="profileButtonsAndImage">
-      <div id="profileContactRow">
+      <div id="profileContactRow" class="wideScreensOnly">
         <a href="tel:14433847455" title="Phone: +1 (443) 384-7455"
           ><i class="fa-solid fa-phone"></i></a
         >
         <a href="mailto:manzi.mattr@gmail.com" title="Email: manzi.mattr@gmail.com"
           ><i class="fa-solid fa-at"></i></a
         >
+        <a
+          href="docs/Matt R. Manzi.2025.06.30.East Coast.pdf"
+          title="Résumé for Matt R. Manzi"
+          target="_blank"
+        >
+          <i class="fas fa-file-pdf"></i>
+        </a>
         <a
           href="/docs/key.asc"
           title="PGP: 665C 3199 D621 6EFC 90FF F11C A5FF 3F30 E4B8 3E20"
@@ -49,8 +56,28 @@
         >
       </h1>
       <div>
-        <p>Versatile & Self-Driven Technology Solutions Developer</p>
+        <p>Self-Driven & Highly Skilled Software Engineer</p>
         <p id="profileQuote">"As we say it, so it shall be."</p>
+      </div>
+      <div id="profileContactRow">
+        <a href="tel:14433847455" title="Phone: +1 (443) 384-7455"
+          ><i class="fa-solid fa-phone"></i></a
+        >
+        <a href="mailto:manzi.mattr@gmail.com" title="Email: manzi.mattr@gmail.com"
+          ><i class="fa-solid fa-at"></i></a
+        >
+        <a
+          href="docs/Matt R. Manzi.2025.06.30.East Coast.pdf"
+          title="Résumé for Matt R. Manzi"
+          target="_blank"
+        >
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a
+          href="/docs/key.asc"
+          title="PGP: 665C 3199 D621 6EFC 90FF F11C A5FF 3F30 E4B8 3E20"
+          ><i class="fa-solid fa-key"></i></a
+        >
       </div>
     </div>
   </div>
@@ -76,11 +103,10 @@
     display: flex;
     justify-content: space-evenly;
 
-    width: 250px;
     max-height: 250px;
   }
 
-  #profileContactRow {
+  #profileButtonsAndImage > #profileContactRow {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -89,6 +115,7 @@
   #profileContactRow a {
     padding: 5px;
     width: 1.28em;
+    margin-right: 0.8em;
 
     background-color: #222537;
 
@@ -121,24 +148,18 @@
     font-weight: 350;
   }
 
+  #profileNameAndTitle > #profileContactRow {
+    display: none;
+  }
+
   #profileText {
     margin: auto;
     width: 60%;
   }
 
-  /* Extra tall and skinny screens (i.e. smartphones) */
-  @media screen and (max-aspect-ratio: 767/1024) {
+  @media screen and (max-aspect-ratio: 1167/1024) {
     #profileHeader {
       width: 100%;
-    }
-
-    #profileContactRow {
-      flex-direction: row;
-    }
-
-    #profileButtonsAndImage {
-      flex-direction: column-reverse;
-      justify-content: center;
     }
 
     #profileHeader img {
@@ -147,6 +168,12 @@
 
     #profileHeader h1 {
       font-size: 1.4em;
+    }
+
+    #profileNameAndTitle > #profileContactRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
     }
 
     #profileText {
