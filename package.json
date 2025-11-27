@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "svelte-kit sync && vite build",
-    "build:docker": "export IMAGE_NAME=\"ghcr.io/imyourmanzi/mattmanzi.com\"; docker build --build-arg \"NODE_VERSION=$(cat .nvmrc | tr -cd '[:digit:].')\" -t \"$IMAGE_NAME:$(date -Iseconds | tr ':' '_')\" -t \"$IMAGE_NAME:$npm_package_version\" -t \"$IMAGE_NAME:latest\" .",
+    "build:docker": "export IMAGE_NAME=\"ghcr.io/imyourmanzi/mattmanzi.com\"; docker build --platform linux/amd64,linux/arm64 --build-arg \"NODE_VERSION=$(cat .nvmrc | tr -cd '[:digit:].')\" -t \"$IMAGE_NAME:$npm_package_version\" -t \"$IMAGE_NAME:latest\" .",
     "dev": "vite dev",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

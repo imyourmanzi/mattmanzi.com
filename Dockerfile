@@ -12,7 +12,7 @@ RUN npm ci
 # raise memory limit for Rollup:
 # - https://github.com/sveltejs/kit/discussions/7989
 # - https://rollupjs.org/troubleshooting/#error-javascript-heap-out-of-memory
-ENV NODE_OPTIONS=--max-old-space-size=8192
+ENV NODE_OPTIONS=--max-old-space-size=12288
 
 COPY tsconfig.json vite.config.ts svelte.config.js ./
 
@@ -28,4 +28,4 @@ LABEL org.opencontainers.image.source=https://github.com/imyourmanzi/mattmanzi.c
 LABEL org.opencontainers.image.description="Container image for mattmanzi.com"
 
 # bring over the production assets
-COPY --from=build /app/build/* /usr/share/nginx/html/
+COPY --from=build /app/build /usr/share/nginx/html/
